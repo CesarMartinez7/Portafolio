@@ -1,0 +1,73 @@
+[
+    {
+      "id": 1,
+      "name": "Delfilms",
+      "description": "Plataforma de streaming gratuita con una amplia selección de películas y series.",
+      "image": "delfilms.png",
+      "link": "https://github.com/CesarMartinez7/delfilms"
+    },
+    {
+      "id": 2,
+      "name": "DataFast",
+      "description": "Sistema de gestión e inventario eficiente para pequeñas y medianas empresas.",
+      "image": "/datafast.png",
+      "link": "https://github.com/CesarMartinez7/datafast"
+    },
+    {
+      "id": 3,
+      "name": "Meko ☕",
+      "description": "Plataforma de streaming de anime con una interfaz intuitiva y catálogo actualizado.",
+      "image": "/meko.png",
+      "link": "https://github.com/CesarMartinez7/meko"
+    },
+    {
+      "id": 4,
+      "name": "DexTS",
+      "description": "Aplicación que utiliza GraphQL para ofrecer información detallada sobre anime y manga.",
+      "image": "/dexts.png",
+      "link": "https://github.com/CesarMartinez7/dexts"
+    },
+    {
+      "id": 5,
+      "name": "TaskMaster",
+      "description": "Aplicación de gestión de tareas para mejorar la productividad personal y en equipo.",
+      "image": "/taskmaster.png",
+      "link": "https://github.com/CesarMartinez7/taskmaster"
+    },
+    {
+      "id": 6,
+      "name": "WeatherNow",
+      "description": "Aplicación que proporciona información meteorológica en tiempo real para cualquier ubicación.",
+      "image": "/weathernow.png",
+      "link": "https://github.com/CesarMartinez7/weathernow"
+    },
+    {
+      "id": 7,
+      "name": "GalleryPhotos",
+      "description": "Aplicación sencilla hecha en nextJS para las busqueda de imagenes hermosas por la api de Pexels.",
+      "image": "/galleryphoto.png",
+      "link": "https://github.com/CesarMartinez7/fittrack"
+    },
+    {
+      "id": 8,
+      "name": "Dragon Ball Wiki",
+      "description": "Plataforma para descubrir, el maravillo mundo de Dragon ball",
+      "image": "/dragonballwiki.png",
+      "link": "https://github.com/CesarMartinez7/recipebook"
+    },
+    {
+      "id": 9,
+      "name": "EventPlanner",
+      "description": "Herramienta para planificar y gestionar eventos, con funciones de calendario y recordatorios.",
+      "image": "/eventplanner.png",
+      "link": "https://github.com/CesarMartinez7/eventplanner"
+    },
+    {
+      "id": 10,
+      "name": "BudgetBuddy",
+      "description": "Aplicación de gestión financiera personal para ayudar a los usuarios a controlar sus gastos e ingresos.",
+      "image": "/budgetbuddy.png",
+      "link": "https://github.com/CesarMartinez7/budgetbuddy"
+    }
+  ]
+  

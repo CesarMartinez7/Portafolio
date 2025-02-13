@@ -20,8 +20,8 @@
 
 
 body {
-  background-color: #000;
-  color: var(--primary);
+  background-color: #000000fb;
+  color: #DADADA;
   font-family: "Ubuntu", sans-serif;
   font-weight: 300; /* O 500, según la variante deseada */
 }
@@ -52,6 +52,8 @@ body {
 
 .shiny-button {
   cursor:pointer;
+  display: flex;
+  gap: 1;
   background-color:#111;
   border:1px solid #353535;
   border-radius:50px;

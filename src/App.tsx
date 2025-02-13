@@ -6,14 +6,26 @@ import Footer from "./components/Footer";
 import mock from "./Mocks/proyect.json";
 import { ItemProyect } from "./lib/response";
 import Proyect from "./components/Proyect";
+import Particles from "./components/Particles";
+import Habilidades from "./components/Habilidades";
 
 function App() {
   const divProject = useRef<HTMLDivElement>(null);
   console.log(mock);
   const [data] = useState<ItemProyect[]>(mock);
   return (
-    <>
-      <div className="h-screen gap-6 w-full lg:p-7 grid grid-cols-1 md:grid-cols-2 relative">
+    <div className="">
+      <Particles
+        particleColors={["#fffff2", "#ffffff"]}
+        particleCount={200}
+        particleSpread={10}
+        speed={0.1}
+        particleBaseSize={100}
+        moveParticlesOnHover={true}
+        alphaParticles={false}
+        disableRotation={false}
+      />
+      <div className="h-screen gap-6 w-full lg:p-12 grid grid-cols-1 md:grid-cols-2 relative">
         <button
           onClick={() => {
             if (divProject.current) {
@@ -72,8 +84,9 @@ function App() {
         <div className="hidden md:flex"></div>
       </div>
       <Proyect data={data} divProject={divProject} />
+      <Habilidades></Habilidades>
       <Footer />
-    </>
+    </div>
   );
 }
 

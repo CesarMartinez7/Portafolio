@@ -87,7 +87,7 @@ const SplitText: React.FC<SplitTextProps> = ({
 
                         return (
                             //@ts-ignore
-                            <animated.span {...props}
+                            <animated.span
                                 key={index}
                                 style={springs[index] as unknown as React.CSSProperties}
                                 className="inline-block transform transition-opacity will-change-transform"

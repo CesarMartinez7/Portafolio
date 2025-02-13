@@ -4,28 +4,28 @@
       "name": "Delfilms 🍿",
       "description": "Plataforma de streaming gratuita con una amplia selección de películas y series.",
       "image": "delfilms.png",
-      "link": "https://github.com/CesarMartinez7/delfilms"
+      "link": "https://delfilms.pages.dev"
     },
     {
       "id": 2,
       "name": "DataFast ⚡",
       "description": "Sistema de gestión e inventario eficiente para pequeñas y medianas empresas.",
       "image": "/datafast.png",
-      "link": "https://github.com/CesarMartinez7/datafast"
+      "link": "https://github.com/CesarMartinez7/Datafast"
     },
     {
       "id": 3,
       "name": "Meko ☕",
       "description": "Plataforma de streaming de anime con una interfaz intuitiva y catálogo actualizado.",
       "image": "/meko.png",
-      "link": "https://github.com/CesarMartinez7/meko"
+      "link": "https://mekoo.pages.dev"
     },
     {
       "id": 4,
       "name": "DexTS",
       "description": "Aplicación que utiliza GraphQL para ofrecer información detallada sobre anime y manga.",
       "image": "/dexts.png",
-      "link": "https://github.com/CesarMartinez7/dexts"
+      "link": "https://dexts.pages.dev"
     },
     {
       "id": 5,
@@ -44,9 +44,9 @@
     {
       "id": 7,
       "name": "GalleryPhotos 📷 ",
-      "description": "Aplicación sencilla hecha en nextJS para las busqueda de imagenes hermosas por la api de Pexels.",
+      "description": "Aplicación sencilla hecha en Next JS para las busqueda de imagenes hermosas por la api de Pexels.",
       "image": "/galleryphoto.png",
-      "link": "https://github.com/CesarMartinez7/fittrack"
+      "link": "https://gallerry-two.vercel.app/"
     },
     {
       "id": 8,

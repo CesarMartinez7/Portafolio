@@ -14,7 +14,7 @@ function App() {
   console.log(mock);
   const [data] = useState<ItemProyect[]>(mock);
   return (
-    <div className="">
+    <div>
       <Particles
         particleColors={["#fffff2", "#ffffff"]}
         particleCount={200}

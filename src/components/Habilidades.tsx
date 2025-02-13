@@ -29,7 +29,7 @@ export default function Habilidades() {
     <div className="h-svw w-full">
       <div className="flex justify-center">
         <h2 className="text-[#dfdfd6] text-[44px] font-semibold w-[30vw]">
-          Powering your favorite frameworks and tools
+          Lenguajes y herramientas que utilizo
         </h2>
       </div>
       <div className="grid grid-cols-3 lg:grid-cols-12 lg:p-26 gap-5">

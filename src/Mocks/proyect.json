@@ -1,14 +1,14 @@
 [
     {
       "id": 1,
-      "name": "Delfilms",
+      "name": "Delfilms 🍿",
       "description": "Plataforma de streaming gratuita con una amplia selección de películas y series.",
       "image": "delfilms.png",
       "link": "https://github.com/CesarMartinez7/delfilms"
     },
     {
       "id": 2,
-      "name": "DataFast",
+      "name": "DataFast ⚡",
       "description": "Sistema de gestión e inventario eficiente para pequeñas y medianas empresas.",
       "image": "/datafast.png",
       "link": "https://github.com/CesarMartinez7/datafast"
@@ -36,21 +36,21 @@
     },
     {
       "id": 6,
-      "name": "WeatherNow",
+      "name": "WeatherNow ⛈️",
       "description": "Aplicación que proporciona información meteorológica en tiempo real para cualquier ubicación.",
       "image": "/weathernow.png",
       "link": "https://github.com/CesarMartinez7/weathernow"
     },
     {
       "id": 7,
-      "name": "GalleryPhotos",
+      "name": "GalleryPhotos 📷 ",
       "description": "Aplicación sencilla hecha en nextJS para las busqueda de imagenes hermosas por la api de Pexels.",
       "image": "/galleryphoto.png",
       "link": "https://github.com/CesarMartinez7/fittrack"
     },
     {
       "id": 8,
-      "name": "Dragon Ball Wiki",
+      "name": "Dragon Ball Wiki 🐉",
       "description": "Plataforma para descubrir, el maravillo mundo de Dragon ball",
       "image": "/dragonballwiki.png",
       "link": "https://github.com/CesarMartinez7/recipebook"

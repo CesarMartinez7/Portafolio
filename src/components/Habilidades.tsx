@@ -35,21 +35,46 @@ const tools: Tool[] = [
     color: "#3178C6",
     link: "https://www.typescriptlang.org/",
   },
+  {
+    name: "bootstrap",
+    color: "#9013fe",
+    link: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "github",
+    color: "#2f2f2f",
+    link: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "css3",
+    color: "#3167c6",
+    link: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "vitejs",
+    color: "#3167c6",
+    link: "https://www.typescriptlang.org/",
+  },
+  {
+    name: "ubuntu",
+    color: "#3167c6",
+    link: "https://www.typescriptlang.org/",
+  },
 ];
 
 export default function Habilidades() {
   return (
     <>
     <Particles></Particles>
-    <div className="h-screen w-full">
+    <div className="h-screen w-full grid place-content-center">
       <div className="flex justify-center">
-        <h2 className="text-[#dfdfd6] text-[44px] font-semibold w-[50vw]">
+        <h2 className=" text-[44px] font-medium bg-gradient-to-t from-zinc-600 to-zinc-200 bg-clip-text text-transparent ">
           Lenguajes y herramientas que utilizo
         </h2>
       </div>
       <div className="relative z-10">
         <div className="absolute w-full h-full bg-gradient-to-b z-50 from-[#101010] to-transparent"></div>
-        <div className="grid grid-cols-3 lg:grid-cols-12 lg:px-44 lg:py-12 gap-5 z-10 ">
+        <div className="grid grid-cols-3 p-2.5 lg:grid-cols-8 lg:px-44 lg:py-12 gap-5 z-10 ">
           {tools.map((tool, index) => (
             <SpotlightCard
               key={index}
@@ -58,7 +83,7 @@ export default function Habilidades() {
               spotlightColor={tool.color}
             >
               <a href={tool.link} target="_blank" rel="noopener noreferrer">
-                <Icon icon={`devicon:${tool.name}`} width="50" height="50" />
+                <Icon icon={`devicon:${tool.name}`} width="50" height="50" color="white" />
               </a>
             </SpotlightCard>
           ))}

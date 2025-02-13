@@ -1,13 +1,15 @@
 import { useSprings, animated, SpringConfig } from '@react-spring/web';
 import { useEffect, useRef, useState } from 'react';
 
+
+
 interface SplitTextProps {
     text?: string;
     className?: string;
     delay?: number;
     animationFrom?: { opacity: number; transform: string };
     animationTo?: { opacity: number; transform: string };
-    easing?: SpringConfig['easing'];
+    easing?: SpringConfig["easing"];
     threshold?: number;
     rootMargin?: string;
     textAlign?: 'left' | 'right' | 'center' | 'justify' | 'start' | 'end';
@@ -84,7 +86,8 @@ const SplitText: React.FC<SplitTextProps> = ({
                             .reduce((acc, w) => acc + w.length, 0) + letterIndex;
 
                         return (
-                            <animated.span
+                            //@ts-ignore
+                            <animated.span {...props}
                                 key={index}
                                 style={springs[index] as unknown as React.CSSProperties}
                                 className="inline-block transform transition-opacity will-change-transform"

@@ -6,7 +6,7 @@ import { useRef, useState } from "react";
 import Footer from "./components/Footer";
 import mock from "./Mocks/proyect.json";
 import { ItemProyect } from "./lib/response";
-import { div, h1, img } from "framer-motion/client";
+
 
 function App() {
   const divProject = useRef<HTMLDivElement>(null);
@@ -21,7 +21,7 @@ function App() {
               divProject.current?.scrollIntoView({ behavior: "smooth" });
             }
           }}
-          className="shiny-text shiny-button absolute top-[92%] right-[50%] transform translate-[-50%]"
+          className="shiny-text shiny-button absolute top-[50%] right-[50%] transform translate-x-[-50%] translate-y-[-50%]"
         >
           <Icon icon="si:expand-more-duotone" width="24" height="24" />
         </button>
@@ -33,7 +33,6 @@ function App() {
             delay={50}
             animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
             animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-            easing="easeOutCubic"
             threshold={0.2}
             rootMargin="-50px"
           />
@@ -44,7 +43,7 @@ function App() {
             delay={100}
             animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
             animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-            easing="easeOutCubic"
+            
             threshold={0.2}
             rootMargin="-50px"
           />
@@ -57,7 +56,7 @@ function App() {
             </button>
           </div>
         </div>
-        <div className="hidden md:flex">Hello world</div>
+        <div className="hidden md:flex"></div>
       </div>
       <div className="p-12 w-full flex gap-6 flex-col" ref={divProject}>
         <div className="w-full grid place-content-center">
@@ -68,7 +67,6 @@ function App() {
             delay={20}
             animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
             animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-            easing="easeOutCubic"
             threshold={0.2}
             rootMargin="-50px"
           />

@@ -26,7 +26,7 @@ export default function Proyect({ divProject, data }: ProyectProps) {
       <div className="grid grid-cols-5 gap-6">
         {data.map((item) => (
             <TiltedCard
-              imageSrc={`/src/assets/${item.image}`}
+              imageSrc={`/public/${item.image}`}
               altText={`${item.name}`}
               captionText={`${item.description}`}
               rotateAmplitude={12}

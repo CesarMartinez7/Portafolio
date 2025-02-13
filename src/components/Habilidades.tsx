@@ -54,6 +54,7 @@ export default function Habilidades() {
             <SpotlightCard
               key={index}
               className="custom-spotlight-card flex justify-center"
+              //@ts-ignore
               spotlightColor={tool.color}
             >
               <a href={tool.link} target="_blank" rel="noopener noreferrer">

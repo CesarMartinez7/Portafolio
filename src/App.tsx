@@ -8,6 +8,7 @@ import { ItemProyect } from "./lib/response";
 import Proyect from "./components/Proyect";
 import Particles from "./components/Particles";
 import Habilidades from "./components/Habilidades";
+import BlurText from "./components/Blurtext";
 
 function App() {
   const divProject = useRef<HTMLDivElement>(null);
@@ -37,6 +38,13 @@ function App() {
           <Icon icon="si:expand-more-duotone" width="24" height="24" />
         </button>
         <div className="flex justify-center w-full h-full flex-col gap-2.5 p-3 lg:p-12">
+          <BlurText
+            text="Isn't this so cool?!"
+            delay={150}
+            animateBy="words"
+            direction="top"
+            className="text-xl "
+          />
           <SplitText
             text="Hello"
             className="text-5xl text-right font-semibold  text-zinc-200"
@@ -48,7 +56,7 @@ function App() {
             rootMargin="-50px"
           />
           <SplitText
-            text="My name is Cesar"
+            text="My name is Cesar."
             className="text-5xl text-right font-semibold  text-zinc-200"
             textAlign="left"
             delay={50}

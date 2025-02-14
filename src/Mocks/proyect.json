@@ -14,6 +14,11 @@
       "vite",
       "Javascript",
       "sass"
+    ],
+    "imageResponsive": [
+      "/delfilms/mobile.png",
+      "/delfilms/tablet.png",
+      "/delfilms/normal.png"
     ]
   },
   {
@@ -30,6 +35,11 @@
       "Prisma",
       "PostgreSQL",
       "TailwindCSS"
+    ],
+    "imageResponsive": [
+      "/datafast/mobile.png",
+      "/datafast/tablet.png",
+      "/datafast/normal.png"
     ]
   },
   {
@@ -46,6 +56,11 @@
       "Firebase",
       "CSS Modules",
       "GraphQL"
+    ],
+    "imageResponsive": [
+      "/meko/mobile.png",
+      "/meko/tablet.png",
+      "/meko/normal.png"
     ]
   },
   {
@@ -62,6 +77,11 @@
       "Apollo Client",
       "TypeScript",
       "TailwindCSS"
+    ],
+    "imageResponsive": [
+      "/dexts/mobile.png",
+      "/dexts/tablet.png",
+      "/dexts/normal.png"
     ]
   },
   {
@@ -78,6 +98,11 @@
       "Node.js",
       "MongoDB",
       "Bootstrap"
+    ],
+    "imageResponsive": [
+      "/taskmaster/mobile.png",
+      "/taskmaster/tablet.png",
+      "/taskmaster/normal.png"
     ]
   },
   {
@@ -93,6 +118,11 @@
       "Expo",
       "OpenWeather API",
       "Styled Components"
+    ],
+    "imageResponsive": [
+      "/weathernow/mobile.png",
+      "/weathernow/tablet.png",
+      "/weathernow/normal.png"
     ]
   },
   {
@@ -109,6 +139,12 @@
       "Pexels API",
       "TailwindCSS"
     ]
+    ,
+    "imageResponsive": [
+      "/weathernow/mobile.png",
+      "/weathernow/tablet.png",
+      "/weathernow/normal.png"
+    ]
   },
   {
     "id": 8,
@@ -123,6 +159,11 @@
       "Vuetify",
       "Firebase",
       "Netlify"
+    ],
+    "imageResponsive": [
+      "/weathernow/mobile.png",
+      "/weathernow/tablet.png",
+      "/weathernow/normal.png"
     ]
   },
   {
@@ -138,6 +179,11 @@
       "CSS",
       "JavaScript",
       "LocalStorage"
+    ],
+    "imageResponsive": [
+      "/weathernow/mobile.png",
+      "/weathernow/tablet.png",
+      "/weathernow/normal.png"
     ]
   },
   {
@@ -153,6 +199,11 @@
       "Dart",
       "Firebase",
       "Hive Database"
+    ],
+    "imageResponsive": [
+      "/weathernow/mobile.png",
+      "/weathernow/tablet.png",
+      "/weathernow/normal.png"
     ]
   }
 ]

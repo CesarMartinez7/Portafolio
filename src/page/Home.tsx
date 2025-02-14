@@ -20,7 +20,7 @@ function Main() {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.6}}
     >
       <Particles
         particleColors={["#fffff2", "#ffffff"]}

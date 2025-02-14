@@ -55,11 +55,11 @@ function Main() {
           />
           <SplitText
             text="Welcome"
-            className="text-5xl text-right font-semibold bg-gradient-to-t from-zinc-600 to-zinc-100 bg-clip-text text-transparent "
+            className="text-5xl font-semibold bg-gradient-to-t  "
             textAlign="left"
             delay={50}
             animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-            animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+            animationTo={{ opacity: 2, transform: "translate3d(0,0,0)" }}
             threshold={0.2}
             rootMargin="-50px"
           />

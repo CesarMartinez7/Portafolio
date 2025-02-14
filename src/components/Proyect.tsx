@@ -2,6 +2,7 @@ import SplitText from "./SplitText";
 import TiltedCard from "./Card";
 import { ItemProyect } from "../lib/response";
 import { Ref } from "react";
+import { useState } from "react";
 
 interface ProyectProps {
   divProject: Ref<HTMLDivElement>;
@@ -9,11 +10,12 @@ interface ProyectProps {
 }
 
 export default function Proyect({ divProject, data }: ProyectProps) {
+  const [countProyect] = useState(data.length)
   return (
     <div className="p-12 w-full flex gap-6 flex-col" ref={divProject}>
       <div className="w-full grid place-content-center">
         <SplitText
-          text="Mis proyectos"
+          text={`Mis ${countProyect} proyectos mas destacados`}
           className="text-2xl text-zinc-300 shiny-text font-medium"
           textAlign="left"
           delay={20}

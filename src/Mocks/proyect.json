@@ -1,73 +1,158 @@
 [
-    {
-      "id": 1,
-      "name": "Delfilms 🍿",
-      "description": "Plataforma de streaming gratuita con una amplia selección de películas y series.",
-      "image": "delfilms.png",
-      "link": "https://delfilms.pages.dev"
-    },
-    {
-      "id": 2,
-      "name": "DataFast ⚡",
-      "description": "Sistema de gestión e inventario eficiente para pequeñas y medianas empresas.",
-      "image": "/datafast.png",
-      "link": "https://github.com/CesarMartinez7/Datafast"
-    },
-    {
-      "id": 3,
-      "name": "Meko ☕",
-      "description": "Plataforma de streaming de anime con una interfaz intuitiva y catálogo actualizado.",
-      "image": "/meko.png",
-      "link": "https://mekoo.pages.dev"
-    },
-    {
-      "id": 4,
-      "name": "DexTS",
-      "description": "Aplicación que utiliza GraphQL para ofrecer información detallada sobre anime y manga.",
-      "image": "/dexts.png",
-      "link": "https://dexts.pages.dev"
-    },
-    {
-      "id": 5,
-      "name": "TaskMaster",
-      "description": "Aplicación de gestión de tareas para mejorar la productividad personal y en equipo.",
-      "image": "/taskmaster.png",
-      "link": "https://github.com/CesarMartinez7/taskmaster"
-    },
-    {
-      "id": 6,
-      "name": "WeatherNow ⛈️",
-      "description": "Aplicación que proporciona información meteorológica en tiempo real para cualquier ubicación.",
-      "image": "/weathernow.png",
-      "link": "https://github.com/CesarMartinez7/weathernow"
-    },
-    {
-      "id": 7,
-      "name": "GalleryPhotos 📷 ",
-      "description": "Aplicación sencilla hecha en Next JS para las busqueda de imagenes hermosas por la api de Pexels.",
-      "image": "/galleryphoto.png",
-      "link": "https://gallerry-two.vercel.app/"
-    },
-    {
-      "id": 8,
-      "name": "Dragon Ball Wiki 🐉",
-      "description": "Plataforma para descubrir, el maravillo mundo de Dragon ball",
-      "image": "/dragonballwiki.png",
-      "link": "https://dragonballwiki.pages.dev"
-    },
-    {
-      "id": 9,
-      "name": "Calculadora",
-      "description": "Calculadora con funciones sencillas hecha en VanilaJS .",
-      "image": "/calculadora.png",
-      "link": "https://calculadora-7df.pages.dev"
-    },
-    {
-      "id": 10,
-      "name": "BudgetBuddy",
-      "description": "Aplicación de gestión financiera personal para ayudar a los usuarios a controlar sus gastos e ingresos.",
-      "image": "/budgetbuddy.png",
-      "link": "https://github.com/CesarMartinez7/budgetbuddy"
-    }
-  ]
-  
+  {
+    "id": 1,
+    "name": "Delfilms 🍿",
+    "description": "Plataforma de streaming gratuita con una amplia selección de películas y series.",
+    "image": "delfilms.png",
+    "link": "https://delfilms.pages.dev",
+    "slogan": "Tu cine, sin límites ni costos 🎬",
+    "moreDescription": "Delfilms es una plataforma de streaming diseñada para los amantes del cine y las series. Con una interfaz sencilla y acceso gratuito, te permite disfrutar de una gran variedad de títulos sin suscripciones ni anuncios molestos. Desde los clásicos hasta los estrenos más recientes, todo está disponible en un solo lugar.",
+    "tecnologias": [
+      "react",
+      "reactrouter",
+      "tailwind",
+      "vite",
+      "Javascript",
+      "sass"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "DataFast ⚡",
+    "description": "Sistema de gestión e inventario eficiente para pequeñas y medianas empresas.",
+    "image": "/datafast.png",
+    "link": "https://github.com/CesarMartinez7/Datafast",
+    "slogan": "Gestión rápida, decisiones inteligentes 📊",
+    "moreDescription": "DataFast es un sistema diseñado para optimizar la gestión de inventarios y facilitar el control de productos en empresas de cualquier tamaño. Su interfaz intuitiva permite registrar, actualizar y analizar datos de manera rápida, reduciendo tiempos de operación y mejorando la eficiencia empresarial.",
+    "tecnologias": [
+      "Next.js",
+      "TypeScript",
+      "Prisma",
+      "PostgreSQL",
+      "TailwindCSS"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Meko ☕",
+    "description": "Plataforma de streaming de anime con una interfaz intuitiva y catálogo actualizado.",
+    "image": "/meko.png",
+    "link": "https://mekoo.pages.dev",
+    "slogan": "El anime que amas, en un solo lugar 🍥",
+    "moreDescription": "Meko es una plataforma enfocada en la transmisión de anime, con un catálogo en constante actualización. Su diseño minimalista y navegación fluida permiten encontrar y disfrutar de tus series favoritas sin complicaciones.",
+    "tecnologias": [
+      "Vue.js",
+      "Nuxt.js",
+      "Firebase",
+      "CSS Modules",
+      "GraphQL"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "DexTS",
+    "description": "Aplicación que utiliza GraphQL para ofrecer información detallada sobre anime y manga.",
+    "image": "/dexts.png",
+    "link": "https://dexts.pages.dev",
+    "slogan": "Tu enciclopedia de anime y manga 📖",
+    "moreDescription": "DexTS es una aplicación que proporciona información detallada sobre anime y manga, aprovechando la potencia de GraphQL para obtener datos en tiempo real. Encuentra sinopsis, personajes, autores y más en un solo lugar.",
+    "tecnologias": [
+      "React",
+      "GraphQL",
+      "Apollo Client",
+      "TypeScript",
+      "TailwindCSS"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "TaskMaster",
+    "description": "Aplicación de gestión de tareas para mejorar la productividad personal y en equipo.",
+    "image": "/taskmaster.png",
+    "link": "https://github.com/CesarMartinez7/taskmaster",
+    "slogan": "Organiza tu día, alcanza tus metas ✅",
+    "moreDescription": "TaskMaster es la solución ideal para aquellos que buscan aumentar su productividad. Con funciones de planificación, recordatorios y colaboración en equipo, esta app te permite mantener el control de tus tareas diarias.",
+    "tecnologias": [
+      "Angular",
+      "RxJS",
+      "Node.js",
+      "MongoDB",
+      "Bootstrap"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "WeatherNow ⛈️",
+    "description": "Aplicación que proporciona información meteorológica en tiempo real para cualquier ubicación.",
+    "image": "/weathernow.png",
+    "link": "https://github.com/CesarMartinez7/weathernow",
+    "slogan": "El clima en tu bolsillo 🌎",
+    "moreDescription": "WeatherNow es una aplicación que te mantiene informado sobre las condiciones climáticas en tiempo real. Con pronósticos detallados y alertas meteorológicas, nunca estarás desprevenido ante cambios de clima inesperados.",
+    "tecnologias": [
+      "React Native",
+      "Expo",
+      "OpenWeather API",
+      "Styled Components"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "GalleryPhotos 📷 ",
+    "description": "Aplicación sencilla hecha en Next JS para la búsqueda de imágenes hermosas por la API de Pexels.",
+    "image": "/galleryphoto.png",
+    "link": "https://gallerry-two.vercel.app/",
+    "slogan": "Encuentra la imagen perfecta en segundos 🖼️",
+    "moreDescription": "GalleryPhotos es una aplicación que permite explorar y descargar imágenes de alta calidad gracias a la API de Pexels. Con una interfaz intuitiva y búsqueda avanzada, siempre encontrarás la imagen ideal.",
+    "tecnologias": [
+      "Next.js",
+      "TypeScript",
+      "Pexels API",
+      "TailwindCSS"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Dragon Ball Wiki 🐉",
+    "description": "Plataforma para descubrir el maravilloso mundo de Dragon Ball.",
+    "image": "/dragonballwiki.png",
+    "link": "https://dragonballwiki.pages.dev",
+    "slogan": "Toda la historia de Dragon Ball en un solo lugar! 🔥",
+    "moreDescription": "Dragon Ball Wiki es la plataforma definitiva para fans de la saga. Encuentra información sobre personajes, transformaciones, sagas y curiosidades del universo de Dragon Ball.",
+    "tecnologias": [
+      "Vue.js",
+      "Vuetify",
+      "Firebase",
+      "Netlify"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Calculadora",
+    "description": "Calculadora con funciones sencillas hecha en VanillaJS.",
+    "image": "/calculadora.png",
+    "link": "https://calculadora-7df.pages.dev",
+    "slogan": "Tus cálculos, sin complicaciones 🧮",
+    "moreDescription": "Esta calculadora sencilla pero eficiente te permite realizar operaciones matemáticas básicas con una interfaz clara y amigable. Ideal para cálculos rápidos sin necesidad de instalar apps pesadas.",
+    "tecnologias": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "LocalStorage"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "BudgetBuddy",
+    "description": "Aplicación de gestión financiera personal para ayudar a los usuarios a controlar sus gastos e ingresos.",
+    "image": "/budgetbuddy.png",
+    "link": "https://github.com/CesarMartinez7/budgetbuddy",
+    "slogan": "Toma el control de tus finanzas 💰",
+    "moreDescription": "BudgetBuddy es una aplicación diseñada para mejorar la administración del dinero. Registra gastos, establece presupuestos y visualiza reportes detallados sobre tu economía.",
+    "tecnologias": [
+      "Flutter",
+      "Dart",
+      "Firebase",
+      "Hive Database"
+    ]
+  }
+]

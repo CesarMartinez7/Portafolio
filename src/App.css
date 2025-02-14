@@ -6,6 +6,11 @@
 }
 
 @font-face {
+  font-family: "Pixelify";
+  src: url("./Fonts/Minecraft.ttf") format("truetype");
+}
+
+@font-face {
   font-family: "Ubuntu";
   src: url("./Fonts/Ubuntu-Light.ttf") format("truetype");
   font-weight: 300; /* Peso correspondiente a Light */
@@ -21,7 +26,7 @@
 body {
   background-color: #101010;
   color: #DADADA;
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Pixelify" ;
   font-weight: 300; /* O 500, según la variante deseada */
 }
 

@@ -14,7 +14,7 @@ export default function Proyect({ divProject, data }: ProyectProps) {
       <div className="w-full grid place-content-center">
         <SplitText
           text="Mis proyectos"
-          className="text-2xl text-zinc-300 font-medium"
+          className="text-2xl text-zinc-300 shiny-text font-medium"
           textAlign="left"
           delay={20}
           animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}

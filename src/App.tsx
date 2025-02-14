@@ -45,11 +45,11 @@ function App() {
             delay={150}
             animateBy="words"
             direction="top"
-            className="text-xl "
+            className="text-xl shiny-text "
           />
           <SplitText
-            text="<Hello/>"
-            className="text-5xl text-right font-semibold  text-zinc-200"
+            text="Welcome"
+            className="text-5xl text-right font-semibold bg-gradient-to-t from-zinc-600 to-zinc-100 bg-clip-text text-transparent "
             textAlign="left"
             delay={50}
             animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
@@ -59,7 +59,7 @@ function App() {
           />
           <SplitText
             text="My name is Cesar"
-            className="text-5xl text-right font-semibold  text-zinc-200"
+            className="text-5xl text-right font-light  text-zinc-300"
             textAlign="left"
             delay={50}
             animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}

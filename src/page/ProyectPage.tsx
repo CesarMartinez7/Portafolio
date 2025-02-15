@@ -1,5 +1,5 @@
 import MockDataProyect from "../Mocks/proyect.json";
-import { useParams } from "react-router-dom";
+import { Link,  useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Particles from "../components/Particles";
@@ -7,6 +7,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "../components/SpothCard";
 import Noise from "../components/noise";
 import SplitText from "../components/SplitText";
+
 
 export default function ProyectPage() {
   const { id } = useParams();
@@ -52,6 +53,7 @@ export default function ProyectPage() {
             rootMargin="-50px"
           />
           <p className="text-xs">{data.slogan}</p>
+          <motion.a href={`${data.link}`} className="bg-zinc-900 py-2 text-center border border-zinc-800" whileHover={{scale: 1.04}} whileTap={{scale: 0.9}} >Visita la pagina</motion.a>
           <div className="flex flex-col gap-3">
             <div className="row-span-3 rounded-md">
               <p className="font-bold">Descripcion</p>
@@ -77,7 +79,7 @@ export default function ProyectPage() {
               </ul>
             </div>
           </div>
-          <img src={`../../public/delfilms${data.imageResponsive[0]}`} alt="" />
+          <img src={`../../public/${data.image}`} alt="" />
         </div>
       </motion.div>
     </>

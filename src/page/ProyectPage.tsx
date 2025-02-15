@@ -1,13 +1,12 @@
 import MockDataProyect from "../Mocks/proyect.json";
-import { Link,  useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Particles from "../components/Particles";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "../components/SpothCard";
-import Noise from "../components/noise";
 import SplitText from "../components/SplitText";
-
+import RollingGallery from "../components/Rolling";
 
 export default function ProyectPage() {
   const { id } = useParams();
@@ -15,7 +14,7 @@ export default function ProyectPage() {
   const Data = MockDataProyect.filter((item) => item.id === numericId);
   const [data] = useState(Data[0]);
   useEffect(() => {
-    document.title = data.name
+    document.title = data.name;
   }, [id]);
   return (
     <>
@@ -34,13 +33,6 @@ export default function ProyectPage() {
         whileInView={{ opacity: 1 }}
         className="p-2 md:p-12 lg:p-22 w-full flex flex-col items-center justify-center h-full min-h-[100vdh]"
       >
-        <Noise
-          patternSize={250}
-          patternScaleX={1}
-          patternScaleY={1}
-          patternRefreshInterval={2}
-          patternAlpha={15}
-        />
         <div className="w-full lg:w-[50vw] flex flex-col gap-2.5 my-17 p-3.5">
           <SplitText
             text={`${data.name}`}
@@ -53,7 +45,14 @@ export default function ProyectPage() {
             rootMargin="-50px"
           />
           <p className="text-xs">{data.slogan}</p>
-          <motion.a href={`${data.link}`} className="bg-zinc-900 py-2 text-center border border-zinc-800" whileHover={{scale: 1.04}} whileTap={{scale: 0.9}} >Visita la pagina</motion.a>
+          <motion.a
+            href={`${data.link}`}
+            className="bg-zinc-900 py-2 text-center border border-zinc-800"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            Visita la pagina
+          </motion.a>
           <div className="flex flex-col gap-3">
             <div className="row-span-3 rounded-md">
               <p className="font-bold">Descripcion</p>
@@ -61,7 +60,7 @@ export default function ProyectPage() {
             </div>
             <div className="">
               <p className="font-semibold mb-2.5">Tecnologias</p>
-              <ul className="grid grid-cols-10 gap-2.5 ">
+              <ul className="grid grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-2.5 ">
                 {data.tecnologias.map((item, index) => (
                   <SpotlightCard
                     key={index}
@@ -79,7 +78,28 @@ export default function ProyectPage() {
               </ul>
             </div>
           </div>
-          <img src={`../../public/${data.image}`} alt=""  loading="lazy"/>
+          <div>
+            <h3 className="mb-3">Capturas de pantalla</h3>
+            <div className="relative mx-auto border-gray-800 dark:border-zinc-800 bg-zinc-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
+              <div className="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
+                <img
+                  src={`${data.image}`}
+                  className="dark:hidden h-[156px] md:h-[278px] w-full rounded-lg"
+                  alt=""
+                />
+                <img
+                  src={`/${data.image}`}
+                  className="hidden dark:block h-[156px] md:h-[278px] w-full rounded-lg object-cover"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div className="relative mx-auto bg-zinc-900 dark:bg-zinc-700 rounded-b-xl rounded-t-sm h-[17px] max-w-[351px] md:h-[21px] md:max-w-[597px]">
+              <div className="absolute left-1/2 top-0 -translate-x-1/2 rounded-b-xl w-[56px] h-[5px] md:w-[96px] md:h-[8px] bg-zinc-800"></div>
+            </div>
+
+            
+          </div>
         </div>
       </motion.div>
     </>

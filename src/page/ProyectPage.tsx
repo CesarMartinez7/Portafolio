@@ -4,13 +4,18 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Particles from "../components/Particles";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import SpotlightCard from "../components/SpothCard";
+import Noise from "../components/noise";
+import SplitText from "../components/SplitText";
 
 export default function ProyectPage() {
   const { id } = useParams();
   const numericId = id ? parseInt(id) : 0;
   const Data = MockDataProyect.filter((item) => item.id === numericId);
   const [data] = useState(Data[0]);
-  useEffect(() => {}, [id]);
+  useEffect(() => {
+    document.title = data.name
+  }, [id]);
   return (
     <>
       <Particles
@@ -24,37 +29,56 @@ export default function ProyectPage() {
         disableRotation={false}
       />
       <motion.div
-        exit={{ opacity: 0, background: "red" }}
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        className="p-2 md:p-12 lg:p-20"
+        className="p-2 md:p-12 lg:p-22 w-full flex flex-col items-center justify-center h-full min-h-[100vdh]"
       >
-        <h2 className="font-semibold text-5xl">{data.name}</h2>
-        <div className="grid grid-cols-2 gap-3.5  grid-co mt-10 ">
-          <div className=" row-span-3 rounded-md p-4">
-            <p className="font-medium">Descripcion</p>
-            <p className="text-sm">{data.moreDescription}</p>
+        <Noise
+          patternSize={250}
+          patternScaleX={1}
+          patternScaleY={1}
+          patternRefreshInterval={2}
+          patternAlpha={15}
+        />
+        <div className="w-full lg:w-[50vw] flex flex-col gap-2.5 my-17 p-3.5">
+          <SplitText
+            text={`${data.name}`}
+            className="text-5xl"
+            textAlign="left"
+            delay={80}
+            animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
+            animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+            threshold={0.2}
+            rootMargin="-50px"
+          />
+          <p className="text-xs">{data.slogan}</p>
+          <div className="flex flex-col gap-3">
+            <div className="row-span-3 rounded-md">
+              <p className="font-bold">Descripcion</p>
+              <p className="font-extralight text-sm">{data.moreDescription}</p>
+            </div>
+            <div className="">
+              <p className="font-semibold mb-2.5">Tecnologias</p>
+              <ul className="grid grid-cols-10 gap-2.5 ">
+                {data.tecnologias.map((item, index) => (
+                  <SpotlightCard
+                    key={index}
+                    className="custom-spotlight-card flex justify-center"
+                    //@ts-ignore
+                    spotlightColor={"gray"}
+                  >
+                    <Icon
+                      icon={`simple-icons:${item.toLowerCase()}`}
+                      width="50"
+                      height="50"
+                    />
+                  </SpotlightCard>
+                ))}
+              </ul>
+            </div>
           </div>
-          <div className="  rounded-md p-4">
-            <p className="font-semibold">Tecnologias</p>
-            <ul className="grid grid-cols-7  gap-2.5 ">
-              {data.tecnologias.map((item) => (
-                <li className="p-2  flex items-center justify-center rounded-[4px] ">
-                  <Icon
-                    icon={`devicon:${item.toLowerCase()}`}
-                    width="50"
-                    height="50"
-                  />
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className=" row-span-3 rounded-md p-4">
-            <p>{data.slogan}</p>
-          </div>
-          <div className=" row-span-3 rounded-md p-4">sdfsdf</div>
+          <img src={`../../public/delfilms${data.imageResponsive[0]}`} alt="" />
         </div>
-        <img src={`../../public/delfilms${data.imageResponsive[0]}`} alt="" />
       </motion.div>
     </>
   );

@@ -30,9 +30,9 @@
     "slogan": "Gestión rápida, decisiones inteligentes 📊",
     "moreDescription": "DataFast es un sistema diseñado para optimizar la gestión de inventarios y facilitar el control de productos en empresas de cualquier tamaño. Su interfaz intuitiva permite registrar, actualizar y analizar datos de manera rápida, reduciendo tiempos de operación y mejorando la eficiencia empresarial.",
     "tecnologias": [
-      "Next.js",
-      "TypeScript",
-      "Prisma",
+      "nextjs",
+      "typeScript",
+      "prisma",
       "PostgreSQL",
       "TailwindCSS"
     ],
@@ -51,8 +51,8 @@
     "slogan": "El anime que amas, en un solo lugar 🍥",
     "moreDescription": "Meko es una plataforma enfocada en la transmisión de anime, con un catálogo en constante actualización. Su diseño minimalista y navegación fluida permiten encontrar y disfrutar de tus series favoritas sin complicaciones.",
     "tecnologias": [
-      "Vue.js",
-      "Nuxt.js",
+      "vuejs",
+      "nuxtjs",
       "Firebase",
       "CSS Modules",
       "GraphQL"
@@ -73,10 +73,10 @@
     "moreDescription": "DexTS es una aplicación que proporciona información detallada sobre anime y manga, aprovechando la potencia de GraphQL para obtener datos en tiempo real. Encuentra sinopsis, personajes, autores y más en un solo lugar.",
     "tecnologias": [
       "React",
-      "GraphQL",
-      "Apollo Client",
-      "TypeScript",
-      "TailwindCSS"
+      "graphQL",
+      "apollo Client",
+      "typeScript",
+      "tailwindCSS"
     ],
     "imageResponsive": [
       "/dexts/mobile.png",

@@ -1,12 +1,12 @@
 import MockDataProyect from "../Mocks/proyect.json";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Particles from "../components/Particles";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "../components/SpothCard";
 import SplitText from "../components/SplitText";
-import RollingGallery from "../components/Rolling";
+
 
 export default function ProyectPage() {
   const { id } = useParams();
@@ -81,15 +81,15 @@ export default function ProyectPage() {
           <div>
             <h3 className="mb-3">Capturas de pantalla</h3>
             <div className="relative mx-auto border-gray-800 dark:border-zinc-800 bg-zinc-800 border-[8px] rounded-t-xl h-[172px] max-w-[301px] md:h-[294px] md:max-w-[512px]">
-              <div className="rounded-lg overflow-hidden h-[156px] md:h-[278px] bg-white dark:bg-gray-800">
+              <div className="rounded-lg overflow-hidden h-[56px] md:h-[278px] w-full bg-white dark:bg-gray-800">
                 <img
                   src={`${data.image}`}
-                  className="dark:hidden h-[156px] md:h-[278px] w-full rounded-lg"
+                  className="dark:hidden h-[56px] md:h-[278px] w-full rounded-lg"
                   alt=""
                 />
                 <img
                   src={`/${data.image}`}
-                  className="hidden dark:block h-[156px] md:h-[278px] w-full rounded-lg object-cover"
+                  className="hidden dark:block h-[56px] md:h-[278px] w-full rounded-lg object-cover"
                   alt=""
                 />
               </div>

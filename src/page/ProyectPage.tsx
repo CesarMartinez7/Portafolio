@@ -79,7 +79,7 @@ export default function ProyectPage() {
               </ul>
             </div>
           </div>
-          <img src={`../../public/${data.image}`} alt="" />
+          <img src={`../../public/${data.image}`} alt=""  loading="lazy"/>
         </div>
       </motion.div>
     </>

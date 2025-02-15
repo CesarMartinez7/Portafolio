@@ -2,7 +2,6 @@ import { Icon } from "@iconify/react";
 import "../App.css";
 import SplitText from "../components/SplitText";
 import { useRef, useState } from "react";
-import Footer from "../components/Footer";
 import mock from "../Mocks/proyect.json";
 import { ItemProyect } from "../lib/response";
 import Proyect from "../components/Proyect";
@@ -102,7 +101,6 @@ function Main() {
       </div>
       <Proyect data={data} divProject={divProject} />
       <Habilidades></Habilidades>
-      <Footer />
     </motion.div>
   );
 }

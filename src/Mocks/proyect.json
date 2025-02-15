@@ -13,7 +13,12 @@
       "tailwindcss",
       "vite",
       "Javascript",
-      "sass"
+      "sass",
+      "cloudflare",
+      "css",
+      "npm",
+      "dotenv",
+      "postcss"
     ],
     "imageResponsive": [
       "/delfilms/mobile.png",
@@ -30,10 +35,14 @@
     "slogan": "Gestión rápida, decisiones inteligentes 📊",
     "moreDescription": "DataFast es un sistema diseñado para optimizar la gestión de inventarios y facilitar el control de productos en empresas de cualquier tamaño. Su interfaz intuitiva permite registrar, actualizar y analizar datos de manera rápida, reduciendo tiempos de operación y mejorando la eficiencia empresarial.",
     "tecnologias": [
-      "nextjs",
-      "typeScript",
-      "prisma",
-      "PostgreSQL",
+      "react",
+      "javascript",
+      "nodedotjs",
+      "npm",
+      "bulma",
+      "chartdotjs",
+      "mysql",
+      "express",
       "TailwindCSS"
     ],
     "imageResponsive": [
@@ -51,11 +60,16 @@
     "slogan": "El anime que amas, en un solo lugar 🍥",
     "moreDescription": "Meko es una plataforma enfocada en la transmisión de anime, con un catálogo en constante actualización. Su diseño minimalista y navegación fluida permiten encontrar y disfrutar de tus series favoritas sin complicaciones.",
     "tecnologias": [
-      "vuejs",
-      "nuxtjs",
-      "Firebase",
-      "CSS Modules",
-      "GraphQL"
+      "react",
+      "typeScript",
+      "css",
+      "GraphQL",
+      "javascript",
+      "tailwindcss",
+      "cloudflare",
+      "npm",
+      "reactrouter",
+      "vite"
     ],
     "imageResponsive": [
       "/meko/mobile.png",
@@ -72,9 +86,13 @@
     "slogan": "Tu enciclopedia de anime y manga 📖",
     "moreDescription": "DexTS es una aplicación que proporciona información detallada sobre anime y manga, aprovechando la potencia de GraphQL para obtener datos en tiempo real. Encuentra sinopsis, personajes, autores y más en un solo lugar.",
     "tecnologias": [
+      "reactrouter",
+      "css",
+      "cloudflare",
       "React",
       "graphQL",
-      "apollo Client",
+      "vite",
+      "apollographql",
       "typeScript",
       "tailwindCSS"
     ],
@@ -134,10 +152,11 @@
     "slogan": "Encuentra la imagen perfecta en segundos 🖼️",
     "moreDescription": "GalleryPhotos es una aplicación que permite explorar y descargar imágenes de alta calidad gracias a la API de Pexels. Con una interfaz intuitiva y búsqueda avanzada, siempre encontrarás la imagen ideal.",
     "tecnologias": [
-      "Next.js",
+      "nextdotjs",
       "TypeScript",
-      "Pexels API",
-      "TailwindCSS"
+      "TailwindCSS",
+      "vercel",
+      "npm"
     ]
     ,
     "imageResponsive": [
@@ -155,10 +174,12 @@
     "slogan": "Toda la historia de Dragon Ball en un solo lugar! 🔥",
     "moreDescription": "Dragon Ball Wiki es la plataforma definitiva para fans de la saga. Encuentra información sobre personajes, transformaciones, sagas y curiosidades del universo de Dragon Ball.",
     "tecnologias": [
-      "Vue.js",
-      "Vuetify",
-      "Firebase",
-      "Netlify"
+      "vite",
+      "react",
+      "javascript",
+      "nodedotjs",
+      "cloudflare",
+      "npm"
     ],
     "imageResponsive": [
       "/weathernow/mobile.png",
@@ -175,10 +196,9 @@
     "slogan": "Tus cálculos, sin complicaciones 🧮",
     "moreDescription": "Esta calculadora sencilla pero eficiente te permite realizar operaciones matemáticas básicas con una interfaz clara y amigable. Ideal para cálculos rápidos sin necesidad de instalar apps pesadas.",
     "tecnologias": [
-      "HTML",
+      "html5",
       "CSS",
-      "JavaScript",
-      "LocalStorage"
+      "JavaScript"
     ],
     "imageResponsive": [
       "/weathernow/mobile.png",

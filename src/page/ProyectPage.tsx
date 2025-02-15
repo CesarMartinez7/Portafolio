@@ -71,7 +71,7 @@ export default function ProyectPage() {
                     <Icon
                       icon={`simple-icons:${item.toLowerCase()}`}
                       width="50"
-                      height="50"
+                      height="40"
                     />
                   </SpotlightCard>
                 ))}

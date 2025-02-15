@@ -7,12 +7,11 @@
   },
   { "name": "python", "color": "#3776AB", "link": "https://www.python.org/" },
   { "name": "linux", "color": "#FCC624", "link": "https://www.linux.org/" },
-  { "name": "nextjs", "color": "#000000", "link": "https://nextjs.org/" },
   { "name": "npm", "color": "#CB3837", "link": "https://www.npmjs.com/" },
   { "name": "mysql", "color": "#4479A1", "link": "https://www.mysql.com/" },
   { "name": "git", "color": "#F05032", "link": "https://git-scm.com/" },
   {
-    "name": "vscode",
+    "name": "visualstudiocode",
     "color": "#007ACC",
     "link": "https://code.visualstudio.com/"
   },
@@ -21,7 +20,7 @@
     "color": "#38B2AC",
     "link": "https://tailwindcss.com/"
   },
-  { "name": "nodejs", "color": "#339933", "link": "https://nodejs.org/" },
+  { "name": "nodedotjs", "color": "#339933", "link": "https://nodejs.org/" },
   { "name": "sqlite", "color": "#003B57", "link": "https://www.sqlite.org/" },
   {
     "name": "html5",
@@ -49,12 +48,12 @@
     "link": "https://www.typescriptlang.org/"
   },
   {
-    "name": "vitejs",
+    "name": "vite",
     "color": "#3167c6",
     "link": "https://www.typescriptlang.org/"
   },
   {
-    "name": "ubuntu",
+    "name": "manjaro",
     "color": "#3167c6",
     "link": "https://www.typescriptlang.org/"
   },

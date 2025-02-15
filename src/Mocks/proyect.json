@@ -10,7 +10,7 @@
     "tecnologias": [
       "react",
       "reactrouter",
-      "tailwind",
+      "tailwindcss",
       "vite",
       "Javascript",
       "sass"

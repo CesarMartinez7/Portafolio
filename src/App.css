@@ -7,20 +7,9 @@
 
 @font-face {
   font-family: "Pixelify";
-  src: url("./Fonts/Minecraft.ttf") format("truetype");
+  src: url("./font/Minecraft.ttf") format("truetype");
 }
 
-@font-face {
-  font-family: "Ubuntu";
-  src: url("./Fonts/Ubuntu-Light.ttf") format("truetype");
-  font-weight: 300; /* Peso correspondiente a Light */
-}
-
-@font-face {
-  font-family: "Ubuntu";
-  src: url("./Fonts/Ubuntu-Medium.ttf") format("truetype");
-  font-weight: 500; /* Peso correspondiente a Medium */
-}
 
 
 body {

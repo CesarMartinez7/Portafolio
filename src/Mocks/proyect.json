@@ -160,9 +160,9 @@
     ]
     ,
     "imageResponsive": [
-      "/weathernow/mobile.png",
-      "/weathernow/tablet.png",
-      "/weathernow/normal.png"
+      "/galleryphotos/mobile.png",
+      "/galleryphotos/tablet.png",
+      "/galleryphotos/normal.png"
     ]
   },
   {
@@ -182,9 +182,9 @@
       "npm"
     ],
     "imageResponsive": [
-      "/weathernow/mobile.png",
-      "/weathernow/tablet.png",
-      "/weathernow/normal.png"
+      "/dragonballwiki/mobile.png",
+      "/dragonballwiki/tablet.png",
+      "/dragonballwiki/normal.png"
     ]
   },
   {
@@ -201,9 +201,9 @@
       "JavaScript"
     ],
     "imageResponsive": [
-      "/weathernow/mobile.png",
-      "/weathernow/tablet.png",
-      "/weathernow/normal.png"
+      "/calculadora/mobile.png",
+      "/calculadora/tablet.png",
+      "/calculadora/normal.png"
     ]
   },
   {
@@ -221,9 +221,9 @@
       "Hive Database"
     ],
     "imageResponsive": [
-      "/weathernow/mobile.png",
-      "/weathernow/tablet.png",
-      "/weathernow/normal.png"
+      "/budgetbuddy/mobile.png",
+      "/budgetbuddy/tablet.png",
+      "/budgetbuddy/normal.png"
     ]
   }
 ]

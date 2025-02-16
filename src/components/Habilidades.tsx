@@ -1,12 +1,10 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "./SpothCard";
-import Particles from "./Particles";
 import ToolJson from "../Mocks/tools.json"
 
 export default function Habilidades() {
   return (
     <>
-    <Particles></Particles>
     <div className="h-screen w-full grid place-content-center">
       <div className="flex justify-center">
         <h2 className=" text-[44px] font-medium bg-gradient-to-t from-zinc-600 to-zinc-200 bg-clip-text text-transparent text-center ">

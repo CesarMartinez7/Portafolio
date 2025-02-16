@@ -1,10 +1,9 @@
-import SplitText from "./SplitText";
 import TiltedCard from "./Card";
 import { ItemProyect } from "../lib/response";
 import { Ref } from "react";
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import CountUp from "./CountUp";
+import BlurText from "./Blurtext";
+
 
 interface ProyectProps {
   divProject: Ref<HTMLDivElement>;
@@ -12,27 +11,15 @@ interface ProyectProps {
 }
 
 export default function Proyect({ divProject, data }: ProyectProps) {
-  const [countProyect] = useState(data.length);
   return (
     <div className="p-12 w-full flex gap-6 flex-col" ref={divProject}>
       <div className="w-full grid place-content-center">
-        <CountUp
-          from={0}
-          to={countProyect}
-          separator=","
-          direction="up"
-          duration={1}
-          className="count-up-text"
-        />
-        <SplitText
-          text={`Mis ${countProyect} proyectos mas destacados`}
-          className="text-2xl text-zinc-300 shiny-text font-medium"
-          textAlign="left"
-          delay={20}
-          animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-          animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-          threshold={0.2}
-          rootMargin="-50px"
+        <BlurText
+          text="Algunos de mis Proyectos"
+          delay={150}
+          animateBy="words"
+          direction="top"
+          className="text-2xl mb-8"
         />
       </div>
       <div className="grid grid-cols-5 gap-6">

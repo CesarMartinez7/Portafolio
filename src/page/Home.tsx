@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import "../App.css";
 import SplitText from "../components/SplitText";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import mock from "../Mocks/proyect.json";
 import { ItemProyect } from "../lib/response";
 import Proyect from "../components/Proyect";
@@ -14,15 +14,20 @@ function Main() {
   const divProject = useRef<HTMLDivElement>(null);
   const [data] = useState<ItemProyect[]>(mock);
 
+  useEffect(() => {
+    document.title = "Welcome 🤖";
+    window.scrollTo(0,0)
+  }, []);
+
   return (
     <motion.div
-      initial={{ opacity: 0}}
-      whileInView={{ opacity: 1}}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.6}}
+      transition={{ duration: 0.6 }}
     >
       <Particles
-        particleColors={["#fffff2", "#ffffff"]}
+        particleColors={["#ffffff", "#ffffff"]}
         particleCount={200}
         particleSpread={10}
         speed={0.1}
@@ -84,9 +89,6 @@ function Main() {
             rootMargin="-50px"
           />
           <div className="inline-flex gap-2.5">
-            <button className="shiny-text shiny-button flex gap-1.5 items-center">
-              Ver Proyectos{" "}
-            </button>
             <motion.a
               whileTap={{ scale: 0.4 }}
               href={"https://github.com/CesarMartinez7"}
@@ -95,6 +97,9 @@ function Main() {
             >
               <Icon icon="tabler:brand-github" width="20" height="20" /> Github{" "}
             </motion.a>
+            <button className="shiny-text shiny-button flex gap-1.5 items-center">
+              Ver Proyectos{" "}
+            </button>
           </div>
         </div>
         <div className="hidden md:flex"></div>

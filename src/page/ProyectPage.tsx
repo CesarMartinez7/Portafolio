@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "../components/SpothCard";
 import SplitText from "../components/SplitText";
 import { Safari } from "../components/Mockup";
-
+import Noise from "../components/noise";
 
 export default function ProyectPage() {
   const { id } = useParams();
@@ -20,13 +20,14 @@ export default function ProyectPage() {
   }, [id]);
 
   return (
+    
     <motion.div
       initial={{ opacity: 0, y: 50, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
-      className="p-2 md:p-12 lg:p-22 w-full flex flex-col items-center justify-center h-full min-h-[100vh]"
+      className="p-2 md:p-12 lg:p-22 w-full flex flex-col items-center justify-center h-full "
     >
-      <div className="w-full lg:w-[60vw] flex flex-col gap-2.5 my-17 p-3.5">
+      <div className="w-full lg:w-[50vw] flex flex-col gap-2.5 my-17 p-3.5">
         <SplitText
           text={`${data.name}`}
           className="text-5xl font-medium"
@@ -52,7 +53,7 @@ export default function ProyectPage() {
         <div className="flex flex-col gap-3">
           <div className="row-span-3 rounded-md">
             <p className="font-medium my-2.5">Descripción</p>
-            <p className="font-extralight text-sm grayscale-75">{data.moreDescription}</p>
+            <p className="text-sm ">{data.moreDescription}</p>
           </div>
           <div>
             <p className="font-semibold mb-2.5">Tecnologías</p>

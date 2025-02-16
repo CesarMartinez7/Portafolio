@@ -7,6 +7,7 @@ import SpotlightCard from "../components/SpothCard";
 import SplitText from "../components/SplitText";
 import { Safari } from "../components/Mockup";
 
+
 export default function ProyectPage() {
   const { id } = useParams();
   const numericId = id ? parseInt(id) : 0;
@@ -39,17 +40,19 @@ export default function ProyectPage() {
         <div className="gap-2.5 flex">
           <motion.a
             href={`${data.link}`}
-            className="W-F"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.9 }}
+            className="bg-gradient-to-t from-zinc-800 to-transparent py-1.5 px-2.5 shiny-button border border-zinc-600 rounded-md w-[50%] flex justify-center"
           >
             Visita la página
           </motion.a>
+          <button className="bg-gradient-to-t from-zinc-800 to-transparent py-1.5 px-2.5 shiny-button border border-zinc-600 rounded-md w-[30%] flex justify-center items-center gap-1.5">
+            Codigo 
+          <Icon icon="tabler:brand-github" width="20" height="20" />
+          </button>
         </div>
         <div className="flex flex-col gap-3">
           <div className="row-span-3 rounded-md">
             <p className="font-medium my-2.5">Descripción</p>
-            <p className="font-extralight text-sm">{data.moreDescription}</p>
+            <p className="font-extralight text-sm grayscale-75">{data.moreDescription}</p>
           </div>
           <div>
             <p className="font-semibold mb-2.5">Tecnologías</p>

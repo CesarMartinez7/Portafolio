@@ -6,7 +6,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "../components/SpothCard";
 import SplitText from "../components/SplitText";
 import { Safari } from "../components/Mockup";
-import Noise from "../components/noise";
+
 
 export default function ProyectPage() {
   const { id } = useParams();

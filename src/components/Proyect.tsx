@@ -4,7 +4,6 @@ import { Ref } from "react";
 import { Link } from "react-router-dom";
 import BlurText from "./Blurtext";
 
-
 interface ProyectProps {
   divProject: Ref<HTMLDivElement>;
   data: ItemProyect[];
@@ -22,7 +21,7 @@ export default function Proyect({ divProject, data }: ProyectProps) {
           className="text-2xl mb-8"
         />
       </div>
-      <div className="grid grid-cols-5 gap-6">
+      <div className="grid grid-cols-5 gap-4">
         {data.map((item) => (
           <Link to={`/proyect/${item.id}`}>
             <TiltedCard
@@ -30,13 +29,13 @@ export default function Proyect({ divProject, data }: ProyectProps) {
               altText={`${item.name}`}
               captionText={`${item.description}`}
               rotateAmplitude={12}
-              scaleOnHover={1.1}
+              scaleOnHover={0.9}
               showMobileWarning={false}
               showTooltip={true}
               displayOverlayContent={true}
               overlayContent={
                 <a
-                  className="tilted-card-demo-text shiny-button backdrop-blur-2xl p-0.5 rounded-lg"
+                  className="tilted-card-demo-text bg-zinc-900 p-1 backdrop-blur-2xl  rounded-lg"
                   href={item.link}
                 >
                   {item.name}

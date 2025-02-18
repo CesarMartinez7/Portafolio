@@ -215,15 +215,17 @@
     "slogan": "Tu mercado, tu código, tu estilo.",
     "moreDescription": "Un clon de Mercado Libre desarrollado para practicar Next.js, React, TypeScript y Tailwind CSS. Replica la experiencia de compra con filtros, búsqueda y un diseño optimizado.",
     "tecnologias": [
-      "Flutter",
-      "Dart",
-      "Firebase",
-      "Hive Database"
+      "TailwindCSS",
+      "React",
+      "nextdotjs",
+      "CSS",
+      "javascript",
+      "vercel"
     ],
     "imageResponsive": [
-      "/budgetbuddy/mobile.png",
-      "/budgetbuddy/tablet.png",
-      "/budgetbuddy/normal.png"
+      "/mercadolibre/mobile.png",
+      "/mercadolibre/tablet.png",
+      "/mercadolibre/normal.png"
     ]
   }
 ]

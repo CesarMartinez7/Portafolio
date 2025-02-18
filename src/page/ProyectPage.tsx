@@ -39,22 +39,22 @@ export default function ProyectPage() {
         <div className="gap-2.5 flex">
           <motion.a
             href={`${data.link}`}
-            className="shadow-[0_4px_14px_0_rgb(0,128,105,39%)] hover:shadow-[0_6px_20px_rgba(0,118,25,23%)]  px-8 py-2  rounded-md text-white font-light transition duration-200 ease-linear w-[50%]"
+            className="shadow-[0_4px_14px_0_rgb(0,128,105,39%)] hover:shadow-[0_6px_20px_rgba(0,118,25,23%)]  px-8 py-2 font-semibold rounded-md text-white  transition duration-200 ease-linear w-[50%]"
           >
             Visitar Pagina
           </motion.a>
-          <button className="px-6 py-2 bg-black text-white rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 whitespace-nowrap flex gap-2">
+          <button className="px-6 py-2 bg-black text-white rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 whitespace-nowrap flex gap-2 border border-zinc-900">
             <Icon icon="tabler:brand-github" width="20" height="20" />
-            Codigo
+            Ver codigo
           </button>
         </div>
         <div className="flex flex-col gap-3">
           <div className="row-span-3 rounded-md">
-            <p className="font-medium my-2.5">Descripción</p>
+            <p className="font-semibold my-1.5">Descripción</p>
             <p className="text-sm ">{data.moreDescription}</p>
           </div>
           <div>
-            <p className="font-semibold mb-2.5">Tecnologías</p>
+            <p className="font-semibold mb-2.5">Tecnologías usadas</p>
             <ul className="grid grid-cols-5 md:grid-cols-9 lg:grid-cols-10 gap-2.5">
               {data.tecnologias.map((item, index) => (
                 <SpotlightCard
@@ -74,7 +74,7 @@ export default function ProyectPage() {
           </div>
         </div>
         <div>
-          <h3 className="my-5 font-medium">Capturas de pantalla</h3>
+          <h3 className="my-5 font-semibold">Capturas de pantalla</h3>
           <div className="w-full">
             <Safari
               imageSrc={data.imageResponsive[2]}

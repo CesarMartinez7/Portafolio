@@ -6,30 +6,32 @@
 }
 
 @font-face {
-  font-family: "Pixelify";
-  src: url("./font/Minecraft.ttf") format("truetype");
+  font-family: "IBM";
+  src: url("./font/static/IBMPlexSans-Light.ttf") format("truetype");
 }
 
 
 
 body {
-  background-color :#101010;
+  font-family: "IBM";
+  background-color :#000000;
   color: #DADADA;
-  font-family: "Pixelify" ;
-  font-weight: 400; /* O 500, según la variante deseada */
+  font-weight: 500;
+   /* O 500, según la variante deseada */
 }
 
 
 
 .shiny-text {
   color:#b5b5b5a4;
-  background:linear-gradient(120deg,#fff0 40%,#fffc,#fff0 60%);
+  background:linear-gradient(120deg,rgba(0, 0, 0, 0) 40%,#fffc,rgba(0, 0, 0, 0) 60%);
   background-size:200% 100%;
   -webkit-background-clip:text;
   background-clip:text;
   display:inline-block;
   animation:shine 5s linear infinite
 }
+
 @keyframes shine {
   0% {
     background-position:100%

@@ -1,7 +1,6 @@
+//@ts-nocheck
 import { useSprings, animated, SpringConfig } from '@react-spring/web';
 import { useEffect, useRef, useState } from 'react';
-
-
 
 interface SplitTextProps {
     text?: string;
@@ -75,7 +74,7 @@ const SplitText: React.FC<SplitTextProps> = ({
     return (
         <p
             ref={ref}
-            className={`split-parent overflow-hidden inline ${className}`}
+            className={`inline ${className}`}
             style={{ textAlign, whiteSpace: 'normal', wordWrap: 'break-word' }}
         >
             {words.map((word, wordIndex) => (

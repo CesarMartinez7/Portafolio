@@ -9,14 +9,17 @@ import Particles from "../components/Particles";
 import Habilidades from "../components/Habilidades";
 import BlurText from "../components/Blurtext";
 import { motion } from "framer-motion";
+import { FlipWords } from "../components/FlipWords";
+
 
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
   const [data] = useState<ItemProyect[]>(mock);
+  const words = ["better", "cute", "beautiful", "modern"];
 
   useEffect(() => {
     document.title = "Welcome 🤖";
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -52,35 +55,34 @@ function Main() {
         <div className="flex justify-center w-full h-full flex-col gap-2.5 p-3 lg:p-12">
           <BlurText
             text="Isn't this so cool?!"
-            delay={150}
+            delay={100}
             animateBy="words"
             direction="top"
-            className="text-xl shiny-text "
+            className="text shiny-text "
           />
-          <SplitText
-            text="Welcome"
-            className="text-5xl font-semibold bg-gradient-to-t  "
-            textAlign="left"
-            delay={50}
-            animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-            animationTo={{ opacity: 2, transform: "translate3d(0,0,0)" }}
-            threshold={0.2}
-            rootMargin="-50px"
-          />
-          <SplitText
-            text="My name is Cesar"
-            className="text-5xl text-right font-light  text-zinc-300"
-            textAlign="left"
-            delay={50}
-            animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-            animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-            threshold={0.2}
-            rootMargin="-50px"
-          />
+          <div className="">
+            <div className="text-4xl mx-auto font-normal bg-gradient-to-t from-zinc-900 to-gray-100 bg-clip-text text-transparent">
+              Build
+              <FlipWords words={words} /> <br />
+              <SplitText
+                text="websites with React "
+                className="text-5xl text-right font-light bg-gradient-to-t from-zinc-900 to-gray-100 bg-clip-text text-transparent"
+                textAlign="left"
+                delay={50}
+                animationFrom={{
+                  opacity: 0,
+                  transform: "translate3d(0,50px,0)",
+                }}
+                animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+                threshold={0.2}
+                rootMargin="-50px"
+              />
+            </div>
+          </div>
 
           <SplitText
             text="Doy vida a ideas con JavaScript, React y mucha pasión."
-            className="text-lg text-zinc-400"
+            className="text-md text-zinc-500"
             textAlign="left"
             delay={50}
             animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}

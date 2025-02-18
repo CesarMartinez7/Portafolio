@@ -7,7 +7,6 @@ import SpotlightCard from "../components/SpothCard";
 import SplitText from "../components/SplitText";
 import { Safari } from "../components/Mockup";
 
-
 export default function ProyectPage() {
   const { id } = useParams();
   const numericId = id ? parseInt(id) : 0;
@@ -16,11 +15,10 @@ export default function ProyectPage() {
 
   useEffect(() => {
     document.title = data.name;
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }, [id]);
 
   return (
-    
     <motion.div
       initial={{ opacity: 0, y: 50, scale: 0.95 }}
       animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -41,13 +39,13 @@ export default function ProyectPage() {
         <div className="gap-2.5 flex">
           <motion.a
             href={`${data.link}`}
-            className="bg-gradient-to-t from-zinc-800 to-transparent py-1.5 px-2.5 shiny-button border border-zinc-600 rounded-md w-[50%] flex justify-center"
+            className="shadow-[0_4px_14px_0_rgb(0,128,105,39%)] hover:shadow-[0_6px_20px_rgba(0,118,25,23%)]  px-8 py-2  rounded-md text-white font-light transition duration-200 ease-linear w-[50%]"
           >
-            Visita la página
+            Visitar Pagina
           </motion.a>
-          <button className="bg-gradient-to-t from-zinc-800 to-transparent py-1.5 px-2.5 shiny-button border border-zinc-600 rounded-md w-[30%] flex justify-center items-center gap-1.5">
-            Codigo 
-          <Icon icon="tabler:brand-github" width="20" height="20" />
+          <button className="px-6 py-2 bg-black text-white rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 whitespace-nowrap flex gap-2">
+            <Icon icon="tabler:brand-github" width="20" height="20" />
+            Codigo
           </button>
         </div>
         <div className="flex flex-col gap-3">
@@ -78,7 +76,11 @@ export default function ProyectPage() {
         <div>
           <h3 className="my-5 font-medium">Capturas de pantalla</h3>
           <div className="w-full">
-            <Safari imageSrc={data.imageResponsive[2]} className="size-full" url={data.link} />
+            <Safari
+              imageSrc={data.imageResponsive[2]}
+              className="size-full"
+              url={data.link}
+            />
           </div>
         </div>
       </div>

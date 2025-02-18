@@ -4,7 +4,8 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "../components/SpothCard";
-import SplitText from "../components/SplitText";
+import BlurText from "../components/Blurtext";
+
 import { Safari } from "../components/Mockup";
 
 export default function ProyectPage() {
@@ -26,24 +27,18 @@ export default function ProyectPage() {
       className="p-2 md:p-12 lg:p-22 w-full flex flex-col items-center justify-center h-full "
     >
       <div className="w-full lg:w-[50vw] flex flex-col gap-2.5 my-17 p-3.5">
-        <SplitText
-          text={`${data.name}`}
-          className="text-5xl font-medium"
-          textAlign="left"
-          delay={40}
-          animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
-          animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-          threshold={0.2}
-        />
+        <h4 className="text-4xl  text-left font-bold bg-gradient-to-bl from-zinc-950 to-zinc-100 bg-clip-text text-transparent">
+          {data.name}
+        </h4>
         <p className="text-xs">{data.slogan}</p>
-        <div className="gap-2.5 flex">
+        <div className="gap-2.5 flex ">
           <motion.a
             href={`${data.link}`}
-            className="shadow-[0_4px_14px_0_rgb(0,128,105,39%)] hover:shadow-[0_6px_20px_rgba(0,118,25,23%)]  px-8 py-2 font-semibold rounded-md text-white  transition duration-200 ease-linear w-[50%]"
+            className="border-zinc-950  border hover:shadow-[0_6px_20px_rgba(50,60,60,16%)]  flex items-center justify-center font-semibold rounded-md text-white transition duration-200 ease-linear w-[30%] hover:-translate-y-1"
           >
             Visitar Pagina
           </motion.a>
-          <button className="px-6 py-2 bg-black text-white rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 whitespace-nowrap flex gap-2 border border-zinc-900">
+          <button className="px-6 py-2 bg-black border-zinc-950  border text-white rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 whitespace-nowrap flex gap-2 cursor-pointer">
             <Icon icon="tabler:brand-github" width="20" height="20" />
             Ver codigo
           </button>
@@ -74,7 +69,7 @@ export default function ProyectPage() {
           </div>
         </div>
         <div>
-          <h3 className="my-5 font-semibold">Capturas de pantalla</h3>
+          <h3 className="my-3 font-semibold">Capturas de pantalla</h3>
           <div className="w-full">
             <Safari
               imageSrc={data.imageResponsive[2]}

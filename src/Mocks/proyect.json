@@ -79,7 +79,7 @@
   },
   {
     "id": 4,
-    "name": "DexTS",
+    "name": "Dex🇹S",
     "description": "Aplicación que utiliza GraphQL para ofrecer información detallada sobre anime y manga.",
     "image": "/dexts.png",
     "link": "https://dexts.pages.dev",
@@ -189,7 +189,7 @@
   },
   {
     "id": 9,
-    "name": "Calculadora",
+    "name": "Calculadora 🖩",
     "description": "Calculadora con funciones sencillas hecha en VanillaJS.",
     "image": "/calculadora.png",
     "link": "https://calculadora-7df.pages.dev",
@@ -208,12 +208,12 @@
   },
   {
     "id": 10,
-    "name": "BudgetBuddy",
-    "description": "Aplicación de gestión financiera personal para ayudar a los usuarios a controlar sus gastos e ingresos.",
+    "name": "Mercado Libre Clon 📦",
+    "description": "Un clon de Mercado Libre hecho para mejorar mis habilidades, con búsqueda avanzada, diseño responsivo y funciones clave del marketplace.",
     "image": "/budgetbuddy.png",
     "link": "https://github.com/CesarMartinez7/budgetbuddy",
-    "slogan": "Toma el control de tus finanzas 💰",
-    "moreDescription": "BudgetBuddy es una aplicación diseñada para mejorar la administración del dinero. Registra gastos, establece presupuestos y visualiza reportes detallados sobre tu economía.",
+    "slogan": "Tu mercado, tu código, tu estilo.",
+    "moreDescription": "Un clon de Mercado Libre desarrollado para practicar Next.js, React, TypeScript y Tailwind CSS. Replica la experiencia de compra con filtros, búsqueda y un diseño optimizado.",
     "tecnologias": [
       "Flutter",
       "Dart",

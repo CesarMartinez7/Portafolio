@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "../components/SpothCard";
-import BlurText from "../components/Blurtext";
 
 import { Safari } from "../components/Mockup";
 

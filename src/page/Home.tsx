@@ -29,7 +29,7 @@ function Main() {
       transition={{ duration: 0.6 }}
     >
       <Particles
-        particleColors={["#ffffff", "#ffffff"]}
+        particleColors={["#f2211", "#ffffff"]}
         particleCount={200}
         particleSpread={10}
         speed={0.1}
@@ -60,7 +60,7 @@ function Main() {
             className="text shiny-text "
           />
           <div className="">
-            <div className="text-5xl mx-auto font-normal bg-gradient-to-t from-zinc-900 to-gray-100 bg-clip-text text-transparent">
+            <div className="text-5xl mx-auto font-normal">
               Build
               <FlipWords words={words} /> <br />
             </div>

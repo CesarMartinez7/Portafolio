@@ -32,7 +32,7 @@ export const HoverEffect = ({
           <AnimatePresence>
             {hoveredIndex === idx && (
               <motion.span
-                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-zinc-900/[0.8] block  rounded-3xl"
+                className="absolute inset-0 h-full w-full bg-neutral-200 dark:bg-zinc-900/[0.8] block  rounded-md"
                 layoutId="hoverBackground"
                 initial={{ opacity: 0 }}
                 animate={{
@@ -66,7 +66,7 @@ export const Card = ({
   return (
     <div
       className={cn(
-        "rounded-2xl h-full w-full p-2 overflow-hidden  border border-zinc-950 group-hover:border-zinc-700 relative z-20",
+        "rounded-md h-full w-full p-2 overflow-hidden border border-zinc-950 group-hover:border-zinc-700 relative z-20",
         className
       )}
     >
@@ -84,7 +84,7 @@ export const CardTitle = ({
   children: React.ReactNode;
 }) => {
   return (
-    <h4 className={cn("text-white font-semibold text-md ", className)}>
+    <h4 className={cn(" uppercase font-semibold text-md ", className)}>
       {children}
     </h4>
   );

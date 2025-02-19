@@ -7,7 +7,7 @@ export default function Habilidades() {
     <>
     <div className="h-screen w-full grid place-content-center">
       <div className="flex justify-center">
-        <h2 className=" text-[44px] font-medium bg-gradient-to-t from-zinc-600 to-zinc-200 bg-clip-text text-transparent text-center ">
+        <h2 className=" text-[44px] font-medium bg-gradient-to-t from-zinc-600 to-zinc-200 bg-clip-text text-transparent text-center font-semibold">
           Lenguajes y herramientas que utilizo  🚀
         </h2>
       </div>
@@ -22,7 +22,7 @@ export default function Habilidades() {
               spotlightColor={tool.color}
             >
               <a href={tool.link} target="_blank" rel="noopener noreferrer">
-                <Icon icon={`simple-icons:${tool.name}`} width="50" height="50" color="white" />
+                <Icon icon={`logos:${tool.name}`} width="50" height="50" color="white" />
               </a>
             </SpotlightCard>
           ))}

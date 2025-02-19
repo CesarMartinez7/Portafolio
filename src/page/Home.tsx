@@ -11,7 +11,6 @@ import BlurText from "../components/Blurtext";
 import { motion } from "framer-motion";
 import { FlipWords } from "../components/FlipWords";
 
-
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
   const [data] = useState<ItemProyect[]>(mock);
@@ -61,23 +60,23 @@ function Main() {
             className="text shiny-text "
           />
           <div className="">
-            <div className="text-4xl mx-auto font-normal bg-gradient-to-t from-zinc-900 to-gray-100 bg-clip-text text-transparent">
+            <div className="text-5xl mx-auto font-normal bg-gradient-to-t from-zinc-900 to-gray-100 bg-clip-text text-transparent">
               Build
               <FlipWords words={words} /> <br />
-              <SplitText
-                text="websites with React "
-                className="text-5xl text-right font-light bg-gradient-to-t from-zinc-900 to-gray-100 bg-clip-text text-transparent"
-                textAlign="left"
-                delay={50}
-                animationFrom={{
-                  opacity: 0,
-                  transform: "translate3d(0,50px,0)",
-                }}
-                animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
-                threshold={0.2}
-                rootMargin="-50px"
-              />
             </div>
+            <SplitText
+              text="websites with React "
+              className=" text-4xl text-right bg-clip-text font-light bg-gradient-to-t from-zinc-900 to-gray-100 "
+              textAlign="left"
+              delay={50}
+              animationFrom={{
+                opacity: 0,
+                transform: "translate3d(0,50px,0)",
+              }}
+              animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
+              threshold={0.2}
+              rootMargin="-50px"
+            />
           </div>
 
           <SplitText
@@ -91,17 +90,16 @@ function Main() {
             rootMargin="-50px"
           />
           <div className="inline-flex gap-2.5">
-            <motion.a
-              whileTap={{ scale: 0.4 }}
-              href={"https://github.com/CesarMartinez7"}
-              className="shiny-text shiny-button flex gap-1.5 items-center"
-              target="_blank"
-            >
-              <Icon icon="tabler:brand-github" width="20" height="20" /> Github{" "}
-            </motion.a>
-            <button className="shiny-text shiny-button flex gap-1.5 items-center">
-              Ver Proyectos{" "}
+            <button className="p-[3px] relative cursor-pointer">
+              <div className="absolute inset-0 bg-gradient-to-r from-zinc-500 to-zinc-900 rounded-lg" />
+              <div className="px-8 py-2  bg-black rounded-[6px] text-sm  relative group transition duration-200 text-white hover:bg-transparent duration-200 font-semibold">
+                See any my projects
+              </div>
             </button>
+            <button className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold hover:bg-black/[0.8] hover:shadow-lg inline-flex items-center gap-2 cursor-pointer">
+            <Icon icon="tabler:brand-github" width="24" height="24" />
+                Github
+              </button>
           </div>
         </div>
         <div className="hidden md:flex"></div>

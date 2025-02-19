@@ -6,24 +6,24 @@
     "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
   },
   { "name": "python", "color": "#3776AB", "link": "https://www.python.org/" },
-  { "name": "linux", "color": "#FCC624", "link": "https://www.linux.org/" },
+  { "name": "linux-tux", "color": "#FCC624", "link": "https://www.linux.org/" },
   { "name": "npm", "color": "#CB3837", "link": "https://www.npmjs.com/" },
-  { "name": "mysql", "color": "#4479A1", "link": "https://www.mysql.com/" },
-  { "name": "git", "color": "#F05032", "link": "https://git-scm.com/" },
+  { "name": "mysql-icon", "color": "#4479A1", "link": "https://www.mysql.com/" },
+  { "name": "git-icon", "color": "#F05032", "link": "https://git-scm.com/" },
   {
-    "name": "visualstudiocode",
+    "name": "visual-studio-code", 
     "color": "#007ACC",
     "link": "https://code.visualstudio.com/"
   },
   {
-    "name": "tailwindcss",
+    "name": "tailwindcss-icon",
     "color": "#38B2AC",
     "link": "https://tailwindcss.com/"
   },
-  { "name": "nodedotjs", "color": "#339933", "link": "https://nodejs.org/" },
-  { "name": "sqlite", "color": "#003B57", "link": "https://www.sqlite.org/" },
+  { "name": "nodejs-icon", "color": "#339933", "link": "https://nodejs.org/" },
+  { "name": "mysql-icon", "color": "#003B57", "link": "https://www.sqlite.org/" },
   {
-    "name": "html5",
+    "name": "html-5",
     "color": "#E34F26",
     "link": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
   },
@@ -38,17 +38,17 @@
     "link": "https://www.typescriptlang.org/"
   },
   {
-    "name": "github",
+    "name": "github-icon",
     "color": "#2f2f2f",
     "link": "https://www.typescriptlang.org/"
   },
   {
-    "name": "css3",
+    "name": "css-3",
     "color": "#3167c6",
     "link": "https://www.typescriptlang.org/"
   },
   {
-    "name": "vite",
+    "name": "vitejs",
     "color": "#3167c6",
     "link": "https://www.typescriptlang.org/"
   },
@@ -58,7 +58,7 @@
     "link": "https://www.typescriptlang.org/"
   },
   {
-    "name": "reactrouter",
+    "name": "react-router",
     "color": "#3167c6",
     "link": "https://www.typescriptlang.org/"
   }

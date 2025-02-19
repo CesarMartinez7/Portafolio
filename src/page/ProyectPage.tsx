@@ -31,16 +31,15 @@ export default function ProyectPage() {
         </h4>
         <p className="text-xs">{data.slogan}</p>
         <div className="gap-2.5 flex ">
-          <motion.a
-            href={`${data.link}`}
-            className="border-zinc-950  border hover:shadow-[0_6px_20px_rgba(50,60,60,16%)]  flex items-center justify-center font-semibold rounded-md text-white transition duration-200 ease-linear w-[30%] hover:-translate-y-1"
-          >
-            Visitar Pagina
-          </motion.a>
-          <button className="px-6 py-2 bg-black border-zinc-950  border text-white rounded-lg font-bold transform hover:-translate-y-1 transition duration-400 whitespace-nowrap flex gap-2 cursor-pointer">
-            <Icon icon="tabler:brand-github" width="20" height="20" />
-            Ver codigo
+          <button className="p-[3px] relative cursor-pointer">
+            <div className="absolute inset-0 bg-gradient-to-r from-zinc-500 to-zinc-900 rounded-lg" />
+            <div className="px-8 py-2  bg-black rounded-[6px] text-sm  relative group transition duration-200 text-white hover:bg-transparent duration-200 font-semibold">
+              See any my projects
+            </div>
           </button>
+          <button className="px-4 py-2 rounded-md border border-black bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200">
+  Sketch
+</button>
         </div>
         <div className="flex flex-col gap-3">
           <div className="row-span-3 rounded-md">

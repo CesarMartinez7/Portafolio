@@ -35,7 +35,7 @@ function Main() {
           cy={1}
           cr={1}
           className={cn(
-            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
+            "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)] transform-gpu"
           )}
         />
         <div className="h-screen gap-6 md:p-12 w-full lg:p-12 grid grid-cols-1 md:grid-cols-2 relative">
@@ -63,7 +63,7 @@ function Main() {
 
             <SplitText
               text="I bring ideas to life with JavaScript, React and a lot of passion."
-              className="text-md text-zinc-500"
+              className="text-md text-zinc-600"
               textAlign="left"
               delay={50}
               animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
@@ -90,7 +90,7 @@ function Main() {
                 Github
               </a>
               <a
-                className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer  "
+                className="px-8 py-2 bg-black text-white text-sm rounded-md font-bold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer  "
                 href="https://www.linkedin.com/in/cesar-martinez-castro-383943332/"
                 target="_blank"
               >

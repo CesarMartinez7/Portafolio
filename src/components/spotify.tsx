@@ -92,9 +92,9 @@ export function ExpandableCardDemo() {
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-zinc-400 text-sm"
+                      className="text-zinc-400 text-sm mb-3.5"
                     >
-                      {active.description}
+                      
                     </motion.p>
                     <ul className="flex flex-wrap gap-1.5 mt-1  w-full">
                       {active.tecnologias?.map((tec) => (

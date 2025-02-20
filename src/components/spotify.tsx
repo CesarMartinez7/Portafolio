@@ -93,15 +93,17 @@ export function ExpandableCardDemo() {
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
                       className="text-zinc-400 text-sm mb-3.5"
-                    >
-                      
-                    </motion.p>
+                    ></motion.p>
                     <ul className="flex flex-wrap gap-1.5 mt-1  w-full">
                       {active.tecnologias?.map((tec) => (
                         <li className="w-fit bg-zinc-950 py-1 px-2 rounded-2xl text-sm gap-1.5 inline-flex">
                           {tec.name}{" "}
                           <span>
-                            <Icon icon={`${tec.icon}`} width="20" height="20 " />
+                            <Icon
+                              icon={`${tec.icon}`}
+                              width="20"
+                              height="20 "
+                            />
                           </span>
                         </li>
                       ))}
@@ -235,7 +237,9 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Delfilms is a free streaming platform with a wide selection of movies and series. Without subscriptions or annoying ads, it offers simple and cost-free access for movie lovers.
+          Delfilms is a free streaming platform with a wide selection of movies
+          and series. Without subscriptions or annoying ads, it offers simple
+          and cost-free access for movie lovers.
         </p>
       );
     },
@@ -263,7 +267,9 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          DataFast is a system designed to optimize inventory management and facilitate product control in companies of all sizes. It improves efficiency and reduces operation time.
+          DataFast is a system designed to optimize inventory management and
+          facilitate product control in companies of all sizes. It improves
+          efficiency and reduces operation time.
         </p>
       );
     },
@@ -291,7 +297,9 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Meko is a platform focused on anime streaming, with an updated catalog and a smooth interface. Find and enjoy your favorite series without complications.
+          Meko is a platform focused on anime streaming, with an updated catalog
+          and a smooth interface. Find and enjoy your favorite series without
+          complications.
         </p>
       );
     },
@@ -319,7 +327,9 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          DexTS provides detailed information about anime and manga using GraphQL to fetch real-time data. Find synopses, characters, and more in one place, plus watch anime and read manga!
+          DexTS provides detailed information about anime and manga using
+          GraphQL to fetch real-time data. Find synopses, characters, and more
+          in one place, plus watch anime and read manga!
         </p>
       );
     },
@@ -347,14 +357,16 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          A clone of Mercado Libre developed with Next.js, React, and Tailwind CSS. It replicates the shopping experience with advanced search and responsive design.
+          A clone of Mercado Libre developed with Next.js, React, and Tailwind
+          CSS. It replicates the shopping experience with advanced search and
+          responsive design.
         </p>
       );
     },
   },
   {
     description: "Real-time weather app",
-    title: "WeatherNow ⛈️",
+    title: "WeatherNo ⛈️",
     src: "/weathernow.png",
     tecnologias: [
       {
@@ -379,7 +391,8 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          WeatherNow keeps you informed about weather conditions in real-time. Get detailed forecasts and alerts for any location.
+          WeatherNow keeps you informed about weather conditions in real-time.
+          Get detailed forecasts and alerts for any location.
         </p>
       );
     },
@@ -407,7 +420,9 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          GalleryPhotos allows you to explore and download high-quality images thanks to the Pexels API. Find the perfect image in seconds with an intuitive interface.
+          GalleryPhotos allows you to explore and download high-quality images
+          thanks to the Pexels API. Find the perfect image in seconds with an
+          intuitive interface.
         </p>
       );
     },
@@ -427,7 +442,9 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Dragon Ball Wiki is the ultimate platform for fans of the saga. Find information about characters, transformations, and sagas from this iconic universe.
+          Dragon Ball Wiki is the ultimate platform for fans of the saga. Find
+          information about characters, transformations, and sagas from this
+          iconic universe.
         </p>
       );
     },
@@ -452,14 +469,15 @@ const cards = [
       },
       {
         name: "Vite",
-        icon: "logos:vitejs"
-      }
+        icon: "logos:vitejs",
+      },
     ],
     ctaLink: "https://calculadora-7df.pages.dev",
     content: () => {
       return (
         <p className="text-sm">
-          A simple yet efficient calculator to perform basic math operations with a clean and user-friendly interface.
+          A simple yet efficient calculator to perform basic math operations
+          with a clean and user-friendly interface.
         </p>
       );
     },
@@ -483,7 +501,9 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          TaskMaster is an app designed to improve personal and team productivity. Plan, organize, and achieve your goals with intuitive and collaborative features.
+          TaskMaster is an app designed to improve personal and team
+          productivity. Plan, organize, and achieve your goals with intuitive
+          and collaborative features.
         </p>
       );
     },

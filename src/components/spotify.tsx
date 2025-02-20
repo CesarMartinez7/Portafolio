@@ -86,17 +86,17 @@ export function ExpandableCardDemo() {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-700 text-md dark:text-neutral-200 text-base"
+                      className="font-bold text-neutral-700 text-lg dark:text-neutral-200 text-base"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-zinc-600 text-sm"
+                      className="text-zinc-400 text-sm"
                     >
                       {active.description}
                     </motion.p>
-                    <ul className="inline-flex gap-1.5 mt-1">
+                    <ul className="flex flex-wrap gap-1.5 mt-1  w-full">
                       {active.tecnologias?.map((tec) => (
                         <li className="w-fit bg-zinc-950 py-1 px-2 rounded-2xl text-sm gap-1.5 inline-flex">
                           {tec.name}{" "}
@@ -126,7 +126,7 @@ export function ExpandableCardDemo() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] text-sm"
+                    className="text-neutral-100  md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-300 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] text-sm"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -159,7 +159,7 @@ export function ExpandableCardDemo() {
               <div className="flex justify-center items-center flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-semibold text-neutral-800 dark:text-neutral-200 text-center md:text-left text-base"
+                  className="font-semibold  dark:text-neutral-200 text-center md:text-left text-base"
                 >
                   {card.title}
                 </motion.h3>
@@ -370,7 +370,7 @@ const cards = [
       },
       {
         name: "Typescript",
-        icon: "logos:typescript",
+        icon: "logos:typescript-icon",
       },
       {
         name: "Tailwind CSS",
@@ -405,7 +405,7 @@ const cards = [
       },
       {
         name: "Typescript",
-        icon: "logos:typescript",
+        icon: "logos:typescript-icon",
       },
       {
         name: "Next.js",
@@ -451,6 +451,14 @@ const cards = [
     src: "/calculadora.png",
     ctaText: "Visitar",
     tecnologias: [
+      {
+        name: "HTML",
+        icon: "logos:html-5",
+      },
+      {
+        name: "CSS",
+        icon: "logos:css-3",
+      },
       {
         name: "Javascript",
         icon: "logos:javascript",

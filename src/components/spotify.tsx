@@ -96,7 +96,7 @@ export function ExpandableCardDemo() {
                     ></motion.p>
                     <ul className="flex flex-wrap gap-1.5 mt-1  w-full">
                       {active.tecnologias?.map((tec) => (
-                        <li className="w-fit bg-zinc-950 py-1 px-2 rounded-2xl text-sm gap-1.5 inline-flex">
+                        <li className="w-fit bg-zinc-900 border-zinc-800 border   py-1 px-2 rounded-2xl text-sm gap-1.5 inline-flex">
                           {tec.name}{" "}
                           <span>
                             <Icon
@@ -117,7 +117,7 @@ export function ExpandableCardDemo() {
                     exit={{ opacity: 0 }}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-2 text-sm font-bold bg-green-500 text-white rounded-md hover:bg-green-600 duration-200"
+                    className="px-4 py-2 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-800 border-b-3"
                   >
                     {"Visitar"}
                   </motion.a>
@@ -161,7 +161,7 @@ export function ExpandableCardDemo() {
               <div className="flex justify-center items-center flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-semibold  dark:text-neutral-200 text-center md:text-left text-base"
+                  className="font-semibold text-center "
                 >
                   {card.title}
                 </motion.h3>

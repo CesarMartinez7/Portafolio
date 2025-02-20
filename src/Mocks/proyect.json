@@ -9,15 +9,14 @@
     "moreDescription": "Delfilms es una plataforma de streaming diseñada para los amantes del cine y las series. Con una interfaz sencilla y acceso gratuito, te permite disfrutar de una gran variedad de títulos sin suscripciones ni anuncios molestos. Desde los clásicos hasta los estrenos más recientes, todo está disponible en un solo lugar.",
     "tecnologias": [
       "react",
-      "reactrouter",
-      "tailwindcss",
-      "vite",
+      "react-router",
+      "tailwindcss-icon",
+      "vitejs",
       "Javascript",
       "sass",
-      "cloudflare",
-      "css",
+      "cloudflare-icon",
+      "css-3",
       "npm",
-      "dotenv",
       "postcss"
     ],
     "imageResponsive": [
@@ -29,7 +28,7 @@
   {
     "id": 2,
     "name": "DataFast ⚡",
-    "description": "Sistema de gestión e inventario eficiente para pequeñas y medianas empresas.",
+    "descrip  tion": "Sistema de gestión e inventario eficiente para pequeñas y medianas empresas.",
     "image": "/datafast.png",
     "link": "https://github.com/CesarMartinez7/Datafast",
     "slogan": "Gestión rápida, decisiones inteligentes 📊",
@@ -37,13 +36,12 @@
     "tecnologias": [
       "react",
       "javascript",
-      "nodedotjs",
+      "nodejs-icon",
       "npm",
       "bulma",
-      "chartdotjs",
-      "mysql",
+      "mysql-icon",
       "express",
-      "TailwindCSS"
+      "tailwindcss-icon"
     ],
     "imageResponsive": [
       "/datafast/mobile.png",
@@ -79,7 +77,7 @@
   },
   {
     "id": 4,
-    "name": "Dex🇹S",
+    "name": "DexTS",
     "description": "Aplicación que utiliza GraphQL para ofrecer información detallada sobre anime y manga.",
     "image": "/dexts.png",
     "link": "https://dexts.pages.dev",
@@ -110,13 +108,7 @@
     "link": "https://github.com/CesarMartinez7/taskmaster",
     "slogan": "Organiza tu día, alcanza tus metas ✅",
     "moreDescription": "TaskMaster es la solución ideal para aquellos que buscan aumentar su productividad. Con funciones de planificación, recordatorios y colaboración en equipo, esta app te permite mantener el control de tus tareas diarias.",
-    "tecnologias": [
-      "Angular",
-      "RxJS",
-      "Node.js",
-      "MongoDB",
-      "Bootstrap"
-    ],
+    "tecnologias": ["Angular", "RxJS", "Node.js", "MongoDB", "Bootstrap"],
     "imageResponsive": [
       "/taskmaster/mobile.png",
       "/taskmaster/tablet.png",
@@ -151,14 +143,7 @@
     "link": "https://gallerry-two.vercel.app/",
     "slogan": "Encuentra la imagen perfecta en segundos 🖼️",
     "moreDescription": "GalleryPhotos es una aplicación que permite explorar y descargar imágenes de alta calidad gracias a la API de Pexels. Con una interfaz intuitiva y búsqueda avanzada, siempre encontrarás la imagen ideal.",
-    "tecnologias": [
-      "nextdotjs",
-      "TypeScript",
-      "TailwindCSS",
-      "vercel",
-      "npm"
-    ]
-    ,
+    "tecnologias": ["nextdotjs", "TypeScript", "TailwindCSS", "vercel", "npm"],
     "imageResponsive": [
       "/galleryphotos/mobile.png",
       "/galleryphotos/tablet.png",
@@ -195,11 +180,7 @@
     "link": "https://calculadora-7df.pages.dev",
     "slogan": "Tus cálculos, sin complicaciones 🧮",
     "moreDescription": "Esta calculadora sencilla pero eficiente te permite realizar operaciones matemáticas básicas con una interfaz clara y amigable. Ideal para cálculos rápidos sin necesidad de instalar apps pesadas.",
-    "tecnologias": [
-      "html5",
-      "CSS",
-      "JavaScript"
-    ],
+    "tecnologias": ["html5", "CSS", "JavaScript"],
     "imageResponsive": [
       "/calculadora/mobile.png",
       "/calculadora/tablet.png",

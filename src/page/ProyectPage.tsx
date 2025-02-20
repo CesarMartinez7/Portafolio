@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "../components/SpothCard";
-
 import { Safari } from "../components/Mockup";
+
+
+
 
 export default function ProyectPage() {
   const { id } = useParams();
@@ -26,20 +28,20 @@ export default function ProyectPage() {
       className="p-2 md:p-12 lg:p-22 w-full flex flex-col items-center justify-center h-full "
     >
       <div className="w-full lg:w-[50vw] flex flex-col gap-2.5 my-17 p-3.5">
-        <h4 className="text-4xl  text-left font-bold bg-gradient-to-bl from-zinc-950 to-zinc-100 bg-clip-text text-transparent">
+        <h4 className="text-4xl  font-bold ">
           {data.name}
         </h4>
         <p className="text-xs">{data.slogan}</p>
-        <div className="gap-2.5 flex ">
-          <button className="p-[3px] relative cursor-pointer">
+        <div className="gap-2.5 flex w-full ">
+          <button className="p-[3px] relative cursor-pointer w-full">
             <div className="absolute inset-0 bg-gradient-to-r from-zinc-500 to-zinc-900 rounded-lg" />
-            <div className="px-8 py-2  bg-black rounded-[6px] text-sm  relative group transition duration-200 text-white hover:bg-transparent duration-200 font-semibold">
+            <div className="px-8 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold">
               See any my projects
             </div>
           </button>
           <button className="px-4 py-2 rounded-md border border-black bg-white text-black text-sm hover:shadow-[4px_4px_0px_0px_rgba(0,0,0)] transition duration-200">
-  Sketch
-</button>
+            Sketch
+          </button>
         </div>
         <div className="flex flex-col gap-3">
           <div className="row-span-3 rounded-md">
@@ -57,7 +59,7 @@ export default function ProyectPage() {
                   spotlightColor="gray"
                 >
                   <Icon
-                    icon={`simple-icons:${item.toLowerCase()}`}
+                    icon={`logos:${item.toLowerCase()}`}
                     width="50"
                     height="40"
                   />

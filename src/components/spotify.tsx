@@ -115,7 +115,7 @@ export function ExpandableCardDemo() {
                     exit={{ opacity: 0 }}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-sm font-bold bg-zinc-950 text-white"
+                    className="px-4 py-2 text-sm font-bold bg-green-600 text-white rounded-md"
                   >
                     {"Visitar"}
                   </motion.a>

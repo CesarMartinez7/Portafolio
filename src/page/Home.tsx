@@ -33,7 +33,7 @@ function Main() {
           height={20}
           cx={1}
           cy={1}
-          cr={1}  
+          cr={1}
           className={cn(
             "[mask-image:radial-gradient(300px_circle_at_center,white,transparent)]"
           )}
@@ -54,7 +54,7 @@ function Main() {
             <div>
               <div className="text-5xl mx-auto font-normal">
                 Build
-                <FlipWords words={words} className="text-green-500" /> <br />
+                <FlipWords words={words} className="text-green-500 " /> <br />
               </div>
             </div>
             <div className="text-5xl text-left bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent">
@@ -72,16 +72,31 @@ function Main() {
               rootMargin="-50px"
             />
             <div className="inline-flex gap-2.5">
-              <button className="p-[3px] relative cursor-pointer">
+              <button
+                className="p-[3px] relative cursor-pointer"
+                onClick={() => window.alert("Hello world")}
+              >
                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-500 to-zinc-900 rounded-lg" />
                 <div className="px-8 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold">
                   See any my projects
                 </div>
               </button>
-              <button className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold hover:bg-black/[0.8] hover:shadow-lg inline-flex items-center gap-2 cursor-pointer">
+              <a
+                className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer "
+                href="https://github.com/CesarMartinez7"
+                target="_blank"
+              >
                 <Icon icon="tabler:brand-github" width="24" height="24" />
                 Github
-              </button>
+              </a>
+              <a
+                className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer  "
+                href="https://www.linkedin.com/in/cesar-martinez-castro-383943332/"
+                target="_blank"
+              >
+                <Icon icon="tabler:brand-linkedin" width="24" height="24" />
+                Linkedin
+              </a>
             </div>
           </div>
           <div className="hidden md:flex"></div>

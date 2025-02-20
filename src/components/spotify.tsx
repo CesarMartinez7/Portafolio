@@ -115,7 +115,7 @@ export function ExpandableCardDemo() {
                     exit={{ opacity: 0 }}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-2 text-sm font-bold bg-green-600 text-white rounded-md"
+                    className="px-4 py-2 text-sm font-bold bg-green-500 text-white rounded-md hover:bg-green-600 duration-200"
                   >
                     {"Visitar"}
                   </motion.a>
@@ -219,7 +219,7 @@ const cards = [
     ctaText: "Visit",
     tecnologias: [
       {
-        name: "react",
+        name: "React",
         icon: "logos:react",
       },
       {

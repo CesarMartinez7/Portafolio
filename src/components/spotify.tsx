@@ -98,7 +98,12 @@ export function ExpandableCardDemo() {
                     </motion.p>
                     <ul className="inline-flex gap-1.5 mt-1">
                       {active.tecnologias?.map((tec) => (
-                        <li className="w-fit bg-zinc-950 py-1 px-2 rounded-2xl text-sm">{tec}</li>
+                        <li className="w-fit bg-zinc-950 py-1 px-2 rounded-2xl text-sm gap-1.5 inline-flex">
+                          {tec.name}{" "}
+                          <span>
+                            <Icon icon={`${tec.icon}`} width="20" height="20 " />
+                          </span>
+                        </li>
                       ))}
                     </ul>
                   </div>
@@ -212,7 +217,20 @@ const cards = [
     title: "Delfilms 🍿",
     src: "delfilms.png",
     ctaText: "Visitar",
-    tecnologias: ["React", "Javascript", "Tailwind CSS"],
+    tecnologias: [
+      {
+        name: "react",
+        icon: "logos:react",
+      },
+      {
+        name: "Javascript",
+        icon: "logos:javascript",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "logos:tailwindcss-icon",
+      },
+    ],
     ctaLink: "https://delfilms.pages.dev",
     content: () => {
       return (
@@ -230,11 +248,24 @@ const cards = [
     title: "DataFast ⚡",
     src: "/datafast.png",
     ctaText: "Visitar",
-    tecnologias: ["React", "Node.js", "MongoDB"],
+    tecnologias: [
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+      {
+        name: "Node.js",
+        icon: "logos:nodejs-icon",
+      },
+      {
+        name: "MongoDB",
+        icon: "logos:mongodb",
+      },
+    ],
     ctaLink: "https://github.com/CesarMartinez7/Datafast",
     content: () => {
       return (
-        <p>
+        <p className="text-sm">
           DataFast es un sistema diseñado para optimizar la gestión de
           inventarios y facilitar el control de productos en empresas de
           cualquier tamaño. Mejora la eficiencia y reduce tiempos de operación.
@@ -247,11 +278,24 @@ const cards = [
     title: "Meko ☕",
     src: "/meko.png",
     ctaText: "Visitar",
-    tecnologias: ["React", "Typescript", "Tailwind CSS"],
+    tecnologias: [
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+      {
+        name: "Typescript",
+        icon: "logos:typescript-icon",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "logos:tailwindcss-icon",
+      },
+    ],
     ctaLink: "https://mekoo.pages.dev",
     content: () => {
       return (
-        <p>
+        <p className="text-sm">
           Meko es una plataforma enfocada en la transmisión de anime, con un
           catálogo actualizado y una interfaz fluida. Encuentra y disfruta de
           tus series favoritas sin complicaciones.
@@ -264,11 +308,24 @@ const cards = [
     title: "DexTS",
     src: "/dexts.png",
     ctaText: "Visitar",
-    tecnologias: ["React", "Typescript", "GraphQL"],
+    tecnologias: [
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+      {
+        name: "Typescript",
+        icon: "logos:typescript-icon",
+      },
+      {
+        name: "GraphQL",
+        icon: "logos:graphql",
+      },
+    ],
     ctaLink: "https://dexts.pages.dev",
     content: () => {
       return (
-        <p>
+        <p className="text-sm">
           DexTS ofrece información detallada sobre anime y manga utilizando
           GraphQL para obtener datos en tiempo real. Encuentra sinopsis,
           personajes y más en un solo lugar.
@@ -281,11 +338,20 @@ const cards = [
     title: "TaskMaster ✅",
     src: "/taskmaster.png",
     ctaText: "Visitar",
-    tecnologias: ["Vue", "Tailwind CSS"],
+    tecnologias: [
+      {
+        name: "Vue",
+        icon: "logos:vue",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "logos:tailwindcss-icon",
+      },
+    ],
     ctaLink: "https://github.com/CesarMartinez7/taskmaster",
     content: () => {
       return (
-        <p>
+        <p className="text-sm">
           TaskMaster es una app diseñada para mejorar la productividad personal
           y en equipo. Planifica, organiza y alcanza tus metas con funciones
           intuitivas y colaborativas.
@@ -297,12 +363,29 @@ const cards = [
     description: "Aplicación de clima en tiempo real",
     title: "WeatherNow ⛈️",
     src: "/weathernow.png",
-    tecnologias: ["React", "Typescript", "Tailwind CSS", "NextJS"],
+    tecnologias: [
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+      {
+        name: "Typescript",
+        icon: "logos:typescript",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "logos:tailwindcss-icon",
+      },
+      {
+        name: "NextJS",
+        icon: "logos:nextjs-icon",
+      },
+    ],
     ctaText: "Visitar",
     ctaLink: "https://github.com/CesarMartinez7/weathernow",
     content: () => {
       return (
-        <p>
+        <p className="text-sm">
           WeatherNow te mantiene informado sobre las condiciones climáticas en
           tiempo real. Recibe pronósticos detallados y alertas para cualquier
           ubicación.
@@ -315,11 +398,24 @@ const cards = [
     title: "GalleryPhotos 📷",
     src: "/galleryphoto.png",
     ctaText: "Visitar",
-    tecnologias: ["React", "Typescript", "Next.js"],
+    tecnologias: [
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+      {
+        name: "Typescript",
+        icon: "logos:typescript",
+      },
+      {
+        name: "Next.js",
+        icon: "logos:nextjs-icon",
+      },
+    ],
     ctaLink: "https://gallerry-two.vercel.app/",
     content: () => {
       return (
-        <p>
+        <p className="text-sm">
           GalleryPhotos permite explorar y descargar imágenes de alta calidad
           gracias a la API de Pexels. Encuentra la imagen perfecta en segundos
           con una interfaz intuitiva.
@@ -332,10 +428,16 @@ const cards = [
     title: "Dragon Ball Wiki 🐉",
     src: "/dragonballwiki.png",
     ctaText: "Visitar",
+    tecnologias: [
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+    ],
     ctaLink: "https://dragonballwiki.pages.dev",
     content: () => {
       return (
-        <p>
+        <p className="text-sm">
           Dragon Ball Wiki es la plataforma definitiva para fans de la saga.
           Encuentra información sobre personajes, transformaciones y sagas de
           este icónico universo.
@@ -348,10 +450,20 @@ const cards = [
     title: "Calculadora 🖩",
     src: "/calculadora.png",
     ctaText: "Visitar",
+    tecnologias: [
+      {
+        name: "Javascript",
+        icon: "logos:javascript",
+      },
+      {
+        name: "Vite",
+        icon: "logos:vitejs"
+      }
+    ],
     ctaLink: "https://calculadora-7df.pages.dev",
     content: () => {
       return (
-        <p>
+        <p className="text-sm">
           Una calculadora sencilla pero eficiente para realizar operaciones
           matemáticas básicas con una interfaz clara y amigable.
         </p>
@@ -363,10 +475,24 @@ const cards = [
     title: "Mercado Libre Clon 📦",
     src: "/mercadolibre.png",
     ctaText: "Visitar",
-    ctaLink: "https://github.com/CesarMartinez7/budgetbuddy",
+    tecnologias: [
+      {
+        name: "Next.js",
+        icon: "logos:nextjs-icon",
+      },
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "logos:tailwindcss-icon",
+      },
+    ],
+    ctaLink: "https://mercadoesclavo.vercel.app",
     content: () => {
       return (
-        <p>
+        <p className="text-sm">
           Un clon de Mercado Libre desarrollado con Next.js, React y Tailwind
           CSS. Replica la experiencia de compra con búsqueda avanzada y diseño
           responsivo.

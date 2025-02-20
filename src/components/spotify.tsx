@@ -3,7 +3,7 @@
 import { act, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./utils/useOutside";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon, iconExists } from "@iconify/react/dist/iconify.js";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -117,9 +117,9 @@ export function ExpandableCardDemo() {
                     exit={{ opacity: 0 }}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-2 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-800 border-b-3"
+                    className="px-4 py-2 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-800 border-b-3 whitespace-nowrap"
                   >
-                    {"Visitar"}
+                    {active.ctaText}
                   </motion.a>
                 </div>
                 <div className=" relative px-4">
@@ -218,7 +218,7 @@ const cards = [
     description: "Free streaming platform",
     title: "Delfilms 🍿",
     src: "delfilms.png",
-    ctaText: "Visit",
+    ctaText: "Visit site",
     tecnologias: [
       {
         name: "React",
@@ -248,19 +248,30 @@ const cards = [
     description: "Inventory and management system",
     title: "DataFast ⚡",
     src: "/datafast.png",
-    ctaText: "Visit",
+    ctaText: "Visit site",
     tecnologias: [
+      {
+        name: "Javascript",
+        icon: "logos:javascript",
+      },
       {
         name: "React",
         icon: "logos:react",
+      },
+      {
+        name: "Tailwind",
+        icon: "logos:tailwindcss-icon",
+      },{
+        name: "Chart.js",
+        icon: "logos:chartjs",
       },
       {
         name: "Node.js",
         icon: "logos:nodejs-icon",
       },
       {
-        name: "MongoDB",
-        icon: "logos:mongodb",
+        name: "MySQL",
+        icon: "logos:mysql-icon",
       },
     ],
     ctaLink: "https://github.com/CesarMartinez7/Datafast",
@@ -278,7 +289,7 @@ const cards = [
     description: "Anime streaming platform",
     title: "Meko ☕",
     src: "/meko.png",
-    ctaText: "Visit",
+    ctaText: "Visit site",
     tecnologias: [
       {
         name: "React",
@@ -308,7 +319,7 @@ const cards = [
     description: "Anime and manga encyclopedia",
     title: "DexTS",
     src: "/dexts.png",
-    ctaText: "Visit",
+    ctaText: "Visit site",
     tecnologias: [
       {
         name: "React",
@@ -322,6 +333,16 @@ const cards = [
         name: "GraphQL",
         icon: "logos:graphql",
       },
+      {
+        name: "Tailwind CSS",
+        icon: "logos:tailwindcss-icon",
+      },{
+        name: "Apollo Client",
+        icon: "logos:apollostack",
+      },{
+        name: "DaisyUI",
+        icon: "logos:daisyui-icon",
+      }
     ],
     ctaLink: "https://dexts.pages.dev",
     content: () => {
@@ -338,7 +359,7 @@ const cards = [
     description: "Mercado Libre clone",
     title: "Mercado Libre Clone 📦",
     src: "/mercadolibre.png",
-    ctaText: "Visit",
+    ctaText: "Visit site",
     tecnologias: [
       {
         name: "Next.js",
@@ -347,6 +368,10 @@ const cards = [
       {
         name: "React",
         icon: "logos:react",
+      },
+      {
+        name: "Typescript",
+        icon: "logos:typescript-icon",
       },
       {
         name: "Tailwind CSS",
@@ -386,7 +411,7 @@ const cards = [
         icon: "logos:nextjs-icon",
       },
     ],
-    ctaText: "Visit",
+    ctaText: "Visit site",
     ctaLink: "https://github.com/CesarMartinez7/weathernow",
     content: () => {
       return (
@@ -401,7 +426,7 @@ const cards = [
     description: "Image search with Pexels API",
     title: "GalleryPhotos 📷",
     src: "/galleryphoto.png",
-    ctaText: "Visit",
+    ctaText: "Visit site",
     tecnologias: [
       {
         name: "React",
@@ -431,12 +456,24 @@ const cards = [
     description: "Dragon Ball encyclopedia",
     title: "Dragon Ball Wiki 🐉",
     src: "/dragonballwiki.png",
-    ctaText: "Visit",
+    ctaText: "Visit site",
     tecnologias: [
       {
         name: "React",
         icon: "logos:react",
       },
+      {
+        name:"Javascript",
+        icon: "logos:javascript",
+      },
+      {
+        name: "Vite",
+        icon: "logos:vitejs",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "logos:tailwindcss-icon",
+      }
     ],
     ctaLink: "https://dragonballwiki.pages.dev",
     content: () => {
@@ -453,7 +490,7 @@ const cards = [
     description: "Calculator in VanillaJS",
     title: "Calculator 🖩",
     src: "/calculadora.png",
-    ctaText: "Visit",
+    ctaText: "Visit site",
     tecnologias: [
       {
         name: "HTML",
@@ -467,10 +504,7 @@ const cards = [
         name: "Javascript",
         icon: "logos:javascript",
       },
-      {
-        name: "Vite",
-        icon: "logos:vitejs",
-      },
+      
     ],
     ctaLink: "https://calculadora-7df.pages.dev",
     content: () => {
@@ -486,7 +520,7 @@ const cards = [
     description: "Task management app",
     title: "TaskMaster ✅",
     src: "/taskmaster.png",
-    ctaText: "Visit",
+    ctaText: "Visit site",
     tecnologias: [
       {
         name: "Vue",
@@ -508,4 +542,65 @@ const cards = [
       );
     },
   },
+  {
+    description: "Bot for Telegram",
+    title: "Catchy Bot 🤖",
+    src: "/catchybot.png",
+    ctaText: "Send Message",
+    tecnologias: [
+      {
+        name: "Python",
+        icon: "logos:python",
+      },
+      {
+        name: "Docker",
+        icon: "logos:docker-icon",
+      },
+      {
+        name: "Python Package",
+        icon: "logos:pypi",
+      },
+      {
+        name: "Telegram API",
+        icon: "logos:telegram",
+      }
+    ],
+    ctaLink: "https://github.com/CesarMartinez7/taskmaster",
+    content: () => {
+      return (
+        <p className="text-sm">
+          This is a Telegram bot developed in Python that allows you to download music from YouTube directly from a chat. Simply send a video link, and the bot will convert it to audio and send it to you in seconds.
+        </p>
+      );
+    },
+  },
+  {
+    description: "Free game made Pygame",
+    title: "Pysoccer",
+    src: "/pysoccer.png",
+    ctaText: "See code",
+    tecnologias: [
+      {
+        name: "Python",
+        icon: "logos:python",
+      },
+      {
+        name: "Docker",
+        icon: "logos:docker-icon",
+      },
+      {
+        name: "Python Package",
+        icon: "logos:pypi",
+      },
+    ],
+    ctaLink: "https://github.com/CesarMartinez7/taskmaster",
+    content: () => {
+      return (
+        <p className="text-sm">
+          Pysoccer is a game with weird physics and bugs that are really annoying but fun, making it a GOTY-worthy game to play OFFLINE WITH MULTIPLAYER.
+        </p>
+      );
+    },
+  },
+  
 ];

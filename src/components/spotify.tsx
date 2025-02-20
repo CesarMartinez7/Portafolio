@@ -213,10 +213,10 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "Plataforma de streaming gratuita",
+    description: "Free streaming platform",
     title: "Delfilms 🍿",
     src: "delfilms.png",
-    ctaText: "Visitar",
+    ctaText: "Visit",
     tecnologias: [
       {
         name: "react",
@@ -235,19 +235,16 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Delfilms es una plataforma de streaming gratuita con una amplia
-          selección de películas y series. Sin suscripciones ni anuncios
-          molestos, ofrece un acceso sencillo y sin costos para los amantes del
-          cine.
+          Delfilms is a free streaming platform with a wide selection of movies and series. Without subscriptions or annoying ads, it offers simple and cost-free access for movie lovers.
         </p>
       );
     },
   },
   {
-    description: "Sistema de gestión e inventario",
+    description: "Inventory and management system",
     title: "DataFast ⚡",
     src: "/datafast.png",
-    ctaText: "Visitar",
+    ctaText: "Visit",
     tecnologias: [
       {
         name: "React",
@@ -266,18 +263,16 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          DataFast es un sistema diseñado para optimizar la gestión de
-          inventarios y facilitar el control de productos en empresas de
-          cualquier tamaño. Mejora la eficiencia y reduce tiempos de operación.
+          DataFast is a system designed to optimize inventory management and facilitate product control in companies of all sizes. It improves efficiency and reduces operation time.
         </p>
       );
     },
   },
   {
-    description: "Plataforma de streaming de anime",
+    description: "Anime streaming platform",
     title: "Meko ☕",
     src: "/meko.png",
-    ctaText: "Visitar",
+    ctaText: "Visit",
     tecnologias: [
       {
         name: "React",
@@ -296,18 +291,16 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Meko es una plataforma enfocada en la transmisión de anime, con un
-          catálogo actualizado y una interfaz fluida. Encuentra y disfruta de
-          tus series favoritas sin complicaciones.
+          Meko is a platform focused on anime streaming, with an updated catalog and a smooth interface. Find and enjoy your favorite series without complications.
         </p>
       );
     },
   },
   {
-    description: "Enciclopedia de anime y manga",
+    description: "Anime and manga encyclopedia",
     title: "DexTS",
     src: "/dexts.png",
-    ctaText: "Visitar",
+    ctaText: "Visit",
     tecnologias: [
       {
         name: "React",
@@ -326,18 +319,16 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          DexTS ofrece información detallada sobre anime y manga utilizando
-          GraphQL para obtener datos en tiempo real. Encuentra sinopsis,
-          personajes y más en un solo lugar.
+          DexTS offers detailed information about anime and manga using GraphQL to fetch real-time data. Find synopses, characters, and more in one place.
         </p>
       );
     },
   },
   {
-    description: "Aplicación de gestión de tareas",
+    description: "Task management app",
     title: "TaskMaster ✅",
     src: "/taskmaster.png",
-    ctaText: "Visitar",
+    ctaText: "Visit",
     tecnologias: [
       {
         name: "Vue",
@@ -352,15 +343,13 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          TaskMaster es una app diseñada para mejorar la productividad personal
-          y en equipo. Planifica, organiza y alcanza tus metas con funciones
-          intuitivas y colaborativas.
+          TaskMaster is an app designed to improve personal and team productivity. Plan, organize, and achieve your goals with intuitive and collaborative features.
         </p>
       );
     },
   },
   {
-    description: "Aplicación de clima en tiempo real",
+    description: "Real-time weather app",
     title: "WeatherNow ⛈️",
     src: "/weathernow.png",
     tecnologias: [
@@ -381,23 +370,21 @@ const cards = [
         icon: "logos:nextjs-icon",
       },
     ],
-    ctaText: "Visitar",
+    ctaText: "Visit",
     ctaLink: "https://github.com/CesarMartinez7/weathernow",
     content: () => {
       return (
         <p className="text-sm">
-          WeatherNow te mantiene informado sobre las condiciones climáticas en
-          tiempo real. Recibe pronósticos detallados y alertas para cualquier
-          ubicación.
+          WeatherNow keeps you informed about weather conditions in real-time. Get detailed forecasts and alerts for any location.
         </p>
       );
     },
   },
   {
-    description: "Búsqueda de imágenes con Pexels API",
+    description: "Image search with Pexels API",
     title: "GalleryPhotos 📷",
     src: "/galleryphoto.png",
-    ctaText: "Visitar",
+    ctaText: "Visit",
     tecnologias: [
       {
         name: "React",
@@ -416,18 +403,16 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          GalleryPhotos permite explorar y descargar imágenes de alta calidad
-          gracias a la API de Pexels. Encuentra la imagen perfecta en segundos
-          con una interfaz intuitiva.
+          GalleryPhotos allows you to explore and download high-quality images thanks to the Pexels API. Find the perfect image in seconds with an intuitive interface.
         </p>
       );
     },
   },
   {
-    description: "Enciclopedia de Dragon Ball",
+    description: "Dragon Ball encyclopedia",
     title: "Dragon Ball Wiki 🐉",
     src: "/dragonballwiki.png",
-    ctaText: "Visitar",
+    ctaText: "Visit",
     tecnologias: [
       {
         name: "React",
@@ -438,18 +423,16 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Dragon Ball Wiki es la plataforma definitiva para fans de la saga.
-          Encuentra información sobre personajes, transformaciones y sagas de
-          este icónico universo.
+          Dragon Ball Wiki is the ultimate platform for fans of the saga. Find information about characters, transformations, and sagas from this iconic universe.
         </p>
       );
     },
   },
   {
-    description: "Calculadora en VanillaJS",
-    title: "Calculadora 🖩",
+    description: "Calculator in VanillaJS",
+    title: "Calculator 🖩",
     src: "/calculadora.png",
-    ctaText: "Visitar",
+    ctaText: "Visit",
     tecnologias: [
       {
         name: "HTML",
@@ -472,17 +455,16 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Una calculadora sencilla pero eficiente para realizar operaciones
-          matemáticas básicas con una interfaz clara y amigable.
+          A simple yet efficient calculator to perform basic math operations with a clean and user-friendly interface.
         </p>
       );
     },
   },
   {
-    description: "Clon de Mercado Libre",
-    title: "Mercado Libre Clon 📦",
+    description: "Mercado Libre clone",
+    title: "Mercado Libre Clone 📦",
     src: "/mercadolibre.png",
-    ctaText: "Visitar",
+    ctaText: "Visit",
     tecnologias: [
       {
         name: "Next.js",
@@ -501,9 +483,7 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Un clon de Mercado Libre desarrollado con Next.js, React y Tailwind
-          CSS. Replica la experiencia de compra con búsqueda avanzada y diseño
-          responsivo.
+          A clone of Mercado Libre developed with Next.js, React, and Tailwind CSS. It replicates the shopping experience with advanced search and responsive design.
         </p>
       );
     },

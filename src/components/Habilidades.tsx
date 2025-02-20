@@ -7,8 +7,8 @@ export default function Habilidades() {
     <>
     <div className="h-screen w-full grid place-content-center">
       <div className="flex justify-center">
-        <h2 className=" text-[44px] font-medium bg-gradient-to-t from-zinc-600 to-zinc-200 bg-clip-text text-transparent text-center font-semibold">
-          Lenguajes y herramientas que utilizo  🚀
+        <h2 className=" text-3xl font-semibold bg-gradient-to-l from-zinc-600 to-zinc-100 bg-clip-text text-transparent text-center ">
+        Skills and tools 🚀
         </h2>
       </div>
       <div className="relative z-10">

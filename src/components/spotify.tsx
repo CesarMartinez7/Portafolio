@@ -1,11 +1,9 @@
 //@ts-nocheck
 
-import  { act, useEffect, useId, useRef, useState } from "react";
+import { act, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./utils/useOutside";
-import Proyectos from "../Mocks/proyect.json";
-import { h1 } from "framer-motion/client";
-
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -71,11 +69,10 @@ export function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-zinc-900 border border-zinc-900 shadow  sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-zinc-900  shadow  sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`img-${active.title}-${id}`}>
                 <img
-                  
                   width={200}
                   height={200}
                   src={active.src}
@@ -85,23 +82,25 @@ export function ExpandableCardDemo() {
               </motion.div>
 
               <div>
-                <div className="flex justify-between items-start p-4">
+                <div className="flex justify-between items-start pt-4 px-4 mb-1">
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-medium text-neutral-700 dark:text-neutral-200 text-base"
+                      className="font-bold text-neutral-700 text-md dark:text-neutral-200 text-base"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-neutral-600 dark:text-neutral-400 text-base"
+                      className="text-zinc-600 text-sm"
                     >
                       {active.description}
                     </motion.p>
-                    <div>{active.tecnolgias?.map((tec) => (
-                      <h1>{tec}sfdsf</h1>
-                    ))}</div>
+                    <ul className="inline-flex gap-1.5 mt-1">
+                      {active.tecnologias?.map((tec) => (
+                        <li className="w-fit bg-zinc-950 py-1 px-2 rounded-2xl text-sm">{tec}</li>
+                      ))}
+                    </ul>
                   </div>
 
                   <motion.a
@@ -111,18 +110,18 @@ export function ExpandableCardDemo() {
                     exit={{ opacity: 0 }}
                     href={active.ctaLink}
                     target="_blank"
-                    className="px-4 py-3 text-sm rounded-full font-bold bg-zinc-950 text-white"
+                    className="px-4 py-3 text-sm rounded-sm font-bold bg-zinc-950 text-white"
                   >
                     {"Visitar"}
                   </motion.a>
                 </div>
-                <div className="pt-4 relative px-4">
+                <div className=" relative px-4">
                   <motion.div
                     layout
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch]"
+                    className="text-neutral-600 text-xs md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-400 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] text-sm"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -213,11 +212,15 @@ const cards = [
     title: "Delfilms 🍿",
     src: "delfilms.png",
     ctaText: "Visitar",
+    tecnologias: ["React", "Javascript", "Tailwind CSS"],
     ctaLink: "https://delfilms.pages.dev",
     content: () => {
       return (
-        <p>
-          Delfilms es una plataforma de streaming gratuita con una amplia selección de películas y series. Sin suscripciones ni anuncios molestos, ofrece un acceso sencillo y sin costos para los amantes del cine.
+        <p className="text-sm">
+          Delfilms es una plataforma de streaming gratuita con una amplia
+          selección de películas y series. Sin suscripciones ni anuncios
+          molestos, ofrece un acceso sencillo y sin costos para los amantes del
+          cine.
         </p>
       );
     },
@@ -227,12 +230,14 @@ const cards = [
     title: "DataFast ⚡",
     src: "/datafast.png",
     ctaText: "Visitar",
-    tecnolgias: ["React", "Node.js", "MongoDB"],
+    tecnologias: ["React", "Node.js", "MongoDB"],
     ctaLink: "https://github.com/CesarMartinez7/Datafast",
     content: () => {
       return (
         <p>
-          DataFast es un sistema diseñado para optimizar la gestión de inventarios y facilitar el control de productos en empresas de cualquier tamaño. Mejora la eficiencia y reduce tiempos de operación.
+          DataFast es un sistema diseñado para optimizar la gestión de
+          inventarios y facilitar el control de productos en empresas de
+          cualquier tamaño. Mejora la eficiencia y reduce tiempos de operación.
         </p>
       );
     },
@@ -242,11 +247,14 @@ const cards = [
     title: "Meko ☕",
     src: "/meko.png",
     ctaText: "Visitar",
+    tecnologias: ["React", "Typescript", "Tailwind CSS"],
     ctaLink: "https://mekoo.pages.dev",
     content: () => {
       return (
         <p>
-          Meko es una plataforma enfocada en la transmisión de anime, con un catálogo actualizado y una interfaz fluida. Encuentra y disfruta de tus series favoritas sin complicaciones.
+          Meko es una plataforma enfocada en la transmisión de anime, con un
+          catálogo actualizado y una interfaz fluida. Encuentra y disfruta de
+          tus series favoritas sin complicaciones.
         </p>
       );
     },
@@ -256,11 +264,14 @@ const cards = [
     title: "DexTS",
     src: "/dexts.png",
     ctaText: "Visitar",
+    tecnologias: ["React", "Typescript", "GraphQL"],
     ctaLink: "https://dexts.pages.dev",
     content: () => {
       return (
         <p>
-          DexTS ofrece información detallada sobre anime y manga utilizando GraphQL para obtener datos en tiempo real. Encuentra sinopsis, personajes y más en un solo lugar.
+          DexTS ofrece información detallada sobre anime y manga utilizando
+          GraphQL para obtener datos en tiempo real. Encuentra sinopsis,
+          personajes y más en un solo lugar.
         </p>
       );
     },
@@ -270,11 +281,14 @@ const cards = [
     title: "TaskMaster ✅",
     src: "/taskmaster.png",
     ctaText: "Visitar",
+    tecnologias: ["Vue", "Tailwind CSS"],
     ctaLink: "https://github.com/CesarMartinez7/taskmaster",
     content: () => {
       return (
         <p>
-          TaskMaster es una app diseñada para mejorar la productividad personal y en equipo. Planifica, organiza y alcanza tus metas con funciones intuitivas y colaborativas.
+          TaskMaster es una app diseñada para mejorar la productividad personal
+          y en equipo. Planifica, organiza y alcanza tus metas con funciones
+          intuitivas y colaborativas.
         </p>
       );
     },
@@ -283,12 +297,15 @@ const cards = [
     description: "Aplicación de clima en tiempo real",
     title: "WeatherNow ⛈️",
     src: "/weathernow.png",
+    tecnologias: ["React", "Typescript", "Tailwind CSS", "NextJS"],
     ctaText: "Visitar",
     ctaLink: "https://github.com/CesarMartinez7/weathernow",
     content: () => {
       return (
         <p>
-          WeatherNow te mantiene informado sobre las condiciones climáticas en tiempo real. Recibe pronósticos detallados y alertas para cualquier ubicación.
+          WeatherNow te mantiene informado sobre las condiciones climáticas en
+          tiempo real. Recibe pronósticos detallados y alertas para cualquier
+          ubicación.
         </p>
       );
     },
@@ -298,11 +315,14 @@ const cards = [
     title: "GalleryPhotos 📷",
     src: "/galleryphoto.png",
     ctaText: "Visitar",
+    tecnologias: ["React", "Typescript", "Next.js"],
     ctaLink: "https://gallerry-two.vercel.app/",
     content: () => {
       return (
         <p>
-          GalleryPhotos permite explorar y descargar imágenes de alta calidad gracias a la API de Pexels. Encuentra la imagen perfecta en segundos con una interfaz intuitiva.
+          GalleryPhotos permite explorar y descargar imágenes de alta calidad
+          gracias a la API de Pexels. Encuentra la imagen perfecta en segundos
+          con una interfaz intuitiva.
         </p>
       );
     },
@@ -316,7 +336,9 @@ const cards = [
     content: () => {
       return (
         <p>
-          Dragon Ball Wiki es la plataforma definitiva para fans de la saga. Encuentra información sobre personajes, transformaciones y sagas de este icónico universo.
+          Dragon Ball Wiki es la plataforma definitiva para fans de la saga.
+          Encuentra información sobre personajes, transformaciones y sagas de
+          este icónico universo.
         </p>
       );
     },
@@ -330,7 +352,8 @@ const cards = [
     content: () => {
       return (
         <p>
-          Una calculadora sencilla pero eficiente para realizar operaciones matemáticas básicas con una interfaz clara y amigable.
+          Una calculadora sencilla pero eficiente para realizar operaciones
+          matemáticas básicas con una interfaz clara y amigable.
         </p>
       );
     },
@@ -344,7 +367,9 @@ const cards = [
     content: () => {
       return (
         <p>
-          Un clon de Mercado Libre desarrollado con Next.js, React y Tailwind CSS. Replica la experiencia de compra con búsqueda avanzada y diseño responsivo.
+          Un clon de Mercado Libre desarrollado con Next.js, React y Tailwind
+          CSS. Replica la experiencia de compra con búsqueda avanzada y diseño
+          responsivo.
         </p>
       );
     },

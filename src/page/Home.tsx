@@ -26,6 +26,7 @@ function Main() {
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
+      
     >
       <div className="relative flex h-[screen] w-full flex-col items-center justify-center overflow-hidden">
         <DotPattern

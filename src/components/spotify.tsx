@@ -69,12 +69,12 @@ export function ExpandableCardDemo() {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-zinc-900  shadow  sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-zinc-950  shadow  sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`img-${active.title}-${id}`}>
                 <img
-                  width={200}
-                  height={200}
+                  width={240}
+                  height={240}
                   src={active.src}
                   alt={active.title}
                   className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
@@ -319,31 +319,35 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          DexTS offers detailed information about anime and manga using GraphQL to fetch real-time data. Find synopses, characters, and more in one place.
+          DexTS provides detailed information about anime and manga using GraphQL to fetch real-time data. Find synopses, characters, and more in one place, plus watch anime and read manga!
         </p>
       );
     },
   },
   {
-    description: "Task management app",
-    title: "TaskMaster ✅",
-    src: "/taskmaster.png",
+    description: "Mercado Libre clone",
+    title: "Mercado Libre Clone 📦",
+    src: "/mercadolibre.png",
     ctaText: "Visit",
     tecnologias: [
       {
-        name: "Vue",
-        icon: "logos:vue",
+        name: "Next.js",
+        icon: "logos:nextjs-icon",
+      },
+      {
+        name: "React",
+        icon: "logos:react",
       },
       {
         name: "Tailwind CSS",
         icon: "logos:tailwindcss-icon",
       },
     ],
-    ctaLink: "https://github.com/CesarMartinez7/taskmaster",
+    ctaLink: "https://mercadoesclavo.vercel.app",
     content: () => {
       return (
         <p className="text-sm">
-          TaskMaster is an app designed to improve personal and team productivity. Plan, organize, and achieve your goals with intuitive and collaborative features.
+          A clone of Mercado Libre developed with Next.js, React, and Tailwind CSS. It replicates the shopping experience with advanced search and responsive design.
         </p>
       );
     },
@@ -461,29 +465,25 @@ const cards = [
     },
   },
   {
-    description: "Mercado Libre clone",
-    title: "Mercado Libre Clone 📦",
-    src: "/mercadolibre.png",
+    description: "Task management app",
+    title: "TaskMaster ✅",
+    src: "/taskmaster.png",
     ctaText: "Visit",
     tecnologias: [
       {
-        name: "Next.js",
-        icon: "logos:nextjs-icon",
-      },
-      {
-        name: "React",
-        icon: "logos:react",
+        name: "Vue",
+        icon: "logos:vue",
       },
       {
         name: "Tailwind CSS",
         icon: "logos:tailwindcss-icon",
       },
     ],
-    ctaLink: "https://mercadoesclavo.vercel.app",
+    ctaLink: "https://github.com/CesarMartinez7/taskmaster",
     content: () => {
       return (
         <p className="text-sm">
-          A clone of Mercado Libre developed with Next.js, React, and Tailwind CSS. It replicates the shopping experience with advanced search and responsive design.
+          TaskMaster is an app designed to improve personal and team productivity. Plan, organize, and achieve your goals with intuitive and collaborative features.
         </p>
       );
     },

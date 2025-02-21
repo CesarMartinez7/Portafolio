@@ -12,7 +12,7 @@ import Overview from "../components/overview";
 
 const TerminalData = () => {
   return (
-    <div className="flex items-center p-8 justify-center">
+    <div className="flex items-center p-4 justify-center">
       <Terminal>
         <TypingAnimation>&gt; more me.json</TypingAnimation>
 
@@ -167,7 +167,7 @@ function Main() {
         initial={{ opacity: 0 }}
         whileInView={{ transition: { duration: 0.4 }, opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="grid grid-cols-1 lg:grid-cols-2 "
+        className="grid grid-cols-1 gap-2  "
       >
         <Overview />
         <TerminalData />

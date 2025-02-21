@@ -27,7 +27,6 @@ function Main() {
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      
     >
       <div className="relative flex h-[screen] w-full flex-col items-center justify-center overflow-hidden">
         <DotPattern
@@ -83,32 +82,38 @@ function Main() {
                   See any my projects
                 </div>
               </button>
-              <a
+              <motion.a
+                whileHover={{ scale: 1.1  }}
                 className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer "
                 href="https://github.com/CesarMartinez7"
                 target="_blank"
               >
                 <Icon icon="tabler:brand-github" width="24" height="24" />
                 Github
-              </a>
-              <a
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1  }}
                 className="px-8 py-2 bg-black text-white text-sm rounded-md font-bold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer  "
                 href="https://www.linkedin.com/in/cesar-martinez-castro-383943332/"
                 target="_blank"
               >
                 <Icon icon="tabler:brand-linkedin" width="24" height="24" />
                 Linkedin
-              </a>
+              </motion.a>
             </div>
           </div>
           <div className="hidden md:flex"></div>
         </div>
       </div>
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1  }} >
+      <motion.div
+        initial={{opacity: 0}}
+        whileInView={{transition: {duration: 0.4}, opacity: 1}}
+        exit={{ opacity: 0}}
+      >
         <Overview />
       </motion.div>
 
-      <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg bg-background p-20">
+      <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg bg-background p-3 lg:p-20">
         <GridPattern
           width={50}
           height={50}
@@ -118,12 +123,12 @@ function Main() {
             "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)]  "
           )}
         />
-        <div ref={divProject} className="w-full">
-          <h3 className="text-center text-2xl font-bold text-green-400">
+        <motion.div  ref={divProject} className="w-full" initial={{ opacity: 0 }} animate={{ opacity: 1, transition : {duration: 1}}} exit={{opacity: 0}} >
+          <h3 className="text-center text-3xl font-bold my-12 from-green-500    bg-clip-text  bg-gradient-to-br  to-green-900 text-transparent">
             Look at my projects
           </h3>
           <ExpandableCardDemo />
-        </div>
+        </motion.div>
       </div>
 
       <Habilidades />

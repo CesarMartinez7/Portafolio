@@ -86,7 +86,7 @@ export function ExpandableCardDemo() {
                   <div className="">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-700 text-lg dark:text-neutral-200 text-base"
+                      className="font-bold text-neutral-700 text-lg dark:text-neutral-200 "
                     >
                       {active.title}
                     </motion.h3>
@@ -140,13 +140,13 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <main className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-3 items-start gap-4 p-4">
+      <main className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 p-4 lg:grid-cols-3">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${index}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col  hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className="p-4 bg-zinc-950 flex flex-col transition-all duration-150  hover:bg-zinc-900 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`img-${card.title}-${id}`}>
@@ -158,16 +158,16 @@ export function ExpandableCardDemo() {
                   className="h-60 w-full  rounded-lg object-cover object-top"
                 />
               </motion.div>
-              <div className="flex justify-center items-center flex-col">
+              <div className="flex flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-semibold text-center "
+                  className="font-semibold  "
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400 text-center md:text-left text-base"
+                  className="text-neutral-600 dark:text-neutral-400  md:text-left text-base"
                 >
                   {card.description}
                 </motion.p>

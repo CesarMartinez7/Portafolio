@@ -3,7 +3,7 @@
 import { act, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./utils/useOutside";
-import { Icon, iconExists } from "@iconify/react/dist/iconify.js";
+import { Icon} from "@iconify/react/dist/iconify.js";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -565,7 +565,7 @@ const cards = [
         icon: "logos:telegram",
       }
     ],
-    ctaLink: "https://github.com/CesarMartinez7/taskmaster",
+    ctaLink: "https://web.telegram.org/a/#7759974599",
     content: () => {
       return (
         <p className="text-sm">

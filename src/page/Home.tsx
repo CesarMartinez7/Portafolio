@@ -9,6 +9,7 @@ import { FlipWords } from "../components/FlipWords";
 import { GridPattern } from "../components/utils/gridPatter";
 import { cn } from "../components/utils";
 import { DotPattern } from "../components/dot-patter";
+import Overview from "../components/overview";
 
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
@@ -78,7 +79,7 @@ function Main() {
                 onClick={() => window.alert("Hello world")}
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-500 to-zinc-900 rounded-lg" />
-                <div className="px-8 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold">
+                <div className="px-8 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold whitespace-nowrap">
                   See any my projects
                 </div>
               </button>
@@ -103,6 +104,9 @@ function Main() {
           <div className="hidden md:flex"></div>
         </div>
       </div>
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1  }} >
+        <Overview />
+      </motion.div>
 
       <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg bg-background p-20">
         <GridPattern
@@ -115,7 +119,7 @@ function Main() {
           )}
         />
         <div ref={divProject} className="w-full">
-          <h3 className="text-center text-xl font-semibold ">
+          <h3 className="text-center text-2xl font-bold text-green-400">
             Look at my projects
           </h3>
           <ExpandableCardDemo />

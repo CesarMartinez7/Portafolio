@@ -30,8 +30,8 @@ function Main() {
     >
       <div className="relative flex h-[screen] w-full flex-col items-center justify-center overflow-hidden">
         <DotPattern
-          width={20}
-          height={20}
+          width={16}
+          height={16}
           cx={1}
           cy={1}
           cr={1}
@@ -73,7 +73,10 @@ function Main() {
               rootMargin="-50px"
             />
             <div className="inline-flex gap-2.5">
-              <button
+              <motion.button
+                initial={{opacity : 0, scale : 0.3}}
+                whileInView={{opacity: 1}}
+                animate={{ opacity: 1, transition: { duration: 1 }, scale: 1 }}
                 className="p-[3px] relative cursor-pointer"
                 onClick={() => window.alert("Hello world")}
               >
@@ -81,9 +84,9 @@ function Main() {
                 <div className="px-8 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold whitespace-nowrap">
                   See any my projects
                 </div>
-              </button>
+              </motion.button>
               <motion.a
-                whileHover={{ scale: 1.1  }}
+                whileHover={{ scale: 1.1 }}
                 className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer "
                 href="https://github.com/CesarMartinez7"
                 target="_blank"
@@ -92,7 +95,7 @@ function Main() {
                 Github
               </motion.a>
               <motion.a
-                whileHover={{ scale: 1.1  }}
+                whileHover={{ scale: 1.1 }}
                 className="px-8 py-2 bg-black text-white text-sm rounded-md font-bold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer  "
                 href="https://www.linkedin.com/in/cesar-martinez-castro-383943332/"
                 target="_blank"
@@ -106,25 +109,22 @@ function Main() {
         </div>
       </div>
       <motion.div
-        initial={{opacity: 0}}
-        whileInView={{transition: {duration: 0.4}, opacity: 1}}
-        exit={{ opacity: 0}}
+        initial={{ opacity: 0 }}
+        whileInView={{ transition: { duration: 0.4 }, opacity: 1 }}
+        exit={{ opacity: 0 }}
       >
         <Overview />
       </motion.div>
 
       <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg bg-background p-3 lg:p-20">
-        <GridPattern
-          width={50}
-          height={50}
-          x={-1}
-          y={-1}
-          className={cn(
-            "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)]  "
-          )}
-        />
-        <motion.div  ref={divProject} className="w-full" initial={{ opacity: 0 }} animate={{ opacity: 1, transition : {duration: 1}}} exit={{opacity: 0}} >
-          <h3 className="text-center text-3xl font-bold my-12 from-green-500    bg-clip-text  bg-gradient-to-br  to-green-900 text-transparent">
+        <motion.div
+          ref={divProject}
+          className="w-full"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 1 } }}
+          exit={{ opacity: 0 }}
+        >
+          <h3 className="text-center text-3xl font-bold my-12 from-green-500 bg-clip-text  bg-gradient-to-br  to-green-900 text-transparent">
             Look at my projects
           </h3>
           <ExpandableCardDemo />

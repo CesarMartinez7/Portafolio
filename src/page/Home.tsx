@@ -6,20 +6,75 @@ import Habilidades from "../components/Habilidades";
 import { ExpandableCardDemo } from "../components/spotify";
 import { motion } from "framer-motion";
 import { FlipWords } from "../components/FlipWords";
-import { GridPattern } from "../components/utils/gridPatter";
 import { cn } from "../components/utils";
 import { DotPattern } from "../components/dot-patter";
 import Overview from "../components/overview";
+
+const TerminalData = () => {
+  return (
+    <div className="flex items-center p-8 justify-center">
+      <Terminal>
+        <TypingAnimation>&gt; more me.json</TypingAnimation>
+
+        <AnimatedSpan delay={1500} className="text-blue-500">
+          <span>{`{`}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={2000} className="text-green-500">
+          <span className="pl-4">{`"name": "Cesar",`}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={2500} className="text-green-500">
+          <span className="pl-4">{`"age": "18",`}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={3000} className="text-green-500">
+          <span className="pl-4">{`"role": "Developer",`}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={3500} className="text-green-500">
+          <span className="pl-4">{`"overview": "Lorem",`}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={4000} className="text-green-500">
+          <span className="pl-4">{`"skills": ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "SQL"], `}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={4500} className="text-green-500">
+          <span className="pl-4">{`"editor": "VS Code",`}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={5000} className="text-green-500">
+          <span className="pl-4">{`"os": "Manjaro Linux"`}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={5500} className="text-blue-500">
+          <span>{`}`}</span>
+        </AnimatedSpan>
+
+        <TypingAnimation delay={6000} className="text-muted-foreground">
+          JSON successfully loaded.
+        </TypingAnimation>
+      </Terminal>
+    </div>
+  );
+};
+
+import {
+  AnimatedSpan,
+  Terminal,
+  TypingAnimation,
+} from "../components/terminal";
 
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
 
   const words = ["better", "cute", "beautiful", "modern"];
 
-  useEffect(() => {
-    document.title = "Welcome";
-    window.scrollTo(0, 0);
-  }, []);
+  // useEffect(() => {
+  //   document.title = "Welcome";
+  //   window.scrollTo(0, 0);
+  // }, []);
 
   return (
     <motion.div
@@ -74,8 +129,8 @@ function Main() {
             />
             <div className="inline-flex gap-2.5">
               <motion.button
-                initial={{opacity : 0, scale : 0.3}}
-                whileInView={{opacity: 1}}
+                initial={{ opacity: 0, scale: 0.3 }}
+                whileInView={{ opacity: 1 }}
                 animate={{ opacity: 1, transition: { duration: 1 }, scale: 1 }}
                 className="p-[3px] relative cursor-pointer"
                 onClick={() => window.alert("Hello world")}
@@ -112,8 +167,10 @@ function Main() {
         initial={{ opacity: 0 }}
         whileInView={{ transition: { duration: 0.4 }, opacity: 1 }}
         exit={{ opacity: 0 }}
+        className="grid grid-cols-1 lg:grid-cols-2 "
       >
         <Overview />
+        <TerminalData />
       </motion.div>
 
       <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg bg-background p-3 lg:p-20">

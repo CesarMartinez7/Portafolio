@@ -32,7 +32,8 @@ export function ExpandableCardDemo() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <>
+    <motion.div
+    >
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -69,7 +70,7 @@ export function ExpandableCardDemo() {
             <motion.div
               initial={{ scale: 0, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
-              exit={{opacity: 0, scale: 0}}
+              exit={{ opacity: 0, scale: 0 }}
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
               className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-black shadow-2xl  sm:rounded-3xl overflow-hidden"
@@ -152,7 +153,7 @@ export function ExpandableCardDemo() {
             layoutId={`card-${card.title}-${index}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 bg-zinc-950 flex flex-col transition-all duration-150  hover:bg-zinc-900 rounded-xl cursor-pointer"
+            className="p-4 bg-black/100 border border-zinc-950/85 flex flex-col transition-all duration-150  hover:bg-zinc-900 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`img-${card.title}-${id}`}>
@@ -182,7 +183,7 @@ export function ExpandableCardDemo() {
           </motion.div>
         ))}
       </main>
-    </>
+    </motion.div>
   );
 }
 
@@ -237,7 +238,7 @@ const cards = [
       },
       {
         name: "Vite",
-        icon: "logos:vitejs"
+        icon: "logos:vitejs",
       },
       {
         name: "Tailwind CSS",

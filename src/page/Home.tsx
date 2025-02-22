@@ -12,7 +12,7 @@ import Overview from "../components/overview";
 
 const TerminalData = () => {
   return (
-    <div className="flex items-center p-4 justify-center">
+    <motion.div  className="flex items-center p-4 justify-center">
       <Terminal>
         <TypingAnimation>~ more me.json</TypingAnimation>
 
@@ -68,7 +68,7 @@ const TerminalData = () => {
           JSON successfully loaded.
         </TypingAnimation>
       </Terminal>
-    </div>
+    </motion.div>
   );
 };
 

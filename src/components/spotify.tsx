@@ -618,7 +618,7 @@ const cards = [
         icon: "logos:pypi",
       },
     ],
-    ctaLink: "https://github.com/CesarMartinez7/taskmaster",
+    ctaLink: "https://github.com/CesarMartinez7/PySoccer",
     content: () => {
       return (
         <p className="text-sm">

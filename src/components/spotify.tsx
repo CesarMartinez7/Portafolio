@@ -3,7 +3,7 @@
 import { act, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./utils/useOutside";
-import { Icon} from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -67,9 +67,12 @@ export function ExpandableCardDemo() {
               <CloseIcon />
             </motion.button>
             <motion.div
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              exit={{opacity: 0, scale: 0}}
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-zinc-950  shadow  sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-black shadow-2xl  sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`img-${active.title}-${id}`}>
                 <img
@@ -112,9 +115,12 @@ export function ExpandableCardDemo() {
 
                   <motion.a
                     layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
+                    initial={{ opacity: 0, scale: 0 }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      transition: { duration: 0.1 },
+                    }}
                     href={active.ctaLink}
                     target="_blank"
                     className="px-4 py-2 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-800 border-b-3 whitespace-nowrap"
@@ -263,7 +269,8 @@ const cards = [
       {
         name: "Tailwind",
         icon: "logos:tailwindcss-icon",
-      },{
+      },
+      {
         name: "Chart.js",
         icon: "logos:chartjs",
       },
@@ -339,13 +346,15 @@ const cards = [
       {
         name: "Tailwind CSS",
         icon: "logos:tailwindcss-icon",
-      },{
+      },
+      {
         name: "Apollo Client",
         icon: "logos:apollostack",
-      },{
+      },
+      {
         name: "DaisyUI",
         icon: "logos:daisyui-icon",
-      }
+      },
     ],
     ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://dexts.pages.dev",
@@ -470,7 +479,7 @@ const cards = [
         icon: "logos:react",
       },
       {
-        name:"Javascript",
+        name: "Javascript",
         icon: "logos:javascript",
       },
       {
@@ -480,7 +489,7 @@ const cards = [
       {
         name: "Tailwind CSS",
         icon: "logos:tailwindcss-icon",
-      }
+      },
     ],
     ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://dragonballwiki.pages.dev",
@@ -512,7 +521,6 @@ const cards = [
         name: "Javascript",
         icon: "logos:javascript",
       },
-      
     ],
     ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://calculadora-7df.pages.dev",
@@ -573,13 +581,15 @@ const cards = [
       {
         name: "Telegram API",
         icon: "logos:telegram",
-      }
+      },
     ],
     ctaLink: "https://web.telegram.org/a/#7759974599",
     content: () => {
       return (
         <p className="text-sm">
-          This is a Telegram bot developed in Python that allows you to download music from YouTube directly from a chat. Simply send a video link, and the bot will convert it to audio and send it to you in seconds.
+          This is a Telegram bot developed in Python that allows you to download
+          music from YouTube directly from a chat. Simply send a video link, and
+          the bot will convert it to audio and send it to you in seconds.
         </p>
       );
     },
@@ -607,10 +617,11 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Pysoccer is a game with weird physics and bugs that are really annoying but fun, making it a GOTY-worthy game to play OFFLINE WITH MULTIPLAYER.
+          Pysoccer is a game with weird physics and bugs that are really
+          annoying but fun, making it a GOTY-worthy game to play OFFLINE WITH
+          MULTIPLAYER.
         </p>
       );
     },
   },
-  
 ];

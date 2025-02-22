@@ -13,7 +13,7 @@ import { AnimatedGridPattern } from "../components/grid-patter";
 
 const TerminalData = () => {
   return (
-    <motion.div  className="flex items-center p-4 justify-center">
+    <motion.div className="flex items-center p-4 justify-center">
       <Terminal>
         <TypingAnimation>~ more me.json</TypingAnimation>
 
@@ -92,8 +92,7 @@ function Main() {
       transition={{ duration: 0.6 }}
     >
       <div className="relative h-[screen] w-full items-center justify-center overflow-hidden ">
-      
-      {/* <DotPattern
+        {/* <DotPattern
         width={20}
         height={20}
         cx={1}
@@ -103,26 +102,26 @@ function Main() {
           "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] ",
         )}
       /> */}
-       <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={0.1}
-        duration={3}
-        repeatDelay={1}
-        className={cn(
-          "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
-          "inset-x-0 inset-y-[-32%] h-[200%] skew-y-12",
-        )}
-      />
+        <AnimatedGridPattern
+          numSquares={30}
+          maxOpacity={0.1}
+          duration={3}
+          repeatDelay={1}
+          className={cn(
+            "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+            "inset-x-0 inset-y-[-32%] h-[200%] skew-y-12"
+          )}
+        />
         <div className="h-screen gap-6 md:p-12 w-full lg:p-12 grid relative">
           <motion.button
             title="Ir a overview"
-            initial={{scale: 0}}
-            animate={{scale: 1, transition: {duration: 0.3, delay: 0.3}}}
-            exit={{scale: 0, opacity: 0}}
+            initial={{ scale: 0 }}
+            animate={{ scale: 1, transition: { duration: 0.3, delay: 0.3 } }}
+            exit={{ scale: 0, opacity: 0 }}
             whileHover={{ scale: 1.1, rotate: 3 }}
             onClick={() => {
               if (divProject.current) {
-                window.scrollTo({top: 900, behavior: "smooth"})
+                window.scrollTo({ top: 900, behavior: "smooth" });
               }
             }}
             className="shiny-text animate-pulse shiny-button rounded-md absolute top-[95%] left-[50%] transform translate-x-[-50%] translate-y-[-50%]"
@@ -156,11 +155,13 @@ function Main() {
                 whileInView={{ opacity: 1 }}
                 animate={{ opacity: 1, transition: { duration: 1 }, scale: 1 }}
                 className="p-[3px] relative cursor-pointer"
-                onClick={() => divProject.current?.scrollIntoView({behavior: "smooth"})}
+                onClick={() =>
+                  divProject.current?.scrollIntoView({ behavior: "smooth" })
+                }
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-500 to-zinc-900 rounded-lg" />
                 <div className="px-8 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold whitespace-nowrap">
-                  See any my projects
+                  Check out my projects
                 </div>
               </motion.button>
               <motion.a
@@ -183,7 +184,6 @@ function Main() {
               </motion.a>
             </div>
           </div>
-          
         </div>
       </div>
       <motion.div
@@ -199,14 +199,17 @@ function Main() {
       <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg bg-background p-3 lg:p-20">
         <motion.div
           ref={divProject}
-          className="w-full"
+          className="w-full flex flex-col items-center gap-2.5"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 1 } }}
           exit={{ opacity: 0 }}
         >
-          <h3 className="text-center text-3xl font-bold my-8 from-green-400 bg-clip-text  bg-gradient-to-br  to-green-700 text-transparent">
-          My projects
+          <h3 className="text-center text-3xl font-bold my-2 from-green-400 bg-clip-text  bg-gradient-to-br  to-green-700 text-transparent">
+            My Projects 
           </h3>
+          <p className="  bg-clip-text w-lg font-light text-balance text-center bg-gradient-to-t from-zinc-700 mb-4 to-gray-100 text-transparent ">
+          In these projects I learned to face real challenges and transform problems into effective solutions.
+          </p>
           <ExpandableCardDemo />
         </motion.div>
       </div>

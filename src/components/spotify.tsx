@@ -476,7 +476,7 @@ const cards = [
   {
     description: "Dragon Ball encyclopedia",
     title: "Dragon Ball Wiki 🐉",
-    src: "/dragonballwiki.png",
+    src: "/dragonballwiki.webp",
     ctaText: "Visit site",
     tecnologias: [
       {

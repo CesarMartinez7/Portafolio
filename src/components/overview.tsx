@@ -7,7 +7,6 @@ export default function Overview() {
         </h3>
         <p className="mt-5 text-left bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent ">
         Disciplined junior programmer eager to continue growing in the world of software development. I consider myself self-taught and I'm always looking to learn something new. Despite the challenges, I keep going, because I know that every mistake and every line of code brings me closer to my best version.
-
         </p>
       </div>
     </div>

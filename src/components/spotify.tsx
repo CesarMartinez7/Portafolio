@@ -173,7 +173,7 @@ export function ExpandableCardDemo() {
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-neutral-600 dark:text-neutral-400  md:text-left text-base"
+                  className="text-zinc-400  md:text-left text-base text-sm"
                 >
                   {card.description}
                 </motion.p>
@@ -234,6 +234,10 @@ const cards = [
       {
         name: "Javascript",
         icon: "logos:javascript",
+      },
+      {
+        name: "Vite",
+        icon: "logos:vitejs"
       },
       {
         name: "Tailwind CSS",

@@ -140,7 +140,7 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <main className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start gap-4 p-4 lg:grid-cols-3">
+      <main className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start p-4 gap-4 md:p-18 lg:p-2 lg:grid-cols-3">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${index}`}
@@ -219,6 +219,7 @@ const cards = [
     title: "Delfilms 🍿",
     src: "delfilms.png",
     ctaText: "Visit site",
+
     tecnologias: [
       {
         name: "React",
@@ -234,6 +235,7 @@ const cards = [
       },
     ],
     ctaLink: "https://delfilms.pages.dev",
+    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     content: () => {
       return (
         <p className="text-sm">
@@ -274,6 +276,7 @@ const cards = [
         icon: "logos:mysql-icon",
       },
     ],
+    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://github.com/CesarMartinez7/Datafast",
     content: () => {
       return (
@@ -344,6 +347,7 @@ const cards = [
         icon: "logos:daisyui-icon",
       }
     ],
+    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://dexts.pages.dev",
     content: () => {
       return (
@@ -378,6 +382,7 @@ const cards = [
         icon: "logos:tailwindcss-icon",
       },
     ],
+    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://mercadoesclavo.vercel.app",
     content: () => {
       return (
@@ -412,6 +417,7 @@ const cards = [
       },
     ],
     ctaText: "Visit site",
+    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://github.com/CesarMartinez7/weathernow",
     content: () => {
       return (
@@ -441,6 +447,7 @@ const cards = [
         icon: "logos:nextjs-icon",
       },
     ],
+    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://gallerry-two.vercel.app/",
     content: () => {
       return (
@@ -475,6 +482,7 @@ const cards = [
         icon: "logos:tailwindcss-icon",
       }
     ],
+    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://dragonballwiki.pages.dev",
     content: () => {
       return (
@@ -506,6 +514,7 @@ const cards = [
       },
       
     ],
+    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://calculadora-7df.pages.dev",
     content: () => {
       return (
@@ -531,6 +540,7 @@ const cards = [
         icon: "logos:tailwindcss-icon",
       },
     ],
+    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
     ctaLink: "https://github.com/CesarMartinez7/taskmaster",
     content: () => {
       return (

@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react";
 import "../App.css";
 import SplitText from "../components/SplitText";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 import Habilidades from "../components/Habilidades";
 import { ExpandableCardDemo } from "../components/spotify";
 import { motion } from "framer-motion";
@@ -14,7 +14,7 @@ const TerminalData = () => {
   return (
     <div className="flex items-center p-4 justify-center">
       <Terminal>
-        <TypingAnimation>&gt; more me.json</TypingAnimation>
+        <TypingAnimation>~ more me.json</TypingAnimation>
 
         <AnimatedSpan delay={1500} className="text-blue-500">
           <span>{`{`}</span>
@@ -33,11 +33,23 @@ const TerminalData = () => {
         </AnimatedSpan>
 
         <AnimatedSpan delay={3500} className="text-green-500">
-          <span className="pl-4">{`"overview": "Lorem",`}</span>
+          <span className="pl-4">{`"overview": "Disciplined, self-taught frontend developer",`}</span>
         </AnimatedSpan>
 
         <AnimatedSpan delay={4000} className="text-green-500">
-          <span className="pl-4">{`"skills": ["JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "SQL"], `}</span>
+          <p className="pl-4 ">
+            {`"skills":`} <span className="text-blue-500">{"["}</span>{" "}
+          </p>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={4000} className="text-green-500">
+          <span className="pl-8">{`"JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "SQL", "Git", "Tailwind", "Linux"`}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={4000} className="text-green-500">
+          <p className="pl-8 ">
+            <span className="text-blue-500">{`]`}</span>,
+          </p>
         </AnimatedSpan>
 
         <AnimatedSpan delay={4500} className="text-green-500">
@@ -70,11 +82,6 @@ function Main() {
   const divProject = useRef<HTMLDivElement>(null);
 
   const words = ["better", "cute", "beautiful", "modern"];
-
-  // useEffect(() => {
-  //   document.title = "Welcome";
-  //   window.scrollTo(0, 0);
-  // }, []);
 
   return (
     <motion.div
@@ -181,8 +188,8 @@ function Main() {
           animate={{ opacity: 1, transition: { duration: 1 } }}
           exit={{ opacity: 0 }}
         >
-          <h3 className="text-center text-3xl font-bold my-12 from-green-500 bg-clip-text  bg-gradient-to-br  to-green-900 text-transparent">
-            Look at my projects
+          <h3 className="text-center text-3xl font-bold my-8 from-green-400 bg-clip-text  bg-gradient-to-br  to-green-700 text-transparent">
+          My projects
           </h3>
           <ExpandableCardDemo />
         </motion.div>

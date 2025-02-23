@@ -224,7 +224,7 @@ const cards = [
   {
     description: "Free streaming platform",
     title: "Delfilms 🍿",
-    src: "delfilms.png",
+    src: "delfilms.webp",
     ctaText: "Visit site",
 
     tecnologias: [
@@ -260,7 +260,7 @@ const cards = [
   {
     description: "Inventory and management system",
     title: "DataFast ⚡",
-    src: "/datafast.png",
+    src: "/datafast.webp",
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -303,7 +303,7 @@ const cards = [
   {
     description: "Anime streaming platform",
     title: "Meko ☕",
-    src: "/meko.png",
+    src: "/meko.webp",
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -333,7 +333,7 @@ const cards = [
   {
     description: "Anime and manga encyclopedia",
     title: "DexTS",
-    src: "/dexts.png",
+    src: "/dexts.webp",
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -376,7 +376,7 @@ const cards = [
   {
     description: "Mercado Libre clone",
     title: "Mercado Libre Clone 📦",
-    src: "/mercadolibre.png",
+    src: "/mercadolibre.webp",
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -411,7 +411,7 @@ const cards = [
   {
     description: "Real-time weather app",
     title: "WeatherNo ⛈️",
-    src: "/weathernow.png",
+    src: "/weathernow.webp",
     tecnologias: [
       {
         name: "React",
@@ -445,7 +445,7 @@ const cards = [
   {
     description: "Image search with Pexels API",
     title: "GalleryPhotos 📷",
-    src: "/galleryphoto.png",
+    src: "/galleryphoto.webp",
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -497,7 +497,7 @@ const cards = [
       },
     ],
     ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
-    ctaLink: "https://dragonballwiki.pages.dev",
+    ctaLink: "https://dragonballwikki.pages.dev/",
     content: () => {
       return (
         <p className="text-sm">
@@ -511,7 +511,7 @@ const cards = [
   {
     description: "Calculator in VanillaJS",
     title: "Calculator 🖩",
-    src: "/calculadora.png",
+    src: "/calculadora.webp",
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -541,7 +541,7 @@ const cards = [
   {
     description: "Task management app",
     title: "TaskMaster ✅",
-    src: "/taskmaster.png",
+    src: "/taskmaster.webp",
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -568,7 +568,7 @@ const cards = [
   {
     description: "Bot for Telegram",
     title: "Catchy Bot 🤖",
-    src: "/catchybot.png",
+    src: "/catchybot.webp",
     ctaText: "Send Message",
     tecnologias: [
       {
@@ -602,7 +602,7 @@ const cards = [
   {
     description: "Free game made Pygame",
     title: "Pysoccer",
-    src: "/pysoccer.png",
+    src: "/pysoccer.webp",
     ctaText: "See code",
     tecnologias: [
       {

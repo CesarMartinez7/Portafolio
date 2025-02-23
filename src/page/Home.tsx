@@ -1,8 +1,7 @@
 import { Icon } from "@iconify/react";
 import "../App.css";
 import SplitText from "../components/SplitText";
-import { useRef } from "react";
-import Habilidades from "../components/Habilidades";
+import { useRef, useState } from "react";
 import { ExpandableCardDemo } from "../components/spotify";
 import { motion } from "framer-motion";
 import { FlipWords } from "../components/FlipWords";
@@ -11,7 +10,15 @@ import { cn } from "../components/utils";
 import Overview from "../components/overview";
 import { AnimatedGridPattern } from "../components/grid-patter";
 
+
+
 const TerminalData = () => {
+  const [isType,setIsType] = useState<boolean>(false)
+
+  if(isType){
+    <div>Esta tipado</div>
+  }
+
   return (
     <motion.div className="flex items-center p-4 justify-center">
       <Terminal>
@@ -22,7 +29,24 @@ const TerminalData = () => {
         </AnimatedSpan>
 
         <AnimatedSpan delay={2000} className="text-green-500">
-          <span className="pl-4">{`"name": "Cesar",`}</span>
+          <span className="pl-2 ">
+            {`"moreAboutMe":`} <span className="text-blue-500">{"{"}</span>
+          </span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={2000} className="text-green-500">
+          <span className="pl-8">{`"name": "Cesar",`}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={2000} className="text-green-500">
+          <span className="pl-8">{`"yearsExperience" : "1-2",`}</span>
+        </AnimatedSpan>
+
+        <AnimatedSpan delay={2000} className="text-green-500">
+          <span className="pl-4 text-blue-500">
+            {`}`}
+            <span className="text-green-500">{`,`}</span>
+          </span>
         </AnimatedSpan>
 
         <AnimatedSpan delay={2500} className="text-green-500">
@@ -38,8 +62,9 @@ const TerminalData = () => {
         </AnimatedSpan>
 
         <AnimatedSpan delay={4000} className="text-green-500">
-          <p className="pl-4 ">
-            {`"skills":`} <span className="text-blue-500">{"["}</span>{" "}
+          <p className="pl-4">
+            {`"skills":`} <span className="text-blue-500">{"["}</span>
+            {""}
           </p>
         </AnimatedSpan>
 
@@ -78,6 +103,7 @@ import {
   Terminal,
   TypingAnimation,
 } from "../components/terminal";
+import { div } from "framer-motion/client";
 
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
@@ -205,16 +231,15 @@ function Main() {
           exit={{ opacity: 0 }}
         >
           <h3 className="text-center text-3xl font-bold my-2 from-green-400 bg-clip-text  bg-gradient-to-br  to-green-700 text-transparent">
-            My Projects 
+            My Projects
           </h3>
           <p className="  bg-clip-text w-lg font-light text-balance text-center bg-gradient-to-t from-zinc-700 mb-4 to-gray-100 text-transparent ">
-          In these projects I learned to face real challenges and transform problems into effective solutions.
+            In these projects I learned to face real challenges and transform
+            problems into effective solutions.
           </p>
           <ExpandableCardDemo />
         </motion.div>
       </div>
-
-      <Habilidades />
     </motion.div>
   );
 }

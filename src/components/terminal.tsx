@@ -1,4 +1,3 @@
-
 import { cn } from "./utils";
 import { motion, MotionProps } from "motion/react";
 import { useEffect, useRef, useState } from "react";
@@ -19,7 +18,10 @@ export const AnimatedSpan = ({
     initial={{ opacity: 0, y: -5 }}
     animate={{ opacity: 1, y: 0 }}
     transition={{ duration: 0.3, delay: delay / 1000 }}
-    className={cn("grid text-sm font-normal tracking-tight text-wrap", className)}
+    className={cn(
+      "grid text-sm font-normal tracking-tight text-wrap",
+      className
+    )}
     {...props}
   >
     {children}
@@ -93,21 +95,28 @@ export const TypingAnimation = ({
 interface TerminalProps {
   children: React.ReactNode;
   className?: string;
+  isType: boolean
 }
 
-export const Terminal = ({ children, className }: TerminalProps) => {
+export const Terminal = ({ children, className, isTypeButton }: TerminalProps) => {
+  const [isType,setIsType] = useState<boolean>(false)
   return (
     <div
       className={cn(
         "z-0 h-full w-full max-w-2xl rounded-xl border border-zinc-900 bg-background overflow-ellipsis text-wrap",
-        className,
+        className
       )}
     >
       <div className="flex flex-col gap-y-2 border-b border-border border-zinc-900 p-4">
-        <div className="flex flex-row gap-x-2">
-          <div className="h-2 w-2 rounded-full bg-red-500"></div>
-          <div className="h-2 w-2 rounded-full bg-yellow-500"></div>
-          <div className="h-2 w-2 rounded-full bg-green-500"></div>
+        <div className="flex justify-between">
+          <div className="flex flex-row gap-x-2 items-center ">
+            <div className="h-2 w-2 rounded-full bg-red-500"></div>
+            <div className="h-2 w-2 rounded-full bg-yellow-500"></div>
+            <div className="h-2 w-2 rounded-full bg-green-500"></div>
+          </div>
+          <button className="bg-white/15 text-xs rounded-md px-2.5 py-1 hover:bg-white/20 duration-150 transition-colors cursor-pointer">
+            Type me
+          </button>
         </div>
       </div>
       <pre className="p-4">

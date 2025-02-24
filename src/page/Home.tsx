@@ -63,7 +63,7 @@ function Main() {
             <div>
               <div className="text-5xl mx-auto font-normal">
                 Build
-                <FlipWords words={words} className="text-green-500 " /> <br />
+                <FlipWords words={words} /> <br />
               </div>
             </div>
             <div className="text-5xl text-left bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent">
@@ -137,7 +137,7 @@ function Main() {
           animate={{ opacity: 1, transition: { duration: 1 } }}
           exit={{ opacity: 0 }}
         >
-          <h3 className="text-center text-3xl font-bold my-2 from-green-400 bg-clip-text  bg-gradient-to-br  to-green-700 text-transparent">
+          <h3 className="text-center text-3xl font-bold my-2 from-green-600 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent">
             My Projects
           </h3>
           <p className="  bg-clip-text w-lg font-light text-balance text-center bg-gradient-to-t from-zinc-700 mb-4 to-gray-100 text-transparent ">

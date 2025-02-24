@@ -32,8 +32,7 @@ export function ExpandableCardDemo() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <motion.div
-    >
+    <motion.div>
       <AnimatePresence>
         {active && typeof active === "object" && (
           <motion.div
@@ -85,51 +84,48 @@ export function ExpandableCardDemo() {
                 />
               </motion.div>
 
-              <div>
-                <div className="flex justify-between items-start pt-4 px-4 mb-1">
-                  <div className="">
+              <div className="mt-4">
+                <div className="flex justify-between  items-center  px-4 mb-1">
+                  <div className="w-fit">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
                       className="font-bold text-neutral-700 text-lg dark:text-neutral-200 "
                     >
                       {active.title}
                     </motion.h3>
-                    <motion.p
-                      layoutId={`description-${active.description}-${id}`}
-                      className="text-zinc-400 text-sm mb-3.5"
-                    ></motion.p>
-                    <ul className="flex flex-wrap gap-1.5 mt-1  w-full">
+                  </div>
+                  <div>
+                    <motion.a
+                      layout
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { duration: 0.1 },
+                      }}
+                      href={active.ctaLink}
+                      target="_blank"
+                      className="px-4 py-1.5 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-800 border-b-3 whitespace-nowrap"
+                    >
+                      {active.ctaText}
+                    </motion.a>
+                  </div>
+                </div>
+                <ul className="flex flex-wrap gap-1.5 mt-4 px-4 w-full  py-2 ">
                       {active.tecnologias?.map((tec) => (
-                        <li className="w-fit bg-zinc-900 border-zinc-800 border   py-1 px-2 rounded-2xl text-sm gap-1.5 inline-flex">
+                        <li className="w-fit bg-zinc-950 border-zinc-800 border text-xs py-1 px-2 rounded-2xl  gap-1.5 inline-flex items-center">
                           {tec.name}{" "}
                           <span>
                             <Icon
                               icon={`${tec.icon}`}
-                              width="20"
-                              height="20 "
+                              width="19"
+                              height="19"
                             />
                           </span>
                         </li>
                       ))}
                     </ul>
-                  </div>
-
-                  <motion.a
-                    layout
-                    initial={{ opacity: 0, scale: 0 }}
-                    animate={{
-                      opacity: 1,
-                      scale: 1,
-                      transition: { duration: 0.1 },
-                    }}
-                    href={active.ctaLink}
-                    target="_blank"
-                    className="px-4 py-2 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-800 border-b-3 whitespace-nowrap"
-                  >
-                    {active.ctaText}
-                  </motion.a>
-                </div>
-                <div className=" relative px-4">
+                <div className="relative px-4">
                   <motion.div
                     layout
                     initial={{ opacity: 0 }}

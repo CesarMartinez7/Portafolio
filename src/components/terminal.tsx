@@ -2,6 +2,7 @@
 import { cn } from "./utils";
 import { motion, MotionProps } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
 interface AnimatedSpanProps extends MotionProps {
   children: React.ReactNode;
@@ -100,7 +101,7 @@ interface TerminalProps {
 export const Terminal = ({ className }: TerminalProps) => {
   const [isType, setIsType] = useState<boolean>(true);
 
-  return isType ? (
+  return (
     <div
       className={cn(
         "z-0 h-full w-full max-w-2xl rounded-xl border border-zinc-900 bg-background overflow-ellipsis text-wrap",
@@ -115,16 +116,17 @@ export const Terminal = ({ className }: TerminalProps) => {
             <div className="h-2 w-2 rounded-full bg-green-500"></div>
           </div>
           <button
-            className="bg-white/15 text-xs animate-pulse rounded-md px-2.5 py-1 hover:bg-white/20 duration-150 transition-colors cursor-pointer"
+            className=" text-xs animate-pulse rounded-md px-2.5 py-1 hover:bg-white/20 duration-150 transition-colors cursor-pointer"
             onClick={() => {
               setIsType(!isType);
             }}
           >
-            Type me
+            {!isType ? (<Icon icon="logos:json" width="22" height="22" />) : (<Icon icon="logos:typescript-icon" width="22" height="22" />)}
+            
           </button>
         </div>
       </div>
-      <pre className="p-4">
+      {isType ? (<pre className="p-4">
         <code className="grid gap-y-1 ">
           <TypingAnimation>~ more me.json</TypingAnimation>
 
@@ -204,39 +206,14 @@ export const Terminal = ({ className }: TerminalProps) => {
             JSON successfully loaded.
           </TypingAnimation>
         </code>
-      </pre>
-    </div>
-  ) : (
-    <div
-      className={cn(
-        "z-0 h-full w-full max-w-2xl rounded-xl border border-zinc-900 bg-background overflow-ellipsis text-wrap transition-transform",
-        className
-      )}
-    >
-      <div className="flex flex-col gap-y-2 border-b border-border border-zinc-900 p-4">
-        <div className="flex justify-between">
-          <div className="flex flex-row gap-x-2 items-center ">
-            <div className="h-2 w-2 rounded-full bg-red-500"></div>
-            <div className="h-2 w-2 rounded-full bg-yellow-500"></div>
-            <div className="h-2 w-2 rounded-full bg-green-500"></div>
-          </div>
-          <button
-            className="bg-white/15 text-xs rounded-md px-2.5 py-1 hover:bg-white/20 duration-150 transition-colors cursor-pointer"
-            onClick={() => {
-              setIsType(!isType);
-            }}
-          >
-            Type me
-          </button>
-        </div>
-      </div>
-      <pre className="p-4">
+      </pre>) : (
+        <pre className="p-4">
         <code className="grid gap-y-1 ">
           <TypingAnimation>~ more me.ts</TypingAnimation>
 
           <AnimatedSpan delay={1500} className="">
             <span className="text-fuchsia-5">
-              {"Interface Me"} <span className="text-blue-500"> {`{`}</span>
+              {"interface Me"} <span className="text-blue-500"> {`{`}</span>
             </span>
           </AnimatedSpan>
 
@@ -328,6 +305,8 @@ export const Terminal = ({ className }: TerminalProps) => {
           </TypingAnimation>
         </code>
       </pre>
+      ) }
+      
     </div>
-  );
+  ) 
 };

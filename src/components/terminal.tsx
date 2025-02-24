@@ -116,12 +116,12 @@ export const Terminal = ({ className }: TerminalProps) => {
             <div className="h-2.5 w-2.5 rounded-full bg-green-500"></div>
           </div>
           <button
-            className=" text-xs animate-pulse rounded-md px-2.5 py-1 hover:bg-white/20 duration-150 transition-colors cursor-pointer"
+            className=" bg-white/5 text-xs rounded-md px-1.5 py-1 hover:bg-white/20 duration-150"
             onClick={() => {
               setIsType(!isType);
             }}
           >
-            {!isType ? (<Icon icon="logos:json" width="22" height="22" />) : (<Icon icon="logos:typescript-icon" width="22" height="22" />)}
+            {!isType ? (<Icon icon="logos:json" width="20" height="22" />) : (<Icon icon="logos:typescript-icon" width="22" height="20" />)}
             
           </button>
         </div>
@@ -130,7 +130,7 @@ export const Terminal = ({ className }: TerminalProps) => {
         <code className="grid gap-y-1 ">
           <TypingAnimation>~ more me.json</TypingAnimation>
 
-          <AnimatedSpan delay={1500} className="text-blue-500">
+          <AnimatedSpan delay={1000} className="text-blue-500">
             <span>{`{`}</span>
           </AnimatedSpan>
 
@@ -139,54 +139,52 @@ export const Terminal = ({ className }: TerminalProps) => {
             <span className="pl-4">{`"name": "Cesar",`}</span>
           </AnimatedSpan>
           
-
-
-          <AnimatedSpan delay={2000} className="text-green-500">
+          <AnimatedSpan delay={2500} className="text-green-500">
             <span className="pl-4">{`"lastName": "Martinez",`}</span>
           </AnimatedSpan>
 
-          <AnimatedSpan delay={2500} className="text-green-500">
+          <AnimatedSpan delay={3000} className="text-green-500">
             <span className="pl-4">{`"age": "18",`}</span>
           </AnimatedSpan>
 
-          <AnimatedSpan delay={3000} className="text-green-500">
+          <AnimatedSpan delay={3500} className="text-green-500">
             <span className="pl-4">{`"role": "Developer",`}</span>
           </AnimatedSpan>
 
-          <AnimatedSpan delay={3500} className="text-green-500">
+          <AnimatedSpan delay={4000} className="text-green-500">
             <span className="pl-4">{`"overview": "Disciplined, self-taught frontend developer",`}</span>
           </AnimatedSpan>
 
-          <AnimatedSpan delay={4000} className="text-green-500">
+          <AnimatedSpan delay={5000} className="text-green-500">
             <p className="pl-4">
               {`"skills":`} <span className="text-blue-500">{"["}</span>
               {""}
             </p>
           </AnimatedSpan>
 
-          <AnimatedSpan delay={4000} className="text-green-500">
+          <AnimatedSpan delay={5500} className="text-green-500">
             <span className="pl-4">{`"JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "SQL", "Git", "Tailwind", "Linux"`}</span>
           </AnimatedSpan>
 
-          <AnimatedSpan delay={4000} className="text-green-500">
+          <AnimatedSpan delay={6000} className="text-green-500">
             <p className="pl-4 ">
               <span className="text-blue-500">{`]`}</span>,
             </p>
           </AnimatedSpan>
 
-          <AnimatedSpan delay={4500} className="text-green-500">
+          <AnimatedSpan delay={6500} className="text-green-500">
             <span className="pl-4">{`"editor": "VS Code",`}</span>
           </AnimatedSpan>
 
-          <AnimatedSpan delay={5000} className="text-green-500">
+          <AnimatedSpan delay={7000} className="text-green-500">
             <span className="pl-4">{`"os": "Manjaro Linux"`}</span>
           </AnimatedSpan>
 
-          <AnimatedSpan delay={5500} className="text-blue-500">
+          <AnimatedSpan delay={7500} className="text-blue-500">
             <span>{`}`}</span>
           </AnimatedSpan>
 
-          <TypingAnimation delay={6000} className="text-muted-foreground">
+          <TypingAnimation delay={8000} className="text-muted-foreground">
             JSON successfully loaded.
           </TypingAnimation>
         </code>
@@ -215,8 +213,6 @@ export const Terminal = ({ className }: TerminalProps) => {
               <span className="text-fuchsia-500">string</span> ,
             </span>
           </AnimatedSpan>
-
-          
 
           <AnimatedSpan delay={2500} className="text-green-500">
             <span className="pl-4">

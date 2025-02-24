@@ -4,6 +4,7 @@ import { act, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./utils/useOutside";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { p } from "framer-motion/client";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -117,7 +118,7 @@ export function ExpandableCardDemo() {
                         scale: 1,
                         transition: { duration: 0.1 },
                       }}
-                      href={active.ctaLink}
+                      href={active.ctaLinkCode}
                       target="_blank"
                       className="px-4 py-1 text-sm font-bold bg-zinc-900 text-white rounded-lg hover:bg-zinc-950 duration-200 border gap-1.5 border-zinc-800 border-b-3 whitespace-nowrap flex justify-center items-center"
                     >
@@ -126,7 +127,7 @@ export function ExpandableCardDemo() {
                     </motion.a>
                   </div>
                 </div>
-                <ul className="flex flex-wrap gap-1.5 mt-4 px-4 w-full  py-2 ">
+                <ul className="flex flex-wrap gap-1.5 mt-2 px-4 w-full  py-2 ">
                   {active.tecnologias?.map((tec) => (
                     <li className="w-fit bg-zinc-950 border-zinc-800 border text-xs py-1 px-2 rounded-2xl  gap-1.5 inline-flex items-center">
                       {tec.name}{" "}
@@ -253,11 +254,11 @@ const cards = [
       },
     ],
     ctaLink: "https://delfilms.pages.dev",
-    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
+    ctaLinkCode: "https://github.com/CesarMartinez7/DelFilms",
     content: () => {
       return (
         <p className="text-sm">
-          Delfilms is a free streaming platform with a wide selection of movies
+           <strong >Delfilms</strong> is a free streaming platform with a wide selection of movies
           and series. Without subscriptions or annoying ads, it offers simple
           and cost-free access for movie lovers.
         </p>
@@ -295,8 +296,8 @@ const cards = [
         icon: "logos:mysql-icon",
       },
     ],
-    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
-    ctaLink: "https://github.com/CesarMartinez7/Datafast",
+    ctaLinkCode: "https://github.com/CesarMartinez7/DataFast",
+    ctaLink: "https://github.com/CesarMartinez7/Datafast/tree/tailwind",
     content: () => {
       return (
         <p className="text-sm">
@@ -374,7 +375,7 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          DexTS provides detailed information about anime and manga using
+          <strong>DexTS </strong> provides detailed information about anime and manga using
           GraphQL to fetch real-time data. Find synopses, characters, and more
           in one place, plus watch anime and read manga!
         </p>
@@ -509,7 +510,7 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Dragon Ball Wiki is the ultimate platform for fans of the saga. Find
+          <strong>Dragon Ball Wiki</strong> is the ultimate platform for fans of the saga. Find
           information about characters, transformations, and sagas from this
           iconic universe.
         </p>
@@ -546,6 +547,31 @@ const cards = [
       );
     },
   },
+  {
+    description: "Fast and versatile port scanner",
+    title: "Speed Port",
+    src: "/speedports.webp",
+    ctaText: "See Code",
+    tecnologias: [
+      {
+        name: "Python",
+        icon: "logos:python",
+      },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez/anchorports",
+    ctaLink: "https://github.com/CesarMartinez7/anchorport",
+    content: () => {
+      return (
+        <p>
+          <strong>Speed Port</strong> is a powerful port scanner built with
+          Python. It features MAC address spoofing to disrupt a target network
+          and leverages the capabilities of <strong>Scapy</strong>, a robust
+          packet manipulation library for Python.
+        </p>
+      );
+    },
+  },
+
   {
     description: "Task management app",
     title: "TaskMaster ✅",

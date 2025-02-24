@@ -23,16 +23,6 @@ function Main() {
       transition={{ duration: 0.6 }}
     >
       <div className="relative h-svh w-full items-center justify-center overflow-hidden ">
-        {/* <DotPattern
-        width={20}
-        height={20}
-        cx={1}
-        cy={1}
-        cr={1}
-        className={cn(
-          "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)] ",
-        )}
-      /> */}
         <AnimatedGridPattern
           numSquares={30}
           maxOpacity={0.1}
@@ -43,7 +33,7 @@ function Main() {
             "inset-x-0 inset-y-[-32%] h-[200%] skew-y-12"
           )}
         />
-        <div className="h-screen gap-6 md:p-12 w-full lg:p-12 grid relative">
+        <div className="h-dvh gap-6 md:p-12 w-full lg:p-12 grid relative">
           <motion.button
             title="Ir a overview"
             initial={{ scale: 0 }}
@@ -66,13 +56,13 @@ function Main() {
                 <FlipWords words={words} /> <br />
               </div>
             </div>
-            <div className="text-5xl text-left bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent">
+            <div className="text-2xl lg:text-5xl  bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent">
               Websites with React and JavaScript
             </div>
 
             <SplitText
               text="I bring ideas to life with JavaScript, React, Python and a lot of passion."
-              className="text-md text-zinc-500"
+              className="text-md text-zinc-400 text-center"
               textAlign="left"
               delay={30}
               animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
@@ -91,7 +81,7 @@ function Main() {
                 }
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-500 to-zinc-900 rounded-lg" />
-                <div className="px-8 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold whitespace-nowrap">
+                <div className="px-1 md:px-6 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold ">
                   Check out my projects
                 </div>
               </motion.button>

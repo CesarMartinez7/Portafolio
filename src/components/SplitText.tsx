@@ -74,11 +74,11 @@ const SplitText: React.FC<SplitTextProps> = ({
     return (
         <p
             ref={ref}
-            className={`inline ${className}`}
+            className={`inline ${className} text-center`}
             style={{ textAlign, whiteSpace: 'normal', wordWrap: 'break-word' }}
         >
             {words.map((word, wordIndex) => (
-                <span key={wordIndex} style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
+                <span key={wordIndex} className='text-center' style={{ display: 'inline-block', whiteSpace: 'nowrap' }}>
                     {word.map((letter, letterIndex) => {
                         const index = words
                             .slice(0, wordIndex)
@@ -87,6 +87,7 @@ const SplitText: React.FC<SplitTextProps> = ({
                         return (
                             //@ts-ignore
                             <animated.span
+                            
                                 key={index}
                                 style={springs[index] as unknown as React.CSSProperties}
                                 className="inline-block transform transition-opacity will-change-transform"
@@ -95,7 +96,7 @@ const SplitText: React.FC<SplitTextProps> = ({
                             </animated.span>
                         );
                     })}
-                    <span style={{ display: 'inline-block', width: '0.3em' }}>&nbsp;</span>
+                    <span className='text-center' style={{ display: 'inline-block', width: '0.3em' }}>&nbsp;</span>
                 </span>
             ))}
         </p>

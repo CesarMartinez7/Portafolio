@@ -1,109 +1,14 @@
 import { Icon } from "@iconify/react";
 import "../App.css";
 import SplitText from "../components/SplitText";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { ExpandableCardDemo } from "../components/spotify";
 import { motion } from "framer-motion";
 import { FlipWords } from "../components/FlipWords";
 import { cn } from "../components/utils";
-// import { DotPattern } from "../components/dot-patter";
+import { Terminal } from "../components/terminal";
 import Overview from "../components/overview";
 import { AnimatedGridPattern } from "../components/grid-patter";
-
-
-
-const TerminalData = () => {
-  const [isType,setIsType] = useState<boolean>(false)
-
-  if(isType){
-    <div>Esta tipado</div>
-  }
-
-  return (
-    <motion.div className="flex items-center p-4 justify-center">
-      <Terminal>
-        <TypingAnimation>~ more me.json</TypingAnimation>
-
-        <AnimatedSpan delay={1500} className="text-blue-500">
-          <span>{`{`}</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={2000} className="text-green-500">
-          <span className="pl-2 ">
-            {`"moreAboutMe":`} <span className="text-blue-500">{"{"}</span>
-          </span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={2000} className="text-green-500">
-          <span className="pl-8">{`"name": "Cesar",`}</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={2000} className="text-green-500">
-          <span className="pl-8">{`"yearsExperience" : "1-2",`}</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={2000} className="text-green-500">
-          <span className="pl-4 text-blue-500">
-            {`}`}
-            <span className="text-green-500">{`,`}</span>
-          </span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={2500} className="text-green-500">
-          <span className="pl-4">{`"age": "18",`}</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={3000} className="text-green-500">
-          <span className="pl-4">{`"role": "Developer",`}</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={3500} className="text-green-500">
-          <span className="pl-4">{`"overview": "Disciplined, self-taught frontend developer",`}</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={4000} className="text-green-500">
-          <p className="pl-4">
-            {`"skills":`} <span className="text-blue-500">{"["}</span>
-            {""}
-          </p>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={4000} className="text-green-500">
-          <span className="pl-8">{`"JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "SQL", "Git", "Tailwind", "Linux"`}</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={4000} className="text-green-500">
-          <p className="pl-8 ">
-            <span className="text-blue-500">{`]`}</span>,
-          </p>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={4500} className="text-green-500">
-          <span className="pl-4">{`"editor": "VS Code",`}</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={5000} className="text-green-500">
-          <span className="pl-4">{`"os": "Manjaro Linux"`}</span>
-        </AnimatedSpan>
-
-        <AnimatedSpan delay={5500} className="text-blue-500">
-          <span>{`}`}</span>
-        </AnimatedSpan>
-
-        <TypingAnimation delay={6000} className="text-muted-foreground">
-          JSON successfully loaded.
-        </TypingAnimation>
-      </Terminal>
-    </motion.div>
-  );
-};
-
-import {
-  AnimatedSpan,
-  Terminal,
-  TypingAnimation,
-} from "../components/terminal";
-import { div } from "framer-motion/client";
 
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
@@ -117,7 +22,7 @@ function Main() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="relative h-[screen] w-full items-center justify-center overflow-hidden ">
+      <div className="relative h-svh w-full items-center justify-center overflow-hidden ">
         {/* <DotPattern
         width={20}
         height={20}
@@ -219,7 +124,9 @@ function Main() {
         className="grid grid-cols-1 gap-2  "
       >
         <Overview />
-        <TerminalData />
+        <motion.div className="flex items-center p-4 justify-center">
+          <Terminal />
+        </motion.div>
       </motion.div>
 
       <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg bg-background p-3 lg:p-20">

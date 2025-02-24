@@ -94,7 +94,7 @@ export function ExpandableCardDemo() {
                       {active.title}
                     </motion.h3>
                   </div>
-                  <div>
+                  <div className="gap-2 flex">
                     <motion.a
                       layout
                       initial={{ opacity: 0, scale: 0 }}
@@ -105,26 +105,37 @@ export function ExpandableCardDemo() {
                       }}
                       href={active.ctaLink}
                       target="_blank"
-                      className="px-4 py-1.5 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-800 border-b-3 whitespace-nowrap"
+                      className="px-4 py-1 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-800 border-b-3 whitespace-nowrap"
                     >
                       {active.ctaText}
+                    </motion.a>
+                    <motion.a
+                      layout
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { duration: 0.1 },
+                      }}
+                      href={active.ctaLink}
+                      target="_blank"
+                      className="px-4 py-1 text-sm font-bold bg-zinc-900 text-white rounded-lg hover:bg-zinc-950 duration-200 border gap-1.5 border-zinc-800 border-b-3 whitespace-nowrap flex justify-center items-center"
+                    >
+                      <Icon icon="tabler:brand-github" width="22" height="22" />
+                      Code
                     </motion.a>
                   </div>
                 </div>
                 <ul className="flex flex-wrap gap-1.5 mt-4 px-4 w-full  py-2 ">
-                      {active.tecnologias?.map((tec) => (
-                        <li className="w-fit bg-zinc-950 border-zinc-800 border text-xs py-1 px-2 rounded-2xl  gap-1.5 inline-flex items-center">
-                          {tec.name}{" "}
-                          <span>
-                            <Icon
-                              icon={`${tec.icon}`}
-                              width="19"
-                              height="19"
-                            />
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
+                  {active.tecnologias?.map((tec) => (
+                    <li className="w-fit bg-zinc-950 border-zinc-800 border text-xs py-1 px-2 rounded-2xl  gap-1.5 inline-flex items-center">
+                      {tec.name}{" "}
+                      <span>
+                        <Icon icon={`${tec.icon}`} width="19" height="19" />
+                      </span>
+                    </li>
+                  ))}
+                </ul>
                 <div className="relative px-4">
                   <motion.div
                     layout
@@ -315,6 +326,7 @@ const cards = [
         icon: "logos:tailwindcss-icon",
       },
     ],
+    ctaLinkCode: "https://github.com/CesarMartinez7/meko",
     ctaLink: "https://mekoo.pages.dev",
     content: () => {
       return (
@@ -357,7 +369,7 @@ const cards = [
         icon: "logos:daisyui-icon",
       },
     ],
-    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
+    ctaLinkCode: "https://github.com/CesarMartinez7/DexTS",
     ctaLink: "https://dexts.pages.dev",
     content: () => {
       return (
@@ -392,7 +404,7 @@ const cards = [
         icon: "logos:tailwindcss-icon",
       },
     ],
-    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
+    ctaLinkCode: "https://github.com/CesarMartinez7/mercadoesclavo",
     ctaLink: "https://mercadoesclavo.vercel.app",
     content: () => {
       return (
@@ -457,7 +469,7 @@ const cards = [
         icon: "logos:nextjs-icon",
       },
     ],
-    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
+    ctaLinkCode: "https://github.com/CesarMartinez7/gallery-photo-nextjs",
     ctaLink: "https://gallerry-two.vercel.app/",
     content: () => {
       return (
@@ -492,7 +504,7 @@ const cards = [
         icon: "logos:tailwindcss-icon",
       },
     ],
-    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
+    ctaLinkCode: "https://github.com/CesarMartinez7/DragonBall",
     ctaLink: "https://dragonballwikki.pages.dev/",
     content: () => {
       return (
@@ -523,7 +535,7 @@ const cards = [
         icon: "logos:javascript",
       },
     ],
-    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
+    ctaLinkCode: "https://github.com/CesarMartinez7/orange",
     ctaLink: "https://calculadora-7df.pages.dev",
     content: () => {
       return (
@@ -584,6 +596,7 @@ const cards = [
         icon: "logos:telegram",
       },
     ],
+    ctaLinkCode: "https://github.com/CesarMartinez7/CatchyBot",
     ctaLink: "https://web.telegram.org/a/#7759974599",
     content: () => {
       return (
@@ -614,6 +627,7 @@ const cards = [
         icon: "logos:pypi",
       },
     ],
+    ctaLinkCode: "https://github.com/CesarMartinez7/PySoccer",
     ctaLink: "https://github.com/CesarMartinez7/PySoccer",
     content: () => {
       return (

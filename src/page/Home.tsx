@@ -10,6 +10,8 @@ import { Terminal } from "../components/terminal";
 import Overview from "../components/overview";
 import { AnimatedGridPattern } from "../components/grid-patter";
 
+import AnimatedList from "../components/certifaciones";
+
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
 
@@ -130,12 +132,16 @@ function Main() {
           <h3 className="text-center text-3xl font-bold my-2 from-green-600 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent">
             My Projects
           </h3>
-          <p className="  bg-clip-text w-lg font-light text-balance text-center bg-gradient-to-t from-zinc-700 mb-4 to-gray-100 text-transparent ">
+          <p className="bg-clip-text w-lg font-light text-balance text-center bg-gradient-to-t from-zinc-700 mb-4 to-gray-100 text-transparent ">
             In these projects I learned to face real challenges and transform
             problems into effective solutions.
           </p>
           <ExpandableCardDemo />
         </motion.div>
+      </div>
+      <div className="flex items-center justify-center flex-col">
+        <h3 className="text-xl">Certificaciones</h3>
+        <AnimatedList enableArrowNavigation={true} displayScrollbar={true} />
       </div>
     </motion.div>
   );

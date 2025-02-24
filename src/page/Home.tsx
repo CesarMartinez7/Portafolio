@@ -86,8 +86,8 @@ function Main() {
                 </div>
               </motion.button>
               <motion.a
-                whileHover={{ scale: 1.1 }}
-                className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer "
+                whileHover={{ scale: 1.04 }}
+                className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer border-white/5 border"
                 href="https://github.com/CesarMartinez7"
                 target="_blank"
               >
@@ -95,7 +95,7 @@ function Main() {
                 Github
               </motion.a>
               <motion.a
-                whileHover={{ scale: 1.1 }}
+                whileHover={{ scale: 1.04 }}
                 className="px-8 py-2 bg-black text-white text-sm rounded-md font-bold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer  "
                 href="https://www.linkedin.com/in/cesar-martinez-castro-383943332/"
                 target="_blank"

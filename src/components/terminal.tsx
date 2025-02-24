@@ -126,7 +126,7 @@ export const Terminal = ({ className }: TerminalProps) => {
           </button>
         </div>
       </div>
-      {isType ? (<pre className="p-4">
+      {isType ? (<motion.pre initial={{scale: 0.97}} className="p-4">
         <code className="grid gap-y-1 ">
           <TypingAnimation>~ more me.json</TypingAnimation>
 
@@ -188,8 +188,8 @@ export const Terminal = ({ className }: TerminalProps) => {
             JSON successfully loaded.
           </TypingAnimation>
         </code>
-      </pre>) : (
-        <pre className="p-4">
+      </motion.pre>) : (
+        <motion.pre   className="p-4">
         <code className="grid gap-y-1 ">
           <TypingAnimation>~ more me.ts</TypingAnimation>
 
@@ -198,7 +198,6 @@ export const Terminal = ({ className }: TerminalProps) => {
               {"interface Me"} <span className="text-blue-500"> {`{`}</span>
             </span>
           </AnimatedSpan>
-
 
           <AnimatedSpan delay={2000} className="text-green-500">
             <span className="pl-4">
@@ -268,7 +267,7 @@ export const Terminal = ({ className }: TerminalProps) => {
             TS successfully loaded.
           </TypingAnimation>
         </code>
-      </pre>
+      </motion.pre>
       ) }
       
     </div>

@@ -160,7 +160,7 @@ export function ExpandableCardDemo() {
             layoutId={`card-${card.title}-${index}`}
             key={card.title}
             onClick={() => setActive(card)}
-            className="p-4 bg-black/100 border border-zinc-950/85 flex flex-col transition-all duration-150  hover:bg-zinc-900 rounded-xl cursor-pointer"
+            className="p-4 bg-black/100 border border-zinc-950 flex flex-col transition-all  duration-300  hover:bg-zinc-950 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`img-${card.title}-${id}`}>

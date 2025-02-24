@@ -108,12 +108,12 @@ export const Terminal = ({ className }: TerminalProps) => {
         className
       )}
     >
-      <div className="flex flex-col gap-y-2 border-b border-border border-zinc-900 p-4">
+      <div className="flex flex-col gap-y-2 border-b border-border border-zinc-900 px-4 py-2">
         <div className="flex justify-between">
           <div className="flex flex-row gap-x-2 items-center ">
-            <div className="h-2 w-2 rounded-full bg-red-500"></div>
-            <div className="h-2 w-2 rounded-full bg-yellow-500"></div>
-            <div className="h-2 w-2 rounded-full bg-green-500"></div>
+            <div className="h-2.5 w-2.5 rounded-full bg-red-500"></div>
+            <div className="h-2.5 w-2.5 rounded-full bg-yellow-500"></div>
+            <div className="h-2.5 w-2.5 rounded-full bg-green-500"></div>
           </div>
           <button
             className=" text-xs animate-pulse rounded-md px-2.5 py-1 hover:bg-white/20 duration-150 transition-colors cursor-pointer"

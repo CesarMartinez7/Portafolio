@@ -95,9 +95,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
       institucion: "SoloLearn",
       isFinish: true,
     },
-    {
-      name: "",
-    },
+    
   ],
 
   onItemSelect,

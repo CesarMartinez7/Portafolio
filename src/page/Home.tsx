@@ -58,7 +58,7 @@ function Main() {
                 <FlipWords words={words} /> <br />
               </div>
             </div>
-            <div className="text-2xl lg:text-5xl  bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent">
+            <div className="text-2xl lg:text-5xl md:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-zinc-300 flex items-center gap-2 md:gap-8">
               Websites with React and JavaScript
             </div>
 

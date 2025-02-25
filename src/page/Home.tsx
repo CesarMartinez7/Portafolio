@@ -139,8 +139,11 @@ function Main() {
           <ExpandableCardDemo />
         </motion.div>
       </div>
-      <div className="flex items-center justify-center flex-col">
-        <h3 className="text-xl">Certificaciones</h3>
+      <div className="flex items-center h-svh justify-center  flex-col">
+        <h3 className="text-center text-3xl font-bold my-2 from-green-600 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent">
+          Certification
+        </h3>
+        <p className="text-balance  text-center bg-clip-text font-light bg-gradient-to-t  from-zinc-700 to-gray-100 text-transparent w-[800px] mb-4 ">I am always learning and improving my skills. These certifications are proof of my commitment to technology and digital security.</p>
         <AnimatedList enableArrowNavigation={true} displayScrollbar={true} />
       </div>
     </motion.div>

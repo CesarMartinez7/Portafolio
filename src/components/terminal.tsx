@@ -116,7 +116,7 @@ export const Terminal = ({ className }: TerminalProps) => {
             <div className="h-2.5 w-2.5 rounded-full bg-green-500"></div>
           </div>
           <button
-            className=" bg-white/5 text-xs rounded-md px-1.5 py-1 hover:bg-white/20 duration-150"
+            className=" text-xs rounded-md px-1.5 py-1  duration-150 cursor-pointer"
             onClick={() => {
               setIsType(!isType);
             }}
@@ -138,10 +138,12 @@ export const Terminal = ({ className }: TerminalProps) => {
           <AnimatedSpan delay={2000} className="text-green-500">
             <span className="pl-4">{`"name": "Cesar",`}</span>
           </AnimatedSpan>
-          
+
+         
           <AnimatedSpan delay={2500} className="text-green-500">
             <span className="pl-4">{`"lastName": "Martinez",`}</span>
           </AnimatedSpan>
+          
 
           <AnimatedSpan delay={3000} className="text-green-500">
             <span className="pl-4">{`"age": "18",`}</span>
@@ -150,6 +152,11 @@ export const Terminal = ({ className }: TerminalProps) => {
           <AnimatedSpan delay={3500} className="text-green-500">
             <span className="pl-4">{`"role": "Developer",`}</span>
           </AnimatedSpan>
+
+          <AnimatedSpan delay={2000} className="text-green-500">
+            <span className="pl-4">{`"learning":`} <span className="text-blue-500">{"["}</span> {'"Figma", "Docker"'}<span className="text-blue-500"> {"]"} </span>  </span>
+          </AnimatedSpan>
+          
 
           <AnimatedSpan delay={4000} className="text-green-500">
             <span className="pl-4">{`"overview": "Disciplined, self-taught frontend developer",`}</span>
@@ -224,6 +231,10 @@ export const Terminal = ({ className }: TerminalProps) => {
               {`"role": `}{"        "}
               <span className="text-fuchsia-500"> enum.DEVELOPER</span> ,{" "}
             </span>
+          </AnimatedSpan>
+
+          <AnimatedSpan delay={2000} className="text-green-500">
+            <span className="pl-4">learning": <span className="text-fuchsia-500">{`      string`}</span> <span className="text-blue-500">{"[]"}</span> ,</span>
           </AnimatedSpan>
 
           <AnimatedSpan delay={3500} className="text-green-500">

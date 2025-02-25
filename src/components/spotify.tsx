@@ -90,12 +90,28 @@ export function ExpandableCardDemo() {
                   <div className="w-fit">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-neutral-700 text-lg dark:text-neutral-200 "
+                      className=" text-zinc-300 font-bold text-lg "
                     >
                       {active.title}
                     </motion.h3>
                   </div>
-                  <div className="gap-2 flex">
+                  <div className="gap-2 flex  ">
+                    
+                    <motion.a
+                      layout
+                      initial={{ opacity: 0, scale: 0 }}
+                      animate={{
+                        opacity: 1,
+                        scale: 1,
+                        transition: { duration: 0.1 },
+                      }}
+                      href={active.ctaLinkCode}
+                      target="_blank"
+                      className="px-2 py-0.5 text-xs font-bold bg-zinc-900 text-white rounded-lg hover:bg-zinc-950 duration-200 border gap-1.5 border-zinc-800 border-b-3 whitespace-nowrap flex justify-center items-center"
+                    >
+                      <Icon icon="tabler:brand-github" width="20" height="20" />
+                      Repository
+                    </motion.a>
                     <motion.a
                       layout
                       initial={{ opacity: 0, scale: 0 }}
@@ -109,21 +125,6 @@ export function ExpandableCardDemo() {
                       className="px-4 py-1 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-800 border-b-3 whitespace-nowrap"
                     >
                       {active.ctaText}
-                    </motion.a>
-                    <motion.a
-                      layout
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{
-                        opacity: 1,
-                        scale: 1,
-                        transition: { duration: 0.1 },
-                      }}
-                      href={active.ctaLinkCode}
-                      target="_blank"
-                      className="px-4 py-1 text-sm font-bold bg-zinc-900 text-white rounded-lg hover:bg-zinc-950 duration-200 border gap-1.5 border-zinc-800 border-b-3 whitespace-nowrap flex justify-center items-center"
-                    >
-                      <Icon icon="tabler:brand-github" width="22" height="22" />
-                      Code
                     </motion.a>
                   </div>
                 </div>
@@ -176,13 +177,13 @@ export function ExpandableCardDemo() {
               <div className="flex flex-col">
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-semibold  "
+                  className="text-zinc-300 font-bold "
                 >
                   {card.title}
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-zinc-400  md:text-left text-base text-sm"
+                  className="text-balance bg-clip-text font-light bg-gradient-to-t  from-zinc-700 to-gray-100 text-transparent text-sm "
                 >
                   {card.description}
                 </motion.p>

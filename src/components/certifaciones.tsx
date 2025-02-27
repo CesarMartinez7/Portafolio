@@ -218,7 +218,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
   }, [selectedIndex, keyboardNav]);
 
   return (
-    <div className={`relative w-[900px] ${className}`}>
+    <div className={`relative max-w-3xl w-2xl min-w-xl ${className}`}>
       <div
         ref={listRef}
         className={`max-h-[400px] overflow-y-auto p-4 ${

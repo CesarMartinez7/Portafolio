@@ -153,7 +153,7 @@ export const Terminal = ({ className }: TerminalProps) => {
             <span className="pl-4">{`"role": "Developer",`}</span>
           </AnimatedSpan>
 
-          <AnimatedSpan delay={2000} className="text-green-500">
+          <AnimatedSpan delay={3800} className="text-green-500">
             <span className="pl-4">{`"learning":`} <span className="text-blue-500">{"["}</span> {'"Figma", "Docker"'}<span className="text-blue-500"> {"]"} </span>  </span>
           </AnimatedSpan>
           

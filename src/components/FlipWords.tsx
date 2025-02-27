@@ -85,7 +85,10 @@ export const FlipWords = ({
                   duration: 0.2,
                 }}
                 className="inline-block  text-transparent bg-clip-text bg-gradient-to-b from-70% from-green-500"
-              >
+                style={{
+                  textShadow:
+                    "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
+                }}> 
                 {letter}
               </motion.span>
             ))}

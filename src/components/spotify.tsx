@@ -5,6 +5,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./utils/useOutside";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { p } from "framer-motion/client";
+import ImageNofound from "../../public/nofoundimage.webp"
+
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -79,7 +81,7 @@ export function ExpandableCardDemo() {
                 <img
                   width={240}
                   height={240}
-                  src={active.src}
+                  src={active.src.length > 0 ? active.src : ImageNofound}
                   alt={active.title}
                   className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
                 />
@@ -156,7 +158,7 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <main className="max-w-4xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start p-4 gap-4 md:p-18 lg:p-2 ">
+      <main className="max-w-3xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start p-4 gap-4 md:p-18 lg:p-2 ">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${index}`}
@@ -169,9 +171,9 @@ export function ExpandableCardDemo() {
                 <img
                   width={100}
                   height={100}
-                  src={card.src}
+                  src={card.src.length > 0 ? card.src : ImageNofound}
                   alt={card.description}
-                  className="h-60 w-full  rounded-lg object-cover object-top"
+                  className="h-60 w-full rounded-lg object-cover object-top"
                 />
               </motion.div>
               <div className="flex flex-col">
@@ -421,7 +423,7 @@ const cards = [
   {
     description: "Real-time weather app",
     title: "WeatherNo ⛈️",
-    src: "/weathernow.webp",
+    src: "",
     tecnologias: [
       {
         name: "React",
@@ -563,7 +565,7 @@ const cards = [
     ctaLink: "https://github.com/CesarMartinez7/anchorport",
     content: () => {
       return (
-        <p>
+        <p className="text-sm">
           <strong>Speed Port</strong> is a powerful port scanner built with
           Python. It features MAC address spoofing to disrupt a target network
           and leverages the capabilities of <strong>Scapy</strong>, a robust
@@ -576,7 +578,7 @@ const cards = [
   {
     description: "Task management app",
     title: "TaskMaster ✅",
-    src: "/taskmaster.webp",
+    src: "",
     ctaText: "Visit site",
     tecnologias: [
       {

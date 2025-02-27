@@ -9,8 +9,9 @@ import { cn } from "../components/utils";
 import { Terminal } from "../components/terminal";
 import Overview from "../components/overview";
 import { AnimatedGridPattern } from "../components/grid-patter";
-
 import AnimatedList from "../components/certifaciones";
+import Navbar from "../components/navbar";
+
 
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
@@ -18,12 +19,14 @@ function Main() {
   const words = ["better", "cute", "beautiful", "modern"];
 
   return (
+
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
+      <Navbar/>
       <div className="relative h-svh w-full items-center justify-center overflow-hidden ">
         <AnimatedGridPattern
           numSquares={30}
@@ -73,20 +76,19 @@ function Main() {
               rootMargin="-50px"
             />
             <div className="inline-flex gap-2.5">
-              <motion.button
+              <motion.a
+              download={true}
                 initial={{ opacity: 0, scale: 0.3 }}
                 whileInView={{ opacity: 1 }}
                 animate={{ opacity: 1, transition: { duration: 1 }, scale: 1 }}
                 className="p-[3px] relative cursor-pointer"
-                onClick={() =>
-                  divProject.current?.scrollIntoView({ behavior: "smooth" })
-                }
+                href="../../public/CesarMartinezCastroResume-2.pdf"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-500 to-zinc-900 rounded-lg" />
                 <div className="px-1 md:px-6 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold ">
-                  Check out my projects
+                  Download CV
                 </div>
-              </motion.button>
+              </motion.a>
               <motion.a
                 whileHover={{ scale: 1.04 }}
                 className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer border-white/5 border"
@@ -129,7 +131,10 @@ function Main() {
           animate={{ opacity: 1, transition: { duration: 1 } }}
           exit={{ opacity: 0 }}
         >
-          <h3 className="text-center text-3xl font-bold my-2 from-green-600 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent">
+          <h3 className="text-center text-3xl font-bold my-2 from-green-400 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent" style={{
+            textShadow:
+              "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
+          }}>
             My Projects
           </h3>
           <p className="bg-clip-text w-lg font-light text-balance text-center bg-gradient-to-t from-zinc-700 mb-4 to-gray-100 text-transparent ">
@@ -140,7 +145,10 @@ function Main() {
         </motion.div>
       </div>
       <div className="flex items-center h-svh justify-center  flex-col">
-        <h3 className="text-center text-3xl font-bold my-2 from-green-600 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent">
+        <h3 className="text-center text-3xl font-bold my-2 from-green-600 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent" style={{
+                  textShadow:
+                    "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
+                }}  >
           My Certification
         </h3>
         <p className="text-balance  text-center bg-clip-text font-light bg-gradient-to-t  from-zinc-700 to-gray-100 text-transparent w-[800px] mb-4 ">I am always learning and improving my skills. These certifications are proof of my commitment to technology and digital security.</p>

@@ -146,11 +146,11 @@ export const Terminal = ({ className }: TerminalProps) => {
           
 
           <AnimatedSpan delay={3000} className="text-green-500">
-            <span className="pl-4">{`"age": "18",`}</span>
+            <span className="pl-4 whitespace-nowrap">{`"age": "18",`}</span>
           </AnimatedSpan>
 
           <AnimatedSpan delay={3500} className="text-green-500">
-            <span className="pl-4">{`"role": "Developer",`}</span>
+            <span className="pl-4">{`"role": "Developer Frontend",`}</span>
           </AnimatedSpan>
 
           <AnimatedSpan delay={3800} className="text-green-500">
@@ -229,7 +229,7 @@ export const Terminal = ({ className }: TerminalProps) => {
           <AnimatedSpan delay={3000} className="text-green-500">
             <span className="pl-4">
               {`"role": `}{"        "}
-              <span className="text-fuchsia-500"> enum.DEVELOPER</span> ,{" "}
+              <span className="text-fuchsia-500"> string</span> ,{" "}
             </span>
           </AnimatedSpan>
 

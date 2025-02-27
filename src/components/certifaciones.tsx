@@ -7,7 +7,6 @@ import React, {
   UIEvent,
 } from "react";
 import { motion, useInView } from "framer-motion";
-import { li } from "framer-motion/client";
 
 interface AnimatedItemProps {
   children: ReactNode;

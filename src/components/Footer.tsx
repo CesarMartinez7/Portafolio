@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className="grid place-content-center py-4.5 w-full gap-4">
       <p>
-        Developed by <strong className="text-green-400">@Cesar Martinez</strong>{" "}
+        Developed by <strong className="text-green-500">@Cesar Martinez</strong>{" "}
         <strong>{new Date().toUTCString()}</strong>
       </p>
       <div className="flex flex-row w-full items-center justify-center gap-4">

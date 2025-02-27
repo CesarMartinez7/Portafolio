@@ -12,30 +12,29 @@ import { AnimatedGridPattern } from "../components/grid-patter";
 import AnimatedList from "../components/certifaciones";
 import Navbar from "../components/navbar";
 
-
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
 
   const words = ["better", "cute", "beautiful", "modern"];
 
   return (
-
     <motion.div
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
+      className="bg-red"
     >
-      <Navbar/>
-      <div className="relative h-svh w-full items-center justify-center overflow-hidden ">
+      <Navbar />
+      <div className="relative h-svh w-full items-center justify-center overflow-hidden">
         <AnimatedGridPattern
-          numSquares={30}
+          numSquares={60}
           maxOpacity={0.1}
           duration={3}
-          repeatDelay={1}
+          repeatDelay={5}
           className={cn(
-            "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
-            "inset-x-0 inset-y-[-32%] h-[200%] skew-y-12"
+            "[mask-image:radial-gradient(240px_circle_at_center,green,transparent)]",
+            "inset-x-0 inset-y-[-50%] h-[200%] skew-y-1"
           )}
         />
         <div className="h-dvh gap-6 md:p-12 w-full lg:p-12 grid relative">
@@ -61,7 +60,7 @@ function Main() {
                 <FlipWords words={words} /> <br />
               </div>
             </div>
-            <div className="text-2xl lg:text-5xl md:leading-tight max-w-5xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-neutral-800 via-white to-zinc-300 flex items-center gap-2 md:gap-8">
+            <div className="text-2xl lg:text-4xl md:leading-tight max-w-4xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-zinc-600 via-white to-zinc-300 flex items-center gap-2 md:gap-8">
               Websites with React and JavaScript
             </div>
 
@@ -77,7 +76,7 @@ function Main() {
             />
             <div className="inline-flex gap-2.5">
               <motion.a
-              download={true}
+                download={true}
                 initial={{ opacity: 0, scale: 0.3 }}
                 whileInView={{ opacity: 1 }}
                 animate={{ opacity: 1, transition: { duration: 1 }, scale: 1 }}
@@ -91,7 +90,7 @@ function Main() {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.04 }}
-                className="px-8 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer border-white/5 border"
+                className="px-5 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer border-white/5 border"
                 href="https://github.com/CesarMartinez7"
                 target="_blank"
               >
@@ -100,7 +99,7 @@ function Main() {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.04 }}
-                className="px-8 py-2 bg-black text-white text-sm rounded-md font-bold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer  "
+                className="px-5 py-2 bg-black text-white text-sm rounded-md font-bold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer  "
                 href="https://www.linkedin.com/in/cesar-martinez-castro-383943332/"
                 target="_blank"
               >
@@ -115,7 +114,7 @@ function Main() {
         initial={{ opacity: 0 }}
         whileInView={{ transition: { duration: 0.4 }, opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="grid grid-cols-1 gap-2  "
+        className="grid grid-cols-1 gap-2 bg-gradient-to-t  from-black via-[#0014045d] -z-10 to-black "
       >
         <Overview />
         <motion.div className="flex items-center p-4 justify-center">
@@ -131,10 +130,13 @@ function Main() {
           animate={{ opacity: 1, transition: { duration: 1 } }}
           exit={{ opacity: 0 }}
         >
-          <h3 className="text-center text-3xl font-bold my-2 from-green-400 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent" style={{
-            textShadow:
-              "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
-          }}>
+          <h3
+            className="text-center text-3xl font-bold my-2 from-green-400 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent"
+            style={{
+              textShadow:
+                "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
+            }}
+          >
             My Projects
           </h3>
           <p className="bg-clip-text w-lg font-light text-balance text-center bg-gradient-to-t from-zinc-700 mb-4 to-gray-100 text-transparent ">
@@ -144,15 +146,21 @@ function Main() {
           <ExpandableCardDemo />
         </motion.div>
       </div>
-      <div className="flex items-center h-svh justify-center  flex-col">
-        <h3 className="text-center text-3xl font-bold my-2 from-green-600 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent" style={{
-                  textShadow:
-                    "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
-                }}  >
+      <div className="flex items-center h-svh justify-center  flex-col bg-gradient-to-tl  [mask_image_white] from-black via-[#000301] backdrop-blur-3xl  to-black">
+        <h3
+          className="text-center text-3xl font-bold my-2 from-green-500 bg-clip-text bg-gradient-to-br  to-green-500 text-transparent"
+          style={{
+            textShadow:
+              "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
+          }}
+        >
           My Certification
         </h3>
-        <p className="text-balance  text-center bg-clip-text font-light bg-gradient-to-t  from-zinc-700 to-gray-100 text-transparent w-[800px] mb-4 ">I am always learning and improving my skills. These certifications are proof of my commitment to technology and digital security.</p>
-        <AnimatedList enableArrowNavigation={true}  displayScrollbar={true}   showGradients={true} />
+        <p className="text-balance  text-center bg-clip-text font-light bg-gradient-to-t from-zinc-500 to-gray-100 text-transparent w-[800px] mb-4 ">
+          I am always learning and improving my skills. These certifications are
+          proof of my commitment to technology and digital security.
+        </p>
+        <AnimatedList />
       </div>
     </motion.div>
   );

@@ -222,7 +222,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
         ref={listRef}
         className={`max-h-[400px] overflow-y-auto p-4 ${
           displayScrollbar
-            ? "[&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:bg-[#060606] [&::-webkit-scrollbar-thumb]:bg-[#222] [&::-webkit-scrollbar-thumb]:rounded-[4px]"
+            ? "[&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:bg-[#944f4f] [&::-webkit-scrollbar-thumb]:bg-[#222] [&::-webkit-scrollbar-thumb]:rounded-[4px]"
             : "scrollbar-hide"
         }`}
         onScroll={handleScroll}
@@ -246,8 +246,8 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
             }}
           >
             <div
-              className={`p-3  border shadow-2xs  border-white/10 shadow-zinc-900  rounded-lg ${
-                selectedIndex === index ? "bg-[#2223]" : ""
+              className={`p-3  border shadow-2xs  border-zinc-900 shadow-zinc-900  rounded-lg ${
+                selectedIndex === index ? "bg-[#000000b4] transition-all duration-150" : ""
               } ${itemClassName}`}
             >
               <p className="text-balance text-sm   bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent ">
@@ -260,7 +260,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
               
               <ul className="flex gap-2 text-xs">
                 {item.skills.map((skill) => (
-                  <li className="w-fit border border-zinc-800 px-2 rounded-2xl  ">{skill}</li>
+                  <li className="w-fit border border-zinc-900 px-2 rounded-2xl  ">{skill}</li>
                 ))}
               </ul>
             </div>
@@ -270,11 +270,11 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
       {showGradients && (
         <>
           <div
-            className="absolute top-0 left-0 right-0 h-[50px] bg-gradient-to-b from-black to-transparent pointer-events-none transition-opacity duration-1000 ease"
+            className="absolute top-0 left-0 right-0 h-[50px]  from-black to-transparent pointer-events-none transition-opacity duration-1000 ease"
             style={{ opacity: topGradientOpacity }}
           ></div>
           <div
-            className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to-t from-black to-transparent pointer-events-none transition-opacity duration-1000 ease"
+            className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to- to-transparent pointer-events-none transition-opacity duration-1000 ease"
             style={{ opacity: bottomGradientOpacity }}
           ></div>
         </>

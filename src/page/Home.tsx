@@ -114,7 +114,7 @@ function Main() {
         initial={{ opacity: 0 }}
         whileInView={{ transition: { duration: 0.4 }, opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="grid grid-cols-1 gap-2 bg-gradient-to-t  from-black via-[#0014045d] -z-10 to-black "
+        className="grid grid-cols-1 gap-2 bg-gradient-to-tl from-black via-[#000301] backdrop-blur-3xl  to-black"
       >
         <Overview />
         <motion.div className="flex items-center p-4 justify-center">
@@ -146,7 +146,7 @@ function Main() {
           <ExpandableCardDemo />
         </motion.div>
       </div>
-      <div className="flex items-center h-svh justify-center  flex-col bg-gradient-to-tl  [mask_image_white] from-black via-[#000301] backdrop-blur-3xl  to-black">
+      <div className="flex items-center h-svh justify-center  flex-col bg-gradient-to-tl from-black via-[#000301] backdrop-blur-3xl  to-black">
         <h3
           className="text-center text-3xl font-bold my-2 from-green-500 bg-clip-text bg-gradient-to-br  to-green-500 text-transparent"
           style={{

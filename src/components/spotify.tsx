@@ -48,7 +48,7 @@ export function ExpandableCardDemo() {
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0  grid place-items-center z-[100] ">
+          <div className="fixed inset-0 grid place-items-center z-[100] bg-black/90 ">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
@@ -111,7 +111,7 @@ export function ExpandableCardDemo() {
                       target="_blank"
                       className="px-2 py-0.5 text-xs font-bold bg-zinc-900 text-white rounded-lg hover:bg-zinc-950 duration-200 border gap-1.5 border-zinc-800 border-b-3 whitespace-nowrap flex justify-center items-center"
                     >
-                      <Icon icon="tabler:brand-github" width="20" height="20" />
+                      <Icon icon="tabler:brand-github" width="18" height="18" />
                       Repository
                     </motion.a>
                     <motion.a
@@ -132,10 +132,10 @@ export function ExpandableCardDemo() {
                 </div>
                 <ul className="flex flex-wrap gap-1.5 mt-2 px-4 w-full  py-2 ">
                   {active.tecnologias?.map((tec) => (
-                    <li className="w-fit bg-zinc-950 border-zinc-800 border text-xs py-1 px-2 rounded-2xl  gap-1.5 inline-flex items-center">
+                    <li className="w-fit bg-zinc-950 border-white/10 border text-xs py-1 px-2 rounded-2xl gap-1.5 flex items-center justify-center">
                       {tec.name}{" "}
                       <span>
-                        <Icon icon={`${tec.icon}`} width="19" height="19" />
+                        <Icon icon={`${tec.icon}`} width="17" height="17" />
                       </span>
                     </li>
                   ))}
@@ -554,7 +554,7 @@ const cards = [
     description: "Fast and versatile port scanner",
     title: "Speed Port",
     src: "/speedports.webp",
-    ctaText: "See Code",
+    ctaText: "Look at code",
     tecnologias: [
       {
         name: "Python",
@@ -641,7 +641,7 @@ const cards = [
     description: "Free game made Pygame",
     title: "Pysoccer",
     src: "/pysoccer.webp",
-    ctaText: "See code",
+    ctaText: "Look at code",
     tecnologias: [
       {
         name: "Python",

@@ -7,6 +7,7 @@ import React, {
   UIEvent,
 } from "react";
 import { motion, useInView } from "framer-motion";
+import { li } from "framer-motion/client";
 
 interface AnimatedItemProps {
   children: ReactNode;
@@ -44,6 +45,11 @@ const AnimatedItem: React.FC<AnimatedItemProps> = ({
 interface Certificacion {
   name: string;
   institucion: string;
+  isFinish: boolean;
+  expedition: string;
+  credentialID: string;
+  credentialURL: string;
+  skills: string[];
 }
 
 interface AnimatedListProps {
@@ -63,39 +69,72 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
       name: "Python Developer",
       institucion: "SoloLearn",
       isFinish: true,
+      expedition: "Febrero 30",
+      expiration: "No expira", // Si el certificado tiene fecha de expiración
+      credentialID: "SL-12345", // ID único del certificado
+      credentialURL: "https://www.sololearn.com/certificates/SL-12345", // URL de verificación
+      skills: ["Python", "Programación", "Desarrollo de software"], // Habilidades adquiridas
     },
     {
-      name: "Docker Essentials: A Developer Introduction ",
+      name: "Docker Essentials: A Developer Introduction",
       institucion: "IBM",
       isFinish: true,
+      expedition: "Febrero 30",
+      expiration: "No expira",
+      credentialID: "IBM-67890",
+      credentialURL: "https://www.ibm.com/certificates/IBM-67890",
+      skills: ["Docker", "Contenedores", "Despliegue de aplicaciones"],
     },
     {
       name: "Python Intermediate",
       institucion: "SoloLearn",
       isFinish: true,
+      expedition: "Febrero 30",
+      expiration: "No expira",
+      credentialID: "SL-54321",
+      credentialURL: "https://www.sololearn.com/certificates/SL-54321",
+      skills: ["Python", "Estructuras de datos", "Algoritmos avanzados"],
     },
-
     {
       name: "Introduction to Cybersecurity",
       institucion: "Cisco Networking Academy",
       isFinish: true,
+      expedition: "Febrero 30",
+      expiration: "No expira",
+      credentialID: "CNA-11223",
+      credentialURL: "https://www.cisco.com/certificates/CNA-11223",
+      skills: ["Ciberseguridad", "Redes", "Protección de datos"],
     },
     {
       name: "Javascript Intermediate",
       institucion: "SoloLearn",
       isFinish: true,
+      expedition: "Febrero 30",
+      expiration: "No expira",
+      credentialID: "SL-33445",
+      credentialURL: "https://www.sololearn.com/certificates/SL-33445",
+      skills: ["JavaScript", "Programación funcional", "ES6+"],
     },
     {
       name: "Introduction to Javascript",
       institucion: "SoloLearn",
       isFinish: true,
+      expedition: "Febrero 30",
+      expiration: "No expira",
+      credentialID: "SL-55667",
+      credentialURL: "https://www.sololearn.com/certificates/SL-55667",
+      skills: ["JavaScript", "DOM", "Eventos"],
     },
     {
       name: "Introduction to Python",
       institucion: "SoloLearn",
       isFinish: true,
+      expedition: "Febrero 30",
+      expiration: "No expira",
+      credentialID: "SL-77889",
+      credentialURL: "https://www.sololearn.com/certificates/SL-77889",
+      skills: ["Python", "Sintaxis básica", "Estructuras de control"],
     },
-    
   ],
 
   onItemSelect,
@@ -208,12 +247,23 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
             }}
           >
             <div
-              className={`p-4 bg-black border shadow-2xs  border-white/10 shadow-zinc-900  rounded-lg ${
+              className={`p-3  border shadow-2xs  border-white/10 shadow-zinc-900  rounded-lg ${
                 selectedIndex === index ? "bg-[#2223]" : ""
               } ${itemClassName}`}
             >
-              <p className="m-0 text-md font-bold text-zinc-300 ">{item.name}</p>
-              <p className="text-balance text-sm   bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent ">{item.institucion}</p>
+              <p className="text-balance text-sm   bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent ">
+                {item.institucion}
+              </p>
+              <h3 className="m-0 text-md font-bold text-zinc-300 ">
+                {item.name}
+              </h3>
+              <p className="text-xs" >{item.expedition}</p>
+              
+              <ul className="flex gap-2 text-xs">
+                {item.skills.map((skill) => (
+                  <li className="w-fit border border-zinc-800 px-2 rounded-2xl  ">{skill}</li>
+                ))}
+              </ul>
             </div>
           </AnimatedItem>
         ))}

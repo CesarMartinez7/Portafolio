@@ -131,7 +131,7 @@ function Main() {
           exit={{ opacity: 0 }}
         >
           <h3
-            className="text-center text-3xl font-bold my-2 from-green-400 bg-clip-text  bg-gradient-to-br  to-green-800 text-transparent"
+            className="text-center text-3xl font-bold my-2 from-green-500 bg-clip-text  bg-gradient-to-br  to-green-500 text-transparent"
             style={{
               textShadow:
                 "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",

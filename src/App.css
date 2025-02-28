@@ -15,7 +15,7 @@
 
 body {
   font-family: "IBM";
-  @apply bg-gradient-to-tr from-black to-zinc-950 ;
+  background-color: #000 ;
   color: #DADADA;
   font-weight: 500;
    /* O 500, según la variante deseada */

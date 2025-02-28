@@ -95,6 +95,16 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
       skills: ["Python", "Estructuras de datos", "Algoritmos avanzados"],
     },
     {
+      name: "Curso de introducción al desarrollo web: HTML y CSS (1/2)",
+      institucion: "SoloLearn",
+      isFinish: true,
+      expedition: "27 de febrero de 2025",
+      expiration: "No expira",
+      credentialID: " 306940459",
+      credentialURL: "https://www.sololearn.com/certificates/SL-54321",
+      skills: ["Html", "Css", "Web Concept"],
+    },
+    {
       name: "Introduction to Cybersecurity",
       institucion: "Cisco Networking Academy",
       isFinish: true,

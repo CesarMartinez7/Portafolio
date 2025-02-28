@@ -60,7 +60,7 @@ function Main() {
                 <FlipWords words={words} /> <br />
               </div>
             </div>
-            <div className="text-2xl lg:text-4xl md:leading-tight max-w-4xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-b from-zinc-600 via-white to-zinc-300 flex items-center gap-2 md:gap-8">
+            <div className="text-2xl lg:text-4xl md:leading-tight max-w-4xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 flex items-center gap-2 md:gap-8">
               Websites with React and JavaScript
             </div>
 
@@ -117,7 +117,7 @@ function Main() {
         className="grid grid-cols-1 gap-2 "
       >
         <Overview />
-        <motion.div className="flex items-center p-4 justify-center">
+        <motion.div className="flex items-center p-4 justify-center mb-8">
           <Terminal />
         </motion.div>
       </motion.div>
@@ -139,7 +139,7 @@ function Main() {
           >
             My Projects
           </h3>
-          <p className="bg-clip-text w-lg font-light text-balance text-center bg-gradient-to-t from-zinc-700 mb-4 to-gray-100 text-transparent ">
+          <p className="bg-clip-text w-lg font-light text-balance text-center bg-gradient-to-t from-zinc-400 mb-4 to-gray-100 text-transparent ">
             In these projects I learned to face real challenges and transform
             problems into effective solutions.
           </p>
@@ -156,7 +156,7 @@ function Main() {
         >
           My Certification
         </h3>
-        <p className="text-balance  text-center bg-clip-text font-light bg-gradient-to-t from-zinc-500 to-gray-100 text-transparent w-[800px] mb-4 ">
+        <p className="text-balance  text-center bg-clip-text font-light bg-gradient-to-t from-zinc-400 to-gray-100 text-transparent w-[800px] mb-4 ">
           I am always learning and improving my skills. These certifications are
           proof of my commitment to technology and digital security.
         </p>

@@ -92,7 +92,7 @@ export function ExpandableCardDemo() {
                   <div className="w-fit">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className=" text-zinc-300 font-bold text-lg "
+                      className=" text-white font-bold text-xl "
                     >
                       {active.title}
                     </motion.h3>
@@ -124,7 +124,7 @@ export function ExpandableCardDemo() {
                       }}
                       href={active.ctaLink}
                       target="_blank"
-                      className="px-4 py-1 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-800 border-b-3 whitespace-nowrap"
+                      className="px-4 py-1 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-600 border-b-3 whitespace-nowrap"
                     >
                       {active.ctaText}
                     </motion.a>
@@ -158,7 +158,7 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <main className="max-w-3xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start p-4 gap-4 md:p-18 lg:p-2 ">
+      <main className="max-w-3xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start p-4 gap-4 md:p-4 lg:p-2 ">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${index}`}
@@ -185,7 +185,7 @@ export function ExpandableCardDemo() {
                 </motion.h3>
                 <motion.p
                   layoutId={`description-${card.description}-${id}`}
-                  className="text-balance bg-clip-text font-light bg-gradient-to-t  from-zinc-700 to-gray-100 text-transparent text-sm "
+                  className="text-balance bg-clip-text font-light bg-gradient-to-t  from-zinc-300 to-gray-100 text-transparent text-sm "
                 >
                   {card.description}
                 </motion.p>

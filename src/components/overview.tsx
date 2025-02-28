@@ -12,7 +12,7 @@ export default function Overview() {
           About me
         </h3>
 
-        <p className="mt-3 text-left bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent text-pretty ">
+        <p className="mt-3 text-left bg-clip-text  bg-gradient-to-t from-zinc-600 to-gray-100 text-transparent text-pretty ">
           Disciplined junior programmer eager to continue growing in the world
           of software development. I consider myself self-taught and I'm always
           looking to learn something new. Despite the challenges, I keep going,

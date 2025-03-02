@@ -237,7 +237,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
         }`}
         onScroll={handleScroll}
         style={{
-          scrollbarWidth: "thin",
+          scrollbarWidth: "auto",
           scrollbarColor: "#222 #060606",
         }}
       >
@@ -260,16 +260,16 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
                 selectedIndex === index ? "bg-[#000000b4] transition-all duration-150" : ""
               } ${itemClassName}`}
             >
-              <h3 className="m-0 text-md font-bold text-zinc-300 ">
+              <h3 className="m-0 text-md font-bold text-zinc-300 shiny-text ">
                 {item.name}
               </h3>
-              <p className="text-balance text-sm   bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent ">
+              <p className="text-balance text-sm   bg-clip-text font-light bg-gradient-to-t from-zinc-300 to-gray-100 text-transparent ">
                 {item.institucion}
               </p>
               
               <ul className="flex gap-2 text-xs">
-                {item.skills.map((skill) => (
-                  <li className="w-fit border border-zinc-900 px-2 rounded-2xl  ">{skill}</li>
+                {item.skills.map((skill,index) => (
+                  <li key={index} className="w-fit border border-zinc-900 px-2 rounded-2xl  ">{skill}</li>
                 ))}
               </ul>
             </div>

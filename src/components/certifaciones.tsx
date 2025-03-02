@@ -227,12 +227,12 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
   }, [selectedIndex, keyboardNav]);
 
   return (
-    <div className={`relative max-w-3xl w-2xl min-w-xl ${className}`}>
+    <div className={`relative md:w-[700px] w-full  ${className}`}>
       <div
         ref={listRef}
         className={`max-h-[400px] overflow-y-auto p-4 ${
           displayScrollbar
-            ? "[&::-webkit-scrollbar]:w-[8px] [&::-webkit-scrollbar-track]:bg-[#944f4f] [&::-webkit-scrollbar-thumb]:bg-[#222] [&::-webkit-scrollbar-thumb]:rounded-[4px]"
+            ? "[&::-webkit-scrollbar]:w-[20px] [&::-webkit-scrollbar-track]:bg-[#944f4f] [&::-webkit-scrollbar-thumb]:bg-[#222] [&::-webkit-scrollbar-thumb]:rounded-[4px]"
             : "scrollbar-hide"
         }`}
         onScroll={handleScroll}
@@ -256,17 +256,16 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
             }}
           >
             <div
-              className={`p-3  border shadow-2xs  border-zinc-900 shadow-zinc-900  rounded-lg ${
+              className={`p-3  border shadow-2xs  border-zinc-900 shadow-zinc-900 flex flex-col gap-1  rounded-lg ${
                 selectedIndex === index ? "bg-[#000000b4] transition-all duration-150" : ""
               } ${itemClassName}`}
             >
-              <p className="text-balance text-sm   bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent ">
-                {item.institucion}
-              </p>
               <h3 className="m-0 text-md font-bold text-zinc-300 ">
                 {item.name}
               </h3>
-              <p className="text-xs" >{item.expedition}</p>
+              <p className="text-balance text-sm   bg-clip-text font-light bg-gradient-to-t from-zinc-700 to-gray-100 text-transparent ">
+                {item.institucion}
+              </p>
               
               <ul className="flex gap-2 text-xs">
                 {item.skills.map((skill) => (

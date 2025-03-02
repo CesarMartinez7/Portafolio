@@ -3,7 +3,10 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 export default function Footer() {
   return (
     <footer className="grid place-content-center py-4.5 w-full gap-4">
-      <p>
+      <p style={{
+            textShadow:
+              "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
+          }}>
         Developed by <strong className="text-green-500">@Cesar Martinez</strong>{" "}
         <strong>{new Date().toUTCString()}</strong>
       </p>

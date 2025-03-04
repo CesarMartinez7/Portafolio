@@ -84,7 +84,7 @@ function Main() {
                 href="./CesarMartinezCastroResume.pdf"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-green-950 rounded-lg" />
-                <div className="px-1 md:px-6 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold ">
+                <div className="px-1 md:px-6 py-2  bg-black rounded-[6px] text-sm relative group transition  text-white hover:bg-transparent duration-200 font-semibold ">
                   Download CV
                 </div>
               </motion.a>

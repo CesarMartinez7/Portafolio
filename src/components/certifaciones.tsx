@@ -43,7 +43,7 @@ const AnimatedItem: React.FC<AnimatedItemProps> = ({
 
 interface Certificacion {
   name: string;
-  institucion: string;
+  institution: string;
   isFinish: boolean;
   expedition: string;
   credentialID: string;

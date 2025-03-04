@@ -66,83 +66,83 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
   items = [
     {
       name: "Python Developer",
-      institucion: "SoloLearn",
+      institution: "SoloLearn",
       isFinish: true,
-      expedition: "Febrero 30",
-      expiration: "No expira", // Si el certificado tiene fecha de expiración
-      credentialID: "SL-12345", // ID único del certificado
-      credentialURL: "https://www.sololearn.com/certificates/SL-12345", // URL de verificación
-      skills: ["Python", "Programación", "Desarrollo de software"], // Habilidades adquiridas
+      expedition: "February 30",
+      expiration: "No expiration", // If the certificate has an expiration date
+      credentialID: "SL-12345", // Unique certificate ID
+      credentialURL: "https://www.sololearn.com/certificates/SL-12345", // Verification URL
+      skills: ["Python", "Programming", "Software Development"], // Acquired skills
     },
     {
       name: "Docker Essentials: A Developer Introduction",
-      institucion: "IBM",
+      institution: "IBM",
       isFinish: true,
-      expedition: "Febrero 30",
-      expiration: "No expira",
+      expedition: "February 30",
+      expiration: "No expiration",
       credentialID: "IBM-67890",
       credentialURL: "https://www.ibm.com/certificates/IBM-67890",
-      skills: ["Docker", "Contenedores", "Despliegue de aplicaciones"],
+      skills: ["Docker", "Containers", "Application Deployment"],
     },
     {
       name: "Python Intermediate",
-      institucion: "SoloLearn",
+      institution: "SoloLearn",
       isFinish: true,
-      expedition: "Febrero 30",
-      expiration: "No expira",
+      expedition: "February 30",
+      expiration: "No expiration",
       credentialID: "SL-54321",
       credentialURL: "https://www.sololearn.com/certificates/SL-54321",
-      skills: ["Python", "Estructuras de datos", "Algoritmos avanzados"],
+      skills: ["Python", "Data Structures", "Advanced Algorithms"],
     },
     {
-      name: "Curso de introducción al desarrollo web: HTML y CSS (1/2)",
-      institucion: "SoloLearn",
+      name: "Introduction to Web Development: HTML and CSS (1/2)",
+      institution: "SoloLearn",
       isFinish: true,
-      expedition: "27 de febrero de 2025",
-      expiration: "No expira",
-      credentialID: " 306940459",
+      expedition: "February 27, 2025",
+      expiration: "No expiration",
+      credentialID: "306940459",
       credentialURL: "https://www.sololearn.com/certificates/SL-54321",
-      skills: ["Html", "Css", "Web Concept"],
+      skills: ["HTML", "CSS", "Web Concepts"],
     },
     {
       name: "Introduction to Cybersecurity",
-      institucion: "Cisco Networking Academy",
+      institution: "Cisco Networking Academy",
       isFinish: true,
-      expedition: "Febrero 30",
-      expiration: "No expira",
+      expedition: "February 30",
+      expiration: "No expiration",
       credentialID: "CNA-11223",
       credentialURL: "https://www.cisco.com/certificates/CNA-11223",
-      skills: ["Ciberseguridad", "Redes", "Protección de datos"],
+      skills: ["Cybersecurity", "Networking", "Data Protection"],
     },
     {
-      name: "Javascript Intermediate",
-      institucion: "SoloLearn",
+      name: "JavaScript Intermediate",
+      institution: "SoloLearn",
       isFinish: true,
-      expedition: "Febrero 30",
-      expiration: "No expira",
+      expedition: "February 30",
+      expiration: "No expiration",
       credentialID: "SL-33445",
       credentialURL: "https://www.sololearn.com/certificates/SL-33445",
-      skills: ["JavaScript", "Programación funcional", "ES6+"],
+      skills: ["JavaScript", "Functional Programming", "ES6+"],
     },
     {
-      name: "Introduction to Javascript",
-      institucion: "SoloLearn",
+      name: "Introduction to JavaScript",
+      institution: "SoloLearn",
       isFinish: true,
-      expedition: "Febrero 30",
-      expiration: "No expira",
+      expedition: "February 30",
+      expiration: "No expiration",
       credentialID: "SL-55667",
       credentialURL: "https://www.sololearn.com/certificates/SL-55667",
-      skills: ["JavaScript", "DOM", "Eventos"],
+      skills: ["JavaScript", "DOM", "Events"],
     },
     {
       name: "Introduction to Python",
-      institucion: "SoloLearn",
+      institution: "SoloLearn",
       isFinish: true,
-      expedition: "Febrero 30",
-      expiration: "No expira",
+      expedition: "February 30",
+      expiration: "No expiration",
       credentialID: "SL-77889",
       credentialURL: "https://www.sololearn.com/certificates/SL-77889",
-      skills: ["Python", "Sintaxis básica", "Estructuras de control"],
+      skills: ["Python", "Basic Syntax", "Control Structures"],
     },
   ],
 
@@ -264,7 +264,7 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
                 {item.name}
               </h3>
               <p className="text-balance text-sm   bg-clip-text font-light bg-gradient-to-t from-zinc-300 to-gray-100 text-transparent ">
-                {item.institucion}
+                {item.institution}
               </p>
               
               <ul className="flex gap-2 text-xs">

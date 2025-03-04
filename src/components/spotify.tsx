@@ -180,6 +180,7 @@ export function ExpandableCardDemo() {
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
                   className="text-zinc-300 font-bold "
+                  
                 >
                   {card.title}
                 </motion.h3>

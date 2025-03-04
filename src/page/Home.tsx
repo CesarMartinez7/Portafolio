@@ -60,7 +60,7 @@ function Main() {
                 <FlipWords words={words} /> <br />
               </div>
             </div>
-            <div className="text-2xl lg:text-4xl md:leading-tight max-w-4xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 flex items-center gap-2 md:gap-8">
+            <div className="text-2xl lg:text-4xl md:leading-tight max-w-4xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 flex items-center gap-2 md:gap-8" >
               Websites with React and JavaScript
             </div>
 
@@ -79,17 +79,19 @@ function Main() {
                 download={true}
                 initial={{ opacity: 0, scale: 0.3 }}
                 whileInView={{ opacity: 1 }}
-                animate={{ opacity: 1, transition: { duration: 1 }, scale: 1 }}
+                animate={{ opacity: 1, scale: 1 }}
                 className="p-[3px] relative cursor-pointer"
-                href="../../public/CesarMartinezCastroResume-2.pdf"
+                href="./assets/CesarMartinezCastroResume-2.pdf"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-zinc-500 to-zinc-900 rounded-lg" />
+                <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-green-950 rounded-lg" />
                 <div className="px-1 md:px-6 py-2  bg-black rounded-[6px] text-sm  relative group transition  text-white hover:bg-transparent duration-200 font-semibold ">
                   Download CV
                 </div>
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.04 }}
+                initial={{scale: 0}}
+                whileInView={{scale: 1}}
                 className="px-5 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer border-white/5 border"
                 href="https://github.com/CesarMartinez7"
                 target="_blank"
@@ -167,7 +169,7 @@ function Main() {
         >
           My Certification
         </h3>
-        <p className="text-balance  text-center bg-clip-text font-light bg-gradient-to-t from-zinc-400 to-gray-100 text-transparent w-[800px] mb-4 ">
+        <p className="text-balance  text-center bg-clip-text font-light bg-gradient-to-t from-zinc-400 to-gray-100 text-transparent md:w-[800px] mb-4 ">
           I am always learning and improving my skills. These certifications are
           proof of my commitment to technology and digital security.
         </p>

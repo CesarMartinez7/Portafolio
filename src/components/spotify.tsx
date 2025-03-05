@@ -4,9 +4,7 @@ import { act, useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./utils/useOutside";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { p } from "framer-motion/client";
-import ImageNofound from "../../public/nofoundimage.webp"
-
+import ImageNofound from "../../public/nofoundimage.webp";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -14,7 +12,7 @@ export function ExpandableCardDemo() {
   );
   const id = useId();
   const ref = useRef<HTMLDivElement>(null);
-
+  const [isHovered, seIsHovered] = useState<boolean>(false);
   useEffect(() => {
     function onKeyDown(event: KeyboardEvent) {
       if (event.key === "Escape") {
@@ -78,13 +76,17 @@ export function ExpandableCardDemo() {
               className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-black shadow-2xl  sm:rounded-3xl overflow-hidden"
             >
               <motion.div layoutId={`img-${active.title}-${id}`}>
-                <img
-                  width={240}
-                  height={240}
-                  src={active.src.length > 0 ? active.src : ImageNofound}
-                  alt={active.title}
-                  className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
-                />
+                {isHovered ? (
+                  <video src={`../../public/${active.video}`} autoPlay loop  />
+                ) : (
+                  <img
+                    width={240}
+                    height={240}
+                    src={active.src.length > 0 ? active.src : ImageNofound}
+                    alt={active.title}
+                    className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
+                  />
+                )}
               </motion.div>
 
               <div className="mt-4">
@@ -98,7 +100,6 @@ export function ExpandableCardDemo() {
                     </motion.h3>
                   </div>
                   <div className="gap-2 flex  ">
-                    
                     <motion.a
                       layout
                       initial={{ opacity: 0, scale: 0 }}
@@ -163,8 +164,11 @@ export function ExpandableCardDemo() {
           <motion.div
             layoutId={`card-${card.title}-${index}`}
             key={card.title}
-            onClick={() => setActive(card)}
-            className="p-4 bg-black/100 border border-zinc-950 flex flex-col transition-all  duration-300  hover:bg-zinc-950 rounded-xl cursor-pointer"
+            onClick={() => {
+              seIsHovered(true);
+              setActive(card);
+            }}
+            className="p-4 bg-black/100 border border-zinc-950 flex flex-col transition-all  duration-300 hover:bg-zinc-950 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`img-${card.title}-${id}`}>
@@ -180,7 +184,6 @@ export function ExpandableCardDemo() {
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
                   className="text-zinc-300 font-bold "
-                  
                 >
                   {card.title}
                 </motion.h3>
@@ -238,7 +241,7 @@ const cards = [
     title: "Delfilms 🍿",
     src: "delfilms.webp",
     ctaText: "Visit site",
-
+    video: "delfilms.webm",
     tecnologias: [
       {
         name: "React",
@@ -262,9 +265,9 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-           <strong >Delfilms</strong> is a free streaming platform with a wide selection of movies
-          and series. Without subscriptions or annoying ads, it offers simple
-          and cost-free access for movie lovers.
+          <strong>Delfilms</strong> is a free streaming platform with a wide
+          selection of movies and series. Without subscriptions or annoying ads,
+          it offers simple and cost-free access for movie lovers.
         </p>
       );
     },
@@ -348,6 +351,7 @@ const cards = [
     title: "DexTS",
     src: "/dexts.webp",
     ctaText: "Visit site",
+    video: "dexts.webm",
     tecnologias: [
       {
         name: "React",
@@ -379,9 +383,9 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          <strong>DexTS </strong> provides detailed information about anime and manga using
-          GraphQL to fetch real-time data. Find synopses, characters, and more
-          in one place, plus watch anime and read manga!
+          <strong>DexTS </strong> provides detailed information about anime and
+          manga using GraphQL to fetch real-time data. Find synopses,
+          characters, and more in one place, plus watch anime and read manga!
         </p>
       );
     },
@@ -514,9 +518,9 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          <strong>Dragon Ball Wiki</strong> is the ultimate platform for fans of the saga. Find
-          information about characters, transformations, and sagas from this
-          iconic universe.
+          <strong>Dragon Ball Wiki</strong> is the ultimate platform for fans of
+          the saga. Find information about characters, transformations, and
+          sagas from this iconic universe.
         </p>
       );
     },
@@ -525,6 +529,7 @@ const cards = [
     description: "Calculator in VanillaJS",
     title: "Calculator 🖩",
     src: "/calculadora.webp",
+    video: "calculadora.webm",
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -555,6 +560,7 @@ const cards = [
     description: "Fast and versatile port scanner",
     title: "Speed Port",
     src: "/speedports.webp",
+    video:"speedport.mp4" ,
     ctaText: "Look at code",
     tecnologias: [
       {

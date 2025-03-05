@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./utils/useOutside";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import ImageNofound from "../../public/nofoundimage.webp";
+import { video } from "framer-motion/client";
 
 export function ExpandableCardDemo() {
   const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
@@ -62,7 +63,7 @@ export function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white rounded-full h-6 w-6"
+              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white  h-6 w-6"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -73,7 +74,7 @@ export function ExpandableCardDemo() {
               exit={{ opacity: 0, scale: 0 }}
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px]  h-full md:h-fit md:max-h-[90%]  flex flex-col bg-black shadow-2xl  sm:rounded-3xl overflow-hidden"
+              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%]  flex flex-col bg-black shadow-2xl shadow-white/2 rounded-full sm:rounded-xl overflow-hidden"
             >
               <motion.div layoutId={`img-${active.title}-${id}`}>
                 {isHovered ? (
@@ -110,7 +111,7 @@ export function ExpandableCardDemo() {
                       }}
                       href={active.ctaLinkCode}
                       target="_blank"
-                      className="px-2 py-0.5 text-xs font-bold bg-zinc-900 text-white rounded-lg hover:bg-zinc-950 duration-200 border gap-1.5 border-zinc-800 border-b-3 whitespace-nowrap flex justify-center items-center"
+                      className="px-2 py-0.5 text-xs font-bold bg-zinc-900 text-white  hover:bg-zinc-950 duration-200 border gap-1.5 border-zinc-800 border-b-3 whitespace-nowrap flex justify-center items-center rounded-md"
                     >
                       <Icon icon="tabler:brand-github" width="18" height="18" />
                       Repository
@@ -168,7 +169,7 @@ export function ExpandableCardDemo() {
               seIsHovered(true);
               setActive(card);
             }}
-            className="p-4 bg-black/100 border border-zinc-950 flex flex-col transition-all  duration-300 hover:bg-zinc-950 rounded-xl cursor-pointer"
+            className="p-3 bg-black/100 border border-zinc-950 flex flex-col transition-all  duration-300 hover:bg-zinc-950 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`img-${card.title}-${id}`}>
@@ -319,6 +320,7 @@ const cards = [
     description: "Anime streaming platform",
     title: "Meko ☕",
     src: "/meko.webp",
+    video: "meko.webm",
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -394,6 +396,7 @@ const cards = [
     description: "Mercado Libre clone",
     title: "Mercado Libre Clone 📦",
     src: "/mercadolibre.webp",
+    video: "mercadolibre.mp4",
     ctaText: "Visit site",
     tecnologias: [
       {

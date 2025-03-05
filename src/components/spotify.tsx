@@ -78,7 +78,7 @@ export function ExpandableCardDemo() {
             >
               <motion.div layoutId={`img-${active.title}-${id}`}>
                 {isHovered ? (
-                  <video src={`./${active.video}`} autoPlay loop  />
+                  <video src={`./${active.video}`} autoPlay loop />
                 ) : (
                   <img
                     width={240}
@@ -95,12 +95,12 @@ export function ExpandableCardDemo() {
                   <div className="w-fit">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className=" text-white font-bold text-xl "
+                      className=" text-white shiny-text font-bold text-xl "
                     >
                       {active.title}
                     </motion.h3>
                   </div>
-                  <div className="gap-2 flex  ">
+                  <div className="gap-2 flex">
                     <motion.a
                       layout
                       initial={{ opacity: 0, scale: 0 }}
@@ -160,7 +160,7 @@ export function ExpandableCardDemo() {
           </div>
         ) : null}
       </AnimatePresence>
-      <main className="max-w-3xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start p-4 gap-4 md:p-4 lg:p-2 ">
+      <main className="max-w-3xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start p-4 gap-2 md:p-4 lg:p-2 ">
         {cards.map((card, index) => (
           <motion.div
             layoutId={`card-${card.title}-${index}`}
@@ -181,19 +181,30 @@ export function ExpandableCardDemo() {
                   className="h-60 w-full rounded-lg object-cover object-top"
                 />
               </motion.div>
-              <div className="flex flex-col">
-                <motion.h3
-                  layoutId={`title-${card.title}-${id}`}
-                  className="text-zinc-300 font-bold "
-                >
-                  {card.title}
-                </motion.h3>
-                <motion.p
-                  layoutId={`description-${card.description}-${id}`}
-                  className="text-balance bg-clip-text font-light bg-gradient-to-t  from-zinc-300 to-gray-100 text-transparent text-sm "
-                >
-                  {card.description}
-                </motion.p>
+              <div className="grid  grid-cols-[1fr_auto]">
+                <motion.div className="">
+                  <motion.h3
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    layoutId={`title-${card.title}-${id}`}
+                    className="text-zinc-300 font-bold "
+                  >
+                    {card.title}
+                  </motion.h3>
+                  <motion.p
+                    initial={{ opacity: 0, scale: 0 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    layoutId={`description-${card.description}-${id}`}
+                    className="text-balance bg-clip-text font-light bg-gradient-to-t  from-zinc-300 to-gray-100 shiny-text text-transparent text-sm "
+                  >
+                    {card.description}
+                  </motion.p>
+                </motion.div>
+                {card.status ? (
+                  <button className="bg-white/7 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/10">Finished</button>
+                ) : (
+                  <button className="bg-white/20 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/15">In development</button>
+                )}
               </div>
             </div>
           </motion.div>
@@ -242,6 +253,7 @@ const cards = [
     title: "Delfilms 🍿",
     src: "delfilms.webp",
     ctaText: "Visit site",
+    status: true,
     video: "delfilms.webm",
     tecnologias: [
       {
@@ -278,6 +290,7 @@ const cards = [
     title: "DataFast ⚡",
     src: "/datafast.webp",
     ctaText: "Visit site",
+    status: true,
     tecnologias: [
       {
         name: "Javascript",
@@ -320,6 +333,7 @@ const cards = [
     description: "Anime streaming platform",
     title: "Meko ☕",
     src: "/meko.webp",
+    status: true,
     video: "meko.webm",
     ctaText: "Visit site",
     tecnologias: [
@@ -352,6 +366,7 @@ const cards = [
     description: "Anime and manga encyclopedia",
     title: "DexTS",
     src: "/dexts.webp",
+    status: true,
     ctaText: "Visit site",
     video: "dexts.webm",
     tecnologias: [
@@ -397,6 +412,7 @@ const cards = [
     title: "Mercado Libre Clone 📦",
     src: "/mercadolibre.webp",
     video: "mercadolibre.mp4",
+    status: false,
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -432,6 +448,7 @@ const cards = [
     description: "Real-time weather app",
     title: "WeatherNo ⛈️",
     src: "",
+    status: true,
     tecnologias: [
       {
         name: "React",
@@ -466,6 +483,8 @@ const cards = [
     description: "Image search with Pexels API",
     title: "GalleryPhotos 📷",
     src: "/galleryphoto.webp",
+    video: "galleryphoto.mp4",
+    status: true,
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -497,6 +516,7 @@ const cards = [
     description: "Dragon Ball encyclopedia",
     title: "Dragon Ball Wiki 🐉",
     src: "/dragonballwiki.webp",
+    status: true,
     ctaText: "Visit site",
     tecnologias: [
       {
@@ -532,6 +552,7 @@ const cards = [
     description: "Calculator in VanillaJS",
     title: "Calculator 🖩",
     src: "/calculadora.webp",
+    status: true,
     video: "calculadora.webm",
     ctaText: "Visit site",
     tecnologias: [
@@ -563,7 +584,8 @@ const cards = [
     description: "Fast and versatile port scanner",
     title: "Speed Port",
     src: "/speedports.webp",
-    video:"speedport.mp4" ,
+    video: "speedport.mp4",
+    status: true,
     ctaText: "Look at code",
     tecnologias: [
       {
@@ -588,6 +610,7 @@ const cards = [
   {
     description: "Task management app",
     title: "TaskMaster ✅",
+    status: true,
     src: "",
     ctaText: "Visit site",
     tecnologias: [
@@ -616,6 +639,8 @@ const cards = [
     description: "Bot for Telegram",
     title: "Catchy Bot 🤖",
     src: "/catchybot.webp",
+    status: true,
+    video: "catchybot.webm",
     ctaText: "Send Message",
     tecnologias: [
       {
@@ -652,6 +677,7 @@ const cards = [
     title: "Pysoccer",
     src: "/pysoccer.webp",
     ctaText: "Look at code",
+    status: true,
     tecnologias: [
       {
         name: "Python",

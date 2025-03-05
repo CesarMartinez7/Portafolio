@@ -29,7 +29,7 @@ body {
 
 .shiny-text {
   color:#ffffffea;
-  background:linear-gradient(120deg,rgba(0, 0, 0, 0) 40%,#fffc,rgba(0, 0, 0, 0) 60%);
+  background:linear-gradient(120deg,rgba(26, 26, 26, 0) 40%,#fffc,rgba(0, 0, 0, 0) 60%);
   background-size:200% 100%;
   -webkit-background-clip:text;
   background-clip:text;

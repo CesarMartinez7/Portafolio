@@ -78,7 +78,7 @@ export function ExpandableCardDemo() {
             >
               <motion.div layoutId={`img-${active.title}-${id}`}>
                 {isHovered ? (
-                  <video src={`./${active.video}`} autoPlay loop />
+                  <video className="aspect-video" src={`./${active.video}`} autoPlay loop />
                 ) : (
                   <img
                     width={240}
@@ -516,6 +516,7 @@ const cards = [
     description: "Dragon Ball encyclopedia",
     title: "Dragon Ball Wiki 🐉",
     src: "/dragonballwiki.webp",
+    video: "dragonballwiki.webm",
     status: true,
     ctaText: "Visit site",
     tecnologias: [

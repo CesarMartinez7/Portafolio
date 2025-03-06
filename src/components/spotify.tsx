@@ -169,7 +169,7 @@ export function ExpandableCardDemo() {
               seIsHovered(true);
               setActive(card);
             }}
-            className="p-3 bg-black/100 border border-zinc-950 flex flex-col transition-all  duration-300 hover:bg-zinc-950 rounded-xl cursor-pointer"
+            className="p-3 bg-black/100 border border-zinc-950 flex flex-col transition-all  duration-300 hover:bg-zinc-950   hover:shadow-green-900 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`img-${card.title}-${id}`}>
@@ -335,7 +335,7 @@ const cards = [
     title: "Meko ☕",
     src: "/meko.webp",
     status: true,
-    video: "meko.webm",
+    video: "meko.mp4",
     ctaText: "Visit site",
     tecnologias: [
       {

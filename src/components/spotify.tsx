@@ -290,6 +290,7 @@ const cards = [
     title: "DataFast ⚡",
     src: "/datafast.webp",
     ctaText: "Visit site",
+    video: "datafast.mp4",
     status: true,
     tecnologias: [
       {
@@ -607,35 +608,6 @@ const cards = [
       );
     },
   },
-
-  {
-    description: "Task management app",
-    title: "TaskMaster ✅",
-    status: true,
-    src: "",
-    ctaText: "Visit site",
-    tecnologias: [
-      {
-        name: "Vue",
-        icon: "logos:vue",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "logos:tailwindcss-icon",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
-    ctaLink: "https://github.com/CesarMartinez7/taskmaster",
-    content: () => {
-      return (
-        <p className="text-sm">
-          TaskMaster is an app designed to improve personal and team
-          productivity. Plan, organize, and achieve your goals with intuitive
-          and collaborative features.
-        </p>
-      );
-    },
-  },
   {
     description: "Bot for Telegram",
     title: "Catchy Bot 🤖",
@@ -678,7 +650,8 @@ const cards = [
     title: "Pysoccer",
     src: "/pysoccer.webp",
     ctaText: "Look at code",
-    status: true,
+    video: "pysoccer.mp4",
+    status: false,
     tecnologias: [
       {
         name: "Python",

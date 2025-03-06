@@ -446,41 +446,6 @@ const cards = [
     },
   },
   {
-    description: "Real-time weather app",
-    title: "WeatherNo ⛈️",
-    src: "",
-    status: true,
-    tecnologias: [
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Typescript",
-        icon: "logos:typescript-icon",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "logos:tailwindcss-icon",
-      },
-      {
-        name: "NextJS",
-        icon: "logos:nextjs-icon",
-      },
-    ],
-    ctaText: "Visit site",
-    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
-    ctaLink: "https://github.com/CesarMartinez7/weathernow",
-    content: () => {
-      return (
-        <p className="text-sm">
-          WeatherNow keeps you informed about weather conditions in real-time.
-          Get detailed forecasts and alerts for any location.
-        </p>
-      );
-    },
-  },
-  {
     description: "Image search with Pexels API",
     title: "GalleryPhotos 📷",
     src: "/galleryphoto.webp",
@@ -678,4 +643,39 @@ const cards = [
       );
     },
   },
+  {
+    description: "Real-time weather app",
+    title: "WeatherNo ⛈️",
+    src: "",
+    status: true,
+    tecnologias: [
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+      {
+        name: "Typescript",
+        icon: "logos:typescript-icon",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "logos:tailwindcss-icon",
+      },
+      {
+        name: "NextJS",
+        icon: "logos:nextjs-icon",
+      },
+    ],
+    ctaText: "Visit site",
+    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
+    ctaLink: "https://github.com/CesarMartinez7/weathernow",
+    content: () => {
+      return (
+        <p className="text-sm">
+          WeatherNow keeps you informed about weather conditions in real-time.
+          Get detailed forecasts and alerts for any location.
+        </p>
+      );
+    },
+  }
 ];

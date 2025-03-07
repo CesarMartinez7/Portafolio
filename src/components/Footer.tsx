@@ -24,7 +24,11 @@ export default function Footer() {
             <Icon icon="tabler:brand-linkedin" width="30" height="30" />
           </a>
         </div>
-        <div></div>
+        <div>
+          <a href="">
+          <Icon icon="tabler:brand-discord" width="30" height="30" />
+          </a>
+        </div>
       </div>
     </footer>
   );

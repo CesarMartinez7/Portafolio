@@ -63,7 +63,7 @@ export function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white/70  h-6 w-6 rounded-2xl"
+              className="flex absolute top-2 right-2 lg:hidden items-center justify-center z-50 bg-white/70  h-6 w-6 rounded-2xl"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -647,7 +647,7 @@ const cards = [
     description: "Real-time weather app",
     title: "WeatherNo ⛈️",
     src: "",
-    status: true,
+    status: false,
     tecnologias: [
       {
         name: "React",

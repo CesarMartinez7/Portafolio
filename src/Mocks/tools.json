@@ -1,65 +1,17 @@
 [
-  { "name": "react", "color": "#61DAFB", "link": "https://reactjs.org/" },
-  {
-    "name": "javascript",
-    "color": "#F7DF1E",
-    "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
-  },
-  { "name": "python", "color": "#3776AB", "link": "https://www.python.org/" },
-  { "name": "linux-tux", "color": "#FCC624", "link": "https://www.linux.org/" },
-  { "name": "npm", "color": "#CB3837", "link": "https://www.npmjs.com/" },
-  { "name": "mysql-icon", "color": "#4479A1", "link": "https://www.mysql.com/" },
-  { "name": "git-icon", "color": "#F05032", "link": "https://git-scm.com/" },
-  {
-    "name": "visual-studio-code", 
-    "color": "#007ACC",
-    "link": "https://code.visualstudio.com/"
-  },
-  {
-    "name": "tailwindcss-icon",
-    "color": "#38B2AC",
-    "link": "https://tailwindcss.com/"
-  },
-  { "name": "nodejs-icon", "color": "#339933", "link": "https://nodejs.org/" },
-  { "name": "mysql-icon", "color": "#003B57", "link": "https://www.sqlite.org/" },
-  {
-    "name": "html-5",
-    "color": "#E34F26",
-    "link": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5"
-  },
-  {
-    "name": "typescript-icon",
-    "color": "#3178C6",
-    "link": "https://www.typescriptlang.org/"
-  },
-  {
-    "name": "bootstrap",
-    "color": "#9013fe",
-    "link": "https://www.typescriptlang.org/"
-  },
-  {
-    "name": "github-icon",
-    "color": "#2f2f2f",
-    "link": "https://www.typescriptlang.org/"
-  },
-  {
-    "name": "css-3",
-    "color": "#3167c6",
-    "link": "https://www.typescriptlang.org/"
-  },
-  {
-    "name": "vitejs",
-    "color": "#3167c6",
-    "link": "https://www.typescriptlang.org/"
-  },
-  {
-    "name": "manjaro",
-    "color": "#3167c6",
-    "link": "https://www.typescriptlang.org/"
-  },
-  {
-    "name": "react-router",
-    "color": "#3167c6",
-    "link": "https://www.typescriptlang.org/"
-  }
+  { "name": "react", "name2": "React", "color": "#61DAFB", "link": "https://reactjs.org/" },
+  { "name": "javascript", "name2": "Javascript", "color": "#F7DF1E", "link": "https://developer.mozilla.org/en-US/docs/Web/JavaScript" },
+  { "name": "python", "name2": "Python", "color": "#3776AB", "link": "https://www.python.org/" },
+  { "name": "linux-tux", "name2": "Linux", "color": "#FCC624", "link": "https://www.linux.org/" },
+  { "name": "mysql-icon", "name2": "Mysql", "color": "#4479A1", "link": "https://www.mysql.com/" },
+  { "name": "git-icon", "name2": "Git", "color": "#F05032", "link": "https://git-scm.com/" },
+  { "name": "visual-studio-code", "name2": "Visual Studio Code", "color": "#007ACC", "link": "https://code.visualstudio.com/" },
+  { "name": "tailwindcss-icon", "name2": "Tailwindcss", "color": "#38B2AC", "link": "https://tailwindcss.com/" },
+  { "name": "nodejs-icon", "name2": "Nodejs", "color": "#339933", "link": "https://nodejs.org/" },
+  { "name": "html-5", "name2": "Html", "color": "#E34F26", "link": "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5" },
+  { "name": "typescript-icon", "name2": "Typescript", "color": "#3178C6", "link": "https://www.typescriptlang.org/" },
+  { "name": "bootstrap", "name2": "Bootstrap", "color": "#9013fe", "link": "https://getbootstrap.com/" },
+  { "name": "github-icon", "name2": "Github", "color": "#2f2f2f", "link": "https://github.com/" },
+  { "name": "css-3", "name2": "Css", "color": "#3167c6", "link": "https://developer.mozilla.org/en-US/docs/Web/CSS" },
+  { "name": "manjaro", "name2": "Manjaro", "color": "#3167c6", "link": "https://manjaro.org/" }
 ]

@@ -11,6 +11,8 @@ import Overview from "../components/overview";
 import { AnimatedGridPattern } from "../components/grid-patter";
 import AnimatedList from "../components/certifaciones";
 import Navbar from "../components/navbar";
+import Habilidades from "../components/Habilidades";
+import { Marquee } from "../components/Habilidades";
 
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
@@ -60,7 +62,7 @@ function Main() {
                 <FlipWords words={words} /> <br />
               </div>
             </div>
-            <div className="text-2xl lg:text-4xl md:leading-tight max-w-4xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 flex items-center gap-2 md:gap-8" >
+            <div className="text-2xl lg:text-4xl md:leading-tight max-w-4xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 flex items-center gap-2 md:gap-8">
               Websites with React and JavaScript
             </div>
 
@@ -90,8 +92,8 @@ function Main() {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.04 }}
-                initial={{scale: 0}}
-                whileInView={{scale: 1}}
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
                 className="px-5 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer border-white/5 border"
                 href="https://github.com/CesarMartinez7"
                 target="_blank"
@@ -131,9 +133,7 @@ function Main() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1, transition: { duration: 1 } }}
           exit={{ opacity: 0 }}
-
         >
-          
           <h3
             className="text-center text-3xl font-bold my-2 from-green-500 bg-clip-text  bg-gradient-to-br  to-green-500 text-transparent"
             style={{
@@ -151,13 +151,13 @@ function Main() {
         </motion.div>
       </div>
       <div className="flex items-center h-svh justify-center flex-col relative  ">
-      <AnimatedGridPattern
+        <AnimatedGridPattern
           numSquares={40}
           maxOpacity={1}
           duration={4}
           repeatDelay={10}
           className={cn(
-            "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] ",
+            "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
           )}
         />
         <h3
@@ -175,6 +175,7 @@ function Main() {
         </p>
         <AnimatedList />
       </div>
+      <Habilidades />
     </motion.div>
   );
 }

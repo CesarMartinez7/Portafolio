@@ -63,7 +63,7 @@ export function ExpandableCardDemo() {
                   duration: 0.05,
                 },
               }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white  h-6 w-6"
+              className="flex absolute top-2 right-2 lg:hidden items-center justify-center bg-white/70  h-6 w-6 rounded-2xl"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -74,7 +74,7 @@ export function ExpandableCardDemo() {
               exit={{ opacity: 0, scale: 0 }}
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-[500px] h-full md:h-fit md:max-h-[90%]  flex flex-col bg-black shadow-2xl shadow-white/2 rounded-full sm:rounded-xl overflow-hidden"
+              className="w-full max-w-[500px] h-full  md:h-fit md:max-h-[90%]  flex flex-col bg-black shadow-2xl shadow-white/2  sm:rounded-xl overflow-hidden"
             >
               <motion.div layoutId={`img-${active.title}-${id}`}>
                 {isHovered ? (

@@ -40,21 +40,6 @@ function Main() {
           )}
         />
         <div className="h-dvh gap-6 md:p-12 w-full lg:p-12 grid relative">
-          <motion.button
-            title="Ir a overview"
-            initial={{ scale: 0 }}
-            animate={{ scale: 1, transition: { duration: 0.3, delay: 0.3 } }}
-            exit={{ scale: 0, opacity: 0 }}
-            whileHover={{ scale: 1.1, rotate: 3 }}
-            onClick={() => {
-              if (divProject.current) {
-                window.scrollTo({ top: 900, behavior: "smooth" });
-              }
-            }}
-            className="shiny-text animate-pulse shiny-button rounded-md absolute top-[95%] left-[50%] transform translate-x-[-50%] translate-y-[-50%]"
-          >
-            <Icon icon="si:expand-more-duotone" width="24" height="24" />
-          </motion.button>
           <div className="flex  items-center justify-center w-full h-full flex-col gap-2.5 p-3 lg:p-12">
             <div>
               <div className="text-5xl mx-auto font-normal">

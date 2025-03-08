@@ -12,7 +12,7 @@ import { AnimatedGridPattern } from "../components/grid-patter";
 import AnimatedList from "../components/certifaciones";
 import Navbar from "../components/navbar";
 import Habilidades from "../components/Habilidades";
-import Form from "../components/form";
+
 
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);

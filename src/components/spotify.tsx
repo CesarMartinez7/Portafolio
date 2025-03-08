@@ -111,7 +111,7 @@ export function ExpandableCardDemo() {
                       }}
                       href={active.ctaLinkCode}
                       target="_blank"
-                      className="px-2 py-0.5 text-xs font-bold bg-zinc-900 text-white  hover:bg-zinc-950 duration-200 border gap-1.5 border-zinc-800 border-b-3 whitespace-nowrap flex justify-center items-center rounded-md"
+                      className="text-xs px-1 md:px-2 md:py-0.5 md:text-xs font-bold bg-zinc-900 text-white  hover:bg-zinc-950 duration-200 border gap-1.5 border-zinc-800 border-b-3 whitespace-nowrap flex justify-center items-center rounded-md"
                     >
                       <Icon icon="tabler:brand-github" width="18" height="18" />
                       Repository
@@ -126,7 +126,7 @@ export function ExpandableCardDemo() {
                       }}
                       href={active.ctaLink}
                       target="_blank"
-                      className="px-4 py-1 text-sm font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-600 border-b-3 whitespace-nowrap"
+                      className=" py-1 px-1 md:px-2 md:py-0.5 md:text-sm text-xs font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-600 border-b-3 whitespace-nowrap"
                     >
                       {active.ctaText}
                     </motion.a>
@@ -281,6 +281,14 @@ const cards = [
           <strong>Delfilms</strong> is a free streaming platform with a wide
           selection of movies and series. Without subscriptions or annoying ads,
           it offers simple and cost-free access for movie lovers.
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se utilizo React para construir interfaces dinámicas.</li>
+            <li>✅ Se implementó Vite para un desarrollo rápido y eficiente.</li>
+            <li>✅ Se utilizó Tailwind CSS para diseñar una interfaz responsive.</li>
+            <li>✅ Se manejó el estado de la aplicación con React Hooks.</li>
+          </ul>
         </p>
       );
     },
@@ -326,6 +334,14 @@ const cards = [
           DataFast is a system designed to optimize inventory management and
           facilitate product control in companies of all sizes. It improves
           efficiency and reduces operation time.
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se integró un backend en Node.js con una base de datos MySQL.</li>
+            <li>✅ Se utilizó Chart.js para visualizar datos de inventario.</li>
+            <li>✅ Se aprendió a manejar rutas y autenticación en React.</li>
+            <li>✅ Se implementó Tailwind CSS para estilizar la interfaz.</li>
+          </ul>
         </p>
       );
     },
@@ -359,6 +375,14 @@ const cards = [
           Meko is a platform focused on anime streaming, with an updated catalog
           and a smooth interface. Find and enjoy your favorite series without
           complications.
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se trabajó con TypeScript para mejorar la calidad del código.</li>
+            <li>✅ Se implementó Tailwind CSS para un diseño rápido y eficiente.</li>
+            <li>✅ Se aprendió a manejar props y estados en TypeScript.</li>
+            <li>✅ Se integró un reproductor de video para streaming.</li>
+          </ul>
         </p>
       );
     },
@@ -404,6 +428,15 @@ const cards = [
           <strong>DexTS </strong> provides detailed information about anime and
           manga using GraphQL to fetch real-time data. Find synopses,
           characters, and more in one place, plus watch anime and read manga!
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se aprendió a utilizar GraphQL para consultas en tiempo real.</li>
+            <li>✅ Se integró Apollo Client para manejar las consultas GraphQL.</li>
+            <li>✅ Se utilizó DaisyUI para componentes de interfaz adicionales de Tailwind.</li>
+            <li>✅ Se trabajó con TypeScript para un código más robusto y prevenir errores.</li>
+            <li>✅ Hize uso de la API de localStorage para un simple sistema de historial.</li>
+          </ul>
         </p>
       );
     },
@@ -441,6 +474,14 @@ const cards = [
           A clone of Mercado Libre developed with Next.js, React, and Tailwind
           CSS. It replicates the shopping experience with advanced search and
           responsive design.
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se aprendió a utilizar Next.js para renderizado del lado del servidor.</li>
+            <li>✅ Se implementó TypeScript para mejorar la calidad del código.</li>
+            <li>✅ Se utilizó Tailwind CSS para un diseño rápido y eficiente.</li>
+            <li>✅ Se trabajó con búsquedas avanzadas y filtros dinámicos.</li>
+          </ul>
         </p>
       );
     },
@@ -474,6 +515,14 @@ const cards = [
           GalleryPhotos allows you to explore and download high-quality images
           thanks to the Pexels API. Find the perfect image in seconds with an
           intuitive interface.
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se aprendió a integrar APIs de terceros (Pexels) en React.</li>
+            <li>✅ Se utilizó Next.js para renderizado del lado del servidor.</li>
+            <li>✅ Se trabajó con TypeScript para un código más seguro.</li>
+            <li>✅ Se implementó un sistema de búsqueda y filtrado de imágenes.</li>
+          </ul>
         </p>
       );
     },
@@ -511,6 +560,14 @@ const cards = [
           <strong>Dragon Ball Wiki</strong> is the ultimate platform for fans of
           the saga. Find information about characters, transformations, and
           sagas from this iconic universe.
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se aprendió a utilizar Vite para un desarrollo rápido.</li>
+            <li>✅ Se implementó Tailwind CSS para un diseño responsive.</li>
+            <li>✅ Se trabajó con React para manejar estados complejos.</li>
+            <li>✅ Se integró un sistema de búsqueda de personajes y sagas.</li>
+          </ul>
         </p>
       );
     },
@@ -543,6 +600,14 @@ const cards = [
         <p className="text-sm">
           A simple yet efficient calculator to perform basic math operations
           with a clean and user-friendly interface.
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se aprendió a manipular el DOM con JavaScript.</li>
+            <li>✅ Se implementó lógica para operaciones matemáticas básicas.</li>
+            <li>✅ Se utilizó CSS para diseñar una interfaz limpia y funcional.</li>
+            <li>✅ Se trabajó con eventos de usuario para interactividad.</li>
+          </ul>
         </p>
       );
     },
@@ -569,6 +634,14 @@ const cards = [
           Python. It features MAC address spoofing to disrupt a target network
           and leverages the capabilities of <strong>Scapy</strong>, a robust
           packet manipulation library for Python.
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se aprendió a utilizar Scapy para manipulación de paquetes.</li>
+            <li>✅ Se implementó un escáner de puertos eficiente.</li>
+            <li>✅ Se trabajó con spoofing de direcciones MAC.</li>
+            <li>✅ Se aprendió sobre protocolos de red y seguridad.</li>
+          </ul>
         </p>
       );
     },
@@ -606,6 +679,14 @@ const cards = [
           This is a Telegram bot developed in Python that allows you to download
           music from YouTube directly from a chat. Simply send a video link, and
           the bot will convert it to audio and send it to you in seconds.
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se aprendió a interactuar con la API de Telegram.</li>
+            <li>✅ Se implementó un sistema para descargar y convertir videos.</li>
+            <li>✅ Se utilizó Docker para contenerizar la aplicación.</li>
+            <li>✅ Se publicó el bot como un paquete en PyPI.</li>
+          </ul>
         </p>
       );
     },
@@ -639,43 +720,15 @@ const cards = [
           Pysoccer is a game with weird physics and bugs that are really
           annoying but fun, making it a GOTY-worthy game to play OFFLINE WITH
           MULTIPLAYER.
+          <br /><br />
+          <strong>Aprendizajes:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Se aprendió a utilizar Pygame para desarrollo de juegos.</li>
+            <li>✅ Se implementó un sistema de física básico.</li>
+            <li>✅ Se trabajó con Docker para empaquetar el juego.</li>
+          </ul>
         </p>
       );
     },
   },
-  {
-    description: "Real-time weather app",
-    title: "WeatherNo ⛈️",
-    src: "",
-    status: false,
-    tecnologias: [
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Typescript",
-        icon: "logos:typescript-icon",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "logos:tailwindcss-icon",
-      },
-      {
-        name: "NextJS",
-        icon: "logos:nextjs-icon",
-      },
-    ],
-    ctaText: "Visit site",
-    ctaLinkCode: "https://github.com/CesarMartinez/Delfilms",
-    ctaLink: "https://github.com/CesarMartinez7/weathernow",
-    content: () => {
-      return (
-        <p className="text-sm">
-          WeatherNow keeps you informed about weather conditions in real-time.
-          Get detailed forecasts and alerts for any location.
-        </p>
-      );
-    },
-  }
-];
+]

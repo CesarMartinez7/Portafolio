@@ -12,7 +12,7 @@ import { AnimatedGridPattern } from "../components/grid-patter";
 import AnimatedList from "../components/certifaciones";
 import Navbar from "../components/navbar";
 import Habilidades from "../components/Habilidades";
-import { Marquee } from "../components/Habilidades";
+import Form from "../components/form";
 
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
@@ -151,15 +151,7 @@ function Main() {
         </motion.div>
       </div>
       <div className="flex items-center h-svh justify-center flex-col relative  ">
-        <AnimatedGridPattern
-          numSquares={40}
-          maxOpacity={1}
-          duration={4}
-          repeatDelay={10}
-          className={cn(
-            "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
-          )}
-        />
+        
         <h3
           className="text-center text-3xl font-bold my-2 from-green-500 bg-clip-text bg-gradient-to-br  to-green-500 text-transparent"
           style={{

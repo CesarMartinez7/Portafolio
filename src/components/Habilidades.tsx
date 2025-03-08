@@ -1,10 +1,21 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "./SpothCard";
 import ToolJson from "../Mocks/tools.json";
+import { AnimatedGridPattern } from "./grid-patter";
+import { cn } from "./utils";
 
 export default function Habilidades() {
   return (
     <div className="h-svh w-full grid place-content-center relative">
+      <AnimatedGridPattern
+          numSquares={30}
+          maxOpacity={1}
+          duration={4}
+          repeatDelay={10}
+          className={cn(
+            "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
+          )}
+        />
       <div className="flex justify-center">
         <h3  style={{
             textShadow:

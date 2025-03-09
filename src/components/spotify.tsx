@@ -624,6 +624,10 @@ const cards = [
         name: "Python",
         icon: "logos:python",
       },
+      {
+        name:"Nmap",
+        icon: "file-icons:nmap"
+      }
     ],
     ctaLinkCode: "https://github.com/CesarMartinez/anchorports",
     ctaLink: "https://github.com/CesarMartinez7/anchorport",
@@ -632,7 +636,7 @@ const cards = [
         <p className="text-sm">
           <strong>Speed Port</strong> is a powerful port scanner built with
           Python. It features MAC address spoofing to disrupt a target network
-          and leverages the capabilities of <strong>Scapy</strong>, a robust
+          and leverages the capabilities of <strong>Scapy</strong> and <strong>Nmap</strong>, a robust
           packet manipulation library for Python.
           <br /><br />
           <strong>Aprendizajes:</strong>

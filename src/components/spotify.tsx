@@ -78,7 +78,7 @@ export function ExpandableCardDemo() {
             >
               <motion.div layoutId={`img-${active.title}-${id}`}>
                 {isHovered ? (
-                  <video className="aspect-video" src={`./${active.video}`} autoPlay loop />
+                  <video className="aspect-video" src={`./${active.video}`} autoPlay loop preload="auto"/>
                 ) : (
                   <img
                     width={240}

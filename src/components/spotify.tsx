@@ -247,6 +247,8 @@ export const CloseIcon = () => {
   );
 };
 
+
+
 const cards = [
   {
     description: "Free streaming platform",
@@ -282,12 +284,12 @@ const cards = [
           selection of movies and series. Without subscriptions or annoying ads,
           it offers simple and cost-free access for movie lovers.
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se utilizo React para construir interfaces dinámicas.</li>
-            <li>✅ Se implementó Vite para un desarrollo rápido y eficiente.</li>
-            <li>✅ Se utilizó Tailwind CSS para diseñar una interfaz responsive.</li>
-            <li>✅ Se manejó el estado de la aplicación con React Hooks.</li>
+            <li>✅ React was used to build dynamic interfaces.</li>
+            <li>✅ Vite was implemented for fast and efficient development.</li>
+            <li>✅ Tailwind CSS was used to design a responsive interface.</li>
+            <li>✅ Application state was managed with React Hooks.</li>
           </ul>
         </p>
       );
@@ -335,12 +337,12 @@ const cards = [
           facilitate product control in companies of all sizes. It improves
           efficiency and reduces operation time.
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se integró un backend en Node.js con una base de datos MySQL.</li>
-            <li>✅ Se utilizó Chart.js para visualizar datos de inventario.</li>
-            <li>✅ Se aprendió a manejar rutas y autenticación en React.</li>
-            <li>✅ Se implementó Tailwind CSS para estilizar la interfaz.</li>
+            <li>✅ A Node.js backend was integrated with a MySQL database.</li>
+            <li>✅ Chart.js was used to visualize inventory data.</li>
+            <li>✅ Learned to handle routes and authentication in React.</li>
+            <li>✅ Tailwind CSS was implemented to style the interface.</li>
           </ul>
         </p>
       );
@@ -376,12 +378,12 @@ const cards = [
           and a smooth interface. Find and enjoy your favorite series without
           complications.
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se trabajó con TypeScript para mejorar la calidad del código.</li>
-            <li>✅ Se implementó Tailwind CSS para un diseño rápido y eficiente.</li>
-            <li>✅ Se aprendió a manejar props y estados en TypeScript.</li>
-            <li>✅ Se integró un reproductor de video para streaming.</li>
+            <li>✅ Worked with TypeScript to improve code quality.</li>
+            <li>✅ Tailwind CSS was implemented for fast and efficient design.</li>
+            <li>✅ Learned to handle props and states in TypeScript.</li>
+            <li>✅ Integrated a video player for streaming.</li>
           </ul>
         </p>
       );
@@ -429,13 +431,13 @@ const cards = [
           manga using GraphQL to fetch real-time data. Find synopses,
           characters, and more in one place, plus watch anime and read manga!
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se aprendió a utilizar GraphQL para consultas en tiempo real.</li>
-            <li>✅ Se integró Apollo Client para manejar las consultas GraphQL.</li>
-            <li>✅ Se utilizó DaisyUI para componentes de interfaz adicionales de Tailwind.</li>
-            <li>✅ Se trabajó con TypeScript para un código más robusto y prevenir errores.</li>
-            <li>✅ Hize uso de la API de localStorage para un simple sistema de historial.</li>
+            <li>✅ Learned to use GraphQL for real-time queries.</li>
+            <li>✅ Integrated Apollo Client to handle GraphQL queries.</li>
+            <li>✅ Used DaisyUI for additional Tailwind UI components.</li>
+            <li>✅ Worked with TypeScript for more robust code and error prevention.</li>
+            <li>✅ Used the localStorage API for a simple history system.</li>
           </ul>
         </p>
       );
@@ -475,12 +477,12 @@ const cards = [
           CSS. It replicates the shopping experience with advanced search and
           responsive design.
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se aprendió a utilizar Next.js para renderizado del lado del servidor.</li>
-            <li>✅ Se implementó TypeScript para mejorar la calidad del código.</li>
-            <li>✅ Se utilizó Tailwind CSS para un diseño rápido y eficiente.</li>
-            <li>✅ Se trabajó con búsquedas avanzadas y filtros dinámicos.</li>
+            <li>✅ Learned to use Next.js for server-side rendering.</li>
+            <li>✅ Implemented TypeScript to improve code quality.</li>
+            <li>✅ Used Tailwind CSS for fast and efficient design.</li>
+            <li>✅ Worked with advanced search and dynamic filters.</li>
           </ul>
         </p>
       );
@@ -516,12 +518,12 @@ const cards = [
           thanks to the Pexels API. Find the perfect image in seconds with an
           intuitive interface.
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se aprendió a integrar APIs de terceros (Pexels) en React.</li>
-            <li>✅ Se utilizó Next.js para renderizado del lado del servidor.</li>
-            <li>✅ Se trabajó con TypeScript para un código más seguro.</li>
-            <li>✅ Se implementó un sistema de búsqueda y filtrado de imágenes.</li>
+            <li>✅ Learned to integrate third-party APIs (Pexels) in React.</li>
+            <li>✅ Used Next.js for server-side rendering.</li>
+            <li>✅ Worked with TypeScript for safer code.</li>
+            <li>✅ Implemented an image search and filtering system.</li>
           </ul>
         </p>
       );
@@ -561,12 +563,12 @@ const cards = [
           the saga. Find information about characters, transformations, and
           sagas from this iconic universe.
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se aprendió a utilizar Vite para un desarrollo rápido.</li>
-            <li>✅ Se implementó Tailwind CSS para un diseño responsive.</li>
-            <li>✅ Se trabajó con React para manejar estados complejos.</li>
-            <li>✅ Se integró un sistema de búsqueda de personajes y sagas.</li>
+            <li>✅ Learned to use Vite for fast development.</li>
+            <li>✅ Implemented Tailwind CSS for a responsive design.</li>
+            <li>✅ Worked with React to handle complex states.</li>
+            <li>✅ Integrated a character and saga search system.</li>
           </ul>
         </p>
       );
@@ -601,12 +603,12 @@ const cards = [
           A simple yet efficient calculator to perform basic math operations
           with a clean and user-friendly interface.
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se aprendió a manipular el DOM con JavaScript.</li>
-            <li>✅ Se implementó lógica para operaciones matemáticas básicas.</li>
-            <li>✅ Se utilizó CSS para diseñar una interfaz limpia y funcional.</li>
-            <li>✅ Se trabajó con eventos de usuario para interactividad.</li>
+            <li>✅ Learned to manipulate the DOM with JavaScript.</li>
+            <li>✅ Implemented logic for basic math operations.</li>
+            <li>✅ Used CSS to design a clean and functional interface.</li>
+            <li>✅ Worked with user events for interactivity.</li>
           </ul>
         </p>
       );
@@ -639,12 +641,12 @@ const cards = [
           and leverages the capabilities of <strong>Scapy</strong> and <strong>Nmap</strong>, a robust
           packet manipulation library for Python.
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se aprendió a utilizar Scapy para manipulación de paquetes.</li>
-            <li>✅ Se implementó un escáner de puertos eficiente.</li>
-            <li>✅ Se trabajó con spoofing de direcciones MAC.</li>
-            <li>✅ Se aprendió sobre protocolos de red y seguridad.</li>
+            <li>✅ Learned to use Scapy for packet manipulation.</li>
+            <li>✅ Implemented an efficient port scanner.</li>
+            <li>✅ Worked with MAC address spoofing.</li>
+            <li>✅ Learned about network protocols and security.</li>
           </ul>
         </p>
       );
@@ -684,12 +686,12 @@ const cards = [
           music from YouTube directly from a chat. Simply send a video link, and
           the bot will convert it to audio and send it to you in seconds.
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se aprendió a interactuar con la API de Telegram.</li>
-            <li>✅ Se implementó un sistema para descargar y convertir videos.</li>
-            <li>✅ Se utilizó Docker para contenerizar la aplicación.</li>
-            <li>✅ Se publicó el bot como un paquete en PyPI.</li>
+            <li>✅ Learned to interact with the Telegram API.</li>
+            <li>✅ Implemented a system to download and convert videos.</li>
+            <li>✅ Used Docker to containerize the application.</li>
+            <li>✅ Published the bot as a package on PyPI.</li>
           </ul>
         </p>
       );
@@ -725,14 +727,14 @@ const cards = [
           annoying but fun, making it a GOTY-worthy game to play OFFLINE WITH
           MULTIPLAYER.
           <br /><br />
-          <strong>Aprendizajes:</strong>
+          <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
-            <li>✅ Se aprendió a utilizar Pygame para desarrollo de juegos.</li>
-            <li>✅ Se implementó un sistema de física básico.</li>
-            <li>✅ Se trabajó con Docker para empaquetar el juego.</li>
+            <li>✅ Learned to use Pygame for game development.</li>
+            <li>✅ Implemented a basic physics system.</li>
+            <li>✅ Worked with Docker to package the game.</li>
           </ul>
         </p>
       );
     },
   },
-]
+];

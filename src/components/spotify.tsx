@@ -631,8 +631,8 @@ const cards = [
         icon: "file-icons:nmap"
       }
     ],
-    ctaLinkCode: "https://github.com/CesarMartinez/anchorports",
-    ctaLink: "https://github.com/CesarMartinez7/anchorport",
+    ctaLinkCode: "https://github.com/CesarMartinez7/AnchorPortss",
+    ctaLink: "https://github.com/CesarMartinez7/AnchorPorts",
     content: () => {
       return (
         <p className="text-sm">

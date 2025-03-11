@@ -16,13 +16,14 @@ export default function Habilidades() {
             "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
           )}
         />
-      <div className="flex justify-center">
+      <div className="flex flex-col justify-center">
         <h3  style={{
             textShadow:
               "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
           }} className="text-center text-3xl font-bold my-2 from-green-400 bg-clip-text bg-gradient-to-br to-green-700 text-transparent">
           My skills
         </h3>
+        
       </div>
 
       {/* Gradientes a los lados */}
@@ -30,11 +31,11 @@ export default function Habilidades() {
       <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
 
       <div className="relative z-10">
-        <div className="grid grid-cols-4 md:grid-cols-6 p-8 lg:grid-cols-9 lg:px-44 lg:py-12 gap-5">
+        <div className="grid grid-cols-2 md:grid-cols-6 p-6 lg:grid-cols-9 lg:px-44 lg:py-12 gap-5  ">
           {ToolJson.map((tool, index) => (
             <SpotlightCard
               key={index}
-              className="custom-spotlight-card flex flex-col items-center gap-2 justify-center grayscale-10"
+              className="custom-spotlight-card flex flex-col  w-full h-full items-center gap-2 justify-center grayscale-10"
               //@ts-ignore
               spotlightColor={tool.color}
             >
@@ -46,7 +47,7 @@ export default function Habilidades() {
                   color="white"
                 />
               </a>
-              <p>{tool.name2}</p>
+              <p className="w-full flex justify-center text-balance font-semibold items-center ">{tool.name2}</p>
             </SpotlightCard>
           ))}
         </div>

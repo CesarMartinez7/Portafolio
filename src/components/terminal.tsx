@@ -1,4 +1,3 @@
-
 import { cn } from "./utils";
 import { motion, MotionProps } from "motion/react";
 import { useEffect, useRef, useState } from "react";
@@ -121,166 +120,177 @@ export const Terminal = ({ className }: TerminalProps) => {
               setIsType(!isType);
             }}
           >
-            {!isType ? (<Icon icon="logos:json" width="20" height="22" />) : (<Icon icon="logos:typescript-icon" width="22" height="20" />)}
-            
+            {!isType ? (
+              <Icon icon="logos:json" width="20" height="22" />
+            ) : (
+              <Icon icon="logos:typescript-icon" width="22" height="20" />
+            )}
           </button>
         </div>
       </div>
-      {isType ? (<motion.pre initial={{scale: 0.97}} className="p-4">
-        <code className="grid gap-y-1 ">
-          <TypingAnimation>~ more me.json</TypingAnimation>
+      {isType ? (
+        <motion.pre initial={{ scale: 0.97 }} className="p-4">
+          <code className="grid gap-y-1 ">
+            <TypingAnimation>~ more me.json</TypingAnimation>
 
-          <AnimatedSpan delay={1000} className="text-blue-500">
-            <span>{`{`}</span>
-          </AnimatedSpan>
+            <AnimatedSpan delay={1000} className="text-blue-500">
+              <span>{`{`}</span>
+            </AnimatedSpan>
 
-          
-          <AnimatedSpan delay={2000} className="text-green-500">
-            <span className="pl-4">{`"name": "Cesar",`}</span>
-          </AnimatedSpan>
+            <AnimatedSpan delay={2000} className="text-green-500">
+              <span className="pl-4">{`"name": "Cesar",`}</span>
+            </AnimatedSpan>
 
-         
-          <AnimatedSpan delay={2500} className="text-green-500">
-            <span className="pl-4">{`"lastName": "Martinez",`}</span>
-          </AnimatedSpan>
-          
+            <AnimatedSpan delay={2500} className="text-green-500">
+              <span className="pl-4">{`"lastName": "Martinez",`}</span>
+            </AnimatedSpan>
 
-          <AnimatedSpan delay={3000} className="text-green-500">
-            <span className="pl-4 whitespace-nowrap">{`"age": "18",`}</span>
-          </AnimatedSpan>
+            <AnimatedSpan delay={3000} className="text-green-500">
+              <span className="pl-4 whitespace-nowrap">{`"age": "18",`}</span>
+            </AnimatedSpan>
 
-          <AnimatedSpan delay={3500} className="text-green-500">
-            <span className="pl-4">{`"role": "Developer Frontend",`}</span>
-          </AnimatedSpan>
+            <AnimatedSpan delay={3500} className="text-green-500">
+              <span className="pl-4">{`"role": "Developer Frontend",`}</span>
+            </AnimatedSpan>
 
-          <AnimatedSpan delay={3800} className="text-green-500">
-            <span className="pl-4">{`"learning":`} <span className="text-blue-500">{"["}</span> {'"Figma", "Docker"'}<span className="text-blue-500"> {"]"} </span>  </span>
-          </AnimatedSpan>
-          
-
-          <AnimatedSpan delay={4000} className="text-green-500">
-            <span className="pl-4">{`"overview": "Disciplined, self-taught frontend developer",`}</span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={5000} className="text-green-500">
-            <p className="pl-4">
-              {`"skills":`} <span className="text-blue-500">{"["}</span>
-              {""}
-            </p>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={5500} className="text-green-500">
-            <span className="pl-4">{`"JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "SQL", "Git", "Tailwind", "Linux"`}</span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={6000} className="text-green-500">
-            <p className="pl-4 ">
-              <span className="text-blue-500">{`]`}</span>,
-            </p>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={6500} className="text-green-500">
-            <span className="pl-4">{`"editor": "VS Code",`}</span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={7000} className="text-green-500">
-            <span className="pl-4">{`"os": "Manjaro Linux"`}</span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={7500} className="text-blue-500">
-            <span>{`}`}</span>
-          </AnimatedSpan>
-
-          <TypingAnimation delay={8000} className="text-muted-foreground">
-            JSON successfully loaded.
-          </TypingAnimation>
-        </code>
-      </motion.pre>) : (
-        <motion.pre   className="p-4">
-        <code className="grid gap-y-1 ">
-          <TypingAnimation>~ more me.ts</TypingAnimation>
-
-          <AnimatedSpan delay={1500} className="">
-            <span className="text-fuchsia-5">
-              {"interface Me"} <span className="text-blue-500"> {`{`}</span>
-            </span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={2000} className="text-green-500">
-            <span className="pl-4">
-              {`"name":         `}{" "}
-              <span className="text-fuchsia-500">string</span> ,
-            </span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={2000} className="text-green-500">
-            <span className="pl-4">
-              {`"lastName" :    `}{" "}
-              <span className="text-fuchsia-500">string</span> ,
-            </span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={2500} className="text-green-500">
-            <span className="pl-4">
-              {`"age":         `} <span className="text-fuchsia-500"> number</span> ,
-            </span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={3000} className="text-green-500">
-            <span className="pl-4">
-              {`"role": `}{"        "}
-              <span className="text-fuchsia-500"> string</span> ,{" "}
-            </span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={2000} className="text-green-500">
-            <span className="pl-4">learning": <span className="text-fuchsia-500">{`      string`}</span> <span className="text-blue-500">{"[]"}</span> ,</span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={3500} className="text-green-500">
-            <span className="pl-4">
-              {`"overview":    `} <span className="text-fuchsia-500"> string</span>,
-            </span>
-          </AnimatedSpan>
-
-          <AnimatedSpan delay={4000} className="text-green-500">
-            <p className="pl-4">
-              {`"skills":`}{" "}
-              <span className="text-blue-500">
-                {"       "}
-                <span className="text-fuchsia-500">string</span> {"[]"}
+            <AnimatedSpan delay={3800} className="text-green-500">
+              <span className="pl-4">
+                {`"learning":`} <span className="text-blue-500">{"["}</span>{" "}
+                {' "Angular", "Docker"'}
+                <span className="text-blue-500"> {"]"} </span>{" "}
               </span>
-              {" ,"}
-            </p>
-          </AnimatedSpan>
+            </AnimatedSpan>
 
-          <AnimatedSpan delay={4500} className="text-green-500">
-            <span className="pl-4">
-              {`"editor":`}{" "}
-              <span className="text-fuchsia-500"> {"      string "}</span>
-              {" ,"}
-            </span>
-          </AnimatedSpan>
+            <AnimatedSpan delay={4000} className="text-green-500">
+              <span className="pl-4">{`"overview": "Disciplined, self-taught frontend developer",`}</span>
+            </AnimatedSpan>
 
-          <AnimatedSpan delay={5000} className="text-green-500">
-            <span className="pl-4">
-              {`"os": `}{" "}
-              <span className="text-fuchsia-500">{"          string"}</span>
-              {" ,"}
-            </span>
-          </AnimatedSpan>
+            <AnimatedSpan delay={5000} className="text-green-500">
+              <p className="pl-4">
+                {`"skills":`} <span className="text-blue-500">{"["}</span>
+                {""}
+              </p>
+            </AnimatedSpan>
 
-          <AnimatedSpan delay={5500} className="text-blue-500">
-            <span>{`}`}</span>
-          </AnimatedSpan>
+            <AnimatedSpan delay={5500} className="text-green-500">
+              <span className="pl-4">{`"JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "SQL", "Git", "Tailwind", "Linux"`}</span>
+            </AnimatedSpan>
 
-          <TypingAnimation delay={6000} className="text-muted-foreground">
-            TS successfully loaded.
-          </TypingAnimation>
-        </code>
-      </motion.pre>
-      ) }
-      
+            <AnimatedSpan delay={6000} className="text-green-500">
+              <p className="pl-4 ">
+                <span className="text-blue-500">{`]`}</span>,
+              </p>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={6500} className="text-green-500">
+              <span className="pl-4">{`"editor": "VS Code",`}</span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={7000} className="text-green-500">
+              <span className="pl-4">{`"os": "Manjaro Linux"`}</span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={7500} className="text-blue-500">
+              <span>{`}`}</span>
+            </AnimatedSpan>
+
+            <TypingAnimation delay={8000} className="text-muted-foreground">
+              JSON successfully loaded.
+            </TypingAnimation>
+          </code>
+        </motion.pre>
+      ) : (
+        <motion.pre className="p-4">
+          <code className="grid gap-y-1 ">
+            <TypingAnimation>~ more me.ts</TypingAnimation>
+
+            <AnimatedSpan delay={1500} className="">
+              <span className="text-fuchsia-5">
+                {"interface Me"} <span className="text-blue-500"> {`{`}</span>
+              </span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={2000} className="text-green-500">
+              <span className="pl-4">
+                {`"name":         `}{" "}
+                <span className="text-fuchsia-500">string</span> ,
+              </span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={2000} className="text-green-500">
+              <span className="pl-4">
+                {`"lastName" :    `}{" "}
+                <span className="text-fuchsia-500">string</span> ,
+              </span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={2500} className="text-green-500">
+              <span className="pl-4">
+                {`"age":         `}{" "}
+                <span className="text-fuchsia-500"> number</span> ,
+              </span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={3000} className="text-green-500">
+              <span className="pl-4">
+                {`"role": `}
+                {"        "}
+                <span className="text-fuchsia-500"> string</span> ,{" "}
+              </span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={2000} className="text-green-500">
+              <span className="pl-4">
+                learning":{" "}
+                <span className="text-fuchsia-500">{`      string`}</span>{" "}
+                <span className="text-blue-500">{"[]"}</span> ,
+              </span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={3500} className="text-green-500">
+              <span className="pl-4">
+                {`"overview":    `}{" "}
+                <span className="text-fuchsia-500"> string</span>,
+              </span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={4000} className="text-green-500">
+              <p className="pl-4">
+                {`"skills":`}{" "}
+                <span className="text-blue-500">
+                  {"       "}
+                  <span className="text-fuchsia-500">string</span> {"[]"}
+                </span>
+                {" ,"}
+              </p>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={4500} className="text-green-500">
+              <span className="pl-4">
+                {`"editor":`}{" "}
+                <span className="text-fuchsia-500"> {"      string "}</span>
+                {" ,"}
+              </span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={5000} className="text-green-500">
+              <span className="pl-4">
+                {`"os": `}{" "}
+                <span className="text-fuchsia-500">{"          string"}</span>
+                {" ,"}
+              </span>
+            </AnimatedSpan>
+
+            <AnimatedSpan delay={5500} className="text-blue-500">
+              <span>{`}`}</span>
+            </AnimatedSpan>
+
+            <TypingAnimation delay={6000} className="text-muted-foreground">
+              TS successfully loaded.
+            </TypingAnimation>
+          </code>
+        </motion.pre>
+      )}
     </div>
-  ) 
+  );
 };

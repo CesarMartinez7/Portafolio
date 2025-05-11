@@ -42,12 +42,12 @@ export default function Habilidades() {
               <a href={tool.link} target="_blank" rel="noopener noreferrer">
                 <Icon
                   icon={`logos:${tool.name}`}
-                  width="50"
-                  height="50"
+                  width="43"
+                  height="43"
                   color="white"
                 />
               </a>
-              <p className="w-full flex justify-center text-balance font-semibold items-center ">{tool.name2}</p>
+              <p className="w-full flex justify-center text-balance font-semibold items-center text-sm ">{tool.name2}</p>
             </SpotlightCard>
           ))}
         </div>

@@ -78,7 +78,13 @@ export function ExpandableCardDemo() {
             >
               <motion.div layoutId={`img-${active.title}-${id}`}>
                 {isHovered ? (
-                  <video className="aspect-video" src={`./${active.video}`} autoPlay loop preload="auto"/>
+                  <video
+                    className="aspect-video"
+                    src={`./${active.video}`}
+                    autoPlay
+                    loop
+                    preload="auto"
+                  />
                 ) : (
                   <img
                     width={240}
@@ -201,9 +207,13 @@ export function ExpandableCardDemo() {
                   </motion.p>
                 </motion.div>
                 {card.status ? (
-                  <button className="bg-white/7 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/10">Finished</button>
+                  <button className="bg-white/7 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/10">
+                    Finished
+                  </button>
                 ) : (
-                  <button className="bg-white/20 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/15">In development</button>
+                  <button className="bg-white/20 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/15">
+                    In development
+                  </button>
                 )}
               </div>
             </div>
@@ -247,8 +257,6 @@ export const CloseIcon = () => {
   );
 };
 
-
-
 const cards = [
   {
     description: "Free streaming platform",
@@ -283,7 +291,8 @@ const cards = [
           <strong>Delfilms</strong> is a free streaming platform with a wide
           selection of movies and series. Without subscriptions or annoying ads,
           it offers simple and cost-free access for movie lovers.
-          <br /><br />
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ React was used to build dynamic interfaces.</li>
@@ -336,7 +345,8 @@ const cards = [
           DataFast is a system designed to optimize inventory management and
           facilitate product control in companies of all sizes. It improves
           efficiency and reduces operation time.
-          <br /><br />
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ A Node.js backend was integrated with a MySQL database.</li>
@@ -377,11 +387,14 @@ const cards = [
           Meko is a platform focused on anime streaming, with an updated catalog
           and a smooth interface. Find and enjoy your favorite series without
           complications.
-          <br /><br />
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ Worked with TypeScript to improve code quality.</li>
-            <li>✅ Tailwind CSS was implemented for fast and efficient design.</li>
+            <li>
+              ✅ Tailwind CSS was implemented for fast and efficient design.
+            </li>
             <li>✅ Learned to handle props and states in TypeScript.</li>
             <li>✅ Integrated a video player for streaming.</li>
           </ul>
@@ -395,7 +408,7 @@ const cards = [
     src: "/dexts.webp",
     status: true,
     ctaText: "Visit site",
-    video: "dexts.webm",
+    video: "dexts.mp4",
     tecnologias: [
       {
         name: "React",
@@ -430,13 +443,17 @@ const cards = [
           <strong>DexTS </strong> provides detailed information about anime and
           manga using GraphQL to fetch real-time data. Find synopses,
           characters, and more in one place, plus watch anime and read manga!
-          <br /><br />
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ Learned to use GraphQL for real-time queries.</li>
             <li>✅ Integrated Apollo Client to handle GraphQL queries.</li>
             <li>✅ Used DaisyUI for additional Tailwind UI components.</li>
-            <li>✅ Worked with TypeScript for more robust code and error prevention.</li>
+            <li>
+              ✅ Worked with TypeScript for more robust code and error
+              prevention.
+            </li>
             <li>✅ Used the localStorage API for a simple history system.</li>
           </ul>
         </p>
@@ -476,7 +493,8 @@ const cards = [
           A clone of Mercado Libre developed with Next.js, React, and Tailwind
           CSS. It replicates the shopping experience with advanced search and
           responsive design.
-          <br /><br />
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ Learned to use Next.js for server-side rendering.</li>
@@ -517,7 +535,8 @@ const cards = [
           GalleryPhotos allows you to explore and download high-quality images
           thanks to the Pexels API. Find the perfect image in seconds with an
           intuitive interface.
-          <br /><br />
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ Learned to integrate third-party APIs (Pexels) in React.</li>
@@ -562,7 +581,8 @@ const cards = [
           <strong>Dragon Ball Wiki</strong> is the ultimate platform for fans of
           the saga. Find information about characters, transformations, and
           sagas from this iconic universe.
-          <br /><br />
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ Learned to use Vite for fast development.</li>
@@ -602,7 +622,8 @@ const cards = [
         <p className="text-sm">
           A simple yet efficient calculator to perform basic math operations
           with a clean and user-friendly interface.
-          <br /><br />
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ Learned to manipulate the DOM with JavaScript.</li>
@@ -627,9 +648,9 @@ const cards = [
         icon: "logos:python",
       },
       {
-        name:"Nmap",
-        icon: "file-icons:nmap"
-      }
+        name: "Nmap",
+        icon: "file-icons:nmap",
+      },
     ],
     ctaLinkCode: "https://github.com/CesarMartinez7/AnchorPortss",
     ctaLink: "https://github.com/CesarMartinez7/AnchorPorts",
@@ -638,9 +659,11 @@ const cards = [
         <p className="text-sm">
           <strong>Speed Port</strong> is a powerful port scanner built with
           Python. It features MAC address spoofing to disrupt a target network
-          and leverages the capabilities of <strong>Scapy</strong> and <strong>Nmap</strong>, a robust
-          packet manipulation library for Python.
-          <br /><br />
+          and leverages the capabilities of <strong>Scapy</strong> and{" "}
+          <strong>Nmap</strong>, a robust packet manipulation library for
+          Python.
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ Learned to use Scapy for packet manipulation.</li>
@@ -685,7 +708,8 @@ const cards = [
           This is a Telegram bot developed in Python that allows you to download
           music from YouTube directly from a chat. Simply send a video link, and
           the bot will convert it to audio and send it to you in seconds.
-          <br /><br />
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ Learned to interact with the Telegram API.</li>
@@ -726,7 +750,8 @@ const cards = [
           Pysoccer is a game with weird physics and bugs that are really
           annoying but fun, making it a GOTY-worthy game to play OFFLINE WITH
           MULTIPLAYER.
-          <br /><br />
+          <br />
+          <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ Learned to use Pygame for game development.</li>

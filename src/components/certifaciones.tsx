@@ -138,6 +138,25 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
       name: "Introduction to Python",
       institution: "SoloLearn",
       isFinish: true,
+      expedition: "Mayo 11",
+      expiration: "No expiration",
+      credentialID: "SL-77889",
+      credentialURL:
+        "https://api2.sololearn.com/v2/certificates/CC-YT4USZLG/image/png?t=638825373427671040",
+      skills: [
+        "Angular",
+        "Basic Syntax",
+        "Routes",
+        "Forms",
+        "HTTPClient",
+        "Routes",
+        "RXJS",
+      ],
+    },
+    {
+      name: "Angular",
+      institution: "SoloLearn",
+      isFinish: true,
       expedition: "February 30",
       expiration: "No expiration",
       credentialID: "SL-77889",
@@ -257,7 +276,9 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
           >
             <div
               className={`p-3  border shadow-2xs  border-zinc-900 shadow-zinc-900 flex flex-col gap-1  rounded-lg ${
-                selectedIndex === index ? "bg-[#000000b4] transition-all duration-150" : ""
+                selectedIndex === index
+                  ? "bg-[#000000b4] transition-all duration-150"
+                  : ""
               } ${itemClassName}`}
             >
               <h3 className="m-0 text-md font-bold text-zinc-300 shiny-text ">
@@ -266,10 +287,15 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
               <p className="text-balance text-sm   bg-clip-text font-light bg-gradient-to-t from-zinc-300 to-gray-100 text-transparent ">
                 {item.institution}
               </p>
-              
+
               <ul className="flex gap-2 text-xs">
-                {item.skills.map((skill,index) => (
-                  <li key={index} className="w-fit border border-zinc-900 px-2 rounded-2xl  ">{skill}</li>
+                {item.skills.map((skill, index) => (
+                  <li
+                    key={index}
+                    className="w-fit border border-zinc-900 px-2 rounded-2xl  "
+                  >
+                    {skill}
+                  </li>
                 ))}
               </ul>
             </div>

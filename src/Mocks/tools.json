@@ -83,5 +83,11 @@
     "name2": "Angular 19",
     "color": "#c027e7",
     "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+  },
+  {
+    "name": "nextjs-icon",
+    "name2": "NextJS",
+    "color": "#fff2",
+    "link": "https://developer.mozilla.org/en-US/docs/Web/CSS"
   }
 ]

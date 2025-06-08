@@ -8,22 +8,28 @@ export default function Habilidades() {
   return (
     <div className="h-svh w-full grid place-content-center relative">
       <AnimatedGridPattern
-          numSquares={30}
-          maxOpacity={1}
-          duration={4}
-          repeatDelay={10}
-          className={cn(
-            "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
-          )}
-        />
+        numSquares={30}
+        maxOpacity={1}
+        duration={4}
+        repeatDelay={10}
+        className={cn(
+          "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
+        )}
+      />
       <div className="flex flex-col justify-center">
-        <h3  style={{
+        <h3
+          style={{
             textShadow:
               "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
-          }} className="text-center text-3xl font-bold my-2 from-green-400 bg-clip-text bg-gradient-to-br to-green-700 text-transparent">
+          }}
+          className="text-center uppercase text-3xl font-bold  from-green-400 bg-clip-text bg-gradient-to-br to-green-700 text-transparent"
+        >
           My skills
         </h3>
-        
+
+        <p className="text-center text-base mt-2 opacity-65">
+          Discover the tools and technologies I master.
+        </p>
       </div>
 
       {/* Gradientes a los lados */}
@@ -47,7 +53,9 @@ export default function Habilidades() {
                   color="white"
                 />
               </a>
-              <p className="w-full flex justify-center text-balance font-semibold items-center text-sm ">{tool.name2}</p>
+              <p className="w-full flex justify-center text-balance font-semibold items-center text-sm ">
+                {tool.name2}
+              </p>
             </SpotlightCard>
           ))}
         </div>

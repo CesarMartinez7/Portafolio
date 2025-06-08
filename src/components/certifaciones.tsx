@@ -246,7 +246,9 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
   }, [selectedIndex, keyboardNav]);
 
   return (
-    <div className={`relative md:w-[700px] w-full  ${className}`}>
+    <div
+      className={`relative md:w-[700px] w-full  mask-x-from-70% mask-x-to-90%  ${className}`}
+    >
       <div
         ref={listRef}
         className={`max-h-[400px] overflow-y-auto p-4 ${

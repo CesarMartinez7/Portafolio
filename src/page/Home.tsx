@@ -13,7 +13,6 @@ import AnimatedList from "../components/certifaciones";
 import Navbar from "../components/navbar";
 import Habilidades from "../components/Habilidades";
 
-
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
 
@@ -42,18 +41,18 @@ function Main() {
         <div className="h-dvh gap-6 md:p-12 w-full lg:p-12 grid relative">
           <div className="flex  items-center justify-center w-full h-full flex-col gap-2.5 p-3 lg:p-12">
             <div>
-              <div className="text-5xl mx-auto font-normal">
+              <div className="text-5xl mx-auto font-medium">
                 Build
                 <FlipWords words={words} /> <br />
               </div>
             </div>
-            <div className="text-2xl lg:text-4xl md:leading-tight max-w-4xl mx-auto text-center tracking-tight font-medium bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 flex items-center gap-2 md:gap-8">
+            <div className="text-2xl lg:text-4xl md:leading-tight max-w-4xl mx-auto text-center tracking-tight font-black bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 flex items-center gap-2 md:gap-8 ">
               Websites with React and JavaScript
             </div>
 
             <SplitText
-              text="I bring ideas to life with JavaScript, React, Python and a lot of passion."
-              className="text-md text-zinc-400 text-center"
+              text="I bring ideas to life with JavaScript, TypeScript, Angular, React, Python and a lot of passion."
+              className="text-md text-zinc-400 text-center shiny-text"
               textAlign="left"
               delay={30}
               animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
@@ -120,7 +119,7 @@ function Main() {
           exit={{ opacity: 0 }}
         >
           <h3
-            className="text-center text-3xl font-bold my-2 from-green-500 bg-clip-text  bg-gradient-to-br  to-green-500 text-transparent"
+            className="text-center uppercase text-3xl font-bold my-2 from-green-500 bg-clip-text  bg-gradient-to-br  to-green-500 text-transparent"
             style={{
               textShadow:
                 "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
@@ -136,9 +135,8 @@ function Main() {
         </motion.div>
       </div>
       <div className="flex items-center h-svh justify-center flex-col relative  ">
-        
         <h3
-          className="text-center text-3xl font-bold my-2 from-green-500 bg-clip-text bg-gradient-to-br  to-green-500 text-transparent"
+          className="text-center uppercase text-3xl font-bold my-2 from-green-500 bg-clip-text bg-gradient-to-br  to-green-500 text-transparent"
           style={{
             textShadow:
               "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",

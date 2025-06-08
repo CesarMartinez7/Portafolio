@@ -1,9 +1,9 @@
 export default function Overview() {
   return (
     <div className="h-60 mt-16 w-full flex justify-center p-4  ">
-      <div className="flex flex-col  justify-center w-2xl">
+      <div className="flex flex-col justify-center w-2xl">
         <h3
-          className="text-center text-3xl font-bold my- from-green-500 bg-clip-text bg-gradient-to-br to-green-500 text-transparent"
+          className="text-center uppercase text-3xl font-black  from-green-500 bg-clip-text bg-gradient-to-br to-green-500 text-transparent"
           style={{
             textShadow:
               "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",

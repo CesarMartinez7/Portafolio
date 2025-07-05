@@ -762,4 +762,43 @@ const cards = [
       );
     },
   },
+  {
+    description: "JsonFormatting",
+    title: "ReactMatter",
+    src: "/reactmatter.png",
+    ctaText: "Visit site",
+    video: "pysoccer.mp4",
+    status: false,
+    tecnologias: [
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+      {
+        name: "Json",
+        icon: "logos:json",
+      },
+      {
+        name: "Typescript",
+        icon: "logos:typescript-icon",
+      },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez7/PySoccer",
+    ctaLink: "https://github.com/CesarMartinez7/PySoccer",
+    content: () => {
+      return (
+        <p className="text-sm">
+          React Matter is a simple JSON formatter that allows you to format and beautify JSON data easily. It provides a user-friendly interface for viewing and editing JSON structures.
+          <br />
+          <br />
+          <strong>Learnings:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ React</li>
+            {/* <li>✅ Implemented a basic physics system.</li>
+            <li>✅ Worked with Docker to package the game.</li> */}
+          </ul>
+        </p>
+      );
+    },
+  },
 ];

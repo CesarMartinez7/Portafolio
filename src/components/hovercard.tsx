@@ -4,15 +4,11 @@ import { useState } from "react";
 import { ItemProyect } from "../lib/response";
 
 interface PropsHoverCard {
-    items: ItemProyect[]
-    className?: string
+  items: ItemProyect[];
+  className?: string;
 }
 
-
-export const HoverEffect = ({
-  items,
-  className,
-}: PropsHoverCard) => {
+export const HoverEffect = ({ items, className }: PropsHoverCard) => {
   let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
@@ -23,7 +19,8 @@ export const HoverEffect = ({
       )}
     >
       {items.map((item, idx) => (
-        <a href={`/proyect/${item.id}`}
+        <a
+          href={`/proyect/${item.id}`}
           key={item?.link}
           className="relative group  block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}

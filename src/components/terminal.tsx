@@ -103,7 +103,7 @@ export const Terminal = ({ className }: TerminalProps) => {
   return (
     <div
       className={cn(
-        "z-0 h-full w-full max-w-2xl rounded-xl border border-white/15  bg-background overflow-ellipsis text-wrap shiny-text backdrop-blur-xl",
+        "z-0 h-full w-full max-w-2xl rounded-xl border border-white/10  bg-background overflow-ellipsis text-wrap shiny-text backdrop-blur-3xl bg-black",
         className
       )}
     >
@@ -137,23 +137,23 @@ export const Terminal = ({ className }: TerminalProps) => {
               <span>{`{`}</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={2000} className="text-green-500">
+            <AnimatedSpan delay={2000} className="text-emerald-500">
               <span className="pl-4">{`"name": "Cesar",`}</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={2500} className="text-green-500">
+            <AnimatedSpan delay={2500} className="text-emerald-500">
               <span className="pl-4">{`"lastName": "Martinez",`}</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={3000} className="text-green-500">
+            <AnimatedSpan delay={3000} className="text-emerald-500">
               <span className="pl-4 whitespace-nowrap">{`"age": "18",`}</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={3500} className="text-green-500">
+            <AnimatedSpan delay={3500} className="text-emerald-500">
               <span className="pl-4">{`"role": "Developer Frontend",`}</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={3800} className="text-green-500">
+            <AnimatedSpan delay={3800} className="text-emerald-500">
               <span className="pl-4">
                 {`"learning":`} <span className="text-blue-500">{"["}</span>{" "}
                 {' "Angular", "Docker"'}
@@ -161,32 +161,32 @@ export const Terminal = ({ className }: TerminalProps) => {
               </span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={4000} className="text-green-500">
+            <AnimatedSpan delay={4000} className="text-emerald-500">
               <span className="pl-4">{`"overview": "Disciplined, self-taught frontend developer",`}</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={5000} className="text-green-500">
+            <AnimatedSpan delay={5000} className="text-emerald-500">
               <p className="pl-4">
                 {`"skills":`} <span className="text-blue-500">{"["}</span>
                 {""}
               </p>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={5500} className="text-green-500">
+            <AnimatedSpan delay={5500} className="text-emerald-500">
               <span className="pl-4">{`"JavaScript", "TypeScript", "React", "Next.js", "Node.js", "Python", "SQL", "Git", "Tailwind", "Linux"`}</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={6000} className="text-green-500">
+            <AnimatedSpan delay={6000} className="text-emerald-500">
               <p className="pl-4 ">
                 <span className="text-blue-500">{`]`}</span>,
               </p>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={6500} className="text-green-500">
+            <AnimatedSpan delay={6500} className="text-emerald-500">
               <span className="pl-4">{`"editor": "VS Code",`}</span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={7000} className="text-green-500">
+            <AnimatedSpan delay={7000} className="text-emerald-500">
               <span className="pl-4">{`"os": "Manjaro Linux"`}</span>
             </AnimatedSpan>
 
@@ -210,28 +210,28 @@ export const Terminal = ({ className }: TerminalProps) => {
               </span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={2000} className="text-green-500">
+            <AnimatedSpan delay={2000} className="text-emerald-500">
               <span className="pl-4">
                 {`"name":         `}{" "}
                 <span className="text-fuchsia-500">string</span> ,
               </span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={2000} className="text-green-500">
+            <AnimatedSpan delay={2000} className="text-emerald-500">
               <span className="pl-4">
                 {`"lastName" :    `}{" "}
                 <span className="text-fuchsia-500">string</span> ,
               </span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={2500} className="text-green-500">
+            <AnimatedSpan delay={2500} className="text-emerald-500">
               <span className="pl-4">
                 {`"age":         `}{" "}
                 <span className="text-fuchsia-500"> number</span> ,
               </span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={3000} className="text-green-500">
+            <AnimatedSpan delay={3000} className="text-emerald-500">
               <span className="pl-4">
                 {`"role": `}
                 {"        "}
@@ -239,7 +239,7 @@ export const Terminal = ({ className }: TerminalProps) => {
               </span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={2000} className="text-green-500">
+            <AnimatedSpan delay={2000} className="text-emerald-500">
               <span className="pl-4">
                 learning":{" "}
                 <span className="text-fuchsia-500">{`      string`}</span>{" "}
@@ -247,14 +247,14 @@ export const Terminal = ({ className }: TerminalProps) => {
               </span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={3500} className="text-green-500">
+            <AnimatedSpan delay={3500} className="text-emerald-500">
               <span className="pl-4">
                 {`"overview":    `}{" "}
                 <span className="text-fuchsia-500"> string</span>,
               </span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={4000} className="text-green-500">
+            <AnimatedSpan delay={4000} className="text-emerald-500">
               <p className="pl-4">
                 {`"skills":`}{" "}
                 <span className="text-blue-500">
@@ -265,7 +265,7 @@ export const Terminal = ({ className }: TerminalProps) => {
               </p>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={4500} className="text-green-500">
+            <AnimatedSpan delay={4500} className="text-emerald-500">
               <span className="pl-4">
                 {`"editor":`}{" "}
                 <span className="text-fuchsia-500"> {"      string "}</span>
@@ -273,7 +273,7 @@ export const Terminal = ({ className }: TerminalProps) => {
               </span>
             </AnimatedSpan>
 
-            <AnimatedSpan delay={5000} className="text-green-500">
+            <AnimatedSpan delay={5000} className="text-emerald-500">
               <span className="pl-4">
                 {`"os": `}{" "}
                 <span className="text-fuchsia-500">{"          string"}</span>

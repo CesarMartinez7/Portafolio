@@ -1,7 +1,6 @@
 import { BrowserRouter,Route,Routes } from "react-router-dom";
 import Main from "./page/Home";
 import NotFound from "./page/Notfound";
-import Footer from "./components/Footer";
 
 
 function App() {
@@ -11,7 +10,7 @@ function App() {
         <Route path="/" element={<Main/>} />
         <Route path="*" element={<NotFound/>}/>
       </Routes>
-      <Footer/>
+      
     </BrowserRouter>
   )
 }

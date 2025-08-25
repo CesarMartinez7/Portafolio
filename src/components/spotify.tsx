@@ -154,7 +154,7 @@ export function ExpandableCardDemo() {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-neutral-100  md:text-sm lg:text-base h-40 md:h-fit pb-10 flex flex-col items-start gap-4 overflow-auto dark:text-neutral-300 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none] [-ms-overflow-style:none] [-webkit-overflow-scrolling:touch] text-sm"
+                    className="text-neutral-100 md:text-sm lg:text-base h-full md:h-fit pb-10 flex flex-col items-start gap-4 md:overflow-auto  dark:text-neutral-300 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none]  [-webkit-overflow-scrolling:touch] text-sm"
                   >
                     {typeof active.content === "function"
                       ? active.content()
@@ -175,7 +175,7 @@ export function ExpandableCardDemo() {
               seIsHovered(true);
               setActive(card);
             }}
-            className="p-3 bg-black/30 backdrop-blur-2xl border border-zinc-950 flex flex-col transition-all  duration-300 hover:bg-zinc-950   hover:shadow-green-900 rounded-xl cursor-pointer"
+            className="p-3 bg-black/20 backdrop-blur-2xl border border-zinc-900 flex flex-col transition-all duration-300 hover:bg-zinc-950 hover:shadow-green-900 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`img-${card.title}-${id}`}>
@@ -190,28 +190,29 @@ export function ExpandableCardDemo() {
               <div className="grid  grid-cols-[1fr_auto]">
                 <motion.div className="">
                   <motion.h3
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1, transition:  3 }}
+                    
                     layoutId={`title-${card.title}-${id}`}
                     className="text-zinc-300 font-bold "
                   >
                     {card.title}
                   </motion.h3>
-                  <motion.p
-                    initial={{ opacity: 0, scale: 0 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
                     layoutId={`description-${card.description}-${id}`}
                     className="text-balance bg-clip-text font-light bg-gradient-to-t  from-zinc-300 to-gray-100 shiny-text text-transparent text-sm "
                   >
                     {card.description}
-                  </motion.p>
+                  </motion.span>
                 </motion.div>
                 {card.status ? (
                   <button className="bg-white/7 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/10">
                     Finished
                   </button>
                 ) : (
-                  <button className="bg-white/20 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/15">
+                  <button className="bg-white/10 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/15">
                     In development
                   </button>
                 )}
@@ -338,7 +339,7 @@ const cards = [
     content: () => {
       return (
         <p className="text-sm">
-          Elisa es un cliente API pontente construido con react, axios y tauri con la filosofia de construido desde cero y con el enfoque de cero dependencias.
+          Elisa is a powerful and efficient API client, built from the ground up to provide a simple and hassle-free API development environment. Crafted with modern web technologies like React and optimized for performance with the power of Tauri, Elisa stands out with its "zero dependencies" philosophy. This means it's a lightweight, fast, and secure application that doesn't burden you with unnecessary libraries or packages
           <br />
           <br />
           <strong>Learnings:</strong>

@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { Icon } from "@iconify/react";
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
@@ -69,7 +70,7 @@ function Main() {
     <div
       className="absolute inset-0 z-0"
       style={{
-        background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(16, 185, 129, 0.25), transparent 70%), #000000",
+        background: "radial-gradient(ellipse 80% 60% at 50% 0%, rgba(5, 186, 126, 0.4), transparent 70%), #000000",
       }}
     />
   
@@ -115,7 +116,7 @@ function Main() {
             transition={{ duration: 0.7 }}
             className="mb-6 relative z-50"
           >
-            <span className="text-emerald-400 font-mono text-sm md:text-base border border-emerald-400/20 rounded-full px-4 py-1.5">
+            <span className="text-emerald-400 font-mono text-sm md:text-base border border-emerald-400/15 rounded-full px-4 py-1.5 backdrop-blur-3xl">
               Frontend Developer
             </span>
           </motion.div>
@@ -127,7 +128,7 @@ function Main() {
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 relative z-50"
           >
             <span className="bg-gradient-to-b from-white to-zinc-400 bg-clip-text text-transparent">I create </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-00 to-emerald-700">
             
               <FlipWords words={words} duration={2500} enableGlow={true} letterAnimation="flip" />
             </span>
@@ -143,7 +144,7 @@ function Main() {
           >
             <SplitText
               text="I specialize in transforming ideas into performant web applications using modern technologies like React, TypeScript, and Node.js."
-              className="text-sm md:text-xl  text-gray-400 leading-relaxed"
+              className="text-sm md:text-xl  text-gray-400! shiny-text leading-relaxed"
               textAlign="center"
               delay={20}
               animationFrom={{ opacity: 0, transform: "translate3d(0,30px,0)" }}
@@ -163,7 +164,7 @@ function Main() {
               whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(16, 185, 129, 0.5)" }}
               whileTap={{ scale: 0.98 }}
               href="#projects"
-              className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white font-medium rounded-lg flex items-center gap-2"
+              className="px-8 py-3 bg-gradient-to-r from-emerald-700 to-emerald-600 text-white font-medium rounded-lg flex items-center gap-2"
             >
               <Icon icon="tabler:rocket" width="20" height="20" />
               View My Work
@@ -174,7 +175,7 @@ function Main() {
               whileTap={{ scale: 0.98 }}
               href="./CesarMartinezCastroResume.pdf"
               download={true}
-              className="px-8 py-3 bg-zinc-950 border border-gray-800 text-white font-medium rounded-lg flex items-center gap-2"
+              className="px-8 py-3 bg-black border border-zinc-900 text-white font-medium rounded-lg flex items-center gap-2"
             >
               <Icon icon="tabler:download" width="20" height="20" />
               Download CV
@@ -209,7 +210,7 @@ function Main() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-white">About </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">Me</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-700">Me</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Get to know my journey, skills, and what drives me as a developer
@@ -230,7 +231,7 @@ function Main() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-white">My Developer </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">Environment</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-500">Environment</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               A glimpse into my development setup and workflow
@@ -261,7 +262,7 @@ function Main() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-white">Featured </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">Projects</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-500">Projects</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Here are some of my recent works that showcase my skills and creativity
@@ -281,7 +282,7 @@ function Main() {
       </section>
 
       {/* Certifications Section */}
-      <section className="relative py-20 px-4 bg-gradient-to-b from-slate-950 to-black">
+      <section className="relative py-20 px-4  flex flex-col justify-center items-center ">
         <div className="max-w-6xl mx-auto">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -292,7 +293,7 @@ function Main() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               <span className="text-white">My </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">Certifications</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-500">Certifications</span>
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto">
               Continuous learning and professional development are key to my growth as a developer
@@ -305,29 +306,13 @@ function Main() {
 
       {/* Skills Section */}
       <section className="relative py-20 px-4">
-        <div className="max-w-6xl mx-auto">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            viewport={{ once: true }}
-            className="mb-16 text-center"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="text-white">Technical </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">Skills</span>
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
-              The technologies and tools I use to bring ideas to life
-            </p>
-          </motion.div>
-          
+        <div className="max-w-6xl mx-auto">      
           <Habilidades />
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="relative border-t border-gray-800 py-12 px-4">
+      <footer className="relative border-t border-zinc-900 py-12 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -336,16 +321,13 @@ function Main() {
             viewport={{ once: true }}
             className="mb-8"
           >
-            <h3 className="text-2xl font-bold text-white mb-4">Let's Connect</h3>
-            <p className="text-gray-400 max-w-xl mx-auto mb-6">
-              Interested in working together or have a project in mind? Feel free to reach out!
-            </p>
+       
             <div className="flex justify-center gap-4">
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 href="https://github.com/CesarMartinez7"
                 target="_blank"
-                className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center border border-gray-800"
+                className=""
               >
                 <Icon icon="tabler:brand-github" width="24" height="24" />
               </motion.a>
@@ -353,22 +335,21 @@ function Main() {
                 whileHover={{ scale: 1.1, y: -2 }}
                 href="https://www.linkedin.com/in/cesar-martinez-castro-383943332/"
                 target="_blank"
-                className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center border border-gray-800"
+                className=""
               >
                 <Icon icon="tabler:brand-linkedin" width="24" height="24" />
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.1, y: -2 }}
                 href="mailto:cesarmartinezcastro7@gmail.com"
-                className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center border border-gray-800"
-              >
-                <Icon icon="tabler:mail" width="24" height="24" />
+                className=""
+              > <Icon icon="tabler:mail" width="24" height="24" />
               </motion.a>
             </div>
           </motion.div>
           
           <div className="text-gray-500 text-sm">
-            <p>© {new Date().getFullYear()} Cesar Martinez. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} @Cesar martinez</p>
           </div>
         </div>
       </footer>

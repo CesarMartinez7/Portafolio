@@ -8,6 +8,7 @@
 @font-face {
   font-family: 'IBM';
   src: url(./font/IBMPlexSans-Light.woff2) format('woff2');
+  font-weight: 300;
 }
 
 
@@ -15,13 +16,12 @@ body {
   font-family: "IBM";
   background-color: #000 ;
   color: #DADADA;
-  font-weight: 500;
    /* O 500, según la variante deseada */
 }
 
 
 ::selection{
-  background-color: rgb(74, 213, 74) ;
+  background-color: rgba(16, 185, 129, 0.5) ;
   color: gray;
 }
 

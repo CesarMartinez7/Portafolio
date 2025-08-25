@@ -75,10 +75,10 @@ export const FlipWords = ({
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
                   duration: 0.2,
                 }}
-                className="inline-block  text-transparent bg-clip-text bg-gradient-to-b from-80% from-green-500"
+                className="inline-block  text-transparent bg-clip-text bg-gradient-to-b from-80% from-emerald-500"
                 style={{
                   textShadow:
-                    "0px 0px 10px rgba(100, 200, 100, 0.6), 0px 0px 20px rgba(100, 200, 100, 0.3)",
+                    "0px 0px 10px rgba(16, 185, 129, 0.5), 0px 0px 20px rgba(16, 185, 129, 0.5)",
                 }}
               >
                 {letter}

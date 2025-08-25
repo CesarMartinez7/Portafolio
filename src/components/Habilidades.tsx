@@ -1,36 +1,27 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import SpotlightCard from "./SpothCard";
 import ToolJson from "../Mocks/tools.json";
-import { AnimatedGridPattern } from "./grid-patter";
-import { cn } from "./utils";
+import {motion} from "motion/react"
+
 
 export default function Habilidades() {
   return (
     <div className="h-svh w-full grid place-content-center relative">
-      <AnimatedGridPattern
-        numSquares={30}
-        maxOpacity={1}
-        duration={4}
-        repeatDelay={10}
-        className={cn(
-          "[mask-image:linear-gradient(to_top_right,white,transparent,transparent)] "
-        )}
-      />
-      <div className="flex flex-col justify-center">
-        <h3
-          style={{
-            textShadow:
-              "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
-          }}
-          className="text-center uppercase text-3xl font-bold  from-green-400 bg-clip-text bg-gradient-to-br to-green-700 text-transparent"
-        >
-          My skills
-        </h3>
-
-        <p className="text-center text-base mt-2 opacity-65">
-          Discover the tools and technologies I master.
-        </p>
-      </div>
+     <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-white">Technical </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-700">Skills</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              The technologies and tools I use to bring ideas to life
+            </p>
+          </motion.div>
 
       {/* Gradientes a los lados */}
       <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>

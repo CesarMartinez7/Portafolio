@@ -305,6 +305,53 @@ const cards = [
     },
   },
   {
+    description: "API Client",
+    title: "Elisa",
+    src: "/elisa.png",
+    ctaText: "Visit site",
+    video: "/elisa-client-0.0.3.png",
+    status: false,
+    tecnologias: [
+      {
+        name: "Axios",
+        icon: "logos:axios",
+      },
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+      {
+        name: "Json",
+        icon: "logos:json",
+      },
+      {
+        name: "Typescript",
+        icon: "logos:typescript-icon",
+      },
+      {
+        name: "TailwindCSS",
+        icon: "logos:tailwindcss-icon",
+      },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez7/Elisa",
+    ctaLink: "https://elisaland.vercel.app/",
+    content: () => {
+      return (
+        <p className="text-sm">
+          Elisa es un cliente API pontente construido con react, axios y tauri con la filosofia de construido desde cero y con el enfoque de cero dependencias.
+          <br />
+          <br />
+          <strong>Learnings:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ React</li>
+            {/* <li>✅ Implemented a basic physics system.</li>
+            <li>✅ Worked with Docker to package the game.</li> */}
+          </ul>
+        </p>
+      );
+    },
+  },
+  {
     description: "Inventory and management system",
     title: "DataFast ⚡",
     src: "/datafast.webp",
@@ -549,6 +596,45 @@ const cards = [
     },
   },
   {
+    description: "Developer Tools Web",
+    title: "Jade",
+    src: "/jade.png",
+    ctaText: "Visit site",
+    video: "pysoccer.mp4",
+    status: false,
+    tecnologias: [
+      {
+        name: "React",
+        icon: "logos:react",
+      },
+      {
+        name: "Json",
+        icon: "logos:json",
+      },
+      {
+        name: "Typescript",
+        icon: "logos:typescript-icon",
+      },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez7/PySoccer",
+    ctaLink: "https://github.com/CesarMartinez7/PySoccer",
+    content: () => {
+      return (
+        <p className="text-sm">
+          React Matter is a simple JSON formatter that allows you to format and beautify JSON data easily. It provides a user-friendly interface for viewing and editing JSON structures.
+          <br />
+          <br />
+          <strong>Learnings:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ React</li>
+            {/* <li>✅ Implemented a basic physics system.</li>
+            <li>✅ Worked with Docker to package the game.</li> */}
+          </ul>
+        </p>
+      );
+    },
+  },
+  {
     description: "Dragon Ball encyclopedia",
     title: "Dragon Ball Wiki 🐉",
     src: "/dragonballwiki.webp",
@@ -762,43 +848,5 @@ const cards = [
       );
     },
   },
-  {
-    description: "JsonFormatting",
-    title: "ReactMatter",
-    src: "/reactmatter.png",
-    ctaText: "Visit site",
-    video: "pysoccer.mp4",
-    status: false,
-    tecnologias: [
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Json",
-        icon: "logos:json",
-      },
-      {
-        name: "Typescript",
-        icon: "logos:typescript-icon",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/PySoccer",
-    ctaLink: "https://github.com/CesarMartinez7/PySoccer",
-    content: () => {
-      return (
-        <p className="text-sm">
-          React Matter is a simple JSON formatter that allows you to format and beautify JSON data easily. It provides a user-friendly interface for viewing and editing JSON structures.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ React</li>
-            {/* <li>✅ Implemented a basic physics system.</li>
-            <li>✅ Worked with Docker to package the game.</li> */}
-          </ul>
-        </p>
-      );
-    },
-  },
+  
 ];

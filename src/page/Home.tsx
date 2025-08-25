@@ -1,156 +1,353 @@
 import { Icon } from "@iconify/react";
-import "../App.css";
-import SplitText from "../components/SplitText";
 import { useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { cn } from "./utils";
+import SplitText from "../components/SplitText";
 import { ExpandableCardDemo } from "../components/spotify";
-import { motion } from "framer-motion";
 import { FlipWords } from "../components/FlipWords";
-import { cn } from "../components/utils";
 import { Terminal } from "../components/terminal";
 import Overview from "../components/overview";
-import { AnimatedGridPattern } from "../components/grid-patter";
 import AnimatedList from "../components/certifaciones";
 import Navbar from "../components/navbar";
 import Habilidades from "../components/Habilidades";
+import "../App.css"
+
 
 function Main() {
   const divProject = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ['start start', 'end end']
+  });
+  
+  const opacity = useTransform(scrollYProgress, [0, 0.2], [0, 1]);
+  const scale = useTransform(scrollYProgress, [0, 0.2], [0.8, 1]);
+  
+  const words = ["innovative", "efficient", "scalable", "modern"];
 
-  const words = ["better", "cute", "beautiful", "modern"];
+  const dockItems = [
+    {
+      title: "GitHub",
+      icon: "tabler:brand-github",
+      href: "https://github.com/CesarMartinez7",
+    },
+    {
+      title: "LinkedIn",
+      icon: "tabler:brand-linkedin",
+      href: "https://www.linkedin.com/in/cesar-martinez-castro-383943332/",
+    },
+    {
+      title: "CV",
+      icon: "tabler:file-text",
+      href: "./CesarMartinezCastroResume.pdf",
+    },
+  ];
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-red"
+      ref={containerRef}
+      className="relative bg-black min-h-screen overflow-hidden"
     >
-      <Navbar />
-      <div className="relative h-svh w-full items-center justify-center overflow-hidden">
-        <AnimatedGridPattern
-          numSquares={60}
-          maxOpacity={0.1}
-          duration={3}
-          repeatDelay={5}
-          className={cn(
-            "[mask-image:radial-gradient(240px_circle_at_center,green,transparent)]",
-            "inset-x-0 inset-y-[-50%] h-[200%] skew-y-1"
-          )}
-        />
-        <div className="h-dvh gap-6 md:p-12 w-full lg:p-12 grid relative">
-          <div className="flex  items-center justify-center w-full h-full flex-col gap-2.5 p-3 lg:p-12">
-            <div>
-              <div className="text-5xl mx-auto font-medium">
-                Build
-                <FlipWords words={words} /> <br />
-              </div>
-            </div>
-            <div className="text-2xl lg:text-4xl md:leading-tight max-w-4xl mx-auto text-center tracking-tight font-black bg-clip-text text-transparent bg-gradient-to-br from-white to-zinc-500 flex items-center gap-2 md:gap-8 ">
-              Websites with React and JavaScript
-            </div>
+      {/* Enhanced background with gradient mesh */}
+      <div className="fixed inset-0 z-0 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-black via-slate-950 to-emerald-950 opacity-100"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-emerald-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-emerald-800/5 rounded-full blur-3xl"></div>
+        
+        {/* Animated grid pattern */}
+        <div className="absolute inset-0 opacity-20">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                <path d="M 30 0 L 0 0 0 30" fill="none" stroke="rgba(16, 185, 129, 0.1)" strokeWidth="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#grid)" />
+          </svg>
+        </div>
+      </div>
 
+      <Navbar />
+      
+      {/* Floating dock for social links */}
+      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-50 hidden md:block">
+        
+        fdsfs
+      </div>
+
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center justify-center px-4 pt-20 pb-16">
+        <div className="max-w-6xl mx-auto text-center z-10">
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            className="mb-6"
+          >
+            <span className="text-emerald-400 font-mono text-sm md:text-base border border-emerald-400/20 rounded-full px-4 py-1.5">
+              Full Stack Developer
+            </span>
+          </motion.div>
+          
+          <motion.h1 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
+          >
+            <span className="text-white">I create </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">
+              <FlipWords words={words} duration={2500} enableGlow={true} letterAnimation="flip" />
+            </span>
+            <br />
+            <span className="text-white">digital experiences</span>
+          </motion.h1>
+          
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="max-w-2xl mx-auto mb-10"
+          >
             <SplitText
-              text="I bring ideas to life with JavaScript, TypeScript, Angular, React, Python and a lot of passion."
-              className="text-md text-zinc-400 text-center shiny-text"
-              textAlign="left"
-              delay={30}
-              animationFrom={{ opacity: 0, transform: "translate3d(0,50px,0)" }}
+              text="I specialize in transforming ideas into performant web applications using modern technologies like React, TypeScript, and Node.js."
+              className="text-lg md:text-xl text-gray-300 leading-relaxed"
+              textAlign="center"
+              delay={20}
+              animationFrom={{ opacity: 0, transform: "translate3d(0,30px,0)" }}
               animationTo={{ opacity: 1, transform: "translate3d(0,0,0)" }}
               threshold={0.2}
               rootMargin="-50px"
             />
-            <div className="inline-flex gap-2.5">
+          </motion.div>
+          
+          <motion.div 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <motion.a
+              whileHover={{ scale: 1.02, boxShadow: "0 0 20px rgba(16, 185, 129, 0.5)" }}
+              whileTap={{ scale: 0.98 }}
+              href="#projects"
+              className="px-8 py-3 bg-gradient-to-r from-emerald-500 to-green-600 text-white font-medium rounded-lg flex items-center gap-2"
+            >
+              <Icon icon="tabler:rocket" width="20" height="20" />
+              View My Work
+            </motion.a>
+            
+            <motion.a
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              href="./CesarMartinezCastroResume.pdf"
+              download={true}
+              className="px-8 py-3 bg-gray-900 border border-gray-800 text-white font-medium rounded-lg flex items-center gap-2"
+            >
+              <Icon icon="tabler:download" width="20" height="20" />
+              Download CV
+            </motion.a>
+          </motion.div>
+        </div>
+        
+        {/* Scroll indicator */}
+        <motion.div 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1 }}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+        >
+          <span className="text-gray-400 text-sm mb-2">Scroll down</span>
+          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-1 h-3 bg-gray-400 rounded-full mt-2"
+            />
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Overview Section */}
+      <section className="relative py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            style={{ opacity, scale }}
+            className="mb-16 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-white">About </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">Me</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Get to know my journey, skills, and what drives me as a developer
+            </p>
+          </motion.div>
+          
+          <Overview />
+        </div>
+      </section>
+
+      {/* Terminal Section */}
+      <section className="relative py-20 px-4 bg-gradient-to-b from-black to-slate-950">
+        <div className="max-w-4xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-white">My Developer </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">Environment</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              A glimpse into my development setup and workflow
+            </p>
+          </motion.div>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: true }}
+            className="flex justify-center"
+          >
+            <Terminal />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="relative py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-white">Featured </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">Projects</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Here are some of my recent works that showcase my skills and creativity
+            </p>
+          </motion.div>
+          
+          <motion.div
+            ref={divProject}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+          >
+            <ExpandableCardDemo />
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section className="relative py-20 px-4 bg-gradient-to-b from-slate-950 to-black">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-white">My </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">Certifications</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Continuous learning and professional development are key to my growth as a developer
+            </p>
+          </motion.div>
+          
+          <AnimatedList />
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section className="relative py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="mb-16 text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              <span className="text-white">Technical </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-500">Skills</span>
+            </h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              The technologies and tools I use to bring ideas to life
+            </p>
+          </motion.div>
+          
+          <Habilidades />
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="relative border-t border-gray-800 py-12 px-4">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            viewport={{ once: true }}
+            className="mb-8"
+          >
+            <h3 className="text-2xl font-bold text-white mb-4">Let's Connect</h3>
+            <p className="text-gray-400 max-w-xl mx-auto mb-6">
+              Interested in working together or have a project in mind? Feel free to reach out!
+            </p>
+            <div className="flex justify-center gap-4">
               <motion.a
-                download={true}
-                initial={{ opacity: 0, scale: 0.3 }}
-                whileInView={{ opacity: 1 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="p-[3px] relative cursor-pointer"
-                href="./CesarMartinezCastroResume.pdf"
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-green-950 rounded-lg" />
-                <div className="px-1 md:px-6 py-2  bg-black rounded-[6px] text-sm relative group transition  text-white hover:bg-transparent duration-200 font-semibold ">
-                  Download CV
-                </div>
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.04 }}
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                className="px-5 py-2  bg-black text-white text-sm rounded-md font-semibold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer border-white/5 border"
+                whileHover={{ scale: 1.1, y: -2 }}
                 href="https://github.com/CesarMartinez7"
                 target="_blank"
+                className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center border border-gray-800"
               >
                 <Icon icon="tabler:brand-github" width="24" height="24" />
-                Github
               </motion.a>
               <motion.a
-                whileHover={{ scale: 1.04 }}
-                className="px-5 py-2 bg-black text-white text-sm rounded-md font-bold group-hover:bg-black/[0.8] shadow-lg inline-flex items-center gap-2 cursor-pointer  "
+                whileHover={{ scale: 1.1, y: -2 }}
                 href="https://www.linkedin.com/in/cesar-martinez-castro-383943332/"
                 target="_blank"
+                className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center border border-gray-800"
               >
                 <Icon icon="tabler:brand-linkedin" width="24" height="24" />
-                Linkedin
+              </motion.a>
+              <motion.a
+                whileHover={{ scale: 1.1, y: -2 }}
+                href="mailto:cesarmartinezcastro7@gmail.com"
+                className="w-12 h-12 rounded-full bg-gray-900 flex items-center justify-center border border-gray-800"
+              >
+                <Icon icon="tabler:mail" width="24" height="24" />
               </motion.a>
             </div>
+          </motion.div>
+          
+          <div className="text-gray-500 text-sm">
+            <p>© {new Date().getFullYear()} Cesar Martinez. All rights reserved.</p>
           </div>
         </div>
-      </div>
-      <motion.div
-        initial={{ opacity: 0 }}
-        whileInView={{ transition: { duration: 0.4 }, opacity: 1 }}
-        exit={{ opacity: 0 }}
-        className="grid grid-cols-1 gap-2 "
-      >
-        <Overview />
-        <motion.div className="flex items-center p-4 justify-center mb-8">
-          <Terminal />
-        </motion.div>
-      </motion.div>
-
-      <div className="relative flex size-full items-center justify-center overflow-hidden rounded-lg bg-background p-3 lg:p-20">
-        <motion.div
-          ref={divProject}
-          className="w-full flex flex-col items-center gap-2.5"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1, transition: { duration: 1 } }}
-          exit={{ opacity: 0 }}
-        >
-          <h3
-            className="text-center uppercase text-3xl font-bold my-2 from-green-500 bg-clip-text  bg-gradient-to-br  to-green-500 text-transparent"
-            style={{
-              textShadow:
-                "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
-            }}
-          >
-            My Projects
-          </h3>
-          <p className="bg-clip-text w-lg font-light text-balance text-center bg-gradient-to-t from-zinc-400 mb-4 to-gray-100 text-transparent ">
-            In these projects I learned to face real challenges and transform
-            problems into effective solutions.
-          </p>
-          <ExpandableCardDemo />
-        </motion.div>
-      </div>
-      <div className="flex items-center h-svh justify-center flex-col relative  ">
-        <h3
-          className="text-center uppercase text-3xl font-bold my-2 from-green-500 bg-clip-text bg-gradient-to-br  to-green-500 text-transparent"
-          style={{
-            textShadow:
-              "0px 0px 10px rgba(50, 205, 50, 0.8), 0px 0px 20px rgba(50, 205, 50, 0.5)",
-          }}
-        >
-          My Certification
-        </h3>
-        <p className="text-balance  text-center bg-clip-text font-light bg-gradient-to-t from-zinc-400 to-gray-100 text-transparent md:w-[800px] mb-4 ">
-          I am always learning and improving my skills. These certifications are
-          proof of my commitment to technology and digital security.
-        </p>
-        <AnimatedList />
-      </div>
-      <Habilidades />
+      </footer>
     </motion.div>
   );
 }

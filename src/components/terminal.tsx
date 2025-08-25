@@ -103,7 +103,7 @@ export const Terminal = ({ className }: TerminalProps) => {
   return (
     <div
       className={cn(
-        "z-0 h-full w-full max-w-2xl rounded-xl border border-white/5  bg-background overflow-ellipsis text-wrap shiny-text",
+        "z-0 h-full w-full max-w-2xl rounded-xl border border-white/15  bg-background overflow-ellipsis text-wrap shiny-text backdrop-blur-xl",
         className
       )}
     >

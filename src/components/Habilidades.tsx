@@ -18,7 +18,7 @@ export default function Habilidades() {
               <span className="text-white">Technical </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-700">Skills</span>
             </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto">
+            <p className=" max-w-2xl mx-auto">
               The technologies and tools I use to bring ideas to life
             </p>
           </motion.div>
@@ -28,11 +28,11 @@ export default function Habilidades() {
       <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
 
       <div className="relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-6 p-6 lg:grid-cols-9 lg:px-44 lg:py-12 gap-5  ">
+        <div className="grid grid-cols-2 md:grid-cols-6 p-6 lg:grid-cols-8 lg:px-44 lg:py-12 gap-5  ">
           {ToolJson.map((tool, index) => (
             <SpotlightCard
               key={index}
-              className="custom-spotlight-card flex flex-col  w-full h-full items-center gap-2 justify-center grayscale-10"
+              className="custom-spotlight-card flex flex-col min-w-24 w-full h-full items-center gap-2 justify-center grayscale-10"
               //@ts-ignore
               spotlightColor={tool.color}
             >

@@ -175,7 +175,7 @@ export function ExpandableCardDemo() {
               seIsHovered(true);
               setActive(card);
             }}
-            className="p-3 bg-black/20 backdrop-blur-2xl border border-zinc-900 flex flex-col transition-all duration-300 hover:bg-zinc-950 hover:shadow-green-900 rounded-xl cursor-pointer"
+            className="p-3 bg-black/20 backdrop-blur-2xl border border-zinc-950 flex flex-col transition-all duration-300 hover:bg-zinc-950 hover:shadow-green-900 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`img-${card.title}-${id}`}>
@@ -601,7 +601,7 @@ const cards = [
     title: "Jade",
     src: "/jade.png",
     ctaText: "Visit site",
-    video: "pysoccer.mp4",
+    video: "Jade.mp4",
     status: false,
     tecnologias: [
       {
@@ -617,17 +617,19 @@ const cards = [
         icon: "logos:typescript-icon",
       },
     ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/PySoccer",
-    ctaLink: "https://github.com/CesarMartinez7/PySoccer",
+    ctaLinkCode: "https://github.com/CesarMartinez7/Jade",
+    ctaLink: "https://jade-sooty.vercel.app/",
     content: () => {
       return (
         <p className="text-sm">
-          React Matter is a simple JSON formatter that allows you to format and beautify JSON data easily. It provides a user-friendly interface for viewing and editing JSON structures.
+          Jade is a simple JSON formatter that allows you to easily format and enhance JSON data. It provides a user-friendly interface for viewing and editing JSON structures. Jade also offers various easy-to-use tools for developers that can be very helpful.
           <br />
           <br />
           <strong>Learnings:</strong>
           <ul className="list-disc pl-5">
             <li>✅ React</li>
+            <li>✅ Recursion</li>
+            <li>✅ Methods Basics from Javascript</li>
             {/* <li>✅ Implemented a basic physics system.</li>
             <li>✅ Worked with Docker to package the game.</li> */}
           </ul>

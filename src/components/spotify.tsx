@@ -139,8 +139,8 @@ export function ExpandableCardDemo() {
                   </div>
                 </div>
                 <ul className="flex flex-wrap gap-1.5 mt-2 px-4 w-full  py-2 ">
-                  {active.tecnologias?.map((tec) => (
-                    <li className="w-fit bg-zinc-950 border-white/10 border text-xs py-1 px-2 rounded-2xl gap-1.5 flex items-center justify-center">
+                  {active.tecnologias?.map((tec, idx) => (
+                    <li key={idx} className="w-fit bg-zinc-950 border-white/10 border text-xs py-1 px-2 rounded-2xl gap-1.5 flex items-center justify-center">
                       {tec.name}{" "}
                       <span>
                         <Icon icon={`${tec.icon}`} width="17" height="17" />
@@ -169,13 +169,14 @@ export function ExpandableCardDemo() {
       <main className="max-w-3xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start p-4 gap-2 md:p-4 lg:p-2 ">
         {cards.map((card, index) => (
           <motion.div
+            
             layoutId={`card-${card.title}-${index}`}
-            key={card.title}
+            key={card.title + index}
             onClick={() => {
               seIsHovered(true);
               setActive(card);
             }}
-            className="p-3 bg-black/20 backdrop-blur-2xl border border-zinc-950 flex flex-col transition-all duration-300 hover:bg-zinc-950 hover:shadow-green-900 rounded-xl cursor-pointer"
+            className="p-3 bg-b backdrop-blur-2xl border border-zinc-950 flex flex-col transition-all duration-300 hover:bg-zinc-950 hover:shadow-green-900 rounded-xl cursor-pointer"
           >
             <div className="flex gap-4 flex-col  w-full">
               <motion.div layoutId={`img-${card.title}-${id}`}>
@@ -846,6 +847,45 @@ const cards = [
             <li>✅ Learned to use Pygame for game development.</li>
             <li>✅ Implemented a basic physics system.</li>
             <li>✅ Worked with Docker to package the game.</li>
+          </ul>
+        </p>
+      );
+    },
+  },
+
+   {
+    description: "Extension for Vscode",
+    title: "Notys",
+    src: "/notys.png",
+    ctaText: "Look markeplace",
+    video: "notys.mp4",
+    status: false,
+    tecnologias: [
+      {
+        name: "Javascript",
+        icon: "logos:javascript",
+      },
+      // {
+      //   name: "Docker",
+      //   icon: "logos:docker-icon",
+      // },
+      // {
+      //   name: "Python Package",
+      //   icon: "logos:pypi",
+      // },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez7",
+    ctaLink: "https://marketplace.visualstudio.com/items?itemName=Develoops.Notys",
+    content: () => {
+      return (
+        <p className="text-sm">
+          This is a custom Visual Studio Code extension developed in JavaScript that allows you to create and manage quick notes directly inside the editor. It’s designed to streamline your workflow by letting you save ideas, reminders, and important snippets without leaving VS Code. Simply open the extension, write your note, and it will be stored automatically for later use.
+          <br />
+          <br />
+          <strong>Learnings:</strong>
+          <ul className="list-disc pl-5">
+            <li>✅ Learned how to build and structure a Visual Studio Code extension.</li>
+            <li>✅ Gained experience using the VS Code API to create custom commands and UI panels.</li>
           </ul>
         </p>
       );

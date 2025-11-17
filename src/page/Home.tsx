@@ -55,18 +55,7 @@ function Main() {
       ref={containerRef}
       className="relative bg-black min-h-screen overflow-hidden"
     >
-      {/* Enhanced background with gradient mesh */}
-   
-      {/* <Navbar /> */}
-
-      <>
-  
-</>
-      {/* Floating dock for social links */}
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2  hidden md:block z-40">
-        
-        .
-      </div>
+    
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center px-4 z-40">

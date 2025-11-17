@@ -276,8 +276,9 @@ const AnimatedList: React.FC<AnimatedListProps> = ({
               }
             }}
           >
+            
             <div
-              className={`p-3  border shadow-2xs bg-black border-zinc-900 shadow-zinc-900 flex flex-col gap-1 rounded-lg ${
+              className={`p-3  border shadow-2xs bg-zinc-950 border-zinc-900 shadow-zinc-900 flex flex-col gap-1 rounded-lg ${
                 selectedIndex === index
                   ? "bg-[#000000b4] transition-all duration-150"
                   : ""

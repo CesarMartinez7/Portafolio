@@ -16,8 +16,12 @@ body {
   font-family: "IBM";
   background-color: #000 ;
   color: #DADADA;
-   /* O 500, según la variante deseada */
+  scrollbar-width: none;
+  scrollbar-track-color: red;
 }
+
+   /* O 500, según la variante deseada */
+
 
 
 ::selection{

@@ -28,6 +28,11 @@ const projectMedia: Record<string, string[]> = {
     "notys-1.png",
     "notys-fullscreen.png",
   ],
+   "Tailwind Breakpoint: [
+    "notys.png",
+    "notys-1.png",
+    "notys-fullscreen.png",
+  ],
   Jade: [
     "jade-comparator.png",
     "jade1.png",
@@ -446,6 +451,31 @@ Integrated Supabase for cloud synchronization and persistence, while maintaining
       <p>Notys is a VS Code extension that allows developers to create and manage quick notes directly within the editor — without breaking their workflow. Built using the VS Code Extension API and powered by Supabase for real-time data storage and synchronization. Published on the official Marketplace, it showcases the ability to build and ship practical tools that developers can rely on in their daily workflow.</p>
     ),
   },
+  {
+  description: "Firefox extension for Tailwind CSS breakpoint detection",
+  title: "Tailwind Breakpoint",
+  src: "/tailwind-breakpoint.png", // pon un screenshot
+  images: [
+    "/tailwind-breakpoint.png",
+    "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&q=80",
+  ],
+  status: true,
+  ctaText: "View on Firefox",
+  tecnologias: [
+    { name: "JavaScript", icon: "logos:javascript" },
+    { name: "Firefox", icon: "logos:firefox" },
+  ],
+  ctaLinkCode: "https://github.com/CesarMartinez7",
+  ctaLink: "https://addons.mozilla.org/", // pon la URL exacta
+  content: () => (
+    <p>
+      A Firefox extension that detects the active Tailwind CSS breakpoint in
+      real time — showing whether you're on xs, sm, md, lg, xl or 2xl as you
+      resize the browser. Built to speed up responsive development without
+      leaving the browser.
+    </p>
+  ),
+
   {
     description: "Anime & manga encyclopedia powered by GraphQL",
     title: "DexTS",

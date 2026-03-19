@@ -7,46 +7,21 @@ import ImageNofound from "../../public/nofoundimage.webp";
 
 // Media por proyecto — mezcla libre de imágenes y videos
 const projectMedia: Record<string, string[]> = {
-  Elisa: [
-    "elisa.png",
-    "elisa-white.png",
-    "elisa-black.png",
-  ],
+  Elisa: ["elisa.png", "elisa-white.png", "elisa-black.png"],
   DexTS: [
     "dexts.mp4",
     "dexts-menu.png",
     "dext-bleach.png",
     "dext-harribel.png",
   ],
-  "Mercado Libre Clone": [
-    "mercadolibre.mp4",
-    "mercadolibre.webp",
-
-  ],
-  Notys: [
-    "notys.png",
-    "notys-1.png",
-    "notys-fullscreen.png",
-  ],
-   "Tailwind Breakpoint: [
-    "notys.png",
-    "notys-1.png",
-    "notys-fullscreen.png",
-  ],
-  Jade: [
-    "jade-comparator.png",
-    "jade1.png",
-    "jade.png",
-  ],
-  "Catchy Bot 🤖": [
-    "catchybot.webm",
-    "catchybot.webp",
-   
-  ],
+  "Mercado Libre Clone": ["mercadolibre.mp4", "mercadolibre.webp"],
+  Notys: ["notys.png", "notys-1.png", "notys-fullscreen.png"],
+  "Tailwind Breakpoint": ["tailwind-break.png", "tailwind-break.png"],
+  Jade: ["jade-comparator.png", "jade1.png", "jade.png"],
+  "Catchy Bot 🤖": ["catchybot.webm", "catchybot.webp"],
   "Speed Port": [
-    "speedport.mp4",   // <- video primero
+    "speedport.mp4", // <- video primero
     "speedports.webp",
-  
   ],
 };
 
@@ -64,7 +39,9 @@ function MediaSkeleton() {
         <div className="absolute inset-0 rounded-full border-2 border-zinc-800" />
         <div className="absolute inset-0 rounded-full border-2 border-t-zinc-400 animate-spin" />
       </div>
-      <span className="text-zinc-500 text-[11px] font-mono tracking-widest uppercase">Loading</span>
+      <span className="text-zinc-500 text-[11px] font-mono tracking-widest uppercase">
+        Loading
+      </span>
     </div>
   );
 }
@@ -72,8 +49,15 @@ function MediaSkeleton() {
 function MediaError() {
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center bg-zinc-900 gap-2 z-10">
-      <Icon icon="tabler:photo-off" className="text-zinc-700" width="30" height="30" />
-      <span className="text-zinc-600 text-[11px] font-mono">Failed to load</span>
+      <Icon
+        icon="tabler:photo-off"
+        className="text-zinc-700"
+        width="30"
+        height="30"
+      />
+      <span className="text-zinc-600 text-[11px] font-mono">
+        Failed to load
+      </span>
     </div>
   );
 }
@@ -82,7 +66,9 @@ function MediaError() {
 // Renderiza imagen o video con loading y error handling
 
 function MediaItem({ src, alt }: { src: string; alt: string }) {
-  const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+  const [status, setStatus] = useState<"loading" | "ready" | "error">(
+    "loading",
+  );
 
   useEffect(() => {
     setStatus("loading");
@@ -160,7 +146,8 @@ function useSlideshow(media: string[], isActive: boolean, interval = 3500) {
 
   const goTo = (idx: number) => setCurrentIndex(idx);
   const goNext = () => setCurrentIndex((prev) => (prev + 1) % media.length);
-  const goPrev = () => setCurrentIndex((prev) => (prev - 1 + media.length) % media.length);
+  const goPrev = () =>
+    setCurrentIndex((prev) => (prev - 1 + media.length) % media.length);
 
   return { currentIndex, goTo, goNext, goPrev };
 }
@@ -173,10 +160,16 @@ export function ExpandableCardDemo() {
   const ref = useRef(null);
 
   const activeMedia = active
-    ? (projectMedia[active.title] ?? [active.src?.length > 0 ? active.src : ImageNofound])
+    ? (projectMedia[active.title] ?? [
+        active.src?.length > 0 ? active.src : ImageNofound,
+      ])
     : [];
 
-  const { currentIndex, goTo, goNext, goPrev } = useSlideshow(activeMedia, !!active, 3500);
+  const { currentIndex, goTo, goNext, goPrev } = useSlideshow(
+    activeMedia,
+    !!active,
+    3500,
+  );
 
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
@@ -241,7 +234,11 @@ export function ExpandableCardDemo() {
                   {isVideo(activeMedia[currentIndex]) && (
                     <div className="absolute top-4 right-4 z-20">
                       <span className="flex items-center gap-1 text-[10px] font-mono px-2 py-1 rounded-full bg-black/60 border border-white/10 text-white/70 backdrop-blur-sm">
-                        <Icon icon="tabler:player-play-filled" width="9" height="9" />
+                        <Icon
+                          icon="tabler:player-play-filled"
+                          width="9"
+                          height="9"
+                        />
                         VIDEO
                       </span>
                     </div>
@@ -249,11 +246,13 @@ export function ExpandableCardDemo() {
 
                   {/* Status badge */}
                   <div className="absolute top-4 left-4 z-20">
-                    <span className={`text-xs font-mono px-3 py-1 rounded-full border backdrop-blur-sm ${
-                      active.status
-                        ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
-                        : "bg-amber-500/10 border-amber-500/30 text-amber-400"
-                    }`}>
+                    <span
+                      className={`text-xs font-mono px-3 py-1 rounded-full border backdrop-blur-sm ${
+                        active.status
+                          ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
+                          : "bg-amber-500/10 border-amber-500/30 text-amber-400"
+                      }`}
+                    >
                       {active.status ? "● Live" : "◌ In progress"}
                     </span>
                   </div>
@@ -262,16 +261,30 @@ export function ExpandableCardDemo() {
                   {activeMedia.length > 1 && (
                     <>
                       <button
-                        onClick={(e) => { e.stopPropagation(); goPrev(); }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          goPrev();
+                        }}
                         className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-black/80 transition-all backdrop-blur-sm"
                       >
-                        <Icon icon="tabler:chevron-left" width="14" height="14" />
+                        <Icon
+                          icon="tabler:chevron-left"
+                          width="14"
+                          height="14"
+                        />
                       </button>
                       <button
-                        onClick={(e) => { e.stopPropagation(); goNext(); }}
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          goNext();
+                        }}
                         className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-black/80 transition-all backdrop-blur-sm"
                       >
-                        <Icon icon="tabler:chevron-right" width="14" height="14" />
+                        <Icon
+                          icon="tabler:chevron-right"
+                          width="14"
+                          height="14"
+                        />
                       </button>
                     </>
                   )}
@@ -282,7 +295,10 @@ export function ExpandableCardDemo() {
                       {activeMedia.map((src, idx) => (
                         <button
                           key={idx}
-                          onClick={(e) => { e.stopPropagation(); goTo(idx); }}
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            goTo(idx);
+                          }}
                           className={`h-1 rounded-full transition-all duration-300 ${
                             idx === currentIndex
                               ? "bg-white w-5"
@@ -305,7 +321,9 @@ export function ExpandableCardDemo() {
                       >
                         {active.title}
                       </motion.h3>
-                      <p className="text-zinc-400 text-sm">{active.description}</p>
+                      <p className="text-zinc-400 text-sm">
+                        {active.description}
+                      </p>
                     </div>
                     <div className="flex gap-2 shrink-0">
                       <a
@@ -313,7 +331,11 @@ export function ExpandableCardDemo() {
                         target="_blank"
                         className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 rounded-lg transition-all"
                       >
-                        <Icon icon="tabler:brand-github" width="15" height="15" />
+                        <Icon
+                          icon="tabler:brand-github"
+                          width="15"
+                          height="15"
+                        />
                         Code
                       </a>
                       <a
@@ -321,7 +343,11 @@ export function ExpandableCardDemo() {
                         target="_blank"
                         className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-all"
                       >
-                        <Icon icon="tabler:external-link" width="15" height="15" />
+                        <Icon
+                          icon="tabler:external-link"
+                          width="15"
+                          height="15"
+                        />
                         {active.ctaText}
                       </a>
                     </div>
@@ -342,7 +368,9 @@ export function ExpandableCardDemo() {
                   <div className="h-px bg-zinc-800" />
 
                   <div className="text-zinc-300 text-sm leading-relaxed">
-                    {typeof active.content === "function" ? active.content() : active.content}
+                    {typeof active.content === "function"
+                      ? active.content()
+                      : active.content}
                   </div>
                 </div>
               </motion.div>
@@ -364,7 +392,10 @@ export function ExpandableCardDemo() {
             viewport={{ once: true }}
             className="group relative bg-zinc-950 border border-zinc-800 rounded-xl overflow-hidden cursor-pointer hover:border-zinc-600 transition-all duration-300"
           >
-            <motion.div layoutId={`img-${card.title}-${id}`} className="relative h-44 overflow-hidden">
+            <motion.div
+              layoutId={`img-${card.title}-${id}`}
+              className="relative h-44 overflow-hidden"
+            >
               <img
                 src={card.src?.length > 0 ? card.src : ImageNofound}
                 alt={card.title}
@@ -372,11 +403,13 @@ export function ExpandableCardDemo() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
               <div className="absolute top-3 right-3">
-                <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full border backdrop-blur-sm ${
-                  card.status
-                    ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
-                    : "bg-amber-500/10 border-amber-500/30 text-amber-400"
-                }`}>
+                <span
+                  className={`text-[10px] font-mono px-2 py-0.5 rounded-full border backdrop-blur-sm ${
+                    card.status
+                      ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
+                      : "bg-amber-500/10 border-amber-500/30 text-amber-400"
+                  }`}
+                >
                   {card.status ? "Live" : "WIP"}
                 </span>
               </div>
@@ -389,10 +422,16 @@ export function ExpandableCardDemo() {
               >
                 {card.title}
               </motion.h3>
-              <p className="text-zinc-500 text-xs mb-3 line-clamp-2">{card.description}</p>
+              <p className="text-zinc-500 text-xs mb-3 line-clamp-2">
+                {card.description}
+              </p>
               <div className="flex items-center gap-1.5">
                 {card.tecnologias?.slice(0, 4).map((tec, idx) => (
-                  <span key={idx} title={tec.name} className="p-1.5 rounded-md bg-zinc-900 border border-zinc-800">
+                  <span
+                    key={idx}
+                    title={tec.name}
+                    className="p-1.5 rounded-md bg-zinc-900 border border-zinc-800"
+                  >
                     <Icon icon={tec.icon} width="13" height="13" />
                   </span>
                 ))}
@@ -402,7 +441,12 @@ export function ExpandableCardDemo() {
                   </span>
                 )}
                 <motion.div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
-                  <Icon icon="tabler:arrow-up-right" className="text-zinc-500" width="16" height="16" />
+                  <Icon
+                    icon="tabler:arrow-up-right"
+                    className="text-zinc-500"
+                    width="16"
+                    height="16"
+                  />
                 </motion.div>
               </div>
             </div>
@@ -429,9 +473,19 @@ const cards = [
     ctaLinkCode: "https://github.com/CesarMartinez7/Elisa",
     ctaLink: "https://elisaland.vercel.app/",
     content: () => (
-      <p>Developed a cross-platform API client using React, Rust, and Tauri, focused on high performance and minimal dependencies. The application implements a custom architecture with near-zero external libraries, including a fully custom-built JSON renderer based on recursive patterns to handle deeply nested data structures efficiently.
-Designed and implemented a proprietary editor for request/response handling, enabling flexible API interaction workflows. Supports Postman Collection v2.1 and environment management, allowing users to import, edit, and export collections and variables seamlessly.
-Integrated Supabase for cloud synchronization and persistence, while maintaining local-first performance through Rust-powered backend processes.</p>
+      <p>
+        Developed a cross-platform API client using React, Rust, and Tauri,
+        focused on high performance and minimal dependencies. The application
+        implements a custom architecture with near-zero external libraries,
+        including a fully custom-built JSON renderer based on recursive patterns
+        to handle deeply nested data structures efficiently. Designed and
+        implemented a proprietary editor for request/response handling, enabling
+        flexible API interaction workflows. Supports Postman Collection v2.1 and
+        environment management, allowing users to import, edit, and export
+        collections and variables seamlessly. Integrated Supabase for cloud
+        synchronization and persistence, while maintaining local-first
+        performance through Rust-powered backend processes.
+      </p>
     ),
   },
   {
@@ -446,36 +500,44 @@ Integrated Supabase for cloud synchronization and persistence, while maintaining
       { name: "Supabase", icon: "logos:supabase-icon" },
     ],
     ctaLinkCode: "https://github.com/CesarMartinez7",
-    ctaLink: "https://marketplace.visualstudio.com/items?itemName=Develoops.Notys",
+    ctaLink:
+      "https://marketplace.visualstudio.com/items?itemName=Develoops.Notys",
     content: () => (
-      <p>Notys is a VS Code extension that allows developers to create and manage quick notes directly within the editor — without breaking their workflow. Built using the VS Code Extension API and powered by Supabase for real-time data storage and synchronization. Published on the official Marketplace, it showcases the ability to build and ship practical tools that developers can rely on in their daily workflow.</p>
+      <p>
+        Notys is a VS Code extension that allows developers to create and manage
+        quick notes directly within the editor — without breaking their
+        workflow. Built using the VS Code Extension API and powered by Supabase
+        for real-time data storage and synchronization. Published on the
+        official Marketplace, it showcases the ability to build and ship
+        practical tools that developers can rely on in their daily workflow.
+      </p>
     ),
   },
   {
-  description: "Firefox extension for Tailwind CSS breakpoint detection",
-  title: "Tailwind Breakpoint",
-  src: "/tailwind-breakpoint.png", // pon un screenshot
-  images: [
-    "/tailwind-breakpoint.png",
-    "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&q=80",
-  ],
-  status: true,
-  ctaText: "View on Firefox",
-  tecnologias: [
-    { name: "JavaScript", icon: "logos:javascript" },
-    { name: "Firefox", icon: "logos:firefox" },
-  ],
-  ctaLinkCode: "https://github.com/CesarMartinez7",
-  ctaLink: "https://addons.mozilla.org/", // pon la URL exacta
-  content: () => (
-    <p>
-      A Firefox extension that detects the active Tailwind CSS breakpoint in
-      real time — showing whether you're on xs, sm, md, lg, xl or 2xl as you
-      resize the browser. Built to speed up responsive development without
-      leaving the browser.
-    </p>
-  ),
-
+    description: "Firefox extension for Tailwind CSS breakpoint detection",
+    title: "Tailwind Breakpoint",
+    src: "/tailwind-break.png", // pon un screenshot
+    images: [
+      "/tailwind-breakpoint.png",
+      "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&q=80",
+    ],
+    status: true,
+    ctaText: "View on Firefox",
+    tecnologias: [
+      { name: "JavaScript", icon: "logos:javascript" },
+      { name: "Firefox", icon: "logos:firefox" },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez7",
+    ctaLink: "https://addons.mozilla.org/", // pon la URL exacta
+    content: () => (
+      <p>
+        A Firefox extension that detects the active Tailwind CSS breakpoint in
+        real time — showing whether you're on xs, sm, md, lg, xl or 2xl as you
+        resize the browser. Built to speed up responsive development without
+        leaving the browser.
+      </p>
+    ),
+  },
   {
     description: "Anime & manga encyclopedia powered by GraphQL",
     title: "DexTS",
@@ -492,7 +554,13 @@ Integrated Supabase for cloud synchronization and persistence, while maintaining
     ctaLinkCode: "https://github.com/CesarMartinez7/DexTS",
     ctaLink: "https://dexts.pages.dev",
     content: () => (
-      <p>DexTS is a full-featured anime and manga encyclopedia that queries real-time data via GraphQL using Apollo Client. Users can browse synopses, characters, and saga details — and also watch anime or read manga directly on the platform. Demonstrates advanced data-fetching patterns and TypeScript type safety at scale.</p>
+      <p>
+        DexTS is a full-featured anime and manga encyclopedia that queries
+        real-time data via GraphQL using Apollo Client. Users can browse
+        synopses, characters, and saga details — and also watch anime or read
+        manga directly on the platform. Demonstrates advanced data-fetching
+        patterns and TypeScript type safety at scale.
+      </p>
     ),
   },
   {
@@ -508,7 +576,14 @@ Integrated Supabase for cloud synchronization and persistence, while maintaining
     ctaLinkCode: "https://github.com/CesarMartinez7/Jade",
     ctaLink: "https://jade-sooty.vercel.app/",
     content: () => (
-      <p>Jade is a developer-focused web toolbox that streamlines common development tasks, featuring a JSON formatter with real-time validation and tree visualization, a JSON comparator, JWT decoder, and text comparison tools. Designed for efficiency, it leverages recursive rendering to handle deeply nested data structures, delivering a fast and intuitive debugging experience.</p>
+      <p>
+        Jade is a developer-focused web toolbox that streamlines common
+        development tasks, featuring a JSON formatter with real-time validation
+        and tree visualization, a JSON comparator, JWT decoder, and text
+        comparison tools. Designed for efficiency, it leverages recursive
+        rendering to handle deeply nested data structures, delivering a fast and
+        intuitive debugging experience.
+      </p>
     ),
   },
   {
@@ -526,7 +601,13 @@ Integrated Supabase for cloud synchronization and persistence, while maintaining
     ctaLinkCode: "https://github.com/CesarMartinez7/mercadoesclavo",
     ctaLink: "https://mercadoesclavo.vercel.app",
     content: () => (
-      <p>A production-scale clone of Mercado Libre built with Next.js and server-side rendering. Features a fully functional product search, dynamic category filters, and a responsive layout that mirrors the real platform's UX. Highlights skills in SSR architecture, TypeScript, and performance optimization.</p>
+      <p>
+        A production-scale clone of Mercado Libre built with Next.js and
+        server-side rendering. Features a fully functional product search,
+        dynamic category filters, and a responsive layout that mirrors the real
+        platform's UX. Highlights skills in SSR architecture, TypeScript, and
+        performance optimization.
+      </p>
     ),
   },
   {
@@ -544,7 +625,13 @@ Integrated Supabase for cloud synchronization and persistence, while maintaining
     ctaLinkCode: "https://github.com/CesarMartinez7/CatchyBot",
     ctaLink: "https://web.telegram.org/a/#7759974599",
     content: () => (
-      <p>Catchy Bot is a Telegram bot that converts YouTube links to audio and delivers them directly in chat. Fully containerized with Docker and published as a PyPI package. Demonstrates backend automation, API integration, containerization, and open-source packaging — outside the frontend stack.</p>
+      <p>
+        Catchy Bot is a Telegram bot that converts YouTube links to audio and
+        delivers them directly in chat. Fully containerized with Docker and
+        published as a PyPI package. Demonstrates backend automation, API
+        integration, containerization, and open-source packaging — outside the
+        frontend stack.
+      </p>
     ),
   },
   {
@@ -560,7 +647,12 @@ Integrated Supabase for cloud synchronization and persistence, while maintaining
     ctaLinkCode: "https://github.com/CesarMartinez7/AnchorPortss",
     ctaLink: "https://github.com/CesarMartinez7/AnchorPorts",
     content: () => (
-      <p>Speed Port is a network security tool built in Python using Scapy and Nmap. It performs fast port scanning with optional MAC address spoofing to test network resilience. Shows depth beyond the browser — network protocols, low-level packet manipulation, and security tooling.</p>
+      <p>
+        Speed Port is a network security tool built in Python using Scapy and
+        Nmap. It performs fast port scanning with optional MAC address spoofing
+        to test network resilience. Shows depth beyond the browser — network
+        protocols, low-level packet manipulation, and security tooling.
+      </p>
     ),
   },
 ];

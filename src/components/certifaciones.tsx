@@ -13,6 +13,16 @@ const credentials = [
     badge: "bg-blue-500/10 text-blue-400",
   },
   {
+    name: "Técnico en Programación de Software",
+    institution: "SENA — Servicio Nacional de Aprendizaje",
+    icon: "logos:google-scholar", // no hay icono de SENA, este es neutral
+    credentialURL: "https://www.sena.edu.co",
+    tags: ["Software Development", "Programming", "Tech"],
+    color: "hover:border-emerald-500/40",
+    glow: "#10b981",
+    badge: "bg-emerald-500/10 text-emerald-400",
+  },
+  {
     name: "Introduction to Cybersecurity",
     institution: "Cisco Networking Academy",
     icon: "logos:cisco",
@@ -52,7 +62,7 @@ export default function Credenciales() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12  ">
           {credentials.map((cert, i) => (
             <motion.a
               key={i}
@@ -66,7 +76,8 @@ export default function Credenciales() {
               whileHover={{ y: -2 }}
               className={`group flex flex-col gap-4 p-6 rounded-2xl bg-zinc-950 border border-zinc-800 transition-all duration-300 ${cert.color}`}
               onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = `0 0 24px -6px ${cert.glow}30`;
+                (e.currentTarget as HTMLElement).style.boxShadow =
+                  `0 0 24px -6px ${cert.glow}30`;
               }}
               onMouseLeave={(e) => {
                 (e.currentTarget as HTMLElement).style.boxShadow = "";
@@ -76,7 +87,9 @@ export default function Credenciales() {
                 <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800">
                   <Icon icon={cert.icon} width="28" height="28" />
                 </div>
-                <span className={`text-xs font-mono px-2.5 py-1 rounded-full ${cert.badge}`}>
+                <span
+                  className={`text-xs font-mono px-2.5 py-1 rounded-full ${cert.badge}`}
+                >
                   Verified
                 </span>
               </div>

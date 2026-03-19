@@ -424,7 +424,9 @@ const cards = [
     ctaLinkCode: "https://github.com/CesarMartinez7/Elisa",
     ctaLink: "https://elisaland.vercel.app/",
     content: () => (
-      <p>Elisa is an API client built from scratch focused on simplicity and performance. Designed with a "zero dependencies" philosophy, it provides a clean environment for testing and developing REST APIs — without the bloat of tools like Postman. Built with React, TypeScript, and powered by Tauri for a native-like experience.</p>
+      <p>Developed a cross-platform API client using React, Rust, and Tauri, focused on high performance and minimal dependencies. The application implements a custom architecture with near-zero external libraries, including a fully custom-built JSON renderer based on recursive patterns to handle deeply nested data structures efficiently.
+Designed and implemented a proprietary editor for request/response handling, enabling flexible API interaction workflows. Supports Postman Collection v2.1 and environment management, allowing users to import, edit, and export collections and variables seamlessly.
+Integrated Supabase for cloud synchronization and persistence, while maintaining local-first performance through Rust-powered backend processes.</p>
     ),
   },
   {

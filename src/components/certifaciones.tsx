@@ -1,324 +1,131 @@
-import React, {
-  useRef,
-  useState,
-  useEffect,
-  ReactNode,
-  MouseEventHandler,
-  UIEvent,
-} from "react";
-import { motion, useInView } from "framer-motion";
+import { motion } from "motion/react";
+import { Icon } from "@iconify/react/dist/iconify.js";
 
-interface AnimatedItemProps {
-  children: ReactNode;
-  delay?: number;
-  index: number;
-  onMouseEnter?: MouseEventHandler<HTMLDivElement>;
-  onClick?: MouseEventHandler<HTMLDivElement>;
-}
+const credentials = [
+  {
+    name: "Docker Essentials: A Developer Introduction",
+    institution: "IBM",
+    icon: "logos:ibm",
+    credentialURL: "https://www.ibm.com/certificates/IBM-67890",
+    tags: ["Docker", "Containers", "Deployment"],
+    color: "hover:border-blue-500/40",
+    glow: "#3178C6",
+    badge: "bg-blue-500/10 text-blue-400",
+  },
+  {
+    name: "Introduction to Cybersecurity",
+    institution: "Cisco Networking Academy",
+    icon: "logos:cisco",
+    credentialURL: "https://www.cisco.com/certificates/CNA-11223",
+    tags: ["Cybersecurity", "Networking", "Data Protection"],
+    color: "hover:border-cyan-500/40",
+    glow: "#06b6d4",
+    badge: "bg-cyan-500/10 text-cyan-400",
+  },
+];
 
-const AnimatedItem: React.FC<AnimatedItemProps> = ({
-  children,
-  delay = 0,
-  index,
-  onMouseEnter,
-  onClick,
-}) => {
-  const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { amount: 0.5, once: false });
+const exploring = [
+  { name: "Supabase", icon: "logos:supabase-icon" },
+  { name: "Docker", icon: "logos:docker-icon" },
+  { name: "PostgreSQL", icon: "logos:postgresql" },
+];
+
+export default function Credenciales() {
   return (
-    <motion.div
-      ref={ref}
-      data-index={index}
-      onMouseEnter={onMouseEnter}
-      onClick={onClick}
-      initial={{ scale: 0.7, opacity: 0 }}
-      animate={inView ? { scale: 1, opacity: 1 } : { scale: 0.7, opacity: 0 }}
-      transition={{ duration: 0.2, delay }}
-      className="mb-4 cursor-pointer "
-    >
-      {children}
-    </motion.div>
-  );
-};
+    <section className="relative py-20 px-4">
+      <div className="max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          viewport={{ once: true }}
+          className="mb-16 text-center"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            <span className="text-white">Credentials & </span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-500">
+              Learning
+            </span>
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto">
+            Verified certifications and technologies I'm actively exploring.
+          </p>
+        </motion.div>
 
-interface Certificacion {
-  name: string;
-  institution: string;
-  isFinish: boolean;
-  expedition: string;
-  credentialID: string;
-  credentialURL: string;
-  skills: string[];
-}
-
-interface AnimatedListProps {
-  items?: Array<Certificacion>;
-  onItemSelect?: (item: string, index: number) => void;
-  showGradients?: boolean;
-  enableArrowNavigation?: boolean;
-  className?: string;
-  itemClassName?: string;
-  displayScrollbar?: boolean;
-  initialSelectedIndex?: number;
-}
-
-const AnimatedList: React.FC<AnimatedListProps> = ({
-  items = [
-    {
-      name: "Python Developer",
-      institution: "SoloLearn",
-      isFinish: true,
-      expedition: "February 30",
-      expiration: "No expiration", // If the certificate has an expiration date
-      credentialID: "SL-12345", // Unique certificate ID
-      credentialURL: "https://www.sololearn.com/certificates/SL-12345", // Verification URL
-      skills: ["Python", "Programming", "Software Development"], // Acquired skills
-    },
-    {
-      name: "Docker Essentials: A Developer Introduction",
-      institution: "IBM",
-      isFinish: true,
-      expedition: "February 30",
-      expiration: "No expiration",
-      credentialID: "IBM-67890",
-      credentialURL: "https://www.ibm.com/certificates/IBM-67890",
-      skills: ["Docker", "Containers", "Application Deployment"],
-    },
-    {
-      name: "Python Intermediate",
-      institution: "SoloLearn",
-      isFinish: true,
-      expedition: "February 30",
-      expiration: "No expiration",
-      credentialID: "SL-54321",
-      credentialURL: "https://www.sololearn.com/certificates/SL-54321",
-      skills: ["Python", "Data Structures", "Advanced Algorithms"],
-    },
-    {
-      name: "Introduction to Web Development: HTML and CSS (1/2)",
-      institution: "SoloLearn",
-      isFinish: true,
-      expedition: "February 27, 2025",
-      expiration: "No expiration",
-      credentialID: "306940459",
-      credentialURL: "https://www.sololearn.com/certificates/SL-54321",
-      skills: ["HTML", "CSS", "Web Concepts"],
-    },
-    {
-      name: "Introduction to Cybersecurity",
-      institution: "Cisco Networking Academy",
-      isFinish: true,
-      expedition: "February 30",
-      expiration: "No expiration",
-      credentialID: "CNA-11223",
-      credentialURL: "https://www.cisco.com/certificates/CNA-11223",
-      skills: ["Cybersecurity", "Networking", "Data Protection"],
-    },
-    {
-      name: "JavaScript Intermediate",
-      institution: "SoloLearn",
-      isFinish: true,
-      expedition: "February 30",
-      expiration: "No expiration",
-      credentialID: "SL-33445",
-      credentialURL: "https://www.sololearn.com/certificates/SL-33445",
-      skills: ["JavaScript", "Functional Programming", "ES6+"],
-    },
-    {
-      name: "Introduction to JavaScript",
-      institution: "SoloLearn",
-      isFinish: true,
-      expedition: "February 30",
-      expiration: "No expiration",
-      credentialID: "SL-55667",
-      credentialURL: "https://www.sololearn.com/certificates/SL-55667",
-      skills: ["JavaScript", "DOM", "Events"],
-    },
-    {
-      name: "Introduction to Python",
-      institution: "SoloLearn",
-      isFinish: true,
-      expedition: "Mayo 11",
-      expiration: "No expiration",
-      credentialID: "SL-77889",
-      credentialURL:
-        "https://api2.sololearn.com/v2/certificates/CC-YT4USZLG/image/png?t=638825373427671040",
-      skills: [
-        "Angular",
-        "Basic Syntax",
-        "Routes",
-        "Forms",
-        "HTTPClient",
-        "Routes",
-        "RXJS",
-      ],
-    },
-    {
-      name: "Angular",
-      institution: "SoloLearn",
-      isFinish: true,
-      expedition: "February 30",
-      expiration: "No expiration",
-      credentialID: "SL-77889",
-      credentialURL: "https://www.sololearn.com/certificates/SL-77889",
-      skills: ["Python", "Basic Syntax", "Control Structures"],
-    },
-  ],
-
-  onItemSelect,
-  showGradients = true,
-  enableArrowNavigation = true,
-  className = "",
-  itemClassName = "",
-  displayScrollbar = true,
-  initialSelectedIndex = -1,
-}) => {
-  const listRef = useRef<HTMLDivElement>(null);
-  const [selectedIndex, setSelectedIndex] =
-    useState<number>(initialSelectedIndex);
-  const [keyboardNav, setKeyboardNav] = useState<boolean>(false);
-  const [topGradientOpacity, setTopGradientOpacity] = useState<number>(0);
-  const [bottomGradientOpacity, setBottomGradientOpacity] = useState<number>(1);
-
-  const handleScroll = (e: UIEvent<HTMLDivElement>) => {
-    const { scrollTop, scrollHeight, clientHeight } =
-      e.target as HTMLDivElement;
-    setTopGradientOpacity(Math.min(scrollTop / 50, 1));
-    const bottomDistance = scrollHeight - (scrollTop + clientHeight);
-    setBottomGradientOpacity(
-      scrollHeight <= clientHeight ? 0 : Math.min(bottomDistance / 50, 1)
-    );
-  };
-
-  // Keyboard navigation: arrow keys, tab, and enter selection
-  useEffect(() => {
-    if (!enableArrowNavigation) return;
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "ArrowDown" || (e.key === "Tab" && !e.shiftKey)) {
-        e.preventDefault();
-        setKeyboardNav(true);
-        setSelectedIndex((prev) => Math.min(prev + 1, items.length - 1));
-      } else if (e.key === "ArrowUp" || (e.key === "Tab" && e.shiftKey)) {
-        e.preventDefault();
-        setKeyboardNav(true);
-        setSelectedIndex((prev) => Math.max(prev - 1, 0));
-      } else if (e.key === "Enter") {
-        if (selectedIndex >= 0 && selectedIndex < items.length) {
-          e.preventDefault();
-          if (onItemSelect) {
-            //@ts-ignore
-            onItemSelect(items[0], selectedIndex);
-          }
-        }
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [items, selectedIndex, onItemSelect, enableArrowNavigation]);
-
-  // Scroll the selected item into view if needed
-  useEffect(() => {
-    if (!keyboardNav || selectedIndex < 0 || !listRef.current) return;
-    const container = listRef.current;
-    const selectedItem = container.querySelector(
-      `[data-index="${selectedIndex}"]`
-    ) as HTMLElement | null;
-    if (selectedItem) {
-      const extraMargin = 50;
-      const containerScrollTop = container.scrollTop;
-      const containerHeight = container.clientHeight;
-      const itemTop = selectedItem.offsetTop;
-      const itemBottom = itemTop + selectedItem.offsetHeight;
-      if (itemTop < containerScrollTop + extraMargin) {
-        container.scrollTo({ top: itemTop - extraMargin, behavior: "smooth" });
-      } else if (
-        itemBottom >
-        containerScrollTop + containerHeight - extraMargin
-      ) {
-        container.scrollTo({
-          top: itemBottom - containerHeight + extraMargin,
-          behavior: "smooth",
-        });
-      }
-    }
-    setKeyboardNav(false);
-  }, [selectedIndex, keyboardNav]);
-
-  return (
-    <div
-      className={`relative md:w-[700px] w-full  mask-x-from-70% mask-x-to-90%  ${className}`}
-    >
-      <div
-        ref={listRef}
-        className={`max-h-[400px] overflow-y-auto p-4 ${
-          displayScrollbar
-            ? "[&::-webkit-scrollbar]:w-[20px] [&::-webkit-scrollbar-track]:bg-[#944f4f] [&::-webkit-scrollbar-thumb]:bg-[#222] [&::-webkit-scrollbar-thumb]:rounded-[4px]"
-            : "scrollbar-hide"
-        }`}
-        onScroll={handleScroll}
-        style={{
-          scrollbarWidth: "auto",
-          scrollbarColor: "#222 #060606",
-        }}
-      >
-        {items.map((item, index) => (
-          <AnimatedItem
-            key={index}
-            delay={0.1}
-            index={index}
-            onMouseEnter={() => setSelectedIndex(index)}
-            onClick={() => {
-              setSelectedIndex(index);
-              if (onItemSelect) {
-                //@ts-ignore
-                onItemSelect(item, index);
-              }
-            }}
-          >
-            
-            <div
-              className={`p-3  border shadow-2xs bg-zinc-950 border-zinc-900 shadow-zinc-900 flex flex-col gap-1 rounded-lg ${
-                selectedIndex === index
-                  ? "bg-[#000000b4] transition-all duration-150"
-                  : ""
-              } ${itemClassName}`}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
+          {credentials.map((cert, i) => (
+            <motion.a
+              key={i}
+              href={cert.credentialURL}
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: i * 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -2 }}
+              className={`group flex flex-col gap-4 p-6 rounded-2xl bg-zinc-950 border border-zinc-800 transition-all duration-300 ${cert.color}`}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = `0 0 24px -6px ${cert.glow}30`;
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.boxShadow = "";
+              }}
             >
-              <h3 className="m-0 text-md font-bold text-zinc-300 shiny-text ">
-                {item.name}
-              </h3>
-              <p className="text-balance text-sm   bg-clip-text font-light bg-gradient-to-t from-zinc-300 to-gray-100 text-transparent ">
-                {item.institution}
-              </p>
+              <div className="flex items-start justify-between gap-3">
+                <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800">
+                  <Icon icon={cert.icon} width="28" height="28" />
+                </div>
+                <span className={`text-xs font-mono px-2.5 py-1 rounded-full ${cert.badge}`}>
+                  Verified
+                </span>
+              </div>
 
-              <ul className="flex gap-2 text-xs">
-                {item.skills.map((skill, index) => (
-                  <li
-                    key={index}
-                    className="w-fit border border-zinc-900 px-2 rounded-2xl  "
+              <div>
+                <h3 className="text-white font-semibold text-sm leading-snug mb-1">
+                  {cert.name}
+                </h3>
+                <p className="text-zinc-500 text-xs">{cert.institution}</p>
+              </div>
+
+              <div className="flex flex-wrap gap-1.5">
+                {cert.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400"
                   >
-                    {skill}
-                  </li>
+                    {tag}
+                  </span>
                 ))}
-              </ul>
-            </div>
-          </AnimatedItem>
-        ))}
-      </div>
-      {showGradients && (
-        <>
-          <div
-            className="absolute top-0 left-0 right-0 h-[50px]  from-black to-transparent pointer-events-none transition-opacity duration-1000 ease"
-            style={{ opacity: topGradientOpacity }}
-          ></div>
-          <div
-            className="absolute bottom-0 left-0 right-0 h-[100px] bg-gradient-to- to-transparent pointer-events-none transition-opacity duration-1000 ease"
-            style={{ opacity: bottomGradientOpacity }}
-          ></div>
-        </>
-      )}
-    </div>
-  );
-};
+              </div>
 
-export default AnimatedList;
+              <div className="flex items-center gap-1 text-zinc-600 group-hover:text-zinc-400 transition-colors text-xs">
+                <Icon icon="tabler:external-link" width="12" height="12" />
+                View credential
+              </div>
+            </motion.a>
+          ))}
+        </div>
+
+        <p className="text-xs font-mono text-zinc-600 uppercase tracking-widest mb-6 text-center">
+          Currently exploring
+        </p>
+        <div className="flex flex-wrap justify-center gap-3">
+          {exploring.map((tech, i) => (
+            <motion.div
+              key={tech.name}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: i * 0.07 }}
+              viewport={{ once: true }}
+              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-950 border border-zinc-800 hover:border-zinc-600 transition-all"
+            >
+              <Icon icon={tech.icon} width="18" height="18" />
+              <span className="text-sm text-zinc-300">{tech.name}</span>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,32 +1,20 @@
 //@ts-nocheck
-
-import { act, useEffect, useId, useRef, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "./utils/useOutside";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import ImageNofound from "../../public/nofoundimage.webp";
-import { video } from "framer-motion/client";
 
 export function ExpandableCardDemo() {
-  const [active, setActive] = useState<(typeof cards)[number] | boolean | null>(
-    null
-  );
+  const [active, setActive] = useState(null);
   const id = useId();
-  const ref = useRef<HTMLDivElement>(null);
-  const [isHovered, seIsHovered] = useState<boolean>(false);
+  const ref = useRef(null);
+
   useEffect(() => {
-    function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") {
-        setActive(false);
-      }
+    function onKeyDown(event) {
+      if (event.key === "Escape") setActive(null);
     }
-
-    if (active && typeof active === "object") {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-
+    document.body.style.overflow = active ? "hidden" : "auto";
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [active]);
@@ -34,862 +22,269 @@ export function ExpandableCardDemo() {
   useOutsideClick(ref, () => setActive(null));
 
   return (
-    <motion.div>
+    <motion.div className="w-full">
       <AnimatePresence>
-        {active && typeof active === "object" && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/20 h-full w-full z-10 "
-          />
+        {active && (
+          <>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
+            />
+            <div className="fixed inset-0 grid place-items-center z-50 p-4">
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.8 }}
+                onClick={() => setActive(null)}
+                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-zinc-900 border border-zinc-700 flex items-center justify-center text-zinc-400 hover:text-white hover:border-zinc-500 transition-all z-50"
+              >
+                <Icon icon="tabler:x" width="18" height="18" />
+              </motion.button>
+
+              <motion.div
+                layoutId={`card-${active.title}-${id}`}
+                ref={ref}
+                className="w-full max-w-2xl max-h-[90vh] flex flex-col bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl"
+              >
+                <motion.div layoutId={`img-${active.title}-${id}`} className="relative h-64 overflow-hidden">
+                  <img
+                    src={active.src?.length > 0 ? active.src : ImageNofound}
+                    alt={active.title}
+                    className="w-full h-full object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className={`text-xs font-mono px-3 py-1 rounded-full border backdrop-blur-sm ${
+                      active.status
+                        ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
+                        : "bg-amber-500/10 border-amber-500/30 text-amber-400"
+                    }`}>
+                      {active.status ? "● Live" : "◌ In progress"}
+                    </span>
+                  </div>
+                </motion.div>
+
+                <div className="flex flex-col gap-4 p-6 overflow-y-auto">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <motion.h3 layoutId={`title-${active.title}-${id}`} className="text-2xl font-bold text-white mb-1">
+                        {active.title}
+                      </motion.h3>
+                      <p className="text-zinc-400 text-sm">{active.description}</p>
+                    </div>
+                    <div className="flex gap-2 shrink-0">
+                      <a href={active.ctaLinkCode} target="_blank"
+                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 rounded-lg transition-all">
+                        <Icon icon="tabler:brand-github" width="15" height="15" />
+                        Code
+                      </a>
+                      <a href={active.ctaLink} target="_blank"
+                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-all">
+                        <Icon icon="tabler:external-link" width="15" height="15" />
+                        {active.ctaText}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {active.tecnologias?.map((tec, idx) => (
+                      <span key={idx} className="flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300">
+                        <Icon icon={tec.icon} width="14" height="14" />
+                        {tec.name}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="h-px bg-zinc-800" />
+
+                  <div className="text-zinc-300 text-sm leading-relaxed">
+                    {typeof active.content === "function" ? active.content() : active.content}
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </>
         )}
       </AnimatePresence>
-      <AnimatePresence>
-        {active && typeof active === "object" ? (
-          <div className="fixed inset-0 grid place-items-center z-[100] bg-black/90 ">
-            <motion.button
-              key={`button-${active.title}-${id}`}
-              layout
-              initial={{
-                opacity: 0,
-              }}
-              animate={{
-                opacity: 1,
-              }}
-              exit={{
-                opacity: 0,
-                transition: {
-                  duration: 0.05,
-                },
-              }}
-              className="flex absolute top-2 right-2 lg:hidden items-center justify-center z-50 bg-white/70  h-6 w-6 rounded-2xl"
-              onClick={() => setActive(null)}
-            >
-              <CloseIcon />
-            </motion.button>
-            <motion.div
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              exit={{ opacity: 0, scale: 0 }}
-              layoutId={`card-${active.title}-${id}`}
-              ref={ref}
-              className="w-full max-w-[500px] h-full  md:h-fit md:max-h-[90%]  flex flex-col bg-black shadow-2xl shadow-white/2  sm:rounded-xl overflow-hidden"
-            >
-              <motion.div layoutId={`img-${active.title}-${id}`}>
-                {isHovered ? (
-                  <video
-                    className="aspect-video"
-                    src={`./${active.video}`}
-                    autoPlay
-                    loop
-                    preload="auto"
-                  />
-                ) : (
-                  <img
-                    width={240}
-                    height={240}
-                    src={active.src.length > 0 ? active.src : ImageNofound}
-                    alt={active.title}
-                    className="w-full h-80 lg:h-80 sm:rounded-tr-lg sm:rounded-tl-lg object-cover object-top"
-                  />
-                )}
-              </motion.div>
 
-              <div className="mt-4">
-                <div className="flex justify-between  items-center  px-4 mb-1">
-                  <div className="w-fit">
-                    <motion.h3
-                      layoutId={`title-${active.title}-${id}`}
-                      className=" text-white shiny-text font-bold text-xl "
-                    >
-                      {active.title}
-                    </motion.h3>
-                  </div>
-                  <div className="gap-2 flex">
-                    <motion.a
-                      layout
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{
-                        opacity: 1,
-                        scale: 1,
-                        transition: { duration: 0.1 },
-                      }}
-                      href={active.ctaLinkCode}
-                      target="_blank"
-                      className="text-xs px-1 md:px-2 md:py-0.5 md:text-xs font-bold bg-zinc-900 text-white  hover:bg-zinc-950 duration-200 border gap-1.5 border-zinc-800 border-b-3 whitespace-nowrap flex justify-center items-center rounded-md"
-                    >
-                      <Icon icon="tabler:brand-github" width="18" height="18" />
-                      Repository
-                    </motion.a>
-                    <motion.a
-                      layout
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={{
-                        opacity: 1,
-                        scale: 1,
-                        transition: { duration: 0.1 },
-                      }}
-                      href={active.ctaLink}
-                      target="_blank"
-                      className=" py-1 px-1 md:px-2 md:py-0.5 md:text-sm text-xs font-bold bg-green-500 text-white rounded-lg hover:bg-green-600 duration-200 border border-green-600 border-b-3 whitespace-nowrap"
-                    >
-                      {active.ctaText}
-                    </motion.a>
-                  </div>
-                </div>
-                <ul className="flex flex-wrap gap-1.5 mt-2 px-4 w-full  py-2 ">
-                  {active.tecnologias?.map((tec, idx) => (
-                    <li key={idx} className="w-fit bg-zinc-950 border-white/10 border text-xs py-1 px-2 rounded-2xl gap-1.5 flex items-center justify-center">
-                      {tec.name}{" "}
-                      <span>
-                        <Icon icon={`${tec.icon}`} width="17" height="17" />
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="relative px-4">
-                  <motion.div
-                    layout
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    className="text-neutral-100 md:text-sm lg:text-base h-full md:h-fit pb-10 flex flex-col items-start gap-4 md:overflow-auto  dark:text-neutral-300 [mask:linear-gradient(to_bottom,white,white,transparent)] [scrollbar-width:none]  [-webkit-overflow-scrolling:touch] text-sm"
-                  >
-                    {typeof active.content === "function"
-                      ? active.content()
-                      : active.content}
-                  </motion.div>
-                </div>
-              </div>
-            </motion.div>
-          </div>
-        ) : null}
-      </AnimatePresence>
-      <main className="max-w-3xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 items-start p-4 gap-2 md:p-4 lg:p-2 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         {cards.map((card, index) => (
           <motion.div
-            
-            layoutId={`card-${card.title}-${index}`}
+            layoutId={`card-${card.title}-${id}`}
             key={card.title + index}
-            onClick={() => {
-              seIsHovered(true);
-              setActive(card);
-            }}
-            className="p-3 bg-b backdrop-blur-2xl border border-zinc-950 flex flex-col transition-all duration-300 hover:bg-zinc-950 hover:shadow-green-900 rounded-xl cursor-pointer"
+            onClick={() => setActive(card)}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: index * 0.06 }}
+            viewport={{ once: true }}
+            className="group relative bg-zinc-950 border border-zinc-800 rounded-xl overflow-hidden cursor-pointer hover:border-zinc-600 transition-all duration-300"
           >
-            <div className="flex gap-4 flex-col  w-full">
-              <motion.div layoutId={`img-${card.title}-${id}`}>
-                <img
-                  width={100}
-                  height={100}
-                  src={card.src.length > 0 ? card.src : ImageNofound}
-                  alt={card.description}
-                  className="h-60 w-full rounded-lg object-cover object-top"
-                />
-              </motion.div>
-              <div className="grid  grid-cols-[1fr_auto]">
-                <motion.div className="">
-                  <motion.h3
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1, transition:  3 }}
-                    
-                    layoutId={`title-${card.title}-${id}`}
-                    className="text-zinc-300 font-bold "
-                  >
-                    {card.title}
-                  </motion.h3>
-                  <motion.span
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    layoutId={`description-${card.description}-${id}`}
-                    className="text-balance bg-clip-text font-light bg-gradient-to-t  from-zinc-300 to-gray-100 shiny-text text-transparent text-sm "
-                  >
-                    {card.description}
-                  </motion.span>
-                </motion.div>
-                {card.status ? (
-                  <button className="bg-white/7 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/10">
-                    Finished
-                  </button>
-                ) : (
-                  <button className="bg-white/10 h-6 text-sm px-2 text-white font-bold rounded-md border-b-2 border-white/15">
-                    In development
-                  </button>
+            <motion.div layoutId={`img-${card.title}-${id}`} className="relative h-44 overflow-hidden">
+              <img
+                src={card.src?.length > 0 ? card.src : ImageNofound}
+                alt={card.title}
+                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
+              <div className="absolute top-3 right-3">
+                <span className={`text-[10px] font-mono px-2 py-0.5 rounded-full border backdrop-blur-sm ${
+                  card.status
+                    ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
+                    : "bg-amber-500/10 border-amber-500/30 text-amber-400"
+                }`}>
+                  {card.status ? "Live" : "WIP"}
+                </span>
+              </div>
+            </motion.div>
+
+            <div className="p-4">
+              <motion.h3 layoutId={`title-${card.title}-${id}`} className="text-white font-semibold text-base mb-1">
+                {card.title}
+              </motion.h3>
+              <p className="text-zinc-500 text-xs mb-3 line-clamp-2">{card.description}</p>
+              <div className="flex items-center gap-1.5">
+                {card.tecnologias?.slice(0, 4).map((tec, idx) => (
+                  <span key={idx} title={tec.name} className="p-1.5 rounded-md bg-zinc-900 border border-zinc-800">
+                    <Icon icon={tec.icon} width="13" height="13" />
+                  </span>
+                ))}
+                {card.tecnologias?.length > 4 && (
+                  <span className="text-[10px] text-zinc-600 font-mono ml-1">+{card.tecnologias.length - 4}</span>
                 )}
+                <motion.div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Icon icon="tabler:arrow-up-right" className="text-zinc-500" width="16" height="16" />
+                </motion.div>
               </div>
             </div>
           </motion.div>
         ))}
-      </main>
+      </div>
     </motion.div>
   );
 }
 
-export const CloseIcon = () => {
-  return (
-    <motion.svg
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-        transition: {
-          duration: 0.05,
-        },
-      }}
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="h-4 w-4 text-black"
-    >
-      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-      <path d="M18 6l-12 12" />
-      <path d="M6 6l12 12" />
-    </motion.svg>
-  );
-};
-
 const cards = [
   {
-    description: "Free streaming platform",
-    title: "Delfilms 🍿",
-    src: "delfilms.webp",
-    ctaText: "Visit site",
-    status: true,
-    video: "delfilms.webm",
-    tecnologias: [
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Javascript",
-        icon: "logos:javascript",
-      },
-      {
-        name: "Vite",
-        icon: "logos:vitejs",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "logos:tailwindcss-icon",
-      },
-    ],
-    ctaLink: "https://delfilms.pages.dev",
-    ctaLinkCode: "https://github.com/CesarMartinez7/DelFilms",
-    content: () => {
-      return (
-        <p className="text-sm">
-          <strong>Delfilms</strong> is a free streaming platform with a wide
-          selection of movies and series. Without subscriptions or annoying ads,
-          it offers simple and cost-free access for movie lovers.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ React was used to build dynamic interfaces.</li>
-            <li>✅ Vite was implemented for fast and efficient development.</li>
-            <li>✅ Tailwind CSS was used to design a responsive interface.</li>
-            <li>✅ Application state was managed with React Hooks.</li>
-          </ul>
-        </p>
-      );
-    },
-  },
-  {
-    description: "API Client",
+    description: "Lightweight API client with zero external dependencies",
     title: "Elisa",
     src: "/elisa.png",
     ctaText: "Visit site",
-    video: "/elisa-client-0.0.3.png",
     status: false,
     tecnologias: [
-      {
-        name: "Axios",
-        icon: "logos:axios",
-      },
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Json",
-        icon: "logos:json",
-      },
-      {
-        name: "Typescript",
-        icon: "logos:typescript-icon",
-      },
-      {
-        name: "TailwindCSS",
-        icon: "logos:tailwindcss-icon",
-      },
+      { name: "React", icon: "logos:react" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "Axios", icon: "logos:axios" },
+      { name: "TailwindCSS", icon: "logos:tailwindcss-icon" },
     ],
     ctaLinkCode: "https://github.com/CesarMartinez7/Elisa",
     ctaLink: "https://elisaland.vercel.app/",
-    content: () => {
-      return (
-        <p className="text-sm">
-          Elisa is a powerful and efficient API client, built from the ground up to provide a simple and hassle-free API development environment. Crafted with modern web technologies like React and optimized for performance with the power of Tauri, Elisa stands out with its "zero dependencies" philosophy. This means it's a lightweight, fast, and secure application that doesn't burden you with unnecessary libraries or packages
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ React</li>
-            {/* <li>✅ Implemented a basic physics system.</li>
-            <li>✅ Worked with Docker to package the game.</li> */}
-          </ul>
-        </p>
-      );
-    },
+    content: () => (
+      <p>Elisa is an API client built from scratch focused on simplicity and performance. Designed with a "zero dependencies" philosophy, it provides a clean environment for testing and developing REST APIs — without the bloat of tools like Postman. Built with React, TypeScript, and powered by Tauri for a native-like experience.</p>
+    ),
   },
   {
-    description: "Inventory and management system",
-    title: "DataFast ⚡",
-    src: "/datafast.webp",
-    ctaText: "Visit site",
-    video: "datafast.mp4",
-    status: true,
-    tecnologias: [
-      {
-        name: "Javascript",
-        icon: "logos:javascript",
-      },
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Tailwind",
-        icon: "logos:tailwindcss-icon",
-      },
-      {
-        name: "Chart.js",
-        icon: "logos:chartjs",
-      },
-      {
-        name: "Node.js",
-        icon: "logos:nodejs-icon",
-      },
-      {
-        name: "MySQL",
-        icon: "logos:mysql-icon",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/DataFast",
-    ctaLink: "https://github.com/CesarMartinez7/Datafast/tree/tailwind",
-    content: () => {
-      return (
-        <p className="text-sm">
-          DataFast is a system designed to optimize inventory management and
-          facilitate product control in companies of all sizes. It improves
-          efficiency and reduces operation time.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ A Node.js backend was integrated with a MySQL database.</li>
-            <li>✅ Chart.js was used to visualize inventory data.</li>
-            <li>✅ Learned to handle routes and authentication in React.</li>
-            <li>✅ Tailwind CSS was implemented to style the interface.</li>
-          </ul>
-        </p>
-      );
-    },
-  },
-  {
-    description: "Anime streaming platform",
-    title: "Meko ☕",
-    src: "/meko.webp",
-    status: true,
-    video: "meko.mp4",
-    ctaText: "Visit site",
-    tecnologias: [
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Typescript",
-        icon: "logos:typescript-icon",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "logos:tailwindcss-icon",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/meko",
-    ctaLink: "https://mekoo.pages.dev",
-    content: () => {
-      return (
-        <p className="text-sm">
-          Meko is a platform focused on anime streaming, with an updated catalog
-          and a smooth interface. Find and enjoy your favorite series without
-          complications.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ Worked with TypeScript to improve code quality.</li>
-            <li>
-              ✅ Tailwind CSS was implemented for fast and efficient design.
-            </li>
-            <li>✅ Learned to handle props and states in TypeScript.</li>
-            <li>✅ Integrated a video player for streaming.</li>
-          </ul>
-        </p>
-      );
-    },
-  },
-  {
-    description: "Anime and manga encyclopedia",
+    description: "Anime & manga encyclopedia powered by GraphQL",
     title: "DexTS",
     src: "/dexts.webp",
     status: true,
     ctaText: "Visit site",
-    video: "dexts.mp4",
     tecnologias: [
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Typescript",
-        icon: "logos:typescript-icon",
-      },
-      {
-        name: "GraphQL",
-        icon: "logos:graphql",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "logos:tailwindcss-icon",
-      },
-      {
-        name: "Apollo Client",
-        icon: "logos:apollostack",
-      },
-      {
-        name: "DaisyUI",
-        icon: "logos:daisyui-icon",
-      },
+      { name: "React", icon: "logos:react" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "GraphQL", icon: "logos:graphql" },
+      { name: "Apollo Client", icon: "logos:apollostack" },
+      { name: "TailwindCSS", icon: "logos:tailwindcss-icon" },
     ],
     ctaLinkCode: "https://github.com/CesarMartinez7/DexTS",
     ctaLink: "https://dexts.pages.dev",
-    content: () => {
-      return (
-        <p className="text-sm">
-          <strong>DexTS </strong> provides detailed information about anime and
-          manga using GraphQL to fetch real-time data. Find synopses,
-          characters, and more in one place, plus watch anime and read manga!
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ Learned to use GraphQL for real-time queries.</li>
-            <li>✅ Integrated Apollo Client to handle GraphQL queries.</li>
-            <li>✅ Used DaisyUI for additional Tailwind UI components.</li>
-            <li>
-              ✅ Worked with TypeScript for more robust code and error
-              prevention.
-            </li>
-            <li>✅ Used the localStorage API for a simple history system.</li>
-          </ul>
-        </p>
-      );
-    },
+    content: () => (
+      <p>DexTS is a full-featured anime and manga encyclopedia that queries real-time data via GraphQL using Apollo Client. Users can browse synopses, characters, and saga details — and also watch anime or read manga directly on the platform. Demonstrates advanced data-fetching patterns and TypeScript type safety at scale.</p>
+    ),
   },
   {
-    description: "Mercado Libre clone",
-    title: "Mercado Libre Clone 📦",
+    description: "E-commerce clone with SSR and dynamic filters",
+    title: "Mercado Libre Clone",
     src: "/mercadolibre.webp",
-    video: "mercadolibre.mp4",
     status: false,
     ctaText: "Visit site",
     tecnologias: [
-      {
-        name: "Next.js",
-        icon: "logos:nextjs-icon",
-      },
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Typescript",
-        icon: "logos:typescript-icon",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "logos:tailwindcss-icon",
-      },
+      { name: "Next.js", icon: "logos:nextjs-icon" },
+      { name: "React", icon: "logos:react" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "TailwindCSS", icon: "logos:tailwindcss-icon" },
     ],
     ctaLinkCode: "https://github.com/CesarMartinez7/mercadoesclavo",
     ctaLink: "https://mercadoesclavo.vercel.app",
-    content: () => {
-      return (
-        <p className="text-sm">
-          A clone of Mercado Libre developed with Next.js, React, and Tailwind
-          CSS. It replicates the shopping experience with advanced search and
-          responsive design.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ Learned to use Next.js for server-side rendering.</li>
-            <li>✅ Implemented TypeScript to improve code quality.</li>
-            <li>✅ Used Tailwind CSS for fast and efficient design.</li>
-            <li>✅ Worked with advanced search and dynamic filters.</li>
-          </ul>
-        </p>
-      );
-    },
+    content: () => (
+      <p>A production-scale clone of Mercado Libre built with Next.js and server-side rendering. Features a fully functional product search, dynamic category filters, and a responsive layout that mirrors the real platform's UX. Highlights skills in SSR architecture, TypeScript, and performance optimization.</p>
+    ),
   },
   {
-    description: "Image search with Pexels API",
-    title: "GalleryPhotos 📷",
-    src: "/galleryphoto.webp",
-    video: "galleryphoto.mp4",
-    status: true,
-    ctaText: "Visit site",
-    tecnologias: [
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Typescript",
-        icon: "logos:typescript-icon",
-      },
-      {
-        name: "Next.js",
-        icon: "logos:nextjs-icon",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/gallery-photo-nextjs",
-    ctaLink: "https://gallerry-two.vercel.app/",
-    content: () => {
-      return (
-        <p className="text-sm">
-          GalleryPhotos allows you to explore and download high-quality images
-          thanks to the Pexels API. Find the perfect image in seconds with an
-          intuitive interface.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ Learned to integrate third-party APIs (Pexels) in React.</li>
-            <li>✅ Used Next.js for server-side rendering.</li>
-            <li>✅ Worked with TypeScript for safer code.</li>
-            <li>✅ Implemented an image search and filtering system.</li>
-          </ul>
-        </p>
-      );
-    },
-  },
-  {
-    description: "Developer Tools Web",
-    title: "Jade",
-    src: "/jade.png",
-    ctaText: "Visit site",
-    video: "Jade.mp4",
-    status: false,
-    tecnologias: [
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Json",
-        icon: "logos:json",
-      },
-      {
-        name: "Typescript",
-        icon: "logos:typescript-icon",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/Jade",
-    ctaLink: "https://jade-sooty.vercel.app/",
-    content: () => {
-      return (
-        <p className="text-sm">
-          Jade is a simple JSON formatter that allows you to easily format and enhance JSON data. It provides a user-friendly interface for viewing and editing JSON structures. Jade also offers various easy-to-use tools for developers that can be very helpful.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ React</li>
-            <li>✅ Recursion</li>
-            <li>✅ Methods Basics from Javascript</li>
-            {/* <li>✅ Implemented a basic physics system.</li>
-            <li>✅ Worked with Docker to package the game.</li> */}
-          </ul>
-        </p>
-      );
-    },
-  },
-  {
-    description: "Dragon Ball encyclopedia",
-    title: "Dragon Ball Wiki 🐉",
-    src: "/dragonballwiki.webp",
-    video: "dragonballwiki.webm",
-    status: true,
-    ctaText: "Visit site",
-    tecnologias: [
-      {
-        name: "React",
-        icon: "logos:react",
-      },
-      {
-        name: "Javascript",
-        icon: "logos:javascript",
-      },
-      {
-        name: "Vite",
-        icon: "logos:vitejs",
-      },
-      {
-        name: "Tailwind CSS",
-        icon: "logos:tailwindcss-icon",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/DragonBall",
-    ctaLink: "https://dragonballwikki.pages.dev/",
-    content: () => {
-      return (
-        <p className="text-sm">
-          <strong>Dragon Ball Wiki</strong> is the ultimate platform for fans of
-          the saga. Find information about characters, transformations, and
-          sagas from this iconic universe.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ Learned to use Vite for fast development.</li>
-            <li>✅ Implemented Tailwind CSS for a responsive design.</li>
-            <li>✅ Worked with React to handle complex states.</li>
-            <li>✅ Integrated a character and saga search system.</li>
-          </ul>
-        </p>
-      );
-    },
-  },
-  {
-    description: "Calculator in VanillaJS",
-    title: "Calculator 🖩",
-    src: "/calculadora.webp",
-    status: true,
-    video: "calculadora.webm",
-    ctaText: "Visit site",
-    tecnologias: [
-      {
-        name: "HTML",
-        icon: "logos:html-5",
-      },
-      {
-        name: "CSS",
-        icon: "logos:css-3",
-      },
-      {
-        name: "Javascript",
-        icon: "logos:javascript",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/orange",
-    ctaLink: "https://calculadora-7df.pages.dev",
-    content: () => {
-      return (
-        <p className="text-sm">
-          A simple yet efficient calculator to perform basic math operations
-          with a clean and user-friendly interface.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ Learned to manipulate the DOM with JavaScript.</li>
-            <li>✅ Implemented logic for basic math operations.</li>
-            <li>✅ Used CSS to design a clean and functional interface.</li>
-            <li>✅ Worked with user events for interactivity.</li>
-          </ul>
-        </p>
-      );
-    },
-  },
-  {
-    description: "Fast and versatile port scanner",
-    title: "Speed Port",
-    src: "/speedports.webp",
-    video: "speedport.mp4",
-    status: true,
-    ctaText: "Look at code",
-    tecnologias: [
-      {
-        name: "Python",
-        icon: "logos:python",
-      },
-      {
-        name: "Nmap",
-        icon: "file-icons:nmap",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/AnchorPortss",
-    ctaLink: "https://github.com/CesarMartinez7/AnchorPorts",
-    content: () => {
-      return (
-        <p className="text-sm">
-          <strong>Speed Port</strong> is a powerful port scanner built with
-          Python. It features MAC address spoofing to disrupt a target network
-          and leverages the capabilities of <strong>Scapy</strong> and{" "}
-          <strong>Nmap</strong>, a robust packet manipulation library for
-          Python.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ Learned to use Scapy for packet manipulation.</li>
-            <li>✅ Implemented an efficient port scanner.</li>
-            <li>✅ Worked with MAC address spoofing.</li>
-            <li>✅ Learned about network protocols and security.</li>
-          </ul>
-        </p>
-      );
-    },
-  },
-  {
-    description: "Bot for Telegram",
-    title: "Catchy Bot 🤖",
-    src: "/catchybot.webp",
-    status: true,
-    video: "catchybot.webm",
-    ctaText: "Send Message",
-    tecnologias: [
-      {
-        name: "Python",
-        icon: "logos:python",
-      },
-      {
-        name: "Docker",
-        icon: "logos:docker-icon",
-      },
-      {
-        name: "Python Package",
-        icon: "logos:pypi",
-      },
-      {
-        name: "Telegram API",
-        icon: "logos:telegram",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/CatchyBot",
-    ctaLink: "https://web.telegram.org/a/#7759974599",
-    content: () => {
-      return (
-        <p className="text-sm">
-          This is a Telegram bot developed in Python that allows you to download
-          music from YouTube directly from a chat. Simply send a video link, and
-          the bot will convert it to audio and send it to you in seconds.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ Learned to interact with the Telegram API.</li>
-            <li>✅ Implemented a system to download and convert videos.</li>
-            <li>✅ Used Docker to containerize the application.</li>
-            <li>✅ Published the bot as a package on PyPI.</li>
-          </ul>
-        </p>
-      );
-    },
-  },
-  {
-    description: "Free game made Pygame",
-    title: "Pysoccer",
-    src: "/pysoccer.webp",
-    ctaText: "Look at code",
-    video: "pysoccer.mp4",
-    status: false,
-    tecnologias: [
-      {
-        name: "Python",
-        icon: "logos:python",
-      },
-      {
-        name: "Docker",
-        icon: "logos:docker-icon",
-      },
-      {
-        name: "Python Package",
-        icon: "logos:pypi",
-      },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/PySoccer",
-    ctaLink: "https://github.com/CesarMartinez7/PySoccer",
-    content: () => {
-      return (
-        <p className="text-sm">
-          Pysoccer is a game with weird physics and bugs that are really
-          annoying but fun, making it a GOTY-worthy game to play OFFLINE WITH
-          MULTIPLAYER.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ Learned to use Pygame for game development.</li>
-            <li>✅ Implemented a basic physics system.</li>
-            <li>✅ Worked with Docker to package the game.</li>
-          </ul>
-        </p>
-      );
-    },
-  },
-
-   {
-    description: "Extension for Vscode",
+    description: "VS Code extension for in-editor note management",
     title: "Notys",
     src: "/notys.png",
-    ctaText: "Look markeplace",
-    video: "notys.mp4",
+    ctaText: "View on Marketplace",
     status: false,
     tecnologias: [
-      {
-        name: "Javascript",
-        icon: "logos:javascript",
-      },
-      // {
-      //   name: "Docker",
-      //   icon: "logos:docker-icon",
-      // },
-      // {
-      //   name: "Python Package",
-      //   icon: "logos:pypi",
-      // },
+      { name: "JavaScript", icon: "logos:javascript" },
+      { name: "VS Code API", icon: "logos:visual-studio-code" },
     ],
     ctaLinkCode: "https://github.com/CesarMartinez7",
     ctaLink: "https://marketplace.visualstudio.com/items?itemName=Develoops.Notys",
-    content: () => {
-      return (
-        <p className="text-sm">
-          This is a custom Visual Studio Code extension developed in JavaScript that allows you to create and manage quick notes directly inside the editor. It’s designed to streamline your workflow by letting you save ideas, reminders, and important snippets without leaving VS Code. Simply open the extension, write your note, and it will be stored automatically for later use.
-          <br />
-          <br />
-          <strong>Learnings:</strong>
-          <ul className="list-disc pl-5">
-            <li>✅ Learned how to build and structure a Visual Studio Code extension.</li>
-            <li>✅ Gained experience using the VS Code API to create custom commands and UI panels.</li>
-          </ul>
-        </p>
-      );
-    },
+    content: () => (
+      <p>Notys is a VS Code extension that lets developers create and manage quick notes directly inside the editor — without breaking their flow. Built with the VS Code Extension API and published to the official Marketplace. Demonstrates ability to ship tools that developers actually use in their daily workflow.</p>
+    ),
   },
-  
+  {
+    description: "Developer toolbox — JSON formatter and utilities",
+    title: "Jade",
+    src: "/jade.png",
+    ctaText: "Visit site",
+    status: false,
+    tecnologias: [
+      { name: "React", icon: "logos:react" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez7/Jade",
+    ctaLink: "https://jade-sooty.vercel.app/",
+    content: () => (
+      <p>Jade is a developer-focused web toolbox built around a JSON formatter with real-time validation and tree visualization. Goes beyond formatting — it includes a set of utilities designed to speed up repetitive dev tasks. Uses recursive rendering to handle deeply nested JSON structures.</p>
+    ),
+  },
+  {
+    description: "Telegram bot that downloads YouTube audio via chat",
+    title: "Catchy Bot 🤖",
+    src: "/catchybot.webp",
+    status: true,
+    ctaText: "Open in Telegram",
+    tecnologias: [
+      { name: "Python", icon: "logos:python" },
+      { name: "Docker", icon: "logos:docker-icon" },
+      { name: "Telegram API", icon: "logos:telegram" },
+      { name: "PyPI", icon: "logos:pypi" },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez7/CatchyBot",
+    ctaLink: "https://web.telegram.org/a/#7759974599",
+    content: () => (
+      <p>Catchy Bot is a Telegram bot that converts YouTube links to audio and delivers them directly in chat. Fully containerized with Docker and published as a PyPI package. Demonstrates backend automation, API integration, containerization, and open-source packaging — outside the frontend stack.</p>
+    ),
+  },
+  {
+    description: "Fast port scanner with MAC spoofing — built in Python",
+    title: "Speed Port",
+    src: "/speedports.webp",
+    status: true,
+    ctaText: "View code",
+    tecnologias: [
+      { name: "Python", icon: "logos:python" },
+      { name: "Nmap", icon: "file-icons:nmap" },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez7/AnchorPortss",
+    ctaLink: "https://github.com/CesarMartinez7/AnchorPorts",
+    content: () => (
+      <p>Speed Port is a network security tool built in Python using Scapy and Nmap. It performs fast port scanning with optional MAC address spoofing to test network resilience. Shows depth beyond the browser — network protocols, low-level packet manipulation, and security tooling.</p>
+    ),
+  },
 ];

@@ -5,19 +5,186 @@ import { useOutsideClick } from "./utils/useOutside";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import ImageNofound from "../../public/nofoundimage.webp";
 
+// Media por proyecto — mezcla libre de imágenes y videos
+const projectMedia: Record<string, string[]> = {
+  Elisa: [
+    "elisa.png",
+    "elisa-white.png",
+    "elisa-black.png",
+  ],
+  DexTS: [
+    "dexts.mp4",
+    "dexts-menu.png",
+    "dext-bleach.png",
+    "dext-harribel.png",
+  ],
+  "Mercado Libre Clone": [
+    "mercadolibre.mp4",
+    "mercadolibre.webp",
+
+  ],
+  Notys: [
+    "notys.mp4",
+    "notys.png",
+    "notys-1.png",
+    "notys-fullscreen.png",
+  ],
+  Jade: [
+    "Jade.mp4",
+    "jade-comparator.png",
+    "jade1.png",
+    "jade.png",
+  ],
+  "Catchy Bot 🤖": [
+    "catchybot.webm",
+    "catchybot.webp",
+   
+  ],
+  "Speed Port": [
+    "speedport.mp4",   // <- video primero
+    "speedports.webp",
+  
+  ],
+};
+
+// Detecta si un src es video por extensión
+function isVideo(src: string): boolean {
+  return /\.(mp4|webm|ogg|mov)(\?.*)?$/i.test(src);
+}
+
+// ─── Skeleton / Error ────────────────────────────────────────────────────────
+
+function MediaSkeleton() {
+  return (
+    <div className="absolute inset-0 flex flex-col items-center justify-center bg-zinc-900 gap-3 z-10">
+      <div className="relative w-8 h-8">
+        <div className="absolute inset-0 rounded-full border-2 border-zinc-800" />
+        <div className="absolute inset-0 rounded-full border-2 border-t-zinc-400 animate-spin" />
+      </div>
+      <span className="text-zinc-500 text-[11px] font-mono tracking-widest uppercase">Loading</span>
+    </div>
+  );
+}
+
+function MediaError() {
+  return (
+    <div className="absolute inset-0 flex flex-col items-center justify-center bg-zinc-900 gap-2 z-10">
+      <Icon icon="tabler:photo-off" className="text-zinc-700" width="30" height="30" />
+      <span className="text-zinc-600 text-[11px] font-mono">Failed to load</span>
+    </div>
+  );
+}
+
+// ─── MediaItem ───────────────────────────────────────────────────────────────
+// Renderiza imagen o video con loading y error handling
+
+function MediaItem({ src, alt }: { src: string; alt: string }) {
+  const [status, setStatus] = useState<"loading" | "ready" | "error">("loading");
+
+  useEffect(() => {
+    setStatus("loading");
+  }, [src]);
+
+  if (isVideo(src)) {
+    return (
+      <>
+        {status === "loading" && <MediaSkeleton />}
+        {status === "error" ? (
+          <MediaError />
+        ) : (
+          <motion.video
+            src={src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover object-top"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: status === "ready" ? 1 : 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            onCanPlay={() => setStatus("ready")}
+            onError={() => setStatus("error")}
+          />
+        )}
+      </>
+    );
+  }
+
+  return (
+    <>
+      {status === "loading" && <MediaSkeleton />}
+      {status === "error" ? (
+        <MediaError />
+      ) : (
+        <motion.img
+          src={src}
+          alt={alt}
+          className="absolute inset-0 w-full h-full object-cover object-top"
+          initial={{ opacity: 0, scale: 1.03 }}
+          animate={{ opacity: status === "ready" ? 1 : 0, scale: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.65, ease: "easeOut" }}
+          onLoad={() => setStatus("ready")}
+          onError={() => setStatus("error")}
+        />
+      )}
+    </>
+  );
+}
+
+// ─── useSlideshow ─────────────────────────────────────────────────────────────
+// Avanza automáticamente; si el slide actual es video, espera a que termine
+
+function useSlideshow(media: string[], isActive: boolean, interval = 3500) {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Reset al abrir la modal
+  useEffect(() => {
+    if (isActive) setCurrentIndex(0);
+  }, [isActive]);
+
+  // Auto-avance solo para imágenes
+  useEffect(() => {
+    if (!isActive || media.length <= 1) return;
+    if (isVideo(media[currentIndex])) return; // videos no auto-avanzan
+
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % media.length);
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, [isActive, media, currentIndex, interval]);
+
+  const goTo = (idx: number) => setCurrentIndex(idx);
+  const goNext = () => setCurrentIndex((prev) => (prev + 1) % media.length);
+  const goPrev = () => setCurrentIndex((prev) => (prev - 1 + media.length) % media.length);
+
+  return { currentIndex, goTo, goNext, goPrev };
+}
+
+// ─── Main component ──────────────────────────────────────────────────────────
+
 export function ExpandableCardDemo() {
   const [active, setActive] = useState(null);
   const id = useId();
   const ref = useRef(null);
 
+  const activeMedia = active
+    ? (projectMedia[active.title] ?? [active.src?.length > 0 ? active.src : ImageNofound])
+    : [];
+
+  const { currentIndex, goTo, goNext, goPrev } = useSlideshow(activeMedia, !!active, 3500);
+
   useEffect(() => {
-    function onKeyDown(event) {
-      if (event.key === "Escape") setActive(null);
-    }
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setActive(null);
+      if (e.key === "ArrowRight" && active) goNext();
+      if (e.key === "ArrowLeft" && active) goPrev();
+    };
     document.body.style.overflow = active ? "hidden" : "auto";
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, [active]);
+  }, [active, currentIndex]);
 
   useOutsideClick(ref, () => setActive(null));
 
@@ -26,13 +193,16 @@ export function ExpandableCardDemo() {
       <AnimatePresence>
         {active && (
           <>
+            {/* Backdrop */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               className="fixed inset-0 bg-black/80 backdrop-blur-md z-40"
             />
+
             <div className="fixed inset-0 grid place-items-center z-50 p-4">
+              {/* Close button */}
               <motion.button
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -48,14 +218,34 @@ export function ExpandableCardDemo() {
                 ref={ref}
                 className="w-full max-w-2xl max-h-[90vh] flex flex-col bg-zinc-950 border border-zinc-800 rounded-2xl overflow-hidden shadow-2xl"
               >
-                <motion.div layoutId={`img-${active.title}-${id}`} className="relative h-64 overflow-hidden">
-                  <img
-                    src={active.src?.length > 0 ? active.src : ImageNofound}
-                    alt={active.title}
-                    className="w-full h-full object-cover object-top"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent" />
-                  <div className="absolute top-4 left-4">
+                {/* ── Media slideshow ── */}
+                <motion.div
+                  layoutId={`img-${active.title}-${id}`}
+                  className="relative h-64 overflow-hidden bg-zinc-900"
+                >
+                  <AnimatePresence mode="crossfade">
+                    <MediaItem
+                      key={`${active.title}-${currentIndex}`}
+                      src={activeMedia[currentIndex] ?? ImageNofound}
+                      alt={`${active.title} - media ${currentIndex + 1}`}
+                    />
+                  </AnimatePresence>
+
+                  {/* Gradient overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-transparent to-transparent pointer-events-none" />
+
+                  {/* Video badge */}
+                  {isVideo(activeMedia[currentIndex]) && (
+                    <div className="absolute top-4 right-4 z-20">
+                      <span className="flex items-center gap-1 text-[10px] font-mono px-2 py-1 rounded-full bg-black/60 border border-white/10 text-white/70 backdrop-blur-sm">
+                        <Icon icon="tabler:player-play-filled" width="9" height="9" />
+                        VIDEO
+                      </span>
+                    </div>
+                  )}
+
+                  {/* Status badge */}
+                  <div className="absolute top-4 left-4 z-20">
                     <span className={`text-xs font-mono px-3 py-1 rounded-full border backdrop-blur-sm ${
                       active.status
                         ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
@@ -64,24 +254,70 @@ export function ExpandableCardDemo() {
                       {active.status ? "● Live" : "◌ In progress"}
                     </span>
                   </div>
+
+                  {/* Navegación con flechas */}
+                  {activeMedia.length > 1 && (
+                    <>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); goPrev(); }}
+                        className="absolute left-3 top-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-black/80 transition-all backdrop-blur-sm"
+                      >
+                        <Icon icon="tabler:chevron-left" width="14" height="14" />
+                      </button>
+                      <button
+                        onClick={(e) => { e.stopPropagation(); goNext(); }}
+                        className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-7 h-7 rounded-full bg-black/50 border border-white/10 flex items-center justify-center text-white/60 hover:text-white hover:bg-black/80 transition-all backdrop-blur-sm"
+                      >
+                        <Icon icon="tabler:chevron-right" width="14" height="14" />
+                      </button>
+                    </>
+                  )}
+
+                  {/* Dots indicadores */}
+                  {activeMedia.length > 1 && (
+                    <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-20">
+                      {activeMedia.map((src, idx) => (
+                        <button
+                          key={idx}
+                          onClick={(e) => { e.stopPropagation(); goTo(idx); }}
+                          className={`h-1 rounded-full transition-all duration-300 ${
+                            idx === currentIndex
+                              ? "bg-white w-5"
+                              : "bg-white/30 w-1.5 hover:bg-white/50"
+                          }`}
+                          title={isVideo(src) ? "Video" : `Imagen ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
 
+                {/* ── Info ── */}
                 <div className="flex flex-col gap-4 p-6 overflow-y-auto">
                   <div className="flex items-start justify-between gap-4">
                     <div>
-                      <motion.h3 layoutId={`title-${active.title}-${id}`} className="text-2xl font-bold text-white mb-1">
+                      <motion.h3
+                        layoutId={`title-${active.title}-${id}`}
+                        className="text-2xl font-bold text-white mb-1"
+                      >
                         {active.title}
                       </motion.h3>
                       <p className="text-zinc-400 text-sm">{active.description}</p>
                     </div>
                     <div className="flex gap-2 shrink-0">
-                      <a href={active.ctaLinkCode} target="_blank"
-                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 rounded-lg transition-all">
+                      <a
+                        href={active.ctaLinkCode}
+                        target="_blank"
+                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-zinc-900 border border-zinc-700 text-zinc-300 hover:text-white hover:border-zinc-500 rounded-lg transition-all"
+                      >
                         <Icon icon="tabler:brand-github" width="15" height="15" />
                         Code
                       </a>
-                      <a href={active.ctaLink} target="_blank"
-                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-all">
+                      <a
+                        href={active.ctaLink}
+                        target="_blank"
+                        className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg transition-all"
+                      >
                         <Icon icon="tabler:external-link" width="15" height="15" />
                         {active.ctaText}
                       </a>
@@ -90,7 +326,10 @@ export function ExpandableCardDemo() {
 
                   <div className="flex flex-wrap gap-2">
                     {active.tecnologias?.map((tec, idx) => (
-                      <span key={idx} className="flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300">
+                      <span
+                        key={idx}
+                        className="flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300"
+                      >
                         <Icon icon={tec.icon} width="14" height="14" />
                         {tec.name}
                       </span>
@@ -109,6 +348,7 @@ export function ExpandableCardDemo() {
         )}
       </AnimatePresence>
 
+      {/* ── Grid de cards ── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
         {cards.map((card, index) => (
           <motion.div
@@ -140,7 +380,10 @@ export function ExpandableCardDemo() {
             </motion.div>
 
             <div className="p-4">
-              <motion.h3 layoutId={`title-${card.title}-${id}`} className="text-white font-semibold text-base mb-1">
+              <motion.h3
+                layoutId={`title-${card.title}-${id}`}
+                className="text-white font-semibold text-base mb-1"
+              >
                 {card.title}
               </motion.h3>
               <p className="text-zinc-500 text-xs mb-3 line-clamp-2">{card.description}</p>
@@ -151,7 +394,9 @@ export function ExpandableCardDemo() {
                   </span>
                 ))}
                 {card.tecnologias?.length > 4 && (
-                  <span className="text-[10px] text-zinc-600 font-mono ml-1">+{card.tecnologias.length - 4}</span>
+                  <span className="text-[10px] text-zinc-600 font-mono ml-1">
+                    +{card.tecnologias.length - 4}
+                  </span>
                 )}
                 <motion.div className="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
                   <Icon icon="tabler:arrow-up-right" className="text-zinc-500" width="16" height="16" />
@@ -185,6 +430,23 @@ const cards = [
     ),
   },
   {
+    description: "VS Code extension for in-editor note management",
+    title: "Notys",
+    src: "/notys.png",
+    ctaText: "View on Marketplace",
+    status: false,
+    tecnologias: [
+      { name: "JavaScript", icon: "logos:javascript" },
+      { name: "VS Code API", icon: "logos:visual-studio-code" },
+      { name: "Supabase", icon: "logos:supabase-icon" },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez7",
+    ctaLink: "https://marketplace.visualstudio.com/items?itemName=Develoops.Notys",
+    content: () => (
+      <p>Notys is a VS Code extension that allows developers to create and manage quick notes directly within the editor — without breaking their workflow. Built using the VS Code Extension API and powered by Supabase for real-time data storage and synchronization. Published on the official Marketplace, it showcases the ability to build and ship practical tools that developers can rely on in their daily workflow.</p>
+    ),
+  },
+  {
     description: "Anime & manga encyclopedia powered by GraphQL",
     title: "DexTS",
     src: "/dexts.webp",
@@ -204,6 +466,22 @@ const cards = [
     ),
   },
   {
+    description: "Developer toolbox — JSON formatter and utilities",
+    title: "Jade",
+    src: "/jade.png",
+    ctaText: "Visit site",
+    status: false,
+    tecnologias: [
+      { name: "React", icon: "logos:react" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+    ],
+    ctaLinkCode: "https://github.com/CesarMartinez7/Jade",
+    ctaLink: "https://jade-sooty.vercel.app/",
+    content: () => (
+      <p>Jade is a developer-focused web toolbox that streamlines common development tasks, featuring a JSON formatter with real-time validation and tree visualization, a JSON comparator, JWT decoder, and text comparison tools. Designed for efficiency, it leverages recursive rendering to handle deeply nested data structures, delivering a fast and intuitive debugging experience.</p>
+    ),
+  },
+  {
     description: "E-commerce clone with SSR and dynamic filters",
     title: "Mercado Libre Clone",
     src: "/mercadolibre.webp",
@@ -219,38 +497,6 @@ const cards = [
     ctaLink: "https://mercadoesclavo.vercel.app",
     content: () => (
       <p>A production-scale clone of Mercado Libre built with Next.js and server-side rendering. Features a fully functional product search, dynamic category filters, and a responsive layout that mirrors the real platform's UX. Highlights skills in SSR architecture, TypeScript, and performance optimization.</p>
-    ),
-  },
-  {
-    description: "VS Code extension for in-editor note management",
-    title: "Notys",
-    src: "/notys.png",
-    ctaText: "View on Marketplace",
-    status: false,
-    tecnologias: [
-      { name: "JavaScript", icon: "logos:javascript" },
-      { name: "VS Code API", icon: "logos:visual-studio-code" },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7",
-    ctaLink: "https://marketplace.visualstudio.com/items?itemName=Develoops.Notys",
-    content: () => (
-      <p>Notys is a VS Code extension that lets developers create and manage quick notes directly inside the editor — without breaking their flow. Built with the VS Code Extension API and published to the official Marketplace. Demonstrates ability to ship tools that developers actually use in their daily workflow.</p>
-    ),
-  },
-  {
-    description: "Developer toolbox — JSON formatter and utilities",
-    title: "Jade",
-    src: "/jade.png",
-    ctaText: "Visit site",
-    status: false,
-    tecnologias: [
-      { name: "React", icon: "logos:react" },
-      { name: "TypeScript", icon: "logos:typescript-icon" },
-    ],
-    ctaLinkCode: "https://github.com/CesarMartinez7/Jade",
-    ctaLink: "https://jade-sooty.vercel.app/",
-    content: () => (
-      <p>Jade is a developer-focused web toolbox built around a JSON formatter with real-time validation and tree visualization. Goes beyond formatting — it includes a set of utilities designed to speed up repetitive dev tasks. Uses recursive rendering to handle deeply nested JSON structures.</p>
     ),
   },
   {

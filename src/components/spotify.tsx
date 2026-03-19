@@ -24,13 +24,11 @@ const projectMedia: Record<string, string[]> = {
 
   ],
   Notys: [
-    "notys.mp4",
     "notys.png",
     "notys-1.png",
     "notys-fullscreen.png",
   ],
   Jade: [
-    "Jade.mp4",
     "jade-comparator.png",
     "jade1.png",
     "jade.png",

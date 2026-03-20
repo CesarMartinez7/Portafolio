@@ -40,7 +40,7 @@ function Main() {
     {
       title: "LinkedIn",
       icon: "tabler:brand-linkedin",
-      href: "https://www.linkedin.com/in/cesar-martinez-castro-383943332/",
+      href: "https://www.linkedin.com/in/cesar-luis-martinez-castro-383943332/",
     },
     {
       title: "CV",
@@ -158,7 +158,7 @@ function Main() {
           >
             {[
               { icon: "tabler:brand-github", href: "https://github.com/CesarMartinez7", label: "GitHub" },
-              { icon: "tabler:brand-linkedin", href: "https://www.linkedin.com/in/cesar-martinez-castro-383943332/", label: "LinkedIn" },
+              { icon: "tabler:brand-linkedin", href: "https://www.linkedin.com/in/cesar-luis-martinez-castro-383943332/", label: "LinkedIn" },
               { icon: "tabler:mail", href: "mailto:cesarmartinezcastro7@gmail.com", label: "Email" },
             ].map((link) => (
               <motion.a

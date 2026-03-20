@@ -45,7 +45,7 @@ function Main() {
     {
       title: "CV",
       icon: "tabler:file-text",
-      href: "./CesarMartinezCastroResume.pdf",
+      href: "./CesarMartinez_Navy.pdf",
     },
   ];
 
@@ -140,7 +140,7 @@ function Main() {
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="./CesarMartinezCastroResume.pdf"
+              href="./CesarMartinez_Navy.pdf"
               download
               className="px-6 py-2.5 border border-zinc-700 hover:border-zinc-500 text-white font-medium rounded-xl flex items-center gap-2 transition-all text-sm"
             >

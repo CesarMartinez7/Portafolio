@@ -14,7 +14,7 @@ const experiences = [
     achievements: [
       "Architected scalable module structure for a legacy project not originally designed for growth.",
       "Proposed and shipped new features and workflows adopted by the team.",
-      "Maintained and extended integrations with Banco Unión, Allianz, and Seguros del Estado.",
+      "Maintained and extended integrations with Seguros Mundial, Banco Unión, Allianz, and Seguros del Estado.",
       "Developed production-ready insurance quoting products handling real client data.",
     ],
     stack: ["Angular", "TypeScript", "Node.js", "REST APIs"],

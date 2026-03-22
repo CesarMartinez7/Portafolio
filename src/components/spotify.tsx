@@ -66,58 +66,39 @@ function MediaError() {
 // Renderiza imagen o video con loading y error handling
 
 function MediaItem({ src, alt }: { src: string; alt: string }) {
-  const [status, setStatus] = useState<"loading" | "ready" | "error">(
-    "loading",
-  );
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    setStatus("loading");
+    setReady(false);
   }, [src]);
 
   if (isVideo(src)) {
     return (
-      <>
-        {status === "loading" && <MediaSkeleton />}
-        {status === "error" ? (
-          <MediaError />
-        ) : (
-          <motion.video
-            src={src}
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="absolute inset-0 w-full h-full object-cover object-top"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: status === "ready" ? 1 : 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            onCanPlay={() => setStatus("ready")}
-            onError={() => setStatus("error")}
-          />
-        )}
-      </>
+      <motion.video
+        src={src}
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover object-top"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: ready ? 1 : 0 }}
+        transition={{ duration: 0.5, ease: "easeOut" }}
+        onCanPlay={() => setReady(true)}
+      />
     );
   }
 
   return (
-    <>
-      {status === "loading" && <MediaSkeleton />}
-      {status === "error" ? (
-        <MediaError />
-      ) : (
-        <motion.img
-          src={src}
-          alt={alt}
-          className="absolute inset-0 w-full h-full object-cover object-top"
-          initial={{ opacity: 0, scale: 1.03 }}
-          animate={{ opacity: status === "ready" ? 1 : 0, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.65, ease: "easeOut" }}
-          onLoad={() => setStatus("ready")}
-          onError={() => setStatus("error")}
-        />
-      )}
-    </>
+    <motion.img
+      src={src}
+      alt={alt}
+      className="absolute inset-0 w-full h-full object-cover object-top"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: ready ? 1 : 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      onLoad={() => setReady(true)}
+    />
   );
 }
 

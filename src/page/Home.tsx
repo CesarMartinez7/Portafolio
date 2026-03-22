@@ -45,7 +45,7 @@ function Main() {
     {
       title: "CV",
       icon: "tabler:file-text",
-      href: "./CesarMartinez_Navy.pdf",
+      href: "./Resumen Profesional - CesarMartinez.pdf",
     },
   ];
 
@@ -140,7 +140,7 @@ function Main() {
             <motion.a
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              href="./CesarMartinez_Navy.pdf"
+              href="./Resumen Profesional - CesarMartinez.pdf"
               download
               className="px-6 py-2.5 border border-zinc-700 hover:border-zinc-500 text-white font-medium rounded-xl flex items-center gap-2 transition-all text-sm"
             >
@@ -159,7 +159,7 @@ function Main() {
             {[
               { icon: "tabler:brand-github", href: "https://github.com/CesarMartinez7", label: "GitHub" },
               { icon: "tabler:brand-linkedin", href: "https://www.linkedin.com/in/cesar-luis-martinez-castro-383943332/", label: "LinkedIn" },
-              { icon: "tabler:mail", href: "mailto:cesarmartinezcastro7@gmail.com", label: "Email" },
+              { icon: "tabler:mail", href: "mailto:cesarwamartinez@gmail.com", label: "Email" },
             ].map((link) => (
               <motion.a
                 key={link.label}

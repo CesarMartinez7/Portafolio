@@ -7,7 +7,15 @@ import ImageNofound from "../../public/nofoundimage.webp";
 
 // Media por proyecto — mezcla libre de imágenes y videos
 const projectMedia: Record<string, string[]> = {
-  Elisa: ["elisa.png", "elisa-white.png", "elisa-black.png"],
+  Elisa: [
+    "elisa-dark-last-version-2.png",
+    "canvas-v2.webp",
+    "elisa-dark-last-version-2.png",
+    "client.webp",
+    "flow-editor-v2.webp",
+    "flow-log-v2.webp",
+    "loadtest-v2.webp",
+  ],
   DexTS: [
     "dexts.mp4",
     "dexts-menu.png",
@@ -442,7 +450,7 @@ const cards = [
   {
     description: "Lightweight API client with zero external dependencies",
     title: "Elisa",
-    src: "/elisa.png",
+    src: "/elisa-dark-last-version.png",
     ctaText: "Visit site",
     status: false,
     tecnologias: [
@@ -452,7 +460,7 @@ const cards = [
       { name: "TailwindCSS", icon: "logos:tailwindcss-icon" },
     ],
     ctaLinkCode: "https://github.com/CesarMartinez7/Elisa",
-    ctaLink: "https://elisaland.vercel.app/",
+    ctaLink: "https://elisa-five.vercel.app/#/landing",
     content: () => (
       <p>
         Developed a cross-platform API client using React, Rust, and Tauri,

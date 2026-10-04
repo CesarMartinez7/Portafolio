@@ -9,34 +9,48 @@ export interface Project {
   ctaLink: string;
   codeLink: string;
   tech: { name: string; icon: string }[];
+  // Métricas destacadas que se muestran en el modal del proyecto
+  stats?: { value: string; label: string }[];
   content: string;
 }
 
 export const projects: Project[] = [
   {
     title: "Elisa",
-    description: "Lightweight API client with zero external dependencies",
-    cover: "/img/elisa-dark-last-version.webp",
+    description: "A fast, local-first API client for web & desktop",
+    cover: "/img/elisa-cliente-landing-2.png",
     media: [
+      "/img/elisa-cliente-landing-2.png",
+      "/img/elisa-overview.png",
+      // "/img/elisa-cliente-landing-1.png",
       "/img/elisa-dark-last-version-2.webp",
+      "/img/elisa-states.webp",
       "/canvas-v2.webp",
       "/client.webp",
       "/flow-editor-v2.webp",
       "/flow-log-v2.webp",
       "/loadtest-v2.webp",
     ],
-    live: false,
+    live: true,
     ctaText: "Visit site",
     ctaLink: "https://elisa-five.vercel.app/#/landing",
     codeLink: "https://github.com/CesarMartinez7/Elisa",
     tech: [
       { name: "React", icon: "logos:react" },
       { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "Tauri", icon: "logos:tauri" },
+      { name: "Rust", icon: "logos:rust" },
+      { name: "Supabase", icon: "logos:supabase-icon" },
       { name: "Axios", icon: "logos:axios" },
-      { name: "TailwindCSS", icon: "logos:tailwindcss-icon" },
+    ],
+    stats: [
+      { value: "v1.0.17", label: "Latest release" },
+      { value: "545", label: "Commits" },
+      { value: "3", label: "Platforms" },
+      { value: "Local-first", label: "Architecture" },
     ],
     content:
-      "Developed a cross-platform API client using React, Rust, and Tauri, focused on high performance and minimal dependencies. The application implements a custom architecture with near-zero external libraries, including a fully custom-built JSON renderer based on recursive patterns to handle deeply nested data structures efficiently. Designed and implemented a proprietary editor for request/response handling, enabling flexible API interaction workflows. Supports Postman Collection v2.1 and environment management, allowing users to import, edit, and export collections and variables seamlessly. Integrated Supabase for cloud synchronization and persistence, while maintaining local-first performance through Rust-powered backend processes.",
+      "Elisa is a free, open-source alternative to Postman that runs both in the browser and as a lightweight Tauri desktop app. It ships a code editor and a JSON/XML/HTML viewer built from scratch on a recursive node renderer, so deeply nested payloads stay fast to read and edit. It imports, edits and exports Postman collections and environments, and persists everything locally first, syncing to the cloud through Supabase when signed in. The desktop build uses a Rust backend to bypass CORS and keep requests fast, and adds request flows, a Monaco-based editor, Git integration and light/dark themes — all in a single view with no context switching.",
   },
   {
     title: "Notys",
@@ -61,13 +75,37 @@ export const projects: Project[] = [
       "Notys is a VS Code extension that allows developers to create and manage quick notes directly within the editor — without breaking their workflow. Built using the VS Code Extension API and powered by Supabase for real-time data storage and synchronization. Published on the official Marketplace, it showcases the ability to build and ship practical tools that developers can rely on in their daily workflow.",
   },
   {
+    title: "Anchor Port",
+    description: "Keyboard-driven TUI to monitor and control your LAN",
+    cover: "/img/anchorport-panel.webp",
+    media: ["/img/anchorport-panel.webp", "/img/anchorport-menu.webp"],
+    live: true,
+    ctaText: "View code",
+    ctaLink: "https://github.com/CesarMartinez7/AnchorPorts",
+    codeLink: "https://github.com/CesarMartinez7/AnchorPorts",
+    tech: [
+      { name: "Python", icon: "logos:python" },
+      { name: "Textual", icon: "tabler:terminal-2" },
+      { name: "Scapy", icon: "tabler:network" },
+      { name: "Nmap", icon: "file-icons:nmap" },
+    ],
+    stats: [
+      { value: "3", label: "Built-in tools" },
+      { value: "ARP · DNS", label: "Control" },
+      { value: ".exe", label: "Standalone" },
+      { value: "Auto", label: "Discovery" },
+    ],
+    content:
+      "Anchor Port is a keyboard-driven terminal UI (built with Textual) for administering your own local network — no typing IP addresses by hand. It auto-discovers every device and, from a live table, lets you block or kick them via ARP, monitor which DNS domains each one reaches, and run a detailed port and OS scan with Nmap. It grew out of a simple port scanner into a full network control tool using Scapy for layer-2 packet work, with a persistent device registry, timed blocks and custom aliases. Ships as a standalone executable via PyInstaller, so it runs without a Python install.",
+  },
+  {
     title: "Tailwind Breakpoint",
     description: "Firefox extension for Tailwind CSS breakpoint detection",
     cover: "/img/tailwind-break.webp",
     media: ["/img/tailwind-break.webp"],
     live: true,
     ctaText: "View on Firefox",
-    ctaLink: "https://addons.mozilla.org/", // pon la URL exacta
+    ctaLink: "https://addons.mozilla.org/es-ES/firefox/addon/tailwind_breack/", // pon la URL exacta
     codeLink: "https://github.com/CesarMartinez7",
     tech: [
       { name: "JavaScript", icon: "logos:javascript" },
@@ -151,21 +189,5 @@ export const projects: Project[] = [
     ],
     content:
       "Catchy Bot is a Telegram bot that converts YouTube links to audio and delivers them directly in chat. Fully containerized with Docker and published as a PyPI package. Demonstrates backend automation, API integration, containerization, and open-source packaging — outside the frontend stack.",
-  },
-  {
-    title: "Speed Port",
-    description: "Fast port scanner with MAC spoofing — built in Python",
-    cover: "/speedports.webp",
-    media: ["/speedport.mp4", "/speedports.webp"],
-    live: true,
-    ctaText: "View code",
-    ctaLink: "https://github.com/CesarMartinez7/AnchorPorts",
-    codeLink: "https://github.com/CesarMartinez7/AnchorPorts",
-    tech: [
-      { name: "Python", icon: "logos:python" },
-      { name: "Nmap", icon: "file-icons:nmap" },
-    ],
-    content:
-      "Speed Port is a network security tool built in Python using Scapy and Nmap. It performs fast port scanning with optional MAC address spoofing to test network resilience. Shows depth beyond the browser — network protocols, low-level packet manipulation, and security tooling.",
   },
 ];

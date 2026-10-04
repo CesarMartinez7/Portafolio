@@ -242,6 +242,24 @@ function ProjectModal({
             ))}
           </ul>
 
+          {project.stats && (
+            <dl className="grid shrink-0 grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 sm:grid-cols-4">
+              {project.stats.map((stat) => (
+                <div
+                  key={stat.label}
+                  className="flex flex-col gap-1 bg-zinc-950 px-4 py-3.5"
+                >
+                  <dt className="truncate text-base font-bold leading-none text-white">
+                    {stat.value}
+                  </dt>
+                  <dd className="truncate font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500">
+                    {stat.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          )}
+
           <p className="border-t border-white/5 pt-5 text-sm leading-relaxed text-zinc-300">
             {project.content}
           </p>

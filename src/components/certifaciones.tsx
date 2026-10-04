@@ -1,36 +1,26 @@
 import { motion } from "motion/react";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
+import Section from "./Section";
+import { fadeUp } from "./utils";
 
 const credentials = [
   {
     name: "Docker Essentials: A Developer Introduction",
     institution: "IBM",
-    icon: "logos:ibm",
     credentialURL: "https://www.ibm.com/certificates/IBM-67890",
     tags: ["Docker", "Containers", "Deployment"],
-    color: "hover:border-blue-500/40",
-    glow: "#3178C6",
-    badge: "bg-blue-500/10 text-blue-400",
   },
   {
     name: "Técnico en Programación de Software",
     institution: "SENA — Servicio Nacional de Aprendizaje",
-    icon: "logos:google-scholar", // no hay icono de SENA, este es neutral
     credentialURL: "https://www.sena.edu.co",
     tags: ["Software Development", "Programming", "Tech"],
-    color: "hover:border-emerald-500/40",
-    glow: "#10b981",
-    badge: "bg-emerald-500/10 text-emerald-400",
   },
   {
     name: "Introduction to Cybersecurity",
     institution: "Cisco Networking Academy",
-    icon: "logos:cisco",
     credentialURL: "https://www.cisco.com/certificates/CNA-11223",
     tags: ["Cybersecurity", "Networking", "Data Protection"],
-    color: "hover:border-cyan-500/40",
-    glow: "#06b6d4",
-    badge: "bg-cyan-500/10 text-cyan-400",
   },
 ];
 
@@ -42,103 +32,74 @@ const exploring = [
 
 export default function Credenciales() {
   return (
-    <section className="relative py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="mb-16 text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-white">Credentials & </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-500">
-              Learning
-            </span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Verified certifications and technologies I'm actively exploring.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-12  ">
-          {credentials.map((cert, i) => (
-            <motion.a
-              key={i}
+    <Section
+      id="credentials"
+      index="03"
+      label="Credentials"
+      title="Credentials"
+      outline="& Learning"
+      aside={`${credentials.length} certifications`}
+      description="Certifications and technologies I'm actively exploring."
+    >
+      <ul className="border-b border-white/15">
+        {credentials.map((cert, i) => (
+          <motion.li
+            key={cert.name}
+            {...fadeUp}
+            transition={{ duration: 0.5, delay: i * 0.08 }}
+            className="border-t border-white/15"
+          >
+            <a
               href={cert.credentialURL}
               target="_blank"
               rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -2 }}
-              className={`group flex flex-col gap-4 p-6 rounded-2xl bg-zinc-950 border border-zinc-800 transition-all duration-300 ${cert.color}`}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow =
-                  `0 0 24px -6px ${cert.glow}30`;
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = "";
-              }}
+              className="group grid items-center gap-x-8 gap-y-3 py-8 transition-[padding] duration-300 hover:pl-3 md:grid-cols-[3rem_1fr_auto]"
             >
-              <div className="flex items-start justify-between gap-3">
-                <div className="p-2 rounded-lg bg-zinc-900 border border-zinc-800">
-                  <Icon icon={cert.icon} width="28" height="28" />
-                </div>
-                <span
-                  className={`text-xs font-mono px-2.5 py-1 rounded-full ${cert.badge}`}
-                >
-                  Verified
-                </span>
-              </div>
+              <span className="font-mono text-xs text-emerald-400">
+                {String(i + 1).padStart(2, "0")}
+              </span>
 
               <div>
-                <h3 className="text-white font-semibold text-sm leading-snug mb-1">
+                <h3 className="text-xl font-bold uppercase leading-tight tracking-tight text-white transition-colors group-hover:text-emerald-400 md:text-3xl">
                   {cert.name}
                 </h3>
-                <p className="text-zinc-500 text-xs">{cert.institution}</p>
+                <p className="mt-2 font-mono text-xs uppercase tracking-[0.18em] text-zinc-400">
+                  {cert.institution}
+                </p>
               </div>
 
-              <div className="flex flex-wrap gap-1.5">
-                {cert.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-zinc-900 border border-zinc-800 text-zinc-400"
-                  >
-                    {tag}
-                  </span>
-                ))}
+              <div className="flex items-center gap-5">
+                <p className="font-mono text-xs text-zinc-500">
+                  {cert.tags.join(" / ")}
+                </p>
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 text-white transition-colors group-hover:border-emerald-400 group-hover:bg-emerald-400 group-hover:text-zinc-950">
+                  <Icon icon="tabler:arrow-up-right" width="18" height="18" />
+                </span>
               </div>
+            </a>
+          </motion.li>
+        ))}
+      </ul>
 
-              <div className="flex items-center gap-1 text-zinc-600 group-hover:text-zinc-400 transition-colors text-xs">
-                <Icon icon="tabler:external-link" width="12" height="12" />
-                View credential
-              </div>
-            </motion.a>
-          ))}
-        </div>
-
-        <p className="text-xs font-mono text-zinc-600 uppercase tracking-widest mb-6 text-center">
+      <motion.div
+        {...fadeUp}
+        className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6"
+      >
+        <p className="shrink-0 font-mono text-xs uppercase tracking-[0.18em] text-zinc-400">
           Currently exploring
         </p>
-        <div className="flex flex-wrap justify-center gap-3">
-          {exploring.map((tech, i) => (
-            <motion.div
+        <ul className="flex flex-wrap gap-2">
+          {exploring.map((tech) => (
+            <li
               key={tech.name}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.3, delay: i * 0.07 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-zinc-950 border border-zinc-800 hover:border-zinc-600 transition-all"
+              className="flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-zinc-200"
             >
-              <Icon icon={tech.icon} width="18" height="18" />
-              <span className="text-sm text-zinc-300">{tech.name}</span>
-            </motion.div>
+              <Icon icon={tech.icon} width="16" height="16" />
+              {tech.name}
+            </li>
           ))}
-        </div>
-      </div>
-    </section>
+        </ul>
+      </motion.div>
+    </Section>
   );
 }

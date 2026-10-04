@@ -1,5 +1,7 @@
 import { motion } from "motion/react";
-import { Icon } from "@iconify/react/dist/iconify.js";
+import { Icon } from "@iconify/react";
+import Section from "./Section";
+import { cn, fadeUp } from "./utils";
 
 const experiences = [
   {
@@ -8,7 +10,7 @@ const experiences = [
     client: "Seguros Mundial",
     period: "Sep 2025 – Present",
     tag: "Full-time · Promoted",
-    tagColor: "emerald",
+    current: true,
     description:
       "Promoted to full-time employee after demonstrating strong performance during internship. Continued leading frontend development for Seguros Mundial's insurance platform.",
     achievements: [
@@ -25,7 +27,7 @@ const experiences = [
     client: "Seguros Mundial",
     period: "Mar 2025 – Sep 2025",
     tag: "Internship",
-    tagColor: "zinc",
+    current: false,
     description:
       "Joined as an intern and quickly took ownership of critical frontend modules. Performance during this period led to a full-time offer within 6 months.",
     achievements: [
@@ -40,94 +42,83 @@ const experiences = [
 
 export default function Experience() {
   return (
-    <section className="relative py-20 px-4">
-      <div className="max-w-4xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          viewport={{ once: true }}
-          className="mb-16 text-center"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="text-white">Work </span>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-emerald-500">
-              Experience
-            </span>
-          </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto">
-            Professional experience building real products for real clients.
-          </p>
-        </motion.div>
-
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-px bg-zinc-800/40 ml-5 hidden sm:block" />
-
-          <div className="space-y-8">
-            {experiences.map((exp, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: i * 0.15 }}
-                viewport={{ once: true }}
-                className="relative sm:pl-16"
+    <Section
+      id="experience"
+      index="01"
+      label="Experience"
+      title="Work"
+      outline="Experience"
+      aside="Mar 2025 – Present"
+      description="From intern to full-time in six months, shipping frontend for an insurance platform used in production."
+    >
+      <ol>
+        {experiences.map((exp, i) => (
+          <motion.li
+            key={exp.period}
+            {...fadeUp}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="grid gap-5 border-t border-white/15 py-10 md:grid-cols-[200px_1fr] md:gap-10 md:py-14"
+          >
+            <div>
+              <p className="font-mono text-xs uppercase tracking-[0.18em] text-zinc-400">
+                {exp.period}
+              </p>
+              <span
+                className={cn(
+                  "mt-4 inline-block rounded-md px-2.5 py-1 text-xs font-medium",
+                  exp.current
+                    ? "bg-emerald-400 text-zinc-950"
+                    : "border border-white/20 text-zinc-300",
+                )}
               >
-                <div className={`absolute left-0 top-8 w-3 h-3 rounded-full border-2 hidden sm:block ${
-                  i === 0 ? "bg-emerald-500 border-emerald-400" : "bg-zinc-700 border-zinc-600"
-                }`} style={{ marginLeft: "14px" }} />
+                {exp.tag}
+              </span>
+            </div>
 
-                <div className="relative border border-zinc-800 rounded-2xl p-8 bg-zinc-950/60 backdrop-blur-sm">
-                  <div className="absolute -top-3 left-6">
-                    <span className={`text-xs font-mono px-3 py-1 rounded-full border ${
-                      exp.tagColor === "emerald"
-                        ? "bg-emerald-500/10 border-emerald-500/30 text-emerald-400"
-                        : "bg-zinc-800 border-zinc-700 text-zinc-400"
-                    }`}>
-                      {exp.tag}
-                    </span>
-                  </div>
+            <div>
+              <h3 className="text-3xl font-bold uppercase leading-none tracking-tighter text-white md:text-5xl">
+                {exp.role}
+              </h3>
+              <p className="mt-3 font-mono text-xs uppercase tracking-[0.18em] text-zinc-400">
+                <span className="text-white">{exp.company}</span> / Client:{" "}
+                {exp.client}
+              </p>
 
-                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-2">
-                    <div>
-                      <h3 className="text-xl font-bold text-white">{exp.role}</h3>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="text-emerald-400 font-mono text-sm">{exp.company}</span>
-                        <span className="text-zinc-600 text-xs">·</span>
-                        <span className="text-zinc-500 text-sm">Client: {exp.client}</span>
-                      </div>
-                    </div>
-                    <span className="text-gray-500 font-mono text-sm whitespace-nowrap">
-                      {exp.period}
-                    </span>
-                  </div>
+              <p className="mt-7 max-w-2xl leading-relaxed text-zinc-400">
+                {exp.description}
+              </p>
 
-                  <p className="text-gray-400 text-sm leading-relaxed mb-5 mt-4">
-                    {exp.description}
-                  </p>
+              <ul className="mt-6 space-y-3">
+                {exp.achievements.map((item) => (
+                  <li
+                    key={item}
+                    className="flex gap-3 text-sm leading-relaxed text-zinc-200"
+                  >
+                    <Icon
+                      icon="tabler:arrow-right"
+                      className="mt-0.5 shrink-0 text-emerald-400"
+                      width="16"
+                      height="16"
+                    />
+                    {item}
+                  </li>
+                ))}
+              </ul>
 
-                  <ul className="space-y-2 mb-6">
-                    {exp.achievements.map((item, j) => (
-                      <li key={j} className="flex gap-3 text-gray-300 text-sm leading-relaxed">
-                        <Icon icon="tabler:arrow-right" className="text-emerald-500 mt-0.5 shrink-0" width="16" height="16" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-
-                  <div className="flex flex-wrap gap-2">
-                    {exp.stack.map((tech) => (
-                      <span key={tech} className="text-xs font-mono px-3 py-1 rounded-full bg-zinc-900 border border-zinc-700 text-zinc-300">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </section>
+              <ul className="mt-8 flex flex-wrap gap-2">
+                {exp.stack.map((tech) => (
+                  <li
+                    key={tech}
+                    className="rounded-full border border-white/20 px-3.5 py-1.5 font-mono text-xs text-zinc-300"
+                  >
+                    {tech}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </motion.li>
+        ))}
+      </ol>
+    </Section>
   );
 }

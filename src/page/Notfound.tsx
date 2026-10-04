@@ -1,23 +1,28 @@
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
+import { Link } from "react-router-dom";
+import "../App.css";
 
 export default function NotFound() {
   return (
     <motion.div
-      className="h-svh min-h-svh grid place-content-center gap-5"
+      className="grid h-svh min-h-svh place-content-center gap-8 px-6"
       aria-label="nofound-page"
       initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
     >
-      <h4 className="text-4xl text-zinc-300 ">Que estas haciendo aqui?</h4>
-      <motion.button
-        className="bg-green-500 font-extrabold hover:bg-green-600 duration-150 rounded-md py-2 border border-b-4 border-green-700"
-        whileInView={{ scale: 1 }}
-        whileHover={{rotate: 1}}
-        initial={{ scale: 0 }}
-        animate={{transition: {duration : 5},}}
+      <h1 className="text-[clamp(4rem,22vw,14rem)] font-bold uppercase leading-[0.9] tracking-tighter text-white">
+        <span className="block">404</span>
+        <span className="text-outline block">Lost</span>
+      </h1>
+      <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-400">
+        ¿Qué estás haciendo aquí?
+      </p>
+      <Link
+        to="/"
+        className="justify-self-start rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-950 transition-colors hover:bg-emerald-300"
       >
         Come back
-      </motion.button>
+      </Link>
     </motion.div>
   );
 }

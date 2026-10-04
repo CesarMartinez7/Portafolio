@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { cn } from "./utils";
 
 interface Position {
   x: number;
@@ -53,10 +54,10 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
       onBlur={handleBlur}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`${className} relative rounded-[13px] border w-full h-full border-zinc-950 bg-[#000] overflow-hidden p-3 `}
+      className={cn("relative rounded-[13px] border w-full h-full border-zinc-950 bg-[#000] overflow-hidden p-3", className)}
     >
       <div
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-500 ease-in-out"
+        className="pointer-events-none absolute inset-0 z-10 opacity-0 transition-opacity duration-500 ease-in-out"
         style={{
           opacity,
           background: `radial-gradient(circle at ${position.x}px ${position.y}px, ${spotlightColor}, transparent 80%)`,

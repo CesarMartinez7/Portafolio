@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer
       id="contact"
-      className="relative isolate overflow-hidden border-t border-white/10 px-6 pt-24 md:pt-32"
+      className="relative isolate overflow-hidden px-6 pt-24 md:pt-32"
     >
       <BlindsBackdrop angle={-18} />
 

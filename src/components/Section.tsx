@@ -24,7 +24,7 @@ export default function Section({
   children,
 }: SectionProps) {
   return (
-    <section id={id} className="border-t border-white/10 px-6 py-24 md:py-32">
+    <section id={id} className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-5xl">
         <motion.header {...fadeUp} className="mb-14 md:mb-20">
           <p className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-zinc-400">

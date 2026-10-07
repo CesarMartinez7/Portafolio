@@ -2,6 +2,10 @@ export interface Project {
   title: string;
   description: string;
   cover: string;
+  // Logo/icono opcional de la marca que se muestra en la tarjeta
+  logo?: string;
+  // Destacado: tarjeta grande (ocupa 2 columnas)
+  featured?: boolean;
   // Mezcla libre de imágenes y videos para el slideshow
   media: string[];
   live: boolean;
@@ -17,6 +21,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Elisa",
+    featured: true,
     description: "A fast, local-first API client for web & desktop",
     cover: "/img/elisa-cliente-landing-2.png",
     media: [
@@ -53,28 +58,6 @@ export const projects: Project[] = [
       "Elisa is a free, open-source alternative to Postman that runs both in the browser and as a lightweight Tauri desktop app. It ships a code editor and a JSON/XML/HTML viewer built from scratch on a recursive node renderer, so deeply nested payloads stay fast to read and edit. It imports, edits and exports Postman collections and environments, and persists everything locally first, syncing to the cloud through Supabase when signed in. The desktop build uses a Rust backend to bypass CORS and keep requests fast, and adds request flows, a Monaco-based editor, Git integration and light/dark themes — all in a single view with no context switching.",
   },
   {
-    title: "Notys",
-    description: "VS Code extension for in-editor note management",
-    cover: "/img/notys.webp",
-    media: [
-      "/img/notys.webp",
-      "/img/notys-1.webp",
-      "/img/notys-fullscreen.webp",
-    ],
-    live: true,
-    ctaText: "View on Marketplace",
-    ctaLink:
-      "https://marketplace.visualstudio.com/items?itemName=Develoops.Notys",
-    codeLink: "https://github.com/CesarMartinez7",
-    tech: [
-      { name: "JavaScript", icon: "logos:javascript" },
-      { name: "VS Code API", icon: "logos:visual-studio-code" },
-      { name: "Supabase", icon: "logos:supabase-icon" },
-    ],
-    content:
-      "Notys is a VS Code extension that allows developers to create and manage quick notes directly within the editor — without breaking their workflow. Built using the VS Code Extension API and powered by Supabase for real-time data storage and synchronization. Published on the official Marketplace, it showcases the ability to build and ship practical tools that developers can rely on in their daily workflow.",
-  },
-  {
     title: "Anchor Port",
     description: "Keyboard-driven TUI to monitor and control your LAN",
     cover: "/img/anchorport-panel.webp",
@@ -98,6 +81,60 @@ export const projects: Project[] = [
     content:
       "Anchor Port is a keyboard-driven terminal UI (built with Textual) for administering your own local network — no typing IP addresses by hand. It auto-discovers every device and, from a live table, lets you block or kick them via ARP, monitor which DNS domains each one reaches, and run a detailed port and OS scan with Nmap. It grew out of a simple port scanner into a full network control tool using Scapy for layer-2 packet work, with a persistent device registry, timed blocks and custom aliases. Ships as a standalone executable via PyInstaller, so it runs without a Python install.",
   },
+  {
+    title: "Notys",
+    description: "VS Code extension for in-editor note management",
+    cover: "/img/notys.webp",
+    media: [
+      "/img/notys.webp",
+      "/img/notys-1.webp",
+      "/img/notys-fullscreen.webp",
+    ],
+    live: true,
+    ctaText: "View on Marketplace",
+    ctaLink:
+      "https://marketplace.visualstudio.com/items?itemName=Develoops.Notys",
+    codeLink: "https://github.com/CesarMartinez7",
+    tech: [
+      { name: "JavaScript", icon: "logos:javascript" },
+      { name: "VS Code API", icon: "logos:visual-studio-code" },
+      { name: "Supabase", icon: "logos:supabase-icon" },
+    ],
+    content:
+      "Notys is a VS Code extension that allows developers to create and manage quick notes directly within the editor — without breaking their workflow. Built using the VS Code Extension API and powered by Supabase for real-time data storage and synchronization. Published on the official Marketplace, it showcases the ability to build and ship practical tools that developers can rely on in their daily workflow.",
+  },
+  {
+    title: "Jade",
+    featured: true,
+    description: "Offline-first dev toolbox: JSON, JWT, regex & color",
+    cover: "/img/jade-hero.webp",
+    logo: "/jade.svg",
+    media: [
+      "/img/jade-hero.webp",
+      "/img/jade-jwt.webp",
+      "/img/jade-regex.webp",
+      "/img/jade-jwt-tilt.webp",
+    ],
+    live: true,
+    ctaText: "Visit site",
+    ctaLink: "https://jade-sooty.vercel.app/",
+    codeLink: "https://github.com/CesarMartinez7/Jade",
+    tech: [
+      { name: "React 19", icon: "logos:react" },
+      { name: "TypeScript", icon: "logos:typescript-icon" },
+      { name: "TailwindCSS", icon: "logos:tailwindcss-icon" },
+      { name: "GSAP", icon: "logos:greensock-icon" },
+    ],
+    stats: [
+      { value: "6", label: "Tools in one" },
+      { value: "100%", label: "In-browser" },
+      { value: "0", label: "Backend calls" },
+      { value: "WCAG", label: "Contrast check" },
+    ],
+    content:
+      "Jade is a developer toolbox that runs entirely in the browser — nothing you paste ever leaves your machine. It bundles six tools in one UI: a JSON formatter with live validation and tree, table and TypeScript-interface views; a structural JSON comparator that diffs by value and ignores key order and formatting; a text comparator; a JWT decoder that reads header and payload locally; a regex tester that explains each token of your pattern and highlights matches in real time; and a color tool that converts formats, builds scales and harmonies, and checks WCAG contrast. The JSON viewer uses a recursive renderer so deeply nested payloads stay fast to read.",
+  },
+
   {
     title: "Tailwind Breakpoint",
     description: "Firefox extension for Tailwind CSS breakpoint detection",
@@ -137,38 +174,6 @@ export const projects: Project[] = [
     ],
     content:
       "DexTS is a full-featured anime and manga encyclopedia that queries real-time data via GraphQL using Apollo Client. Users can browse synopses, characters, and saga details — and also watch anime or read manga directly on the platform. Demonstrates advanced data-fetching patterns and TypeScript type safety at scale.",
-  },
-  {
-    title: "Jade",
-    description: "Offline-first developer toolbox for JSON, types & JWT",
-    cover: "/img/40shots_so.png",
-    media: [
-      "/img/163_1x_shots_so.png",
-      "/img/219_1x_shots_so.png",
-      "/img/40shots_so.png",
-      "/img/jade-json.webp",
-      "/img/jade-types.webp",
-      "/img/jade-jwt.webp",
-      "/img/jade-diff.webp",
-    ],
-    live: true,
-    ctaText: "Visit site",
-    ctaLink: "https://jade-sooty.vercel.app/",
-    codeLink: "https://github.com/CesarMartinez7/Jade",
-    tech: [
-      { name: "React 19", icon: "logos:react" },
-      { name: "TypeScript", icon: "logos:typescript-icon" },
-      { name: "TailwindCSS", icon: "logos:tailwindcss-icon" },
-      { name: "GSAP", icon: "logos:greensock-icon" },
-    ],
-    stats: [
-      { value: "4", label: "Tools in one" },
-      { value: "100%", label: "In-browser" },
-      { value: "0", label: "Backend calls" },
-      { value: "JSON → TS", label: "Type gen" },
-    ],
-    content:
-      "Jade is a developer toolbox that runs entirely in the browser — nothing is ever sent to a server. It bundles four tools behind a command dock: a JSON formatter with live validation plus tree, table and TypeScript-interface views; a structural JSON comparator that diffs by value and ignores key order and formatting; a JWT decoder that reads header and payload locally; and a text comparator. The JSON viewer uses a recursive renderer so deeply nested payloads stay fast to read, and types are generated straight from the pasted JSON (JSON → TypeScript interfaces in one click).",
   },
   // {
   //   title: "Mercado Libre Clone",

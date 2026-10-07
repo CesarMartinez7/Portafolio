@@ -77,7 +77,7 @@ export default function Credenciales() {
       aside={`${credentials.length} certifications`}
       description="Certifications and technologies I'm actively exploring."
     >
-      <ul className="border-b border-white/15">
+      <ul className="border-b border-line">
         {credentials.map((cert, i) => {
           const hasLink = Boolean(cert.credentialURL);
           const Wrapper = hasLink ? "a" : "div";
@@ -86,7 +86,7 @@ export default function Credenciales() {
               key={cert.name}
               {...fadeUp}
               transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="border-t border-white/15"
+              className="border-t border-line"
             >
               <Wrapper
                 {...(hasLink
@@ -100,35 +100,35 @@ export default function Credenciales() {
                   hasLink ? "transition-[padding] duration-300 hover:pl-3" : ""
                 }`}
               >
-                <span className="font-mono text-xs text-emerald-400">
+                <span className="font-mono text-xs text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
 
                 <div>
                   <h3
-                    className={`text-xl font-bold uppercase leading-tight tracking-tight text-white md:text-3xl ${
-                      hasLink ? "transition-colors group-hover:text-emerald-400" : ""
+                    className={`text-xl font-bold uppercase leading-tight tracking-tight text-fg md:text-3xl ${
+                      hasLink ? "transition-colors group-hover:text-accent" : ""
                     }`}
                   >
                     {cert.name}
                   </h3>
-                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.18em] text-zinc-400">
+                  <p className="mt-2 font-mono text-xs uppercase tracking-[0.18em] text-muted">
                     {cert.institution}
                   </p>
                 </div>
 
                 <div className="flex items-center gap-5">
-                  <p className="font-mono text-xs text-zinc-500">
+                  <p className="font-mono text-xs text-subtle">
                     {cert.tags.join(" / ")}
                   </p>
                   {hasLink ? (
-                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/20 text-white transition-colors group-hover:border-emerald-400 group-hover:bg-emerald-400 group-hover:text-zinc-950">
+                    <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line-2 text-fg transition-colors group-hover:border-accent group-hover:bg-accent group-hover:text-bg">
                       <Icon icon="tabler:arrow-up-right" width="18" height="18" />
                     </span>
                   ) : (
                     <span
                       title="No verification link available"
-                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-white/10 text-zinc-600"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-line text-subtle"
                     >
                       <Icon icon="tabler:certificate" width="18" height="18" />
                     </span>
@@ -147,14 +147,14 @@ export default function Credenciales() {
             {...fadeUp}
             className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6"
           >
-            <p className="w-40 shrink-0 font-mono text-xs uppercase tracking-[0.18em] text-zinc-400">
+            <p className="w-40 shrink-0 font-mono text-xs uppercase tracking-[0.18em] text-muted">
               {row.label}
             </p>
             <ul className="flex flex-wrap gap-2">
               {row.items.map((tech) => (
                 <li
                   key={tech.name}
-                  className="flex items-center gap-2 rounded-full border border-white/20 px-4 py-2 text-sm text-zinc-200"
+                  className="flex items-center gap-2 rounded-full border border-line-2 px-4 py-2 text-sm text-fg-soft"
                 >
                   <Icon icon={tech.icon} width="16" height="16" />
                   {tech.name}

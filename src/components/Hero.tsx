@@ -14,9 +14,17 @@ const builds = [
 ];
 
 const facts = [
-  { label: "Current role", value: "Frontend Developer Jr.", sub: "Red5G S.A.S" },
+  {
+    label: "Current role",
+    value: "Frontend Developer Jr.",
+    sub: "Red5G S.A.S",
+  },
   { label: "Client", value: "Seguros Mundial", sub: "Insurance platform" },
-  { label: "Stack", value: "Angular · TypeScript · Node.js", sub: "In production" },
+  {
+    label: "Stack",
+    value: "Angular · TypeScript · Node.js",
+    sub: "In production",
+  },
   { label: "Experience", value: "1+ year", sub: "Mar 2025 – Present" },
 ];
 
@@ -27,7 +35,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative isolate flex min-h-svh flex-col overflow-hidden"
+      className="relative isolate flex min-h-svh flex-col overflow-hidden bg-bg text-fg-soft"
     >
       <BlindsBackdrop />
 
@@ -37,7 +45,7 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-zinc-300"
+          className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-muted"
         >
           <span>{site.role}</span>
           <span className="hidden sm:inline">{site.location}</span>
@@ -46,7 +54,7 @@ export default function Hero() {
         <h1 className="sr-only">
           {site.name} — {site.role}
         </h1>
-        <div aria-hidden="true" className="mt-10 text-white">
+        <div aria-hidden="true" className="mt-10 text-fg">
           <SplitText
             text="César"
             delay={60}
@@ -69,18 +77,18 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
-            <p className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xl font-medium text-white md:text-2xl">
+            <p className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xl font-medium text-fg md:text-2xl">
               I build
               <RotatingText
                 texts={builds}
                 rotationInterval={2400}
                 staggerDuration={0.015}
                 staggerFrom="last"
-                mainClassName="overflow-hidden rounded-lg bg-emerald-400 px-3 py-1 text-zinc-950"
+                mainClassName="overflow-hidden rounded-lg bg-accent px-3 py-1 text-bg"
                 splitLevelClassName="overflow-hidden"
               />
             </p>
-            <p className="mt-5 max-w-lg leading-relaxed text-zinc-200 [text-shadow:0_1px_14px_rgba(0,0,0,0.9)]">
+            <p className="mt-5 max-w-lg leading-relaxed text-fg-soft">
               Building scalable web applications with Angular, TypeScript and
               Node.js. 1+ year of professional experience working on real
               production systems for the insurance industry.
@@ -95,7 +103,7 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="group flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-950 transition-colors hover:bg-emerald-300"
+              className="group flex items-center gap-2 rounded-full bg-fg px-6 py-3 text-sm font-medium text-bg transition-colors hover:bg-accent-hover"
             >
               View my work
               <Icon
@@ -108,7 +116,7 @@ export default function Hero() {
             <a
               href={site.cv}
               download
-              className="flex items-center gap-2 rounded-full border border-white/25 bg-zinc-950/40 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:border-white/60"
+              className="flex items-center gap-2 rounded-full border border-line-2 bg-bg/40 px-6 py-3 text-sm font-medium text-fg backdrop-blur-sm transition-colors hover:border-fg"
             >
               <Icon icon="tabler:download" width="16" height="16" />
               Download CV
@@ -121,7 +129,7 @@ export default function Hero() {
                   target={link.href.startsWith("mailto") ? undefined : "_blank"}
                   rel="noopener noreferrer"
                   aria-label={link.label}
-                  className="rounded-full p-2.5 text-zinc-300 transition-colors hover:bg-white/10 hover:text-white"
+                  className="rounded-full p-2.5 text-muted transition-colors hover:bg-surface-2 hover:text-fg"
                 >
                   <Icon icon={link.icon} width="20" height="20" />
                 </a>
@@ -135,16 +143,16 @@ export default function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.8 }}
-            className="grid grid-cols-2 gap-6 border-t border-white/15 pt-6 md:grid-cols-4"
+            className="grid grid-cols-2 gap-6 border-t border-line pt-6 md:grid-cols-4"
           >
             {facts.map((fact) => (
               <div key={fact.label}>
-                <dt className="font-mono text-[10px] uppercase tracking-[0.18em] text-zinc-400">
+                <dt className="font-mono text-[10px] uppercase tracking-[0.18em] text-muted">
                   {fact.label}
                 </dt>
-                <dd className="mt-1.5 text-sm font-medium text-white">
+                <dd className="mt-1.5 text-sm font-medium text-fg">
                   {fact.value}
-                  <span className="block text-xs font-normal text-zinc-400">
+                  <span className="block text-xs font-normal text-muted">
                     {fact.sub}
                   </span>
                 </dd>

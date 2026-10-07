@@ -17,9 +17,9 @@ function StatusBadge({ live, className }: { live: boolean; className?: string })
   return (
     <span
       className={cn(
-        "rounded-full border bg-zinc-950/80 px-2.5 py-0.5 font-mono text-[11px] backdrop-blur-sm",
+        "rounded-full border bg-surface/80 px-2.5 py-0.5 font-mono text-[11px] backdrop-blur-sm",
         live
-          ? "border-emerald-500/30 text-emerald-400"
+          ? "border-accent/40 text-accent"
           : "border-amber-500/30 text-amber-400",
         className,
       )}
@@ -138,10 +138,10 @@ function ProjectModal({
         exit={{ opacity: 0, y: 12, scale: 0.98 }}
         transition={{ duration: 0.25 }}
         onClick={(e) => e.stopPropagation()}
-        className="flex max-h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-white/15 bg-zinc-950 shadow-2xl"
+        className="flex max-h-[90vh] w-full max-w-3xl flex-col overflow-hidden rounded-3xl border border-line bg-surface shadow-2xl"
       >
         {/* ── Media slideshow ── */}
-        <div className="relative aspect-video shrink-0 overflow-hidden bg-zinc-900">
+        <div className="relative aspect-video shrink-0 overflow-hidden bg-surface-2">
           <MediaItem
             key={current}
             src={current}
@@ -155,7 +155,7 @@ function ProjectModal({
             type="button"
             aria-label="Close"
             onClick={onClose}
-            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-white/10 bg-black/60 text-zinc-300 backdrop-blur-sm transition-colors hover:text-white"
+            className="absolute right-4 top-4 flex h-9 w-9 items-center justify-center rounded-full border border-line bg-black/60 text-fg-soft backdrop-blur-sm transition-colors hover:text-fg"
           >
             <Icon icon="tabler:x" width="16" height="16" />
           </button>
@@ -166,7 +166,7 @@ function ProjectModal({
                 type="button"
                 aria-label="Previous"
                 onClick={goPrev}
-                className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-sm transition-colors hover:text-white"
+                className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-black/60 text-fg/70 backdrop-blur-sm transition-colors hover:text-fg"
               >
                 <Icon icon="tabler:chevron-left" width="16" height="16" />
               </button>
@@ -174,7 +174,7 @@ function ProjectModal({
                 type="button"
                 aria-label="Next"
                 onClick={goNext}
-                className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-black/60 text-white/70 backdrop-blur-sm transition-colors hover:text-white"
+                className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-line bg-black/60 text-fg/70 backdrop-blur-sm transition-colors hover:text-fg"
               >
                 <Icon icon="tabler:chevron-right" width="16" height="16" />
               </button>
@@ -189,8 +189,8 @@ function ProjectModal({
                     className={cn(
                       "h-1.5 rounded-full transition-all duration-300",
                       idx === currentIndex
-                        ? "w-5 bg-white"
-                        : "w-1.5 bg-white/30 hover:bg-white/60",
+                        ? "w-5 bg-fg"
+                        : "w-1.5 bg-fg/30 hover:bg-fg/60",
                     )}
                   />
                 ))}
@@ -203,17 +203,17 @@ function ProjectModal({
         <div className="flex flex-col gap-5 overflow-y-auto p-6">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <h3 className="text-3xl font-bold uppercase tracking-tighter text-white md:text-4xl">
+              <h3 className="text-3xl font-bold uppercase tracking-tighter text-fg md:text-4xl">
                 {project.title}
               </h3>
-              <p className="mt-1 text-sm text-zinc-400">{project.description}</p>
+              <p className="mt-1 text-sm text-muted">{project.description}</p>
             </div>
             <div className="flex shrink-0 gap-2">
               <a
                 href={project.codeLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 rounded-full border border-white/25 px-4 py-2 text-xs font-medium text-zinc-300 transition-colors hover:border-zinc-600 hover:text-white"
+                className="flex items-center gap-1.5 rounded-full border border-line-2 px-4 py-2 text-xs font-medium text-fg-soft transition-colors hover:border-line-2 hover:text-fg"
               >
                 <Icon icon="tabler:brand-github" width="15" height="15" />
                 Code
@@ -222,7 +222,7 @@ function ProjectModal({
                 href={project.ctaLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-xs font-medium text-zinc-950 transition-colors hover:bg-emerald-300"
+                className="flex items-center gap-1.5 rounded-full bg-fg px-4 py-2 text-xs font-medium text-bg transition-colors hover:bg-accent-hover"
               >
                 <Icon icon="tabler:external-link" width="15" height="15" />
                 {project.ctaText}
@@ -234,7 +234,7 @@ function ProjectModal({
             {project.tech.map((tec) => (
               <li
                 key={tec.name}
-                className="flex items-center gap-1.5 rounded-md border border-zinc-800 bg-zinc-900/60 px-2.5 py-1 text-xs text-zinc-300"
+                className="flex items-center gap-1.5 rounded-md border border-line bg-surface-2 px-2.5 py-1 text-xs text-fg-soft"
               >
                 <Icon icon={tec.icon} width="14" height="14" />
                 {tec.name}
@@ -243,16 +243,16 @@ function ProjectModal({
           </ul>
 
           {project.stats && (
-            <dl className="grid shrink-0 grid-cols-2 gap-px overflow-hidden rounded-xl border border-white/10 bg-white/10 sm:grid-cols-4">
+            <dl className="grid shrink-0 grid-cols-2 gap-px overflow-hidden rounded-xl border border-line bg-fg/10 sm:grid-cols-4">
               {project.stats.map((stat) => (
                 <div
                   key={stat.label}
-                  className="flex flex-col gap-1 bg-zinc-950 px-4 py-3.5"
+                  className="flex flex-col gap-1 bg-surface px-4 py-3.5"
                 >
-                  <dt className="truncate text-base font-bold leading-none text-white">
+                  <dt className="truncate text-base font-bold leading-none text-fg">
                     {stat.value}
                   </dt>
-                  <dd className="truncate font-mono text-[10px] uppercase tracking-[0.12em] text-zinc-500">
+                  <dd className="truncate font-mono text-[10px] uppercase tracking-[0.12em] text-subtle">
                     {stat.label}
                   </dd>
                 </div>
@@ -260,7 +260,7 @@ function ProjectModal({
             </dl>
           )}
 
-          <p className="border-t border-white/5 pt-5 text-sm leading-relaxed text-zinc-300">
+          <p className="border-t border-line pt-5 text-sm leading-relaxed text-fg-soft">
             {project.content}
           </p>
         </div>
@@ -278,13 +278,13 @@ function TechIcons({ tech }: { tech: Project["tech"] }) {
         <li
           key={tec.name}
           title={tec.name}
-          className="rounded-md border border-zinc-800 bg-zinc-900 p-1.5"
+          className="rounded-md border border-line bg-surface-2 p-1.5"
         >
           <Icon icon={tec.icon} width="13" height="13" />
         </li>
       ))}
       {tech.length > 4 && (
-        <li className="ml-1 font-mono text-[10px] text-zinc-500">
+        <li className="ml-1 font-mono text-[10px] text-subtle">
           +{tech.length - 4}
         </li>
       )}
@@ -304,7 +304,7 @@ function ProjectCard({
   return (
     <SpotlightCard
       spotlightColor="rgba(52, 211, 153, 0.14)"
-      className="rounded-3xl border-white/10 bg-zinc-950 p-0 transition-colors duration-300 hover:border-white/40"
+      className="rounded-3xl border-line bg-surface p-0 transition-colors duration-300 hover:border-fg/40"
     >
     <button
       type="button"
@@ -316,7 +316,7 @@ function ProjectCard({
     >
       <div
         className={cn(
-          "overflow-hidden bg-zinc-900",
+          "overflow-hidden bg-surface-2",
           featured ? "absolute inset-0" : "relative aspect-[16/10]",
         )}
       >
@@ -330,9 +330,15 @@ function ProjectCard({
           className="h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
         />
         {featured && (
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/70 to-transparent" />
         )}
       </div>
+
+      {project.logo && (
+        <span className="absolute left-3 top-3 flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-black/40 p-1.5 backdrop-blur-sm">
+          <img src={project.logo} alt="" className="h-full w-full object-contain" />
+        </span>
+      )}
 
       <StatusBadge live={project.live} className="absolute right-3 top-3" />
 
@@ -343,13 +349,13 @@ function ProjectCard({
         )}
       >
         {featured && (
-          <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.18em] text-emerald-400">
+          <p className="mb-2 font-mono text-[11px] uppercase tracking-[0.18em] text-accent">
             Featured
           </p>
         )}
         <h3
           className={cn(
-            "flex items-center gap-2 font-bold uppercase tracking-tight text-white",
+            "flex items-center gap-2 font-bold uppercase tracking-tight text-fg",
             featured ? "text-3xl md:text-5xl" : "text-lg",
           )}
         >
@@ -358,12 +364,12 @@ function ProjectCard({
             icon="tabler:arrow-up-right"
             width="16"
             height="16"
-            className="text-zinc-600 transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-emerald-400"
+            className="text-subtle transition-all group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
           />
         </h3>
         <p
           className={cn(
-            "mt-1.5 text-zinc-400",
+            "mt-1.5 text-muted",
             featured ? "max-w-md text-sm md:text-base" : "text-sm",
           )}
         >
@@ -393,17 +399,19 @@ export default function Projects() {
       aside={`${projects.length} projects`}
       description="Personal and open-source work built outside of my professional role."
     >
-      <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Una sola cuadrícula: los destacados ocupan 2 columnas, el resto 1.
+          Con el orden actual la última fila queda completa, sin huecos. */}
+      <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
         {projects.map((project, index) => (
           <motion.li
             key={project.title}
             {...fadeUp}
             transition={{ duration: 0.4, delay: (index % 3) * 0.06 }}
-            className={cn(index === 0 && "sm:col-span-2")}
+            className={cn(project.featured && "md:col-span-2")}
           >
             <ProjectCard
               project={project}
-              featured={index === 0}
+              featured={!!project.featured}
               onOpen={() => setActive(project)}
             />
           </motion.li>

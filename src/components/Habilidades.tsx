@@ -37,16 +37,16 @@ export default function Habilidades() {
       aside={`${Object.values(skills).flat().length} technologies`}
       description="Technologies I work with daily and tools I rely on in production."
     >
-      <div className="border-b border-white/15">
+      <div className="border-b border-line">
         {Object.entries(skills).map(([category, tools], catIdx) => (
           <motion.div
             key={category}
             {...fadeUp}
             transition={{ duration: 0.5, delay: catIdx * 0.08 }}
-            className="grid gap-5 border-t border-white/15 py-10 md:grid-cols-[200px_1fr] md:gap-10"
+            className="grid gap-5 border-t border-line py-10 md:grid-cols-[200px_1fr] md:gap-10"
           >
-            <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-zinc-400 md:pt-3">
-              <span className="text-emerald-400">
+            <h3 className="font-mono text-xs uppercase tracking-[0.18em] text-muted md:pt-3">
+              <span className="text-accent">
                 {String(catIdx + 1).padStart(2, "0")}
               </span>{" "}
               / {category}

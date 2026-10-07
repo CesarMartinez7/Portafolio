@@ -27,18 +27,18 @@ export default function Section({
     <section id={id} className="px-6 py-24 md:py-32">
       <div className="mx-auto max-w-5xl">
         <motion.header {...fadeUp} className="mb-14 md:mb-20">
-          <p className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-zinc-400">
+          <p className="flex items-center justify-between font-mono text-xs uppercase tracking-[0.2em] text-muted">
             <span>
-              <span className="text-emerald-400">{index}</span> / {label}
+              <span className="text-accent">{index}</span> / {label}
             </span>
             {aside && <span className="hidden sm:inline">{aside}</span>}
           </p>
-          <h2 className="mt-8 text-[clamp(2.6rem,11vw,7.5rem)] font-bold uppercase leading-[0.92] tracking-tighter text-white">
+          <h2 className="mt-8 text-[clamp(2.6rem,11vw,7.5rem)] font-bold uppercase leading-[0.92] tracking-tighter text-fg">
             <span className="block">{title}</span>
             <span className="text-outline block">{outline}</span>
           </h2>
           {description && (
-            <p className="mt-8 max-w-xl leading-relaxed text-zinc-400">
+            <p className="mt-8 max-w-xl leading-relaxed text-muted">
               {description}
             </p>
           )}

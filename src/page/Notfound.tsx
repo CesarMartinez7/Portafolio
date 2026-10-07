@@ -10,16 +10,16 @@ export default function NotFound() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
-      <h1 className="text-[clamp(4rem,22vw,14rem)] font-bold uppercase leading-[0.9] tracking-tighter text-white">
+      <h1 className="text-[clamp(4rem,22vw,14rem)] font-bold uppercase leading-[0.9] tracking-tighter text-fg">
         <span className="block">404</span>
         <span className="text-outline block">Lost</span>
       </h1>
-      <p className="font-mono text-xs uppercase tracking-[0.2em] text-zinc-400">
+      <p className="font-mono text-xs uppercase tracking-[0.2em] text-muted">
         ¿Qué estás haciendo aquí?
       </p>
       <Link
         to="/"
-        className="justify-self-start rounded-full bg-white px-6 py-3 text-sm font-medium text-zinc-950 transition-colors hover:bg-emerald-300"
+        className="justify-self-start rounded-full bg-fg px-6 py-3 text-sm font-medium text-bg transition-colors hover:bg-accent-hover"
       >
         Come back
       </Link>

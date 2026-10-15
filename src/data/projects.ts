@@ -38,7 +38,7 @@ export const projects: Project[] = [
     ],
     live: true,
     ctaText: "Visit site",
-    ctaLink: "https://elisa-five.vercel.app/#/landing",
+    ctaLink: "https://www.elisa.develoops.dev/#/landing",
     codeLink: "https://github.com/CesarMartinez7/Elisa",
     tech: [
       { name: "React", icon: "logos:react" },
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     ],
     live: true,
     ctaText: "Visit site",
-    ctaLink: "https://jade-sooty.vercel.app/",
+    ctaLink: "https://www.jade.develoops.dev/",
     codeLink: "https://github.com/CesarMartinez7/Jade",
     tech: [
       { name: "React 19", icon: "logos:react" },

@@ -12,12 +12,12 @@ const experiences = [
     tag: "Full-time · Promoted",
     current: true,
     description:
-      "Promoted to full-time employee after demonstrating strong performance during internship. Continued leading frontend development for Seguros Mundial's insurance platform.",
+      "Promoted to full-time employee after demonstrating strong performance during internship — the first junior profile on the team to earn this promotion. Continued leading frontend development for Seguros Mundial's insurance platform.",
     achievements: [
-      "Architected scalable module structure for a legacy project not originally designed for growth.",
-      "Proposed and shipped new features and workflows adopted by the team.",
-      "Maintained and extended integrations with Seguros Mundial, Banco Unión, Allianz, and Seguros del Estado.",
-      "Developed production-ready insurance quoting products handling real client data.",
+      "Refactored legacy Angular architecture across 3+ core modules, cutting component load time by ~30% and improving maintainability.",
+      "Built and integrated production insurance quoting tools connected to Seguros Mundial, Banco Unión, Allianz, and Seguros del Estado APIs, processing hundreds of quotes daily.",
+      "Proposed and shipped 3 new features adopted permanently by the team, shortening the dev cycle by at least one iteration per sprint.",
+      "Led the standardization of technical documentation for new modules, cutting onboarding time for new developers.",
     ],
     stack: ["Angular", "TypeScript", "Node.js", "REST APIs"],
   },
@@ -31,10 +31,10 @@ const experiences = [
     description:
       "Joined as an intern and quickly took ownership of critical frontend modules. Performance during this period led to a full-time offer within 6 months.",
     achievements: [
-      "Built insurance quoting products from scratch for Seguros Mundial.",
-      "Identified scalability issues in the existing codebase and proposed architectural improvements.",
-      "Integrated with third-party financial APIs including Banco Unión and Allianz.",
-      "Took initiative on features beyond the scope of the internship role.",
+      "Gained production-level Angular proficiency within the first month, with no prior framework experience.",
+      "Built functional product-page clones for real insurers, used as the base for the production quoting flow.",
+      "Collaborated on integrating 2 new modules into the core system, accelerating delivery of key features.",
+      "Wrote technical process documentation that reduced the team's incident-resolution time.",
     ],
     stack: ["Angular", "TypeScript", "Node.js", "REST APIs"],
   },

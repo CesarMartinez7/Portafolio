@@ -3,26 +3,27 @@ import { motion } from "motion/react";
 import Section from "./Section";
 import { fadeUp } from "./utils";
 
+// demonstrable: usado en producción (Seguros Mundial) o en un proyecto propio publicado — ver Experience y Projects.
 const skills = {
   Frontend: [
-    { name: "angular-icon", label: "Angular 19" },
-    { name: "typescript-icon", label: "TypeScript" },
-    { name: "react", label: "React" },
-    { name: "nextjs-icon", label: "Next.js" },
-    { name: "javascript", label: "JavaScript" },
-    { name: "tailwindcss-icon", label: "Tailwind" },
+    { name: "angular-icon", label: "Angular", demonstrable: true },
+    { name: "typescript-icon", label: "TypeScript", demonstrable: true },
+    { name: "react", label: "React", demonstrable: true },
+    { name: "nextjs-icon", label: "Next.js", demonstrable: false },
+    { name: "javascript", label: "JavaScript", demonstrable: true },
+    { name: "tailwindcss-icon", label: "Tailwind", demonstrable: true },
   ],
   "Backend & Data": [
-    { name: "nodejs-icon", label: "Node.js" },
-    { name: "python", label: "Python" },
-    { name: "mysql-icon", label: "MySQL" },
-    { name: "postgresql", label: "PostgreSQL" },
-    { name: "supabase-icon", label: "Supabase" },
+    { name: "nodejs-icon", label: "Node.js", demonstrable: true },
+    { name: "python", label: "Python", demonstrable: true },
+    { name: "mysql-icon", label: "MySQL", demonstrable: false },
+    { name: "postgresql", label: "PostgreSQL", demonstrable: false },
+    { name: "supabase-icon", label: "Supabase", demonstrable: true },
   ],
   Tooling: [
-    { name: "git-icon", label: "Git" },
-    { name: "docker-icon", label: "Docker" },
-    { name: "linux-tux", label: "Linux" },
+    { name: "git-icon", label: "Git", demonstrable: true },
+    { name: "docker-icon", label: "Docker", demonstrable: true },
+    { name: "linux-tux", label: "Linux", demonstrable: false },
   ],
 };
 
@@ -35,7 +36,7 @@ export default function Habilidades() {
       title="Technical"
       outline="Skills"
       aside={`${Object.values(skills).flat().length} technologies`}
-      description="Technologies I work with daily and tools I rely on in production."
+      description="Technologies I work with daily and tools I rely on in production. Marked with a dot are demonstrable — shipped in production for Seguros Mundial or in a published project of mine, not just listed."
     >
       <div className="border-b border-line">
         {Object.entries(skills).map(([category, tools], catIdx) => (
@@ -56,6 +57,11 @@ export default function Habilidades() {
                 <li
                   key={tool.name}
                   className="group flex cursor-default items-center gap-3"
+                  title={
+                    tool.demonstrable
+                      ? "Demonstrable — used in production or a shipped project"
+                      : undefined
+                  }
                 >
                   <Icon
                     icon={`logos:${tool.name}`}
@@ -64,6 +70,12 @@ export default function Habilidades() {
                   <span className="text-outline-thin text-3xl font-bold uppercase tracking-tighter md:text-5xl">
                     {tool.label}
                   </span>
+                  {tool.demonstrable && (
+                    <span
+                      aria-hidden="true"
+                      className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent"
+                    />
+                  )}
                 </li>
               ))}
             </ul>

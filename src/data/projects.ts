@@ -22,7 +22,8 @@ export const projects: Project[] = [
   {
     title: "Elisa",
     featured: true,
-    description: "A fast, local-first API client for web & desktop",
+    description:
+      "Local-first API client for web & desktop, with flows, smart docs and an MCP server for AI agents",
     cover: "/img/elisa-new.PNG",
     media: [
       "/img/elisa-new.PNG",
@@ -49,13 +50,13 @@ export const projects: Project[] = [
       { name: "Axios", icon: "logos:axios" },
     ],
     stats: [
-      { value: "v1.0.17", label: "Latest release" },
-      { value: "545", label: "Commits" },
-      { value: "3", label: "Platforms" },
-      { value: "Local-first", label: "Architecture" },
+      { value: "v2.2.4", label: "Latest release" },
+      { value: "728", label: "Commits" },
+      { value: "12", label: "Import formats" },
+      { value: "MCP", label: "AI-agent ready" },
     ],
     content:
-      "Elisa is a free, open-source alternative to Postman that runs both in the browser and as a lightweight Tauri desktop app. It ships a code editor and a JSON/XML/HTML viewer built from scratch on a recursive node renderer, so deeply nested payloads stay fast to read and edit. It imports, edits and exports Postman collections and environments, and persists everything locally first, syncing to the cloud through Supabase when signed in. The desktop build uses a Rust backend to bypass CORS and keep requests fast, and adds request flows, a Monaco-based editor, Git integration and light/dark themes — all in a single view with no context switching.",
+      "Elisa is a free, open-source API client that runs in the browser and as a lightweight Tauri 2 + Rust desktop app. It covers the full request lifecycle: collections and environments with dynamic variables, pre/post-request scripts on a Postman-compatible `pm` API, and responses rendered as tree, code, sortable table or graph, with cookies, headers and a timeline. A visual flow canvas chains requests so one call's output — a token, an id — feeds the next, with a run log. It can also test a whole collection and write documentation for it automatically (Smart Docs), generate typed interfaces in 10 languages from a response, generate request code in cURL, fetch, Axios, Python and more, and run load tests that report latency percentiles and error rates. It imports from 12 formats, including Postman, Insomnia, OpenAPI/Swagger, HAR, cURL and SoapUI. Data is local-first (IndexedDB), works fully offline and syncs automatically; signed in, it adds real-time team workspaces with per-collection roles and permissions over Supabase Realtime. The desktop build skips CORS entirely, ships a local mock server you can publish behind a temporary HTTPS URL, stores collections as Git-friendly files, and exposes Elisa itself as an MCP server so AI agents like Claude Code or Cursor can send requests through it with per-change approval.",
   },
   {
     title: "Anchor Port",
@@ -106,7 +107,8 @@ export const projects: Project[] = [
   {
     title: "Jade",
     featured: true,
-    description: "Offline-first dev toolbox: JSON, JWT, regex & color",
+    description:
+      "All-in-one dev toolbox: JSON, diffing, JWT, regex, color & QR — 100% offline",
     cover: "/img/jade-hero.webp",
     logo: "/jade.svg",
     media: [
@@ -126,13 +128,13 @@ export const projects: Project[] = [
       { name: "GSAP", icon: "logos:greensock-icon" },
     ],
     stats: [
-      { value: "6", label: "Tools in one" },
+      { value: "7", label: "Tools in one" },
       { value: "100%", label: "In-browser" },
       { value: "0", label: "Backend calls" },
       { value: "WCAG", label: "Contrast check" },
     ],
     content:
-      "Jade is a developer toolbox that runs entirely in the browser — nothing you paste ever leaves your machine. It bundles six tools in one UI: a JSON formatter with live validation and tree, table and TypeScript-interface views; a structural JSON comparator that diffs by value and ignores key order and formatting; a text comparator; a JWT decoder that reads header and payload locally; a regex tester that explains each token of your pattern and highlights matches in real time; and a color tool that converts formats, builds scales and harmonies, and checks WCAG contrast. The JSON viewer uses a recursive renderer so deeply nested payloads stay fast to read.",
+      "Jade is a developer toolbox that runs entirely in the browser — nothing you paste ever leaves your machine. It bundles seven tools behind a command palette (Ctrl+K) and sharable links: a JSON tool with live validation, format and minify, plus tree, table and TypeScript-interface views, file open/download and copy; a structural JSON comparator that diffs by value and ignores key order and formatting; a line-by-line text comparator; a JWT decoder that reads header and payload locally; a regex tester that explains each token of your pattern and highlights matches in real time; a color tool that converts formats, builds scales and harmonies, and checks WCAG contrast; and a QR code generator. The JSON viewer uses a recursive renderer so deeply nested payloads stay fast to read.",
   },
 
   {
@@ -151,30 +153,30 @@ export const projects: Project[] = [
     content:
       "A Firefox extension that detects the active Tailwind CSS breakpoint in real time — showing whether you're on xs, sm, md, lg, xl or 2xl as you resize the browser. Built to speed up responsive development without leaving the browser.",
   },
-  {
-    title: "DexTS",
-    description: "Anime & manga encyclopedia powered by GraphQL",
-    cover: "/dexts.webp",
-    media: [
-      "/dexts.mp4",
-      "/img/dexts-menu.webp",
-      "/img/dext-bleach.webp",
-      "/img/dext-harribel.webp",
-    ],
-    live: true,
-    ctaText: "Visit site",
-    ctaLink: "https://dexts.pages.dev",
-    codeLink: "https://github.com/CesarMartinez7/DexTS",
-    tech: [
-      { name: "React", icon: "logos:react" },
-      { name: "TypeScript", icon: "logos:typescript-icon" },
-      { name: "GraphQL", icon: "logos:graphql" },
-      { name: "Apollo Client", icon: "logos:apollostack" },
-      { name: "TailwindCSS", icon: "logos:tailwindcss-icon" },
-    ],
-    content:
-      "DexTS is a full-featured anime and manga encyclopedia that queries real-time data via GraphQL using Apollo Client. Users can browse synopses, characters, and saga details — and also watch anime or read manga directly on the platform. Demonstrates advanced data-fetching patterns and TypeScript type safety at scale.",
-  },
+  // {
+  //   title: "DexTS",
+  //   description: "Anime & manga encyclopedia powered by GraphQL",
+  //   cover: "/dexts.webp",
+  //   media: [
+  //     "/dexts.mp4",
+  //     "/img/dexts-menu.webp",
+  //     "/img/dext-bleach.webp",
+  //     "/img/dext-harribel.webp",
+  //   ],
+  //   live: true,
+  //   ctaText: "Visit site",
+  //   ctaLink: "https://dexts.pages.dev",
+  //   codeLink: "https://github.com/CesarMartinez7/DexTS",
+  //   tech: [
+  //     { name: "React", icon: "logos:react" },
+  //     { name: "TypeScript", icon: "logos:typescript-icon" },
+  //     { name: "GraphQL", icon: "logos:graphql" },
+  //     { name: "Apollo Client", icon: "logos:apollostack" },
+  //     { name: "TailwindCSS", icon: "logos:tailwindcss-icon" },
+  //   ],
+  //   content:
+  //     "DexTS is a full-featured anime and manga encyclopedia that queries real-time data via GraphQL using Apollo Client. Users can browse synopses, characters, and saga details — and also watch anime or read manga directly on the platform. Demonstrates advanced data-fetching patterns and TypeScript type safety at scale.",
+  // },
   // {
   //   title: "Mercado Libre Clone",
   //   description: "E-commerce clone with SSR and dynamic filters",

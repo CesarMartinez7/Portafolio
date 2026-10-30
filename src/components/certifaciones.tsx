@@ -12,25 +12,10 @@ interface Credential {
 
 const credentials: Credential[] = [
   {
-    name: "Angular Course",
-    institution: "SoloLearn",
-    tags: ["Angular", "Components", "Routing"],
-  },
-  {
     name: "Técnico en Programación de Software",
     institution: "SENA — Servicio Nacional de Aprendizaje",
     credentialURL: "https://www.sena.edu.co",
     tags: ["Software Development", "Programming", "Tech"],
-  },
-  {
-    name: "Exploratory Data Analysis with Python",
-    institution: "SENA — Servicio Nacional de Aprendizaje · 40 h",
-    tags: ["Python", "Data Analysis", "EDA"],
-  },
-  {
-    name: "English — Levels 3 to 9",
-    institution: "SENA — Servicio Nacional de Aprendizaje · 40 h each",
-    tags: ["3", "4", "5", "6", "7", "9"],
   },
   {
     name: "Docker Essentials: A Developer Introduction",
@@ -43,6 +28,21 @@ const credentials: Credential[] = [
     institution: "Cisco Networking Academy",
     credentialURL: "https://www.cisco.com/certificates/CNA-11223",
     tags: ["Cybersecurity", "Networking", "Data Protection"],
+  },
+  {
+    name: "Angular Course",
+    institution: "SoloLearn",
+    tags: ["Angular", "Components", "Routing"],
+  },
+  {
+    name: "Exploratory Data Analysis with Python",
+    institution: "SENA — Servicio Nacional de Aprendizaje · 40 h",
+    tags: ["Python", "Data Analysis", "EDA"],
+  },
+  {
+    name: "English — Levels 3 to 9",
+    institution: "SENA — Servicio Nacional de Aprendizaje · 6 courses, 40 h each",
+    tags: ["B2", "Technical Reading", "Professional Communication"],
   },
 ];
 

@@ -89,9 +89,12 @@ export default function Hero() {
               />
             </p>
             <p className="mt-5 max-w-lg leading-relaxed text-fg-soft">
-              Building scalable web applications with Angular, TypeScript and
-              Node.js. 1+ year of professional experience working on real
-              production systems for the insurance industry.
+              Frontend developer with 1+ year shipping production systems for
+              the insurance industry — refactoring legacy Angular
+              architecture and integrating quoting tools with Seguros
+              Mundial, Banco Unión and Allianz. Outside work, I build and
+              ship open-source developer tools, like Elisa, an API client
+              with flows, load testing and an MCP server for AI agents.
             </p>
           </motion.div>
 

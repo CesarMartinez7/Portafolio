@@ -23,9 +23,9 @@ export const projects: Project[] = [
     title: "Elisa",
     featured: true,
     description: "A fast, local-first API client for web & desktop",
-    cover: "/img/elisa-cliente-landing-2.png",
+    cover: "/img/elisa-new.PNG",
     media: [
-      "/img/elisa-cliente-landing-2.png",
+      "/img/elisa-new.PNG",
       "/img/elisa-overview.png",
       // "/img/elisa-cliente-landing-1.png",
       "/img/elisa-dark-last-version-2.webp",
